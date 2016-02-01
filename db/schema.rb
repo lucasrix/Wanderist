@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160201144532) do
+ActiveRecord::Schema.define(version: 20160201154315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "settings_suits", force: :cascade do |t|
+    t.integer  "user_id"
+    t.boolean  "notifications"
+    t.boolean  "autoupdate"
+    t.boolean  "use_location"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "settings_suits", ["user_id"], name: "index_settings_suits_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "provider",               default: "email", null: false
@@ -47,4 +58,5 @@ ActiveRecord::Schema.define(version: 20160201144532) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
 
+  add_foreign_key "settings_suits", "users"
 end
