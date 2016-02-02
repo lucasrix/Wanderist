@@ -1,6 +1,9 @@
 FactoryGirl.define do
   factory :report do
-    reportable nil
+    user
+    story_point
+    kind { Faker::Lorem.word }
+    message { Faker::Lorem.paragraph }
   end
 
 end
