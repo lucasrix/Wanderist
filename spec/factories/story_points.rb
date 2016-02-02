@@ -1,10 +1,10 @@
 FactoryGirl.define do
   factory :story_point do
-    caption "MyString"
-location "MyString"
-latitude "MyString"
-longitude "MyString"
-public false
+    user
+    caption { Faker::Lorem.sentence }
+    location { Faker::Address.street_address }
+    latitude { Faker::Address.latitude }
+    longitude { Faker::Address.longitude }
+    public false
   end
-
 end

@@ -78,6 +78,8 @@ ActiveRecord::Schema.define(version: 20160202103914) do
   add_index "stories", ["user_id"], name: "index_stories_on_user_id", using: :btree
 
   create_table "story_points", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "story_id"
     t.string   "caption"
     t.string   "location"
     t.string   "latitude"
@@ -86,6 +88,9 @@ ActiveRecord::Schema.define(version: 20160202103914) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end
+
+  add_index "story_points", ["story_id"], name: "index_story_points_on_story_id", using: :btree
+  add_index "story_points", ["user_id"], name: "index_story_points_on_user_id", using: :btree
 
   create_table "story_points_tags", id: false, force: :cascade do |t|
     t.integer "tag_id"
@@ -147,4 +152,6 @@ ActiveRecord::Schema.define(version: 20160202103914) do
   add_foreign_key "contents", "story_points"
   add_foreign_key "settings_suits", "users"
   add_foreign_key "stories", "users"
+  add_foreign_key "story_points", "stories"
+  add_foreign_key "story_points", "users"
 end

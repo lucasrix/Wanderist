@@ -1,11 +1,11 @@
 FactoryGirl.define do
   factory :story do
-    user nil
-name "MyString"
-description "MyText"
-public false
-latitude "MyString"
-longitude "MyString"
+    user
+    reports
+    name { Faker::Lorem.sentence }
+    description { Faker::Lorem.paragraph }
+    latitude { Faker::Address.latitude }
+    longitude { Faker::Address.longitude }
+    public false
   end
-
 end
