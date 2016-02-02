@@ -5,5 +5,4 @@ FactoryGirl.define do
     kind { Faker::Lorem.word }
     message { Faker::Lorem.paragraph }
   end
-
 end
