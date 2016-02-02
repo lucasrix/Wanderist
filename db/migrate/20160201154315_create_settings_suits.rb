@@ -5,6 +5,7 @@ class CreateSettingsSuits < ActiveRecord::Migration
       t.boolean :notifications
       t.boolean :autoupdate
       t.boolean :use_location
+      t.boolean :public
 
       t.timestamps null: false
     end

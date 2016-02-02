@@ -11,16 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160201155713) do
+ActiveRecord::Schema.define(version: 20160202100248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "audios", force: :cascade do |t|
+    t.string   "file"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "contents", force: :cascade do |t|
+    t.integer  "story_point_id"
+    t.integer  "entity_id"
+    t.string   "entity_type"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "contents", ["entity_type", "entity_id"], name: "index_contents_on_entity_type_and_entity_id", using: :btree
+  add_index "contents", ["story_point_id"], name: "index_contents_on_story_point_id", using: :btree
+
+  create_table "photos", force: :cascade do |t|
+    t.string   "file"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "settings_suits", force: :cascade do |t|
     t.integer  "user_id"
     t.boolean  "notifications"
     t.boolean  "autoupdate"
     t.boolean  "use_location"
+    t.boolean  "public"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
@@ -39,6 +63,22 @@ ActiveRecord::Schema.define(version: 20160201155713) do
   end
 
   add_index "stories", ["user_id"], name: "index_stories_on_user_id", using: :btree
+
+  create_table "story_points", force: :cascade do |t|
+    t.string   "caption"
+    t.string   "location"
+    t.string   "latitude"
+    t.string   "longitude"
+    t.boolean  "public"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "texts", force: :cascade do |t|
+    t.text     "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "provider",               default: "email", null: false
@@ -71,6 +111,13 @@ ActiveRecord::Schema.define(version: 20160201155713) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
 
+  create_table "videos", force: :cascade do |t|
+    t.string   "file"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "contents", "story_points"
   add_foreign_key "settings_suits", "users"
   add_foreign_key "stories", "users"
 end
