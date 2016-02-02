@@ -1,6 +1,5 @@
 FactoryGirl.define do
   factory :text do
-    text "MyText"
+    file { Faker::Lorem.sentence }
   end
-
 end
