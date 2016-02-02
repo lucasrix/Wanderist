@@ -1,6 +1,5 @@
 FactoryGirl.define do
   factory :photo do
-    file "MyString"
+    file { Faker::Lorem.sentence }
   end
-
 end
