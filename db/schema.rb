@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160202103146) do
+ActiveRecord::Schema.define(version: 20160202103914) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,14 +39,27 @@ ActiveRecord::Schema.define(version: 20160202103146) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "reports", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "reportable_id"
+    t.string   "reportable_type"
+    t.string   "kind"
+    t.text     "message"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "reports", ["reportable_type", "reportable_id"], name: "index_reports_on_reportable_type_and_reportable_id", using: :btree
+  add_index "reports", ["user_id"], name: "index_reports_on_user_id", using: :btree
+
   create_table "settings_suits", force: :cascade do |t|
     t.integer  "user_id"
-    t.boolean  "notifications"
-    t.boolean  "autoupdate"
-    t.boolean  "use_location"
-    t.boolean  "public"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.boolean  "notifications", default: true
+    t.boolean  "autoupdate",    default: true
+    t.boolean  "use_location",  default: true
+    t.boolean  "public",        default: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   add_index "settings_suits", ["user_id"], name: "index_settings_suits_on_user_id", using: :btree
@@ -55,11 +68,11 @@ ActiveRecord::Schema.define(version: 20160202103146) do
     t.integer  "user_id"
     t.string   "name"
     t.text     "description"
-    t.boolean  "public"
+    t.boolean  "public",      default: false
     t.string   "latitude"
     t.string   "longitude"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   add_index "stories", ["user_id"], name: "index_stories_on_user_id", using: :btree
@@ -69,9 +82,9 @@ ActiveRecord::Schema.define(version: 20160202103146) do
     t.string   "location"
     t.string   "latitude"
     t.string   "longitude"
-    t.boolean  "public"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "public",     default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "story_points_tags", id: false, force: :cascade do |t|

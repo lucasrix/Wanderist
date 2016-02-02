@@ -5,7 +5,7 @@ class CreateStoryPoints < ActiveRecord::Migration
       t.string :location
       t.string :latitude
       t.string :longitude
-      t.boolean :public
+      t.boolean :public, default: false
 
       t.timestamps null: false
     end
