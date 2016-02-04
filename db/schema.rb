@@ -16,29 +16,6 @@ ActiveRecord::Schema.define(version: 20160202103914) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "audios", force: :cascade do |t|
-    t.string   "file"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "contents", force: :cascade do |t|
-    t.integer  "story_point_id"
-    t.integer  "entity_id"
-    t.string   "entity_type"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-  end
-
-  add_index "contents", ["entity_type", "entity_id"], name: "index_contents_on_entity_type_and_entity_id", using: :btree
-  add_index "contents", ["story_point_id"], name: "index_contents_on_story_point_id", using: :btree
-
-  create_table "photos", force: :cascade do |t|
-    t.string   "file"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "reports", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "reportable_id"
@@ -55,11 +32,10 @@ ActiveRecord::Schema.define(version: 20160202103914) do
   create_table "settings_suits", force: :cascade do |t|
     t.integer  "user_id"
     t.boolean  "notifications", default: true
-    t.boolean  "autoupdate",    default: true
     t.boolean  "use_location",  default: true
-    t.boolean  "public",        default: false
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.boolean  "public",        default: true
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   add_index "settings_suits", ["user_id"], name: "index_settings_suits_on_user_id", using: :btree
@@ -77,19 +53,28 @@ ActiveRecord::Schema.define(version: 20160202103914) do
 
   add_index "stories", ["user_id"], name: "index_stories_on_user_id", using: :btree
 
+  create_table "stories_story_points", id: false, force: :cascade do |t|
+    t.integer "story_id"
+    t.integer "story_point_id"
+  end
+
+  add_index "stories_story_points", ["story_id"], name: "index_stories_story_points_on_story_id", using: :btree
+  add_index "stories_story_points", ["story_point_id"], name: "index_stories_story_points_on_story_point_id", using: :btree
+
   create_table "story_points", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "story_id"
+    t.string   "file"
+    t.text     "text"
     t.string   "caption"
     t.string   "location"
     t.string   "latitude"
     t.string   "longitude"
-    t.boolean  "public",     default: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.integer  "variation"
+    t.boolean  "public",     default: true
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
-  add_index "story_points", ["story_id"], name: "index_story_points_on_story_id", using: :btree
   add_index "story_points", ["user_id"], name: "index_story_points_on_user_id", using: :btree
 
   create_table "story_points_tags", id: false, force: :cascade do |t|
@@ -102,12 +87,6 @@ ActiveRecord::Schema.define(version: 20160202103914) do
 
   create_table "tags", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "texts", force: :cascade do |t|
-    t.text     "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -143,15 +122,7 @@ ActiveRecord::Schema.define(version: 20160202103914) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
 
-  create_table "videos", force: :cascade do |t|
-    t.string   "file"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_foreign_key "contents", "story_points"
   add_foreign_key "settings_suits", "users"
   add_foreign_key "stories", "users"
-  add_foreign_key "story_points", "stories"
   add_foreign_key "story_points", "users"
 end

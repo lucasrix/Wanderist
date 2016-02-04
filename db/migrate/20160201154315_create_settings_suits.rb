@@ -3,9 +3,8 @@ class CreateSettingsSuits < ActiveRecord::Migration
     create_table :settings_suits do |t|
       t.references :user, index: true, foreign_key: true
       t.boolean :notifications, default: true
-      t.boolean :autoupdate, default: true
       t.boolean :use_location, default: true
-      t.boolean :public, default: false
+      t.boolean :public, default: true
 
       t.timestamps null: false
     end
