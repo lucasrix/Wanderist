@@ -1,0 +1,326 @@
+# Stories
+
+## Create a new Story
+
+#### Request
+
+###### HTTP request
+
+```javascript
+POST /api/v1/stories
+```
+
+###### Request Body
+
+| Name            | Value    | Description |
+| --------------- |--------- | ----------- |
+| `name`          | `string` | required    |
+| `description`   | `text`   | optional    |
+| `storyPointIds` | `array`  | optional    |
+
+#### Response
+
+**HTTP/1.1 200 OK**
+
+If successful, this method returns a response body with the following structure:
+
+```javascript
+{
+  "data": {
+    "id": integer,
+    "userId": integer,
+    "name": string,
+    "description": text,
+    "public": boolean,
+    "createdAt": datetime,
+    "updatedAt": datetime
+  }
+}
+```
+
+###### Response Parameters
+
+| Name          | Value      | Description              |
+| ------------- | ---------- | ------------------------ |
+| `id`          | `integer`  | Story's id               |
+| `userId`      | `integer`  | User's id                |
+| `name`        | `string`   | Name                     |
+| `description` | `text`     | Description              |
+| `public`      | `boolean`  | true/false               |
+| `createdAt`   | `datetime` | 2016-02-09T09:23:23.000Z |
+| `updatedAt`   | `datetime` | 2016-02-09T09:23:23.000Z |
+
+**HTTP/1.1 422 Unprocessable Entity**
+
+```javascript
+{
+  "error": {
+    "errors": array
+  }
+}
+```
+
+###### Response Parameters
+
+| Name              | Value     | Description                           |
+| ----------------- | --------- | ------------------------------------- |
+| `error["errors"]` | `array`   | Array of serverside validation errors |
+
+###### Available `errors` messages
+
+| Name    | Description         |
+| --------| ------------------- |
+| `name`  | Name can't be blank |
+
+**HTTP/1.1 403 Forbidden**
+
+```javascript
+{
+  "error": {
+    "message": "You don't have permission to access"
+  }
+}
+```
+
+---
+
+## Update a Story
+
+#### Request
+
+###### HTTP request
+
+```javascript
+PUT /api/v1/stories/:id
+```
+
+###### Request Path
+
+| Name   | Value    | Description    |
+| ------ |----------| -------------- |
+| `:id`  | `string` | Story's id     |
+
+###### Request Body
+
+| Name            | Value    | Description |
+| --------------- |--------- | ----------- |
+| `name`          | `string` | required    |
+| `description`   | `text`   | optional    |
+| `storyPointIds` | `array`  | optional    |
+
+#### Response
+
+**HTTP/1.1 200 OK**
+
+If successful, this method returns a response body with the following structure:
+
+```javascript
+{
+  "data": {
+    "id": integer,
+    "userId": integer,
+    "name": string,
+    "description": text,
+    "public": boolean,
+    "createdAt": datetime,
+    "updatedAt": datetime
+  }
+}
+```
+
+###### Response Parameters
+
+| Name          | Value      | Description              |
+| ------------- | ---------- | ------------------------ |
+| `id`          | `integer`  | Story's id               |
+| `userId`      | `integer`  | User's id                |
+| `name`        | `string`   | Name                     |
+| `description` | `text`     | Description              |
+| `public`      | `boolean`  | true/false               |
+| `createdAt`   | `datetime` | 2016-02-09T09:23:23.000Z |
+| `updatedAt`   | `datetime` | 2016-02-09T09:23:23.000Z |
+
+**HTTP/1.1 422 Unprocessable Entity**
+
+```javascript
+{
+  "error": {
+    "errors": array
+  }
+}
+```
+
+###### Response Parameters
+
+| Name              | Value     | Description                           |
+| ----------------- | --------- | ------------------------------------- |
+| `error["errors"]` | `array`   | Array of serverside validation errors |
+
+
+###### Available `errors` messages
+
+| Name    | Description         |
+| --------| ------------------- |
+| `name`  | Name can't be blank |
+
+**HTTP/1.1 403 Forbidden**
+
+```javascript
+{
+  "error": {
+    "message": "You don't have permission to access"
+  }
+}
+```
+
+**HTTP/1.1 404 Not Found**
+
+```javascript
+{
+  "error": {
+    "message": "Couldn't find Story with 'id'=1"
+  }
+}
+```
+
+---
+
+## Show a Story
+
+#### Request
+
+###### HTTP request
+
+```javascript
+GET /api/v1/stories/:id
+```
+
+###### Request Path
+| Name  | Value    | Description |
+| ----- |--------- | ----------- |
+| `:id` | `string` | Story's id  |
+
+#### Response
+
+**HTTP/1.1 200 OK**
+
+If successful, this method returns a response body with the following structure:
+
+```javascript
+{
+  "data": {
+    "id": integer,
+    "userId": integer,
+    "name": string,
+    "public": boolean,
+    "description": text,
+    "createdAt": datetime,
+    "updatedAt": datetime,
+    "followed": boolean,
+    "storyPoints": [
+      {
+        "id": integer,
+        "userId": integer,
+        "storyId": integer,
+        "caption": string,
+        "public": boolean,
+        "kind": string,
+        "text": text,
+        "address": string,
+        "latitude": string,
+        "longitude": string,
+        "file": string,
+        "thumbnail": string,
+        "createdAt": datetime,
+        "updatedAt": datetime,
+        "tags": array,
+        "saved": boolean,
+        "liked": boolean
+      }
+    ]
+  }
+}
+```
+
+###### Response Parameters
+
+| Name          | Value      | Description                     |
+| ------------- |----------- | ------------------------------- |
+| `id`          | `integer`  | Story's id                      |
+| `userId`      | `integer`  | User's id                       |
+| `name`        | `string`   | Name                            |
+| `description` | `text`     | Description                     |
+| `public`      | `boolean`  | true/false                      |
+| `createdAt`   | `datetime` | 2016-02-09T09:23:23.000Z        |
+| `updatedAt`   | `datetime` | 2016-02-09T09:23:23.000Z        |
+| `followed`    | `boolean`  | true/false                      |
+| `storyPoints` | `array`    | SPs in Story                    |
+
+**HTTP/1.1 403 Forbidden**
+
+```javascript
+{
+  "error": {
+    "message": "You don't have permission to access"
+  }
+}
+```
+
+**HTTP/1.1 404 Not Found**
+
+```javascript
+{
+  "error": {
+    "message": "Couldn't find Story with 'id'=1"
+  }
+}
+```
+
+---
+
+## Remove a Story
+
+#### Request
+
+###### HTTP Request
+
+```javascript
+DELETE /api/v1/stories/:id
+```
+
+###### Request Path
+
+| Name   | Value    | Description    |
+| ------ |----------| -------------- |
+| `:id`  | `string` | Story's id     |
+
+#### Response
+
+**HTTP/1.1 200 OK**
+
+```javascript
+{
+}
+```
+
+**HTTP/1.1 403 Forbidden**
+
+```javascript
+{
+  "error": {
+    "message": "You don't have permission to access"
+  }
+}
+```
+
+**HTTP/1.1 404 Not Found**
+
+```javascript
+{
+  "error": {
+    "message": "Couldn't find Story with 'id'=1"
+  }
+}
+```
+
+---
