@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160202103914) do
+ActiveRecord::Schema.define(version: 20160215120345) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "likes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "story_point_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "likes", ["story_point_id"], name: "index_likes_on_story_point_id", using: :btree
+  add_index "likes", ["user_id"], name: "index_likes_on_user_id", using: :btree
 
   create_table "reports", force: :cascade do |t|
     t.integer  "user_id"
@@ -45,8 +55,8 @@ ActiveRecord::Schema.define(version: 20160202103914) do
     t.string   "name"
     t.text     "description"
     t.boolean  "public",      default: false
-    t.string   "latitude"
-    t.string   "longitude"
+    t.float    "latitude"
+    t.float    "longitude"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
   end
@@ -66,10 +76,10 @@ ActiveRecord::Schema.define(version: 20160202103914) do
     t.string   "file"
     t.text     "text"
     t.string   "caption"
-    t.string   "location"
-    t.string   "latitude"
-    t.string   "longitude"
-    t.integer  "variation"
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.integer  "kind"
     t.boolean  "public",     default: true
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
@@ -85,10 +95,27 @@ ActiveRecord::Schema.define(version: 20160202103914) do
   add_index "story_points_tags", ["story_point_id"], name: "index_story_points_tags_on_story_point_id", using: :btree
   add_index "story_points_tags", ["tag_id"], name: "index_story_points_tags_on_tag_id", using: :btree
 
+  create_table "story_relationships", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "story_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "story_relationships", ["story_id"], name: "index_story_relationships_on_story_id", using: :btree
+  add_index "story_relationships", ["user_id"], name: "index_story_relationships_on_user_id", using: :btree
+
   create_table "tags", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "user_relationships", force: :cascade do |t|
+    t.integer  "follower_id", null: false
+    t.integer  "followed_id", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -122,7 +149,11 @@ ActiveRecord::Schema.define(version: 20160202103914) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
 
+  add_foreign_key "likes", "story_points"
+  add_foreign_key "likes", "users"
   add_foreign_key "settings_suits", "users"
   add_foreign_key "stories", "users"
   add_foreign_key "story_points", "users"
+  add_foreign_key "story_relationships", "stories"
+  add_foreign_key "story_relationships", "users"
 end

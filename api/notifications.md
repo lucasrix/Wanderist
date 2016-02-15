@@ -51,7 +51,7 @@ If successful, this method returns a response body with the following structure:
 ```javascript
 {
   "error": {
-    "message": "You don't have permission to access"
+    "errorMessages": [ "You don't have permission to access" ]
   }
 }
 ```

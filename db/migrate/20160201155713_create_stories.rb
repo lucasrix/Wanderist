@@ -5,8 +5,8 @@ class CreateStories < ActiveRecord::Migration
       t.string :name
       t.text :description
       t.boolean :public, default: false
-      t.string :latitude
-      t.string :longitude
+      t.float :latitude
+      t.float :longitude
 
       t.timestamps null: false
     end

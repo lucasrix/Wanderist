@@ -55,29 +55,37 @@ If successful, this method returns a response body with the following structure:
 ```javascript
 {
   "error": {
-    "errors": array
+    "errorMessages": array,
+    "details": object
   }
 }
 ```
 
 ###### Response Parameters
 
-| Name              | Value     | Description                           |
-| ----------------- | --------- | ------------------------------------- |
-| `error["errors"]` | `array`   | Array of serverside validation errors |
+| Name               | Value     | Description                           |
+| ------------------ | --------- | ------------------------------------- |
+| `details["name"]`  | `array`   | Array of serverside validation errors |
 
-###### Available `errors` messages
+###### Available `details["name"]` errors
 
-| Name    | Description         |
-| --------| ------------------- |
-| `name`  | Name can't be blank |
+| Name             | Description   |
+| -----------------| ------------- |
+| `can't be blank` | if empty name |
+
+###### Available `error["errorMessages"]`
+
+Can include all available messages for each field.
+Creates from the following rules:
+`field name` + `errors["field_message"]`
+For example => Name can't be blank
 
 **HTTP/1.1 403 Forbidden**
 
 ```javascript
 {
   "error": {
-    "message": "You don't have permission to access"
+    "errorMessages": [ "You don't have permission to access" ]
   }
 }
 ```
@@ -145,30 +153,37 @@ If successful, this method returns a response body with the following structure:
 ```javascript
 {
   "error": {
-    "errors": array
+    "errorMessages": array,
+    "details": object
   }
 }
 ```
 
 ###### Response Parameters
 
-| Name              | Value     | Description                           |
-| ----------------- | --------- | ------------------------------------- |
-| `error["errors"]` | `array`   | Array of serverside validation errors |
+| Name               | Value     | Description                           |
+| ------------------ | --------- | ------------------------------------- |
+| `details["name"]`  | `array`   | Array of serverside validation errors |
 
+###### Available `details["name"]` errors
 
-###### Available `errors` messages
+| Name             | Description   |
+| -----------------| ------------- |
+| `can't be blank` | if empty name |
 
-| Name    | Description         |
-| --------| ------------------- |
-| `name`  | Name can't be blank |
+###### Available  `error["errorMessages"]`
+
+Can include all available messages for each field.
+Creates from the following rules:
+`field name` + `errors["field_message"]`
+For example => Name can't be blank
 
 **HTTP/1.1 403 Forbidden**
 
 ```javascript
 {
   "error": {
-    "message": "You don't have permission to access"
+    "errorMessages": [ "You don't have permission to access" ]
   }
 }
 ```
@@ -178,7 +193,7 @@ If successful, this method returns a response body with the following structure:
 ```javascript
 {
   "error": {
-    "message": "Couldn't find Story with 'id'=1"
+    "errorMessages": [ "Couldn't find Story with 'id'=#{:id}" ]
   }
 }
 ```
@@ -217,6 +232,7 @@ If successful, this method returns a response body with the following structure:
     "createdAt": datetime,
     "updatedAt": datetime,
     "followed": boolean,
+    "relationId": integer,
     "storyPoints": [
       {
         "id": integer,
@@ -227,13 +243,14 @@ If successful, this method returns a response body with the following structure:
         "kind": string,
         "text": text,
         "address": string,
-        "latitude": string,
-        "longitude": string,
+        "latitude": float,
+        "longitude": float,
         "file": string,
         "thumbnail": string,
         "createdAt": datetime,
         "updatedAt": datetime,
         "tags": array,
+        "relationId": integer,
         "saved": boolean,
         "liked": boolean
       }
@@ -254,6 +271,7 @@ If successful, this method returns a response body with the following structure:
 | `createdAt`   | `datetime` | 2016-02-09T09:23:23.000Z        |
 | `updatedAt`   | `datetime` | 2016-02-09T09:23:23.000Z        |
 | `followed`    | `boolean`  | true/false                      |
+| `relationId`  | `integer`  | optional if followed, id of relation object|
 | `storyPoints` | `array`    | SPs in Story                    |
 
 **HTTP/1.1 403 Forbidden**
@@ -261,7 +279,7 @@ If successful, this method returns a response body with the following structure:
 ```javascript
 {
   "error": {
-    "message": "You don't have permission to access"
+    "errorMessages": [ "You don't have permission to access" ]
   }
 }
 ```
@@ -271,7 +289,7 @@ If successful, this method returns a response body with the following structure:
 ```javascript
 {
   "error": {
-    "message": "Couldn't find Story with 'id'=1"
+    "errorMessages": [ "Couldn't find Story with 'id'=#{:id}" ]
   }
 }
 ```
@@ -308,7 +326,7 @@ DELETE /api/v1/stories/:id
 ```javascript
 {
   "error": {
-    "message": "You don't have permission to access"
+    "errorMessages": [ "You don't have permission to access" ]
   }
 }
 ```
@@ -318,7 +336,7 @@ DELETE /api/v1/stories/:id
 ```javascript
 {
   "error": {
-    "message": "Couldn't find Story with 'id'=1"
+    "errorMessages": [ "Couldn't find Story with 'id'=#{:id}" ]
   }
 }
 ```

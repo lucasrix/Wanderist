@@ -5,6 +5,39 @@ RSpec.describe User, type: :model do
     it { is_expected.to have_one(:settings_suit) }
     it { is_expected.to have_many(:stories) }
     it { is_expected.to have_many(:story_points) }
+    it { is_expected.to have_many(:story_relationships) }
+
+    it do
+      is_expected.to have_many(:followed_stories).through(:story_relationships)
+        .source(:story)
+    end
+
+    it do
+      is_expected.to have_many(:active_relationships)
+        .class_name('UserRelationship').with_foreign_key('follower_id')
+    end
+
+    it do
+      is_expected.to have_many(:passive_relationships)
+        .class_name('UserRelationship').with_foreign_key('followed_id')
+    end
+
+    it do
+      is_expected.to have_many(:following).through(:active_relationships)
+        .source(:followed)
+    end
+
+    it do
+      is_expected.to have_many(:followers).through(:passive_relationships)
+        .source(:follower)
+    end
+
+    it { is_expected.to have_many(:likes) }
+
+    it do
+      is_expected.to have_many(:liked_story_points).through(:likes)
+        .source(:story_point)
+    end
   end
 
   context 'Validations' do

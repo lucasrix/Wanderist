@@ -5,10 +5,10 @@ class CreateStoryPoints < ActiveRecord::Migration
       t.string :file
       t.text   :text
       t.string :caption
-      t.string :location
-      t.string :latitude
-      t.string :longitude
-      t.integer :variation
+      t.string :address
+      t.float :latitude
+      t.float :longitude
+      t.integer :kind
       t.boolean :public, default: true
 
       t.timestamps null: false

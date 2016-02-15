@@ -26,7 +26,7 @@ POST /api/v1/auth
 
 #### Response
 
- **HTTP/1.1 200 OK**
+**HTTP/1.1 200 OK**
 
 ```javascript
 {
@@ -37,8 +37,8 @@ POST /api/v1/auth
     "uid": string,
     "username": string,
     "email": string,
-    "created_at": datetime,
-    "updated_at": datetime
+    "createdAt": datetime,
+    "updatedAt": datetime
   }
 }
 ```
@@ -48,32 +48,31 @@ POST /api/v1/auth
 | `id`       | integer |user's id |
 | `provider` | `string` | 'email' |
 |`uid`|`string`|user's email|
-|`username`|`string`|user's username, default: User#{user_id}, can be changed in next step|
+|`username`|`string`|user's username, default: User#{userId}, can be changed in next step|
 |`email`|`string`|user's email|
-|`created_at`|`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
-|`updated_at`|`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
+|`createdAt`|`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
+|`updatedAt`|`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
 
 **HTTP/1.1 403 Forbidden**
 
  ```javascript
-{
-  "status": "error",
-  "errors": {
-    "email": array,
-    "password": array,
-    "full_messages": array
+{ 
+  "error": {
+    "errorMessages": array,
+    "details": object
   }
 }
 ```
-
 ###### Response Parameters
+
+**Available fields error["details"]**:
+
 | Name         | Value    | Description   |
 | ------------ |----------| --------------|
-| `errors ["email"]`| `array` | Array of serverside validation errors for email
-| `errors ["password"]`| `array` | Array of serverside validation errors for password
-| `errors ["full_messages"]`| `array` | Array of serverside validation errors for email and password
+| `details ["email"]`| `array` | Array of serverside validation errors for email
+| `details ["password"]`| `array` | Array of serverside validation errors for password
 
-**Available  `errors ["email"]`**:
+**Available  `details["email"] errors`**:
 
 | Name      | Description   |
 | ------------| --------------|
@@ -81,12 +80,21 @@ POST /api/v1/auth
 | `is not an email`|if email has wrong format|
 | `address is already in use`|if user with email already exists|
 
-**Available  `errors ["password"]`**:
+**Available  `details["password"] errors`**:
 
 | Name      | Description   |
 | ------------| --------------|
 | `can't be blank`| if empty password|
 | `is too short (minimum is 8 characters)`|if password length less then 8 characters|
+
+
+**Available  `error["errorMessages"]`**:
+
+Can include all available messages for each field.
+Creates from the following rules:
+ `field name` +  `errors ["field_message"]`
+ For example => Password can't be blank
+
 ------------
 
 ### Sign In
@@ -98,14 +106,17 @@ POST /api/v1/auth
 ```javascript
 POST /api/v1/auth/sign_in
 ```
+
 ###### Request Body
-  ```javascript
+
+```javascript
 {
   "provider": string,
   "email": string,
   "password": string
 }
 ```
+
 ###### Request Parameters
 | Name         | Value    | Description   |
 | ------------ |----------| --------------|
@@ -115,7 +126,7 @@ POST /api/v1/auth/sign_in
 
 #### Response
 
- **HTTP/1.1 200 OK**
+**HTTP/1.1 200 OK**
 
 ```javascript
 {
@@ -127,11 +138,12 @@ POST /api/v1/auth/sign_in
     "username": string,
     "firstname": string,
     "lastname": string,
-    "created_at": datetime,
-    "updated_at": datetime
+    "createdAt": datetime,
+    "updatedAt": datetime
   }
 }
 ```
+
 ###### Response Parameters
 | Name         | Value    | Description   |
 | ------------ |----------| --------------|
@@ -142,20 +154,18 @@ POST /api/v1/auth/sign_in
 |`username`|`string`|user's username|
 |`firstname`|`string`|optional, user's firstname|
 |`lastname`|`string`|optional, user's lastname|
-|`created_at`|`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
-|`updated_at`|`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
+|`createdAt`|`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
+|`updatedAt`|`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
 
 **HTTP/1.1 401 Unauthorized**
 
  ```javascript
 {
-  "errors": array
+  "error": {
+    "errorMessages": [ "Invalid login credentials. Please try again." ]
+  }
 }
 ```
-###### Response Parameters
-| Name         | Value    | Description   |
-| ------------ |----------| --------------|
-| `errors`       | `array` | ["Invalid login credentials. Please try again."]
 ------------
 
 
@@ -181,13 +191,10 @@ DELETE /api/v1/auth/sign_out
  **HTTP/1.1 404  Not Found**
 ```javascript
 {
-  "errors": array
+  "error": {
+    "errorMessages": [ "User was not found or was not logged in." ]
 }
 ```
-###### Response Parameters
-| Name         | Value    | Description   |
-| ------------ |----------| --------------|
-| `errors`       | `array` | ["User was not found or was not logged in."]
 ------------
 
 
@@ -245,19 +252,11 @@ POST /api/v1/auth/password
 
 ```javascript
 {
-  "success": boolean,
-  "errors": array
+  "error": {
+    "errorMessages": [ "Unable to find user with email #{email}." ]
+  }
 }
 ```
-
-###### Response Parameters
-
-
-| Name         | Value    | Description   |
-| ------------ |----------| --------------|
-|`success`| `boolean` |false|
-|`message`|`array`|["Unable to find user with email #{email}."]|
-
 
 ------------
 
@@ -276,8 +275,8 @@ PUT /api/v1/auth
 ```javascript
 {
   "password": string,
-  "password_confirmation": string,
-  "current_password": string
+  "passwordConfirmation": string,
+  "currentPassword": string
 }
 ```
 ###### Request Parameters
@@ -285,15 +284,15 @@ PUT /api/v1/auth
 | Name         | Value    | Description   |
 | ------------ |----------| --------------|
 |`password`| `string` |required, new user's password |
-|`password_confirmation`|`string`|required, confirmation of new user's password|
-|`current_password`| `string` |required, current user's password |
+|`passwordConfirmation`|`string`|required, confirmation of new user's password|
+|`currentPassword`| `string` |required, current user's password |
 
 
 #### Response
 
  **HTTP/1.1 200 OK**
 
- ###### Response Body
+###### Response Body
 
 ```javascript
 {
@@ -305,8 +304,8 @@ PUT /api/v1/auth
     "username": string,
     "firstname": string,
     "lastname": string,
-    "created_at": datetime,
-    "updated_at": datetime
+    "createdAt": datetime,
+    "updatedAt": datetime
     }
 }
 ```
@@ -318,59 +317,53 @@ PUT /api/v1/auth
 |`uid`|`string`|user's email|
 |`username`|`string`|user's username|
 |`email`|`string`|user's email|
-|`created_at`|`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
-|`updated_at`|`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
+|`createdAt`|`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
+|`updatedAt`|`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
 
 
- **HTTP/1.1 403 Forbidden**
+**HTTP/1.1 403 Forbidden**
 
  ```javascript
-{
-  "status": "error",
-  "errors": {
-    "password": array,
-    "password_confirmation": array,
-    "current_password": array,
-    "full_messages": array
-    }
+{ 
+  "error": {
+    "errorMessages": array,
+    "details": object
 }
 ```
 ###### Response Parameters
+
+**Available fields error["details"]**:
+
 | Name         | Value    | Description   |
 | ------------ |----------| --------------|
-| `errors ["password"]`| `array` | Array of serverside validation errors for password
-| `errors ["password_confirmation"]`| `array` | Array of serverside validation errors for password_confirmation
-| `errors ["current_password]`| `array` | Array of serverside validation errors for current_password
-| `errors ["full_messages']`| `array` | Array of full errors messages
+| `details["password"]`| `array` | Array of serverside validation errors for password
+| `details["passwordConfirmation"]`| `array` | Array of serverside validation errors for passwordConfirmation
+| `details["currentPassword]`| `array` | Array of serverside validation errors for currentPassword
 
-
-**Available  `errors ["password"]`**:
+**Available  `details["password"]`**:
 
 | Name      | Description   |
 | ------------| --------------|
 | `can't be blank`| if empty password|
 | `is too short (minimum is 8 characters)`|if password length less then 8 characters|
 
-**Available  `errors ["password_confirmation"]`**:
+**Available  `details["passwordConfirmation"]`**:
 
 | Name      | Description   |
 | ------------| --------------|
 | `can't be blank`| if empty password confirmation|
 | `doesn't match Password`|if passwords aren't equal|
 
-**Available  `errors ["current_password"]`**:
+**Available  `errors ["currentPassword"]`**:
 
 | Name      | Description   |
 | ------------| --------------|
 | `can't be blank`| if empty current password|
 | `is invalid`|if invalid current password|
 
-**Available  `errors ["full_messages"]`**:
+**Available  `error["errorMessages"]`**:
 
 Can include all available messages for each field.
 Creates from the following rules:
  `field name` +  `errors ["field_message"]`
  For example => Password can't be blank
-
-
-
