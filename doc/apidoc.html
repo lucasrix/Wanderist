@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>API documentation</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type='text/css' rel='stylesheet' href='./apidoc/stylesheets/bundled/bootstrap.min.css'/>
+<link type='text/css' rel='stylesheet' href='./apidoc/stylesheets/bundled/prettify.css'/>
+<link type='text/css' rel='stylesheet' href='./apidoc/stylesheets/bundled/bootstrap-responsive.min.css'/>
+  <link type='text/css' rel='stylesheet' href='./apidoc/stylesheets/application.css'/>
+  <!-- IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div id='container'>
+        <ul class='breadcrumb'>
+  <li class='active'><a href='./apidoc.html'>Wanderist 1.0</a></li>
+  
+</ul>
+
+<div>
+<p>Wanderist API documentation</p>
+</div>
+
+<h1 class='page-header'>Resources</h1>
+
+  <h2>
+    <a href='./apidoc/passwords.html'>
+      Passwords
+    </a><br>
+    <small></small>
+  </h2>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Resource</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+          <tr>
+            <td>
+              <a href='./apidoc/passwords/create.html'>POST /auth/password</a>
+            </td>
+            <td width='60%'>Use this route to send a password reset confirmation email to users that registered by email.</td>
+          </tr>
+    </tbody>
+  </table>
+  <h2>
+    <a href='./apidoc/registrations.html'>
+      Registrations
+    </a><br>
+    <small>Users manager</small>
+  </h2>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Resource</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+          <tr>
+            <td>
+              <a href='./apidoc/registrations/create.html'>POST /auth</a>
+            </td>
+            <td width='60%'>Email registration. A verification email will be sent to the email address provided.</td>
+          </tr>
+    </tbody>
+  </table>
+  <h2>
+    <a href='./apidoc/sessions.html'>
+      Sessions
+    </a><br>
+    <small></small>
+  </h2>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Resource</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+          <tr>
+            <td>
+              <a href='./apidoc/sessions/create.html'>POST /auth/sign_in</a>
+            </td>
+            <td width='60%'>Email authentication.</td>
+          </tr>
+          <tr>
+            <td>
+              <a href='./apidoc/sessions/destroy.html'>DELETE /auth/sign_out</a>
+            </td>
+            <td width='60%'>Use this route to end the user&#39;s current session. This route will invalidate the user&#39;s authentication token.</td>
+          </tr>
+    </tbody>
+  </table>
+  <h2>
+    <a href='./apidoc/token_validations.html'>
+      Token validations
+    </a><br>
+    <small></small>
+  </h2>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Resource</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+          <tr>
+            <td>
+              <a href='./apidoc/token_validations/validate_token.html'>GET /auth/validate_token</a>
+            </td>
+            <td width='60%'>Use this route to validate tokens on return visits to the client.</td>
+          </tr>
+    </tbody>
+  </table>
+
+
+        
+      </div>
+    </div>
+    <hr>
+    <footer>&copy; 2016</footer>
+  </div>
+  <script type='text/javascript' src='./apidoc/javascripts/bundled/jquery.js'></script>
+<script type='text/javascript' src='./apidoc/javascripts/bundled/bootstrap-collapse.js'></script>
+<script type='text/javascript' src='./apidoc/javascripts/bundled/prettify.js'></script>
+<script type='text/javascript' src='./apidoc/javascripts/apipie.js'></script>
+</body>
+</html>

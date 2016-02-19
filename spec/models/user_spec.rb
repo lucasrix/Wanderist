@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  context 'Associations' do
+  context 'relations' do
+    it { should have_one(:profile) }
     it { is_expected.to have_one(:settings_suit) }
     it { is_expected.to have_many(:stories) }
     it { is_expected.to have_many(:story_points) }
@@ -44,5 +45,12 @@ RSpec.describe User, type: :model do
     subject { build(:user) }
     it { is_expected.to validate_presence_of(:username) }
     it { is_expected.to validate_uniqueness_of(:username).case_insensitive }
+  end
+
+  context 'callbacks' do
+    it 'create profile' do
+      user = create(:user)
+      expect(user.profile).to be_a(Profile)
+    end
   end
 end

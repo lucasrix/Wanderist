@@ -1,0 +1,450 @@
+{
+  "apipies#index": [
+    {
+      "verb": "GET",
+      "path": "/apipie",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": null,
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/apipie/v1.html",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": null,
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/apipie/v1/registrations/create.html",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": null,
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/apipie/v1/provider_sessions/create.html",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": null,
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/apipie/v1.html",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": null,
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/apipie",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": null,
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/apipie",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": null,
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "omniauth_callbacks#omniauth_success": [
+    {
+      "verb": "GET",
+      "path": "/auth/facebook/callback",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": "<html><body>You are being <a href=\"http://localhost:3001/?auth_token=IF0bGD4kkBJCaoaBhwRY2w&amp;blank=true&amp;client_id=cxR9N2K0KQEGEclRuurang&amp;config=&amp;expiry=1457355581&amp;uid=1024114657650433\">redirected</a>.</body></html>",
+      "code": 302,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/auth/facebook/callback",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": "<html><body>You are being <a href=\"http://localhost:3001/?auth_token=IF0bGD4kkBJCaoaBhwRY2w&amp;blank=true&amp;client_id=cxR9N2K0KQEGEclRuurang&amp;config=&amp;expiry=1457355581&amp;uid=1024114657650433&amp;auth_token=RAlbTkv9vgbkR2zrwL2t5A&amp;blank=true&amp;client_id=Xrbz7_jZBZPdmq8u4I1JXQ&amp;config=&amp;expiry=1457355599&amp;uid=1024114657650433#/_=_?auth_token=IF0bGD4kkBJCaoaBhwRY2w&amp;blank=true\">redirected</a>.</body></html>",
+      "code": 302,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/auth/facebook/callback",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": "<html><body>You are being <a href=\"http://localhost:3001/?auth_token=IF0bGD4kkBJCaoaBhwRY2w&amp;blank=true&amp;client_id=cxR9N2K0KQEGEclRuurang&amp;config=&amp;expiry=1457355581&amp;uid=1024114657650433&amp;auth_token=RAlbTkv9vgbkR2zrwL2t5A&amp;blank=true&amp;client_id=Xrbz7_jZBZPdmq8u4I1JXQ&amp;config=&amp;expiry=1457355599&amp;uid=1024114657650433&amp;auth_token=fH91839mU3108v2_KGQtZQ&amp;blank=true&amp;client_id=uVhGIC7cxZ7lxyCnQwwN0g&amp;config=&amp;expiry=1457355624&amp;uid=1024114657650433#/_=_?auth_token=IF0bGD4kkBJCaoaBhwRY2w&amp;blank=true\">redirected</a>.</body></html>",
+      "code": 302,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/auth/facebook/callback",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": "<html><body>You are being <a href=\"http://localhost:3001/?auth_token=L0rCe8juptrkNce9EglkZg&amp;blank=true&amp;client_id=PwJQdqCHTFR7T_1HUs7BoQ&amp;config=&amp;expiry=1457355646&amp;uid=1024114657650433\">redirected</a>.</body></html>",
+      "code": 302,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "omniauth_callbacks#redirect_callbacks": [
+    {
+      "verb": "GET",
+      "path": "/omniauth/facebook/callback",
+      "versions": [
+
+      ],
+      "query": "code=AQDD42AEp7b4Np1DWWe_uDGfpo5a-YCRwH77sUbxRRgu-POXUDOfiGV6h0jwBvnY_5PYODWg3JN6GJmgXKdTGU-hckMRrjJeICyO_aWMRXzHqIBqW1MF-MFjuY5O0k5HGVdqC5xoAkQc6pBu5ygkKnygrXYoo23ASrGkeYHiYuWGpFah3UDwL-R5l5n9fdVPp7JjJs5rNi1LFLZfC-uUq04y6AbzxBncE_24RyirnjxxOHta90XeIxfS4Hsh8twElHBzujS5pOcaYGHn9t2coQa_CqMnY52c5oQkXJ9CFJgX-NsgQGqE_ZgagYAs1KhzjYMbVyKDbnU_uHJCcJmiy-TK&state=f45eb550d3fbe29588772db69d4b6ec7e7b15a51f8b6fa1d",
+      "request_data": null,
+      "response_data": "<html><body>You are being <a href=\"http://localhost:3000//auth/facebook/callback\">redirected</a>.</body></html>",
+      "code": 302,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/omniauth/facebook/callback",
+      "versions": [
+
+      ],
+      "query": "code=AQDNOxeM6Jbr4grLiel2_eSsVWChCIVPJbXHeCZ50DQJoXFdQvB1ePOngze15TbuyV3UA-ffgB3Cf79ypqS054RUsOS4LfFNCCjCopXikCl1kV254WNV_oCGdQR0HjBlIg00NT0JRDBkbsanrWA8gwkpNpOq2a11dCMJ_iJnw1jQCKsM3bNOZoDXhoS2ZHCyOC9nElVrb3X6YAuBDTztmNusi8XDN_mSyoxakip-cZeC0X6cV7rgFiIvjyatQiZQeTwCWdsIqs4pr-DTrJ5jmqsPG2cGQb6iQoTcAdsNDJmZn8O3arzUQOWwURad3YyyDzttgjGQJJMJ0x_XVkEroL6K&state=45d5524a83d5feeb81bee45abe7cfbcb56c36b068f03e675",
+      "request_data": null,
+      "response_data": "<html><body>You are being <a href=\"http://localhost:3000//auth/facebook/callback\">redirected</a>.</body></html>",
+      "code": 302,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/omniauth/facebook/callback",
+      "versions": [
+
+      ],
+      "query": "code=AQCTxFPWju1r263nT0bSlTYHzUTH5QdVJPKm_b4yFaedCo3MT5aBq8wk169IXuC2fXmOoynsg0NbktchONmuu6_Atu2MxJLJzDZgJZHNFCl_qVVaj6hUDTsyAlhCIApWyAr335dXpPguZkHsNBf3Cfbd_PWwcRdvsJR4aGB0BAdkHC-fqImSZrazbV9k6sB1Hp93ng0tlCgBOMR8s0ARF5x7Ip-UDwV7N_Tj9zJQ9IcuET8B1ms0OztynSg13HBrDyPzJA-DtjxXErTWKHE4u7mPBxDlzReDAsb15KTQNXaSZyqfCq9aNgZqNX-YTX10PfnLpu50VTW33NFnsVn_iLFo&state=6dedfc34e54040deaaa78d0416b219ade905bfd80ad07502",
+      "request_data": null,
+      "response_data": "<html><body>You are being <a href=\"http://localhost:3000//auth/facebook/callback\">redirected</a>.</body></html>",
+      "code": 302,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/omniauth/facebook/callback",
+      "versions": [
+        "v1"
+      ],
+      "query": "code=AQB-g9k59gqFpVceh0ZpZAU20j9L1y2b7UcnTalETSwoXzf7p3kckbCXeZ9L4ViNCaD-PiPkutasdi_Fa00NCmfJDm4wKFhvZVgjXUPs-wIJbkvXvaN_i0lssfJsLVcWR3K1EpxFqe5MfMAAEA3kF517tk_mOD6DTByii1HSVjw8y9-8DeyL1QzXzZkGv2f-zRlLxiDtyjthLxsYY-WF88ZccWk1GCR79fJ5vQ7YmvhbgLHs6Rhfs2yJ5QMooVIyKEuG_trkUeqaVC5u8UX4vUqMCEJuVft9zUwNPzuaro9qSNRqEr6lbcoENNXSfCCqnLkpCiM0n9EbNPsXlcFyWwbc&state=6b1e7247ed273014d89bbcc33666dc16f95b2c1145ed509c",
+      "request_data": null,
+      "response_data": "<html><body>You are being <a href=\"http://localhost:3000//auth/facebook/callback\">redirected</a>.</body></html>",
+      "code": 302,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "provider_sessions#create": [
+    {
+      "verb": "POST",
+      "path": "/api/v1/auth/provider_sessions",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "facebook_access_token": "CAACEdEose0cBAOPBxZBBjFxdVZCEC4Ngv6rR4LBY9alqHLH3JxM9XlLwVHgjq1gLL5pFr5ti5j8UfD9ZCqDgIm4i5vO4dt1sdI8ShleWB0UHEaWCh3wtBDvhoCzDNZBdXAUk0l1NcO6lJemr9XWs8cH72zrKbTzPKDzDx004nmImbsJ1zxERUz9QIzDifiumftkswmRm2QZDZD"
+      },
+      "response_data": {
+        "success": true,
+        "data": {
+          "id": 2,
+          "provider": "email",
+          "uid": "george@rubygarage.org",
+          "name": null,
+          "nickname": null,
+          "image": null,
+          "email": "george@rubygarage.org"
+        }
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/api/v1/auth/provider_sessions",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "facebook_access_token": "wrong access token"
+      },
+      "response_data": null,
+      "code": "404",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "registrations#create": [
+    {
+      "verb": "POST",
+      "path": "/api/v1/auth",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "email": "username@example.com",
+        "password": "password",
+        "password_confirmation": "password"
+      },
+      "response_data": {
+        "status": "error",
+        "data": {
+          "id": null,
+          "provider": "email",
+          "uid": "",
+          "name": null,
+          "nickname": null,
+          "image": null,
+          "email": "username@example.com",
+          "created_at": null,
+          "updated_at": null
+        },
+        "errors": {
+          "email": [
+            "already in use"
+          ],
+          "full_messages": [
+            "Email already in use"
+          ]
+        }
+      },
+      "code": 403,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/api/v1/auth",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "email": "username2@example.com",
+        "password": "password",
+        "password_confirmation": "password"
+      },
+      "response_data": {
+        "status": "success",
+        "data": {
+          "id": 7,
+          "provider": "email",
+          "uid": "username2@example.com",
+          "name": null,
+          "nickname": null,
+          "image": null,
+          "email": "username2@example.com",
+          "created_at": "2016-02-22T11:57:34.638Z",
+          "updated_at": "2016-02-22T11:57:34.638Z"
+        }
+      },
+      "code": 200,
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "sessions#create": [
+    {
+      "verb": "POST",
+      "path": "/api/v1/auth/sign_in",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "email": "george@rubygarage.org",
+        "password": "password"
+      },
+      "response_data": {
+        "data": {
+          "id": 2,
+          "provider": "email",
+          "uid": "george@rubygarage.org",
+          "name": null,
+          "nickname": null,
+          "image": null,
+          "email": "george@rubygarage.org"
+        }
+      },
+      "code": 200,
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "sessions#destroy": [
+    {
+      "verb": "DELETE",
+      "path": "/api/v1/auth/sign_out",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": {
+        "success": true
+      },
+      "code": 200,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "DELETE",
+      "path": "/api/v1/auth/sign_out",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": {
+        "errors": [
+          "User was not found or was not logged in."
+        ]
+      },
+      "code": 404,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "token_validations#validate_token": [
+    {
+      "verb": "GET",
+      "path": "/api/v1/auth/validate_token",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": {
+        "success": false,
+        "errors": [
+          "Invalid login credentials"
+        ]
+      },
+      "code": 401,
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/api/v1/auth/validate_token",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": {
+        "success": true,
+        "data": {
+          "id": 2,
+          "provider": "email",
+          "uid": "george@rubygarage.org",
+          "name": null,
+          "nickname": null,
+          "image": null,
+          "email": "george@rubygarage.org"
+        }
+      },
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "welcome#index": [
+    {
+      "verb": "GET",
+      "path": "/",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": null,
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/",
+      "versions": [
+
+      ],
+      "query": null,
+      "request_data": null,
+      "response_data": null,
+      "code": 200,
+      "show_in_doc": 0,
+      "recorded": true
+    }
+  ]
+}

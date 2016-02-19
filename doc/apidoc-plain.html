@@ -1,0 +1,423 @@
+  <h4><a href='#passwords'>Passwords</a></h4>
+  <ul>
+      <li><a href='#passwords-create'>create</a></li>
+  </ul>
+  <h4><a href='#registrations'>Registrations</a></h4>
+  <ul>
+      <li><a href='#registrations-create'>create</a></li>
+  </ul>
+  <h4><a href='#sessions'>Sessions</a></h4>
+  <ul>
+      <li><a href='#sessions-create'>create</a></li>
+      <li><a href='#sessions-destroy'>destroy</a></li>
+  </ul>
+  <h4><a href='#token_validations'>Token validations</a></h4>
+  <ul>
+      <li><a href='#token_validations-validate_token'>validate_token</a></li>
+  </ul>
+
+
+
+  <hr/>
+
+  <div>
+    <h2 id="passwords">
+      <a href='#passwords'>Passwords</a><br>
+      <small></small>
+    </h2>
+  </div>
+
+
+  <div>
+
+      <hr/>
+
+      <h3 id="passwords-create">
+      <a href='#passwords'>Passwords</a> / <a href='#passwords-create'>create</a>
+      </h3>
+
+      <div>
+          <h4>
+              POST /auth/password
+            <br>
+            <small>Use this route to send a password reset confirmation email to users that registered by email.</small>
+          </h4>
+      </div>
+
+      <div>
+        
+
+          <h4>Errors</h4>
+            404
+            Unable to find user with email {{email}}.
+            <pre class="prettyprint lang-yaml">--- 
+...
+</pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>email </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be String</p>
+ ]
+      </small>
+      
+<p>Email</p>
+
+    </li>
+    
+    <li>
+      <strong>redirect_url </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be String</p>
+ ]
+      </small>
+      
+<p>Redirect URL</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+  </div>
+
+  <hr/>
+
+  <div>
+    <h2 id="registrations">
+      <a href='#registrations'>Registrations</a><br>
+      <small>Users manager</small>
+    </h2>
+  </div>
+
+
+  <div>
+
+      <hr/>
+
+      <h3 id="registrations-create">
+      <a href='#registrations'>Registrations</a> / <a href='#registrations-create'>create</a>
+      </h3>
+
+      <div>
+          <h4>
+              POST /auth
+            <br>
+            <small>Email registration. A verification email will be sent to the email address provided.</small>
+          </h4>
+      </div>
+
+      <div>
+        
+          <h4>Examples</h4>
+            <pre class="wiki">POST /auth
+{
+  &quot;email&quot;: &quot;username@example.com&quot;,
+  &quot;password&quot;: &quot;password&quot;,
+  &quot;password_confirmation&quot;: &quot;password&quot;,
+  &quot;confirm_success_url&quot;: &quot;http://localhost:3001/&quot;,
+  &quot;config_name&quot;: &quot;default&quot;
+}
+403
+{
+  &quot;status&quot;: &quot;error&quot;,
+  &quot;data&quot;: {
+    &quot;id&quot;: null,
+    &quot;provider&quot;: &quot;email&quot;,
+    &quot;uid&quot;: &quot;&quot;,
+    &quot;name&quot;: null,
+    &quot;nickname&quot;: null,
+    &quot;image&quot;: null,
+    &quot;email&quot;: &quot;username@example.com&quot;,
+    &quot;created_at&quot;: null,
+    &quot;updated_at&quot;: null
+  },
+  &quot;errors&quot;: {
+    &quot;email&quot;: [
+      &quot;already in use&quot;
+    ],
+    &quot;full_messages&quot;: [
+      &quot;Email already in use&quot;
+    ]
+  }
+}</pre>
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>email </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be String</p>
+ ]
+      </small>
+      
+<p>Email address</p>
+
+    </li>
+    
+    <li>
+      <strong>password </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be String</p>
+ ]
+      </small>
+      
+<p>Password</p>
+
+    </li>
+    
+    <li>
+      <strong>password_confirmation </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be String</p>
+ ]
+      </small>
+      
+<p>Password confirmation</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+  </div>
+
+  <hr/>
+
+  <div>
+    <h2 id="sessions">
+      <a href='#sessions'>Sessions</a><br>
+      <small></small>
+    </h2>
+  </div>
+
+
+  <div>
+
+      <hr/>
+
+      <h3 id="sessions-create">
+      <a href='#sessions'>Sessions</a> / <a href='#sessions-create'>create</a>
+      </h3>
+
+      <div>
+          <h4>
+              POST /auth/sign_in
+            <br>
+            <small>Email authentication.</small>
+          </h4>
+      </div>
+
+      <div>
+        
+          <h4>Examples</h4>
+            <pre class="wiki">POST /auth/sign_in
+{
+  &quot;email&quot;: &quot;george@rubygarage.org&quot;,
+  &quot;password&quot;: &quot;password&quot;
+}
+200
+{
+  &quot;data&quot;: {
+    &quot;id&quot;: 2,
+    &quot;provider&quot;: &quot;email&quot;,
+    &quot;uid&quot;: &quot;george@rubygarage.org&quot;,
+    &quot;name&quot;: null,
+    &quot;nickname&quot;: null,
+    &quot;image&quot;: null,
+    &quot;email&quot;: &quot;george@rubygarage.org&quot;
+  }
+}</pre>
+            <pre class="wiki">POST /auth/sign_in
+{
+  &quot;email&quot;: &quot;george@rubygarage.org&quot;,
+  &quot;password&quot;: &quot;password&quot;
+}
+201
+{
+  &quot;data&quot;: {
+    &quot;id&quot;: 2,
+    &quot;provider&quot;: &quot;email&quot;,
+    &quot;uid&quot;: &quot;george@rubygarage.org&quot;,
+    &quot;name&quot;: null,
+    &quot;nickname&quot;: null,
+    &quot;image&quot;: null,
+    &quot;email&quot;: &quot;george@rubygarage.org&quot;
+  }
+}</pre>
+
+          <h4>Errors</h4>
+            401
+            Invalid login credentials. Please try again.
+            <pre class="prettyprint lang-yaml">--- 
+...
+</pre>
+
+            <br>
+            401
+            A confirmation email was sent to your account at {{email}}.You must follow the instructions in the email before your account can be activated
+            <pre class="prettyprint lang-yaml">--- 
+...
+</pre>
+
+            <br>
+            403
+            Email already in use
+            <pre class="prettyprint lang-yaml">--- 
+...
+</pre>
+
+            <br>
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>email </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be String</p>
+ ]
+      </small>
+      
+<p>Email address</p>
+
+    </li>
+    
+    <li>
+      <strong>password </strong>:
+      <small>
+        required
+        
+          [ 
+<p>Must be String</p>
+ ]
+      </small>
+      
+<p>Password</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+      <hr/>
+
+      <h3 id="sessions-destroy">
+      <a href='#sessions'>Sessions</a> / <a href='#sessions-destroy'>destroy</a>
+      </h3>
+
+      <div>
+          <h4>
+              DELETE /auth/sign_out
+            <br>
+            <small>Use this route to end the user's current session. This route will invalidate the user's authentication token.</small>
+          </h4>
+      </div>
+
+      <div>
+        
+
+
+      </div>
+  </div>
+
+  <hr/>
+
+  <div>
+    <h2 id="token_validations">
+      <a href='#token_validations'>Token validations</a><br>
+      <small></small>
+    </h2>
+  </div>
+
+
+  <div>
+
+      <hr/>
+
+      <h3 id="token_validations-validate_token">
+      <a href='#token_validations'>Token validations</a> / <a href='#token_validations-validate_token'>validate_token</a>
+      </h3>
+
+      <div>
+          <h4>
+              GET /auth/validate_token
+            <br>
+            <small>Use this route to validate tokens on return visits to the client.</small>
+          </h4>
+      </div>
+
+      <div>
+        
+
+
+          <h4>Params</h4>
+          <ul>
+    <li>
+      <strong>uid </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be Integer</p>
+ ]
+      </small>
+      
+<p>UID</p>
+
+    </li>
+    
+    <li>
+      <strong>client </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be String</p>
+ ]
+      </small>
+      
+<p>Client</p>
+
+    </li>
+    
+    <li>
+      <strong>access-token </strong>:
+      <small>
+        optional
+        
+          [ 
+<p>Must be String</p>
+ ]
+      </small>
+      
+<p>Access Token</p>
+
+    </li>
+    
+</ul>
+
+      </div>
+  </div>

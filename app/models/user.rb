@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
           :recoverable, :rememberable, :trackable, :validatable
   include DeviseTokenAuth::Concerns::User
 
-  has_one :settings_suit
+  has_one :profile
   has_many :stories
   has_many :story_points
   has_many :story_relationships
@@ -19,4 +19,7 @@ class User < ActiveRecord::Base
   has_many :liked_story_points, through: :likes, source: :story_point
 
   validates :username, presence: true, uniqueness: { case_sensitive: false }
+  after_create do
+    Profile.create(user: self)
+  end
 end
