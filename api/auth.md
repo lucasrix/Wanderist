@@ -26,7 +26,7 @@ POST /api/v1/auth
 
 #### Response
 
- **HTTP/1.1 200 OK**
+**HTTP/1.1 200 OK**
 
 ```javascript
 {
@@ -56,24 +56,23 @@ POST /api/v1/auth
 **HTTP/1.1 403 Forbidden**
 
  ```javascript
-{
-  "status": "error",
-  "errors": {
-    "email": array,
-    "password": array,
-    "full_messages": array
+{ 
+  "error": {
+    "error_messages": array,
+    "details": object
   }
 }
 ```
-
 ###### Response Parameters
+
+**Available fields error["details"]**:
+
 | Name         | Value    | Description   |
 | ------------ |----------| --------------|
-| `errors ["email"]`| `array` | Array of serverside validation errors for email
-| `errors ["password"]`| `array` | Array of serverside validation errors for password
-| `errors ["full_messages"]`| `array` | Array of serverside validation errors for email and password
+| `details ["email"]`| `array` | Array of serverside validation errors for email
+| `details ["password"]`| `array` | Array of serverside validation errors for password
 
-**Available  `errors ["email"]`**:
+**Available  `details["email"] errors`**:
 
 | Name      | Description   |
 | ------------| --------------|
@@ -81,12 +80,21 @@ POST /api/v1/auth
 | `is not an email`|if email has wrong format|
 | `address is already in use`|if user with email already exists|
 
-**Available  `errors ["password"]`**:
+**Available  `details["password"] errors`**:
 
 | Name      | Description   |
 | ------------| --------------|
 | `can't be blank`| if empty password|
 | `is too short (minimum is 8 characters)`|if password length less then 8 characters|
+
+
+**Available  `error["error_messages"]`**:
+
+Can include all available messages for each field.
+Creates from the following rules:
+ `field name` +  `errors ["field_message"]`
+ For example => Password can't be blank
+
 ------------
 
 ### Sign In
@@ -98,14 +106,17 @@ POST /api/v1/auth
 ```javascript
 POST /api/v1/auth/sign_in
 ```
+
 ###### Request Body
-  ```javascript
+
+```javascript
 {
   "provider": string,
   "email": string,
   "password": string
 }
 ```
+
 ###### Request Parameters
 | Name         | Value    | Description   |
 | ------------ |----------| --------------|
@@ -115,7 +126,7 @@ POST /api/v1/auth/sign_in
 
 #### Response
 
- **HTTP/1.1 200 OK**
+**HTTP/1.1 200 OK**
 
 ```javascript
 {
@@ -132,6 +143,7 @@ POST /api/v1/auth/sign_in
   }
 }
 ```
+
 ###### Response Parameters
 | Name         | Value    | Description   |
 | ------------ |----------| --------------|
@@ -149,13 +161,11 @@ POST /api/v1/auth/sign_in
 
  ```javascript
 {
-  "errors": array
+  "error": {
+    "error_messages": [ "Invalid login credentials. Please try again." ]
+  }
 }
 ```
-###### Response Parameters
-| Name         | Value    | Description   |
-| ------------ |----------| --------------|
-| `errors`       | `array` | ["Invalid login credentials. Please try again."]
 ------------
 
 
@@ -181,13 +191,10 @@ DELETE /api/v1/auth/sign_out
  **HTTP/1.1 404  Not Found**
 ```javascript
 {
-  "errors": array
+  "error": {
+    "error_messages": [ "User was not found or was not logged in." ]
 }
 ```
-###### Response Parameters
-| Name         | Value    | Description   |
-| ------------ |----------| --------------|
-| `errors`       | `array` | ["User was not found or was not logged in."]
 ------------
 
 
@@ -245,19 +252,11 @@ POST /api/v1/auth/password
 
 ```javascript
 {
-  "success": boolean,
-  "errors": array
+  "error": {
+    "error_messages": [ "Unable to find user with email #{email}." ]
+  }
 }
 ```
-
-###### Response Parameters
-
-
-| Name         | Value    | Description   |
-| ------------ |----------| --------------|
-|`success`| `boolean` |false|
-|`message`|`array`|["Unable to find user with email #{email}."]|
-
 
 ------------
 
@@ -293,7 +292,7 @@ PUT /api/v1/auth
 
  **HTTP/1.1 200 OK**
 
- ###### Response Body
+###### Response Body
 
 ```javascript
 {
@@ -322,36 +321,33 @@ PUT /api/v1/auth
 |`updated_at`|`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
 
 
- **HTTP/1.1 403 Forbidden**
+**HTTP/1.1 403 Forbidden**
 
  ```javascript
-{
-  "status": "error",
-  "errors": {
-    "password": array,
-    "password_confirmation": array,
-    "current_password": array,
-    "full_messages": array
-    }
+{ 
+  "error": {
+    "error_messages": array,
+    "details": object
 }
 ```
 ###### Response Parameters
+
+**Available fields error["details"]**:
+
 | Name         | Value    | Description   |
 | ------------ |----------| --------------|
-| `errors ["password"]`| `array` | Array of serverside validation errors for password
-| `errors ["password_confirmation"]`| `array` | Array of serverside validation errors for password_confirmation
-| `errors ["current_password]`| `array` | Array of serverside validation errors for current_password
-| `errors ["full_messages']`| `array` | Array of full errors messages
+| `details["password"]`| `array` | Array of serverside validation errors for password
+| `details["password_confirmation"]`| `array` | Array of serverside validation errors for password_confirmation
+| `details["current_password]`| `array` | Array of serverside validation errors for current_password
 
-
-**Available  `errors ["password"]`**:
+**Available  `details["password"]`**:
 
 | Name      | Description   |
 | ------------| --------------|
 | `can't be blank`| if empty password|
 | `is too short (minimum is 8 characters)`|if password length less then 8 characters|
 
-**Available  `errors ["password_confirmation"]`**:
+**Available  `details["password_confirmation"]`**:
 
 | Name      | Description   |
 | ------------| --------------|
@@ -365,12 +361,9 @@ PUT /api/v1/auth
 | `can't be blank`| if empty current password|
 | `is invalid`|if invalid current password|
 
-**Available  `errors ["full_messages"]`**:
+**Available  `error["error_messages"]`**:
 
 Can include all available messages for each field.
 Creates from the following rules:
  `field name` +  `errors ["field_message"]`
  For example => Password can't be blank
-
-
-

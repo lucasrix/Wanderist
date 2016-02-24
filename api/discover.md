@@ -30,30 +30,31 @@ If successful, this method returns a response body with the following structure:
     "stories": [
       {
         "id": integer,
-        "userId": integer,
+        "user_id": integer,
         "name": string,
         "description": text,
         "public": boolean,
-        "createdAt": datetime,
-        "updatedAt": datetime,
+        "created_at": datetime,
+        "updated_at": datetime,
         "followed": boolean,
-        "storyPoints": [
+        "story_points": [
           {
             "id": integer,
-            "userId": integer,
-            "storyId": integer,
+            "user_id": integer,
+            "story_id": integer,
             "caption": string,
             "public": boolean,
             "kind": string,
             "text": text,
             "address": string,
-            "latitude": string,
-            "longitude": string,
+            "latitude": float,
+            "longitude": float,
             "file": string,
             "thumbnail": string,
             "createdAt": datetime,
             "updatedAt": datetime,
             "tags": array,
+            "relationId": integer,
             "liked": boolean,
             "saved": boolean
           }
@@ -70,13 +71,14 @@ If successful, this method returns a response body with the following structure:
         "kind": string,
         "text": text,
         "address": string,
-        "latitude": string,
-        "longitude": string,
+        "latitude": float,
+        "longitude": float,
         "file": string,
         "thumbnail": string,
         "createdAt": datetime,
         "updatedAt": datetime,
         "tags": array,
+        "relationId": integer,
         "liked": boolean,
         "saved": boolean
       }
@@ -90,14 +92,14 @@ If successful, this method returns a response body with the following structure:
 | Name          | Value    | Description                       |
 | ------------- | -------- | --------------------------------- |
 | `stories`     | `array`  | Stories by location               |
-| `storyPoints` | `array`  | StoryPoints by location           |
+| `story_points` | `array`  | StoryPoints by location           |
 
 **HTTP/1.1 403 Forbidden**
 
 ```javascript
 {
   "error": {
-    "message": "You don't have permission to access"
+    "error_messages": [ "You don't have permission to access" ]
   }
 }
 ```
@@ -113,7 +115,7 @@ Search by places
 ###### HTTP Request
 
 ```javascript
-GET /api/v1/search/places
+GET /api/v1/places
 ```
 
 ###### Request Body
@@ -132,60 +134,58 @@ If successful, this method returns a response body with the following structure:
 
 ```javascript
 {
-  "data": [
-    {
-      "id": integer,
-      "userId": integer,
-      "name": string,
-      "description": text,
-      "public": boolean,
-      "createdAt": datetime,
-      "updatedAt": datetime,
-      "followed": boolean,
-      "storyPoints": [
-        {
-          "id": integer,
-          "userId": integer,
-          "storyId": integer,
-          "caption": string,
-          "public": boolean,
-          "kind": string,
-          "text": text,
-          "address": string,
-          "latitude": string,
-          "longitude": string,
-          "file": string,
-          "thumbnail": string,
-          "createdAt": datetime,
-          "updatedAt": datetime,
-          "tags": array
-        }
-      ]
-    }
-  ]
+  "data": {
+    "stories": [
+      {
+        "id": integer,
+        "user_id": integer,
+        "name": string,
+        "description": text,
+        "public": boolean,
+        "created_at": datetime,
+        "updated_at": datetime,
+        "followed": boolean,
+        "relation_id": integer,
+        "storyPoints": [
+          {
+            "id": integer,
+            "user_id": integer,
+            "story_id": integer,
+            "caption": string,
+            "public": boolean,
+            "kind": string,
+            "text": text,
+            "address": string,
+            "latitude": float,
+            "longitude": float,
+            "file": string,
+            "thumbnail": string,
+            "created_at": datetime,
+            "updated_at": datetime,
+            "tags": array,
+            "relation_id": integer,
+            "saved": boolean,
+            "liked": boolean
+          }
+        ]
+      }
+    ]
+  }
 }
 ```
 
 ###### Response Parameters
 
-| Name          | Value      | Description              |
-| ------------- | ---------- | ------------------------ |
-| `id`          | `integer`  | Story's id               |
-| `userId`      | `integer`  | User's id                |
-| `name`        | `string`   | Name                     |
-| `description` | `text`     | Description              |
-| `public`      | `boolean`  | true/false               |
-| `createdAt`   | `datetime` | 2016-02-09T09:23:23.000Z |
-| `updatedAt`   | `datetime` | 2016-02-09T09:23:23.000Z |
-| `followed`    | `boolean`  | true/false               |
-| `storyPoints` | `array`    | Story's SPs              |
+| Name          | Value    | Description                    |
+| ------------- | -------- | ------------------------------ |
+| `stories`     | `array`  | Stories by place               |
 
 **HTTP/1.1 403 Forbidden**
 
 ```javascript
 {
   "error": {
-    "message": "You don't have permission to access"
+    "error_messages": [ "You don't have permission to access" ]
   }
 }
 ```
