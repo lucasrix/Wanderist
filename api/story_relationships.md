@@ -14,7 +14,7 @@ POST /api/v1/story_relationships
 
 | Name        | Value     | Description                                     |
 | ----------- | --------- | ----------------------------------------------- |
-| `storyId`   | `string`  | required                                        |
+| `story_id`   | `string`  | required                                        |
 
 #### Response
 
@@ -24,9 +24,9 @@ POST /api/v1/story_relationships
 {
   "data": {
     "id": integer,
-    "userId": integer,
-    "storyId": integer,
-    "followedStory": relationships_object
+    "user_id": integer,
+    "story_id": integer,
+    "followed_story": relationships_object
   }
 }
 ```
@@ -36,21 +36,21 @@ POST /api/v1/story_relationships
 | Name            | Value      | Description                       |
 | --------------- | ---------- | --------------------------------- |
 | `id`            | `integer`  | relationship's id                 |
-| `userId`        | `integer`  | user's id                         |
-| `storyId`       | `integer`  | story's id                        |
-| `followedStory` | `object`   | followed story in JSON            |
+| `user_id`        | `integer`  | user's id                         |
+| `story_id`       | `integer`  | story's id                        |
+| `followed_story` | `object`   | followed story in JSON            |
 
 ###### Followed Story
 
 ```javascript
 {
   "id": integer,
-  "userId": integer,
+  "user_id": integer,
   "name": string,
   "description": text,
   "public": boolean,
-  "createdAt": datetime,
-  "updatedAt": datetime
+  "created_at": datetime,
+  "updated_at": datetime
 }
 ```
 
@@ -59,12 +59,12 @@ POST /api/v1/story_relationships
 | Name          | Value      | Description              |
 | ------------- | ---------- | ------------------------ |
 | `id`          | `integer`  | story's id               |
-| `userId`      | `integer`  | user's id                |
+| `user_id`      | `integer`  | user's id                |
 | `name`        | `string`   | name                     |
 | `description` | `text`     | description              |
 | `public`      | `boolean`  | true/false               |
-| `createdAt`   | `datetime` | datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ |
-| `updatedAt`   | `datetime` | datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ |
+| `created_at`   | `datetime` | datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ |
+| `updated_at`   | `datetime` | datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ |
 
 
 **HTTP/1.1 403 Forbidden**
@@ -72,7 +72,7 @@ POST /api/v1/story_relationships
 ```javascript
 {
   "error": {
-    "errorMessages": [ "You don't have permission to access" ]
+    "error_messages": [ "You don't have permission to access" ]
   }
 }
 ```
@@ -82,9 +82,9 @@ POST /api/v1/story_relationships
 ```javascript
 {
   "error": {
-    "errorMessages": [ "StoryId can't be blank" ],
+    "error_messages": [ "story_id can't be blank" ],
     "details": {
-      "storyId": ["can't be blank"]
+      "story_id": ["can't be blank"]
     }
   }
 }
@@ -120,7 +120,7 @@ DELETE /api/v1/story_relationships/:id
 ```javascript
 {
   "error": {
-    "errorMessages": [ "You don't have permission to access" ]
+    "error_messages": [ "You don't have permission to access" ]
   }
 }
 ```
@@ -130,7 +130,7 @@ DELETE /api/v1/story_relationships/:id
 ```javascript
 {
   "error": {
-    "errorMessages": [ "Couldn't find StoryRelation with 'id'= #{id}" ]
+    "error_messages": [ "Couldn't find story_relation with 'id'= #{id}" ]
   }
 }
 ```

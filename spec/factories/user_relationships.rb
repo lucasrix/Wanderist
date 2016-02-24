@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :user_relationship do
-    follower nil
-    followed nil
+    follower { create(:user) }
+    followed { create(:user) }
   end
 end

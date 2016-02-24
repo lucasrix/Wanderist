@@ -14,7 +14,7 @@ POST /api/v1/likes
 
 | Name           | Value     | Description           |
 | -------------- | --------- | --------------------- |
-| `storyPointId` | `string`  | required, SP's id     |
+| `story_point_id` | `string`  | required, SP's id     |
 
 #### Response
 
@@ -24,9 +24,9 @@ POST /api/v1/likes
 {
   "data": {
     "id": integer,
-    "userId": integer,
-    "storyPointId": integer,
-    "likedStoryPoint": object
+    "user_id": integer,
+    "story_point_id": integer,
+    "liked_story_point": object
   }
 }
 ```
@@ -36,17 +36,17 @@ POST /api/v1/likes
 | Name              | Value      | Description        |
 | ----------------- | ---------- | ------------------ |
 | `id`              | `integer`  | Like's id          |
-| `userId`          | `integer`  | User's id          |
-| `storyPointId`    | `integer`  | SP's id            |
-| `likedStoryPoint` | `object`   | liked Story Point  |
+| `user_id`          | `integer`  | User's id          |
+| `story_point_id`    | `integer`  | SP's id            |
+| `liked_story_point` | `object`   | liked Story Point  |
 
 ###### Liked Story Point
 
 ```javascript
 {
   "id": integer,
-  "userId": integer,
-  "storyId": integer,
+  "user_id": integer,
+  "story_id": integer,
   "caption": string,
   "public": boolean,
   "kind": string,
@@ -56,10 +56,10 @@ POST /api/v1/likes
   "longitude": float,
   "file": string,
   "thumbnail": string,
-  "createdAt": datetime,
-  "updatedAt": datetime,
+  "created_at": datetime,
+  "updated_at": datetime,
   "tags": array,
-  "relationId": integer,
+  "relation_id": integer,
   "saved": boolean,
   "liked": boolean
 }
@@ -69,8 +69,8 @@ POST /api/v1/likes
 | Name        | Value      | Description                       |
 | ----------- | ---------- | --------------------------------- |
 | `id`        | `integer`  | SP's id                           |
-| `userId`    | `integer`  | User's id                         |
-| `storyId`   | `integer`  | Story's id                        |
+| `user_id`    | `integer`  | User's id                         |
+| `story_id`   | `integer`  | Story's id                        |
 | `caption`   | `string`   | SP's caption, max. 140 chrs       |
 | `public`    | `boolean`  | default: true                     |
 | `kind`      | `string`   | 'text', 'audio', 'image', 'video' |
@@ -80,10 +80,10 @@ POST /api/v1/likes
 | `longitude` | `float`    |                                   |
 | `file`      | `string`   | file path                         |
 | `thumbnail` | `string`   | thumbnail path                    |
-| `createdAt` | `datetime` | "2016-02-09T09:23:23.000Z"        |
-| `updatedAt` | `datetime` | "2016-02-09T09:23:23.000Z"        |
+| `created_at` | `datetime` | "2016-02-09T09:23:23.000Z"        |
+| `updated_at` | `datetime` | "2016-02-09T09:23:23.000Z"        |
 | `tags`      | `array`    | ex. [ "usa", "museum", "2016" ]   |
-| `relationId`| `integer`  | Relation id                       |
+| `relation_id`| `integer`  | Relation id                       |
 | `saved`     | `boolean`  | true/false                        |
 | `liked`     | `boolean`  | true/false                        |
 
@@ -93,7 +93,7 @@ POST /api/v1/likes
 ```javascript
 {
   "error": {
-    "errorMessages": [ "You don't have permission to access" ]
+    "error_messages": [ "You don't have permission to access" ]
   }
 }
 
@@ -104,9 +104,9 @@ POST /api/v1/likes
 ```javascript
 {
   "error": {
-    "errorMessages": [ "StoryPointId can't be blank" ],
+    "error_messages": [ "story_point_id can't be blank" ],
     "details": {
-      "storyPointId": ["can't be blank"]
+      "story_point_id": ["can't be blank"]
     }
   }
 }
@@ -142,7 +142,7 @@ DELETE /api/v1/likes/:id
 ```javascript
 {
   "error": {
-    "errorMessages": [ "You don't have permission to access" ]
+    "error_messages": [ "You don't have permission to access" ]
   }
 }
 ```
@@ -152,7 +152,7 @@ DELETE /api/v1/likes/:id
 ```javascript
 {
   "error": {
-    "errorMessages": [ "Couldn't find Like with 'id'= #{id}" ]
+    "error_messages": [ "Couldn't find Like with 'id'= #{id}" ]
   }
 }
 ```

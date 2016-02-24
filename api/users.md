@@ -31,12 +31,12 @@ GET /api/v1/users/:id
     "avatar": string,
     "home": string,
     "about": text,
-    "personalUrl": string,
-    "storyPointsCount": integer,
+    "personal_url": string,
+    "story_points_count": integer,
     "followed": boolean,
-    "relationId": integer,
-    "createdAt": datetime,
-    "updatedAt": datetime
+    "relation_id": integer,
+    "created_at": datetime,
+    "updated_at": datetime
   }
 }
 ```
@@ -52,12 +52,12 @@ GET /api/v1/users/:id
 |`avatar`          |`string`  |path to user's avatar|
 |`home`            |`string`  |user's address|
 |`about`           |`text`    |user's description|
-|`personalUrl`     | `string` | optional, link to user's personal webpage|
-|`storyPointsCount`|`integer`|quantity of sPs created by user|
+|`personal_url`     | `string` | optional, link to user's personal webpage|
+|`story_points_count`|`integer`|quantity of sPs created by user|
 |`followed`        |`boolean`|true if followed user|
-|`relationId`      |`integer`|optional if followed, id of relation object|
-|`createdAt`       |`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
-|`updatedAt`       |`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
+|`relation_id`      |`integer`|optional if followed, id of relation object|
+|`created_at`       |`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
+|`updated_at`       |`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
 
 
 **HTTP/1.1 403 Forbidden**
@@ -65,7 +65,7 @@ GET /api/v1/users/:id
 ```javascript
 { 
   "error": {
-    "errorMessages": [ "You don't have permission to access" ]
+    "error_messages": [ "You don't have permission to access" ]
   }
 }
 ```
@@ -75,7 +75,7 @@ GET /api/v1/users/:id
 ```javascript
 { 
   "error": {
-    "errorMessages": [ "Couldn't find User with 'id'=#{:id}" ]
+    "error_messages": [ "Couldn't find User with 'id'=#{:id}" ]
   }
 }
 ```
@@ -113,14 +113,14 @@ GET /api/v1/users/:id/profile
     "avatar": string,
     "home": string,
     "about": text,
-    "personalUrl": string,
-    "storyPointsCount": integer,
+    "personal_url": string,
+    "story_points_count": integer,
     "followers": integer,
     "following": integer,
     "likes": integer,
     "saves": integer,
-    "createdAt": datetime,
-    "updatedAt": datetime
+    "created_at": datetime,
+    "updated_at": datetime
   }
 }
 ```
@@ -136,14 +136,14 @@ GET /api/v1/users/:id/profile
 |`avatar`|`string`|path to user's avatar|
 |`home`|`string`|user's address|
 |`about`|`text`|user's description|
-| `personalUrl`   | `string`   | optional, link to user's personal webpage|
-|`storyPointsCount`|`integer`|quantity of sPs created by user|
+| `personal_url`   | `string`   | optional, link to user's personal webpage|
+|`story_points_count`|`integer`|quantity of sPs created by user|
 |`followers`|`integer`|quantity of users subscribers|
 |`following`|`integer`|quantity of users subscriptions|
 |`likes`|`integer`|how many times other users liked sPs of current users|
 |`saved`|`integer`|how many times other users added sPs of current users to their stories|
-|`createdAt`|`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
-|`updatedAt`|`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
+|`created_at`|`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
+|`updated_at`|`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
 
 
 **HTTP/1.1 403 Forbidden**
@@ -151,7 +151,7 @@ GET /api/v1/users/:id/profile
 ```javascript
 {
   "error": {
-    "errorMessages": [ "You don't have permission to access" ]
+    "error_messages": [ "You don't have permission to access" ]
   }
 }
 ```
@@ -162,7 +162,7 @@ GET /api/v1/users/:id/profile
 ```javascript
 {
   "error": {
-    "errorMessages": [ "Couldn't find User with 'id'=#{:id}" ]
+    "error_messages": [ "Couldn't find User with 'id'=#{:id}" ]
   }
 }
 ```
@@ -194,7 +194,7 @@ PUT /api/v1/users/:id/profile
   "firstname": string,
   "lastname": string,
   "email": string,
-  "personalUrl": string,
+  "personal_url": string,
   "home": string,
   "about": text
 }
@@ -206,7 +206,7 @@ PUT /api/v1/users/:id/profile
 | `firstname`   | `string`   | optional, user's firstname |
 | `lastname`   | `string`   | optional, user's lastname |
 | `email`   | `string`   | optional, user's email|
-| `personalUrl`   | `string`   | optional, link to user's personal webpage|
+| `personal_url`   | `string`   | optional, link to user's personal webpage|
 | `home`   | `string`   | optional, user's address|
 |`about`|`text`|user's description|
 
@@ -222,12 +222,12 @@ PUT /api/v1/users/:id/profile
     "firstname": string,
     "lastname": string,
     "email": string,
-    "personalUrl": string,
+    "personal_url": string,
     "avatar": string,
     "home": string,
     "about": text,
-    "createdAt": datetime,
-    "updatedAt": datetime
+    "created_at": datetime,
+    "updated_at": datetime
   }
 }
 ```
@@ -241,19 +241,19 @@ PUT /api/v1/users/:id/profile
 |`firstname` | `string` | user's firstname |
 |`lastname`|`string`|user's lastname|
 |`email`|`string`|user's email|
-|`personalUrl`   | `string`   | link to user's personal webpage|
+|`personal_url`   | `string`   | link to user's personal webpage|
 |`avatar`|`string`|path to user's avatar|
 |`home`|`string`|user's address|
 |`about`|`text`|user's description|
-|`createdAt`|`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
-|`updatedAt`|`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
+|`created_at`|`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
+|`updated_at`|`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
 
 **HTTP/1.1 403 Forbidden**
 
 ```javascript
 {
   "error": {
-    "errorMessages": [ "You don't have permission to access" ]
+    "error_messages": [ "You don't have permission to access" ]
   }
 }
 ```
@@ -263,7 +263,7 @@ PUT /api/v1/users/:id/profile
 ```javascript
 {
   "error": {
-    "errorMessages": [ "Couldn't find User with 'id'=#{:id}" ]
+    "error_messages": [ "Couldn't find User with 'id'=#{:id}" ]
   }
 }
 ```
@@ -273,7 +273,7 @@ PUT /api/v1/users/:id/profile
 ```javascript
 {
   "error": {
-    "errorMessages": array,
+    "error_messages": array,
     "details": object
   }
 }
@@ -295,7 +295,7 @@ PUT /api/v1/users/:id/profile
 | `can't be blank`| if empty email|
 |"#{value} has already been taken"| if user with email already exists
 
-**Available  `error["errorMessages"]`**:
+**Available  `error["error_messages"]`**:
 
 Can include all available messages for each field.
 Creates from the following rules:
@@ -335,7 +335,7 @@ GET /api/v1/users/:id/settings
 ```javascript
 {
   "error": {
-    "errorMessages": [ "You don't have permission to access" ]
+    "error_messages": [ "You don't have permission to access" ]
   }
 }
 ```
@@ -345,7 +345,7 @@ GET /api/v1/users/:id/settings
 ```javascript
 {
   "error": {
-    "errorMessages": [ "Couldn't find User with 'id'=#{:id}" ]
+    "error_messages": [ "Couldn't find User with 'id'=#{:id}" ]
   }
 }
 ```
@@ -409,7 +409,7 @@ PUT /api/v1/users/:id/settings
 ```javascript
 {
   "error": {
-    "errorMessages": [ "You don't have permission to access" ]
+    "error_messages": [ "You don't have permission to access" ]
   }
 }
 ```
@@ -419,7 +419,7 @@ PUT /api/v1/users/:id/settings
 ```javascript
 {
   "error": {
-    "errorMessages": [ "Couldn't find User with 'id'=#{:id}" ]
+    "error_messages": [ "Couldn't find User with 'id'=#{:id}" ]
   }
 }
 ```
@@ -429,7 +429,7 @@ PUT /api/v1/users/:id/settings
 ```javascript
 {
   "error": {
-    "errorMessages": array,
+    "error_messages": array,
     "details": object
   }
 }
@@ -444,7 +444,7 @@ PUT /api/v1/users/:id/settings
 | `details["notifications"]`| `array` | "can't be blank"
 | `details["public"]`| `array` | "can't be blank"
 
-**Available  `error["errorMessages"]`**:
+**Available  `error["error_messages"]`**:
 
 Can include all available messages for each field.
 Creates from the following rules:
@@ -496,12 +496,12 @@ GET /api/v1/users/:id/followers
   "avatar": string,
   "home": string,
   "about": text,
-  "personalUrl": string,
-  "storyPointsCount": integer,
+  "personal_url": string,
+  "story_points_count": integer,
   "followed": boolean,
-  "relationId": integer,
-  "createdAt": datetime,
-  "updatedAt": datetime
+  "relation_id": integer,
+  "created_at": datetime,
+  "updated_at": datetime
 }
 ```
 
@@ -516,19 +516,19 @@ GET /api/v1/users/:id/followers
 |`avatar`|`string`|path to user's avatar|
 |`home`|`string`|user's address|
 |`about`|`text`|user's description|
-|`personalUrl`   | `string`   | optional, link to user's personal webpage|
-|`storyPointsCount`|`integer`|quantity of sPs created by user|
+|`personal_url`   | `string`   | optional, link to user's personal webpage|
+|`story_points_count`|`integer`|quantity of sPs created by user|
 |`followed`|`boolean`|true if followed user|
-|`relationId`|`integer`|optional if followed, id of relation object|
-|`createdAt`|`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
-|`updatedAt`|`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
+|`relation_id`|`integer`|optional if followed, id of relation object|
+|`created_at`|`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
+|`updated_at`|`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
 
 **HTTP/1.1 403 Forbidden**
 
 ```javascript
 {
   "error": {
-    "errorMessages": [ "You don't have permission to access" ]
+    "error_messages": [ "You don't have permission to access" ]
   }
 }
 ```
@@ -539,7 +539,7 @@ GET /api/v1/users/:id/followers
 ```javascript
 { 
   "error": {
-    "errorMessages": [ "Couldn't find User with 'id'=#{:id}" ]
+    "error_messages": [ "Couldn't find User with 'id'=#{:id}" ]
   }
 }
 ```
@@ -590,12 +590,12 @@ GET /api/v1/users/:id/followings
   "avatar": string,
   "home": string,
   "about": text,
-  "personalUrl": string,
-  "storyPointsCount": integer,
+  "personal_url": string,
+  "story_points_count": integer,
   "followed": boolean,
-  "relationId": integer,
-  "createdAt": datetime,
-  "updatedAt": datetime
+  "relation_id": integer,
+  "created_at": datetime,
+  "updated_at": datetime
 }
 ```
 
@@ -610,12 +610,12 @@ GET /api/v1/users/:id/followings
 |`avatar`|`string`|path to user's avatar|
 |`home`|`string`|user's address|
 |`about`|`text`|user's description|
-|`personalUrl`   | `string`   | optional, link to user's personal webpage|
-|`storyPointsCount`|`integer`|quantity of sPs created by user|
+|`personal_url`   | `string`   | optional, link to user's personal webpage|
+|`story_points_count`|`integer`|quantity of sPs created by user|
 |`followed`|`boolean`|true if followed user|
-|`relationId`|`integer`|optional if followed, id of relation object|
-|`createdAt`|`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
-|`updatedAt`|`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
+|`relation_id`|`integer`|optional if followed, id of relation object|
+|`created_at`|`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
+|`updated_at`|`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
 
 
 **HTTP/1.1 403 Forbidden**
@@ -623,7 +623,7 @@ GET /api/v1/users/:id/followings
 ```javascript
 {
   "error": {
-    "errorMessages": [ "You don't have permission to access" ]
+    "error_messages": [ "You don't have permission to access" ]
   }
 }
 ```
@@ -634,7 +634,7 @@ GET /api/v1/users/:id/followings
 ```javascript
 {
   "error": {
-    "errorMessages": [ "Couldn't find User with 'id'=#{:id}" ]
+    "error_messages": [ "Couldn't find User with 'id'=#{:id}" ]
   }
 }
 ```

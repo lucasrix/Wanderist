@@ -5,9 +5,5 @@ FactoryGirl.define do
     email { Faker::Internet.email }
     provider 'email'
     uid { email }
-
-    after(:create) do |user|
-      create(:settings_suit, user: user)
-    end
   end
 end

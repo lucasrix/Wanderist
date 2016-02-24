@@ -30,18 +30,18 @@ If successful, this method returns a response body with the following structure:
     "stories": [
       {
         "id": integer,
-        "userId": integer,
+        "user_id": integer,
         "name": string,
         "description": text,
         "public": boolean,
-        "createdAt": datetime,
-        "updatedAt": datetime,
+        "created_at": datetime,
+        "updated_at": datetime,
         "followed": boolean,
-        "storyPoints": [
+        "story_points": [
           {
             "id": integer,
-            "userId": integer,
-            "storyId": integer,
+            "user_id": integer,
+            "story_id": integer,
             "caption": string,
             "public": boolean,
             "kind": string,
@@ -92,14 +92,14 @@ If successful, this method returns a response body with the following structure:
 | Name          | Value    | Description                       |
 | ------------- | -------- | --------------------------------- |
 | `stories`     | `array`  | Stories by location               |
-| `storyPoints` | `array`  | StoryPoints by location           |
+| `story_points` | `array`  | StoryPoints by location           |
 
 **HTTP/1.1 403 Forbidden**
 
 ```javascript
 {
   "error": {
-    "errorMessages": [ "You don't have permission to access" ]
+    "error_messages": [ "You don't have permission to access" ]
   }
 }
 ```
@@ -138,19 +138,19 @@ If successful, this method returns a response body with the following structure:
     "stories": [
       {
         "id": integer,
-        "userId": integer,
+        "user_id": integer,
         "name": string,
         "description": text,
         "public": boolean,
-        "createdAt": datetime,
-        "updatedAt": datetime,
+        "created_at": datetime,
+        "updated_at": datetime,
         "followed": boolean,
-        "relationId": integer,
+        "relation_id": integer,
         "storyPoints": [
           {
             "id": integer,
-            "userId": integer,
-            "storyId": integer,
+            "user_id": integer,
+            "story_id": integer,
             "caption": string,
             "public": boolean,
             "kind": string,
@@ -160,10 +160,10 @@ If successful, this method returns a response body with the following structure:
             "longitude": float,
             "file": string,
             "thumbnail": string,
-            "createdAt": datetime,
-            "updatedAt": datetime,
+            "created_at": datetime,
+            "updated_at": datetime,
             "tags": array,
-            "relationId": integer,
+            "relation_id": integer,
             "saved": boolean,
             "liked": boolean
           }
@@ -185,7 +185,7 @@ If successful, this method returns a response body with the following structure:
 ```javascript
 {
   "error": {
-    "errorMessages": [ "You don't have permission to access" ]
+    "error_messages": [ "You don't have permission to access" ]
   }
 }
 ```

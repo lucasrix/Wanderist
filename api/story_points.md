@@ -21,8 +21,8 @@ If successful, this method returns a response body with the following structure:
   "data": [
     {
       "id": integer,
-      "userId": integer,
-      "storyId": integer,
+      "user_id": integer,
+      "story_id": integer,
       "caption": string,
       "public": boolean,
       "kind": string,
@@ -32,17 +32,17 @@ If successful, this method returns a response body with the following structure:
       "longitude": float,
       "file": string,
       "thumbnail": string,
-      "createdAt": datetime,
-      "updatedAt": datetime,
+      "created_at": datetime,
+      "updated_at": datetime,
       "tags": array,
       "story": {
         "id": integer,
-        "userId": integer,
+        "user_id": integer,
         "name": string,
         "description": text,
         "public": boolean,
-        "createdAt": datetime,
-        "updatedAt": datetime
+        "created_at": datetime,
+        "updated_at": datetime
       },
       "user": {
       }
@@ -61,8 +61,8 @@ If successful, this method returns a response body with the following structure:
 | `latitude`  | `float`    |                                   |
 | `longitude` | `float`    |                                   |
 | `thumbnail` | `string`   | thumbnail path                    |
-| `createdAt` | `datetime` | "2016-02-09T09:23:23.000Z"        |
-| `updatedAt` | `datetime` | "2016-02-09T09:23:23.000Z"        |
+| `created_at` | `datetime` | "2016-02-09T09:23:23.000Z"        |
+| `updated_at` | `datetime` | "2016-02-09T09:23:23.000Z"        |
 | `story`     | `object`   |                                   |
 | `user`      | `object`   |                                   |
 
@@ -71,7 +71,7 @@ If successful, this method returns a response body with the following structure:
 ```javascript
 {
   "error": {
-    "errorMessages": [ "You don't have permission to access" ]
+    "error_messages": [ "You don't have permission to access" ]
   }
 }
 ```
@@ -99,8 +99,8 @@ If successful, this method returns a response body with the following structure:
   "data": [
     {
       "id": integer,
-      "userId": integer,
-      "storyId": integer,
+      "user_id": integer,
+      "story_id": integer,
       "caption": string,
       "public": boolean,
       "kind": string,
@@ -110,8 +110,8 @@ If successful, this method returns a response body with the following structure:
       "longitude": float,
       "file": string,
       "thumbnail": string,
-      "createdAt": datetime,
-      "updatedAt": datetime,
+      "created_at": datetime,
+      "updated_at": datetime,
       "tags": array
     }
   ]
@@ -123,8 +123,8 @@ If successful, this method returns a response body with the following structure:
 | Name        | Value      | Description                       |
 | ----------- | ---------- | --------------------------------- |
 | `id`        | `integer`  | SP's id                           |
-| `userId`    | `integer`  | User's id                         |
-| `storyId`   | `integer`  | Story's id                        |
+| `user_id`    | `integer`  | User's id                         |
+| `story_id`   | `integer`  | Story's id                        |
 | `caption`   | `string`   | SP's caption, max. 140 chrs       |
 | `public`    | `boolean`  | default: true                     |
 | `kind`      | `string`   | 'text', 'audio', 'image', 'video' |
@@ -134,8 +134,8 @@ If successful, this method returns a response body with the following structure:
 | `longitude` | `float`    |                                   |
 | `file`      | `string`   | file path                         |
 | `thumbnail` | `string`   | thumbnail path                    |
-| `createdAt` | `datetime` | "2016-02-09T09:23:23.000Z"        |
-| `updatedAt` | `datetime` | "2016-02-09T09:23:23.000Z"        |
+| `created_at` | `datetime` | "2016-02-09T09:23:23.000Z"        |
+| `updated_at` | `datetime` | "2016-02-09T09:23:23.000Z"        |
 | `tags`      | `array`    | ex. [ "usa", "museum", "2016" ]   |
 
 **HTTP/1.1 403 Forbidden**
@@ -143,7 +143,7 @@ If successful, this method returns a response body with the following structure:
 ```javascript
 {
   "error": {
-    "errorMessages": [ "You don't have permission to access" ]
+    "error_messages": [ "You don't have permission to access" ]
   }
 }
 ```
@@ -172,7 +172,7 @@ POST /api/v1/story_points
 | `latitude`  | `string`  | required                                           |
 | `longitude` | `string`  | required                                           |
 | `tags`      | `array`   | optional                                           |
-| `storyId`   | `integer` | optional                                           |
+| `story_id`   | `integer` | optional                                           |
 
 #### Response
 
@@ -184,8 +184,8 @@ If successful, this method returns a response body with the following structure:
 {
   "data": {
     "id": integer,
-    "userId": integer,
-    "storyId": integer,
+    "user_id": integer,
+    "story_id": integer,
     "caption": string,
     "public": boolean,
     "kind": string,
@@ -195,8 +195,8 @@ If successful, this method returns a response body with the following structure:
     "longitude": float,
     "file": string,
     "thumbnail": string,
-    "createdAt": datetime,
-    "updatedAt": datetime,
+    "created_at": datetime,
+    "updated_at": datetime,
     "tags": array
   }
 }
@@ -207,8 +207,8 @@ If successful, this method returns a response body with the following structure:
 | Name        | Value      | Description                       |
 | ----------- | ---------- | --------------------------------- |
 | `id`        | `integer`  | SP's id                           |
-| `userId`    | `integer`  | User's id                         |
-| `storyId`   | `integer`  | Story's id                        |
+| `user_id`    | `integer`  | User's id                         |
+| `story_id`   | `integer`  | Story's id                        |
 | `caption`   | `string`   | SP's caption, max. 140 chrs       |
 | `public`    | `boolean`  | default: true                     |
 | `kind`      | `string`   | 'text', 'audio', 'image', 'video' |
@@ -218,8 +218,8 @@ If successful, this method returns a response body with the following structure:
 | `longitude` | `float`    |                                   |
 | `file`      | `string`   | file path                         |
 | `thumbnail` | `string`   | thumbnail path                    |
-| `createdAt` | `datetime` | "2016-02-09T09:23:23.000Z"        |
-| `updatedAt` | `datetime` | "2016-02-09T09:23:23.000Z"        |
+| `created_at` | `datetime` | "2016-02-09T09:23:23.000Z"        |
+| `updated_at` | `datetime` | "2016-02-09T09:23:23.000Z"        |
 | `tags`      | `array`    | ex. [ "usa", "museum", "2016" ]   |
 
 **HTTP/1.1 422 Unprocessable Entity**
@@ -227,7 +227,7 @@ If successful, this method returns a response body with the following structure:
 ```javascript
 {
   "error": {
-    "errorMessages": array,
+    "error_messages": array,
     "details": object
   }
 }
@@ -290,7 +290,7 @@ If successful, this method returns a response body with the following structure:
 | ------------------ | ------------------ |
 | `can't be blank`   | if empty longitude |
 
-###### Available `error["errorMessages"]`
+###### Available `error["error_messages"]`
 
 Can include all available messages for each field.
 Creates from the following rules:
@@ -302,7 +302,7 @@ For example => Caption can't be blank
 ```javascript
 {
   "error": {
-    "errorMessages": [ "You don't have permission to access" ]
+    "error_messages": [ "You don't have permission to access" ]
   }
 }
 ```
@@ -345,8 +345,8 @@ If successful, this method returns a response body with the following structure:
 {
   "data": {
     "id": integer,
-    "userId": integer,
-    "storyId": integer,
+    "user_id": integer,
+    "story_id": integer,
     "caption": string,
     "public": boolean,
     "kind": string,
@@ -356,8 +356,8 @@ If successful, this method returns a response body with the following structure:
     "longitude": float,
     "file": string,
     "thumbnail": string,
-    "createdAt": datetime,
-    "updatedAt": datetime,
+    "created_at": datetime,
+    "updated_at": datetime,
     "tags": array
   }
 }
@@ -368,8 +368,8 @@ If successful, this method returns a response body with the following structure:
 | Name        | Value      | Description                       |
 | ----------- | ---------- | --------------------------------- |
 | `id`        | `integer`  | SP's id                           |
-| `userId`    | `integer`  | User's id                         |
-| `storyId`   | `integer`  | Story's id                        |
+| `user_id`    | `integer`  | User's id                         |
+| `story_id`   | `integer`  | Story's id                        |
 | `caption`   | `string`   | SP's caption, max. 140 chrs       |
 | `public`    | `boolean`  | default: true                     |
 | `kind`      | `string`   | 'text', 'audio', 'image', 'video' |
@@ -379,8 +379,8 @@ If successful, this method returns a response body with the following structure:
 | `longitude` | `float`    |                                   |
 | `file`      | `string`   | file path                         |
 | `thumbnail` | `string`   | thumbnail path                    |
-| `createdAt` | `datetime` | "2016-02-09T09:23:23.000Z"        |
-| `updatedAt` | `datetime` | "2016-02-09T09:23:23.000Z"        |
+| `created_at` | `datetime` | "2016-02-09T09:23:23.000Z"        |
+| `updated_at` | `datetime` | "2016-02-09T09:23:23.000Z"        |
 | `tags`      | `array`    | ex. [ "usa", "museum", "2016" ]   |
 
 **HTTP/1.1 422 Unprocessable Entity**
@@ -388,7 +388,7 @@ If successful, this method returns a response body with the following structure:
 ```javascript
 {
   "error": {
-    "errorMessages": array,
+    "error_messages": array,
     "details": object
   }
 }
@@ -430,7 +430,7 @@ If successful, this method returns a response body with the following structure:
 | ------------------ | ------------------ |
 | `can't be blank`   | if empty longitude |
 
-###### Available `error["errorMessages"]`
+###### Available `error["error_messages"]`
 
 Can include all available messages for each field.
 Creates from the following rules:
@@ -442,7 +442,7 @@ For example => Caption can't be blank
 ```javascript
 {
   "error": {
-    "errorMessages": [ "You don't have permission to access" ]
+    "error_messages": [ "You don't have permission to access" ]
   }
 }
 ```
@@ -475,8 +475,8 @@ If successful, this method returns a response body with the following structure:
 {
   "data": {
     "id": integer,
-    "userId": integer,
-    "storyId": integer,
+    "user_id": integer,
+    "story_id": integer,
     "caption": string,
     "public": boolean,
     "kind": string,
@@ -486,8 +486,8 @@ If successful, this method returns a response body with the following structure:
     "longitude":float,
     "file": string,
     "thumbnail": string,
-    "createdAt": datetime,
-    "updatedAt": datetime,
+    "created_at": datetime,
+    "updated_at": datetime,
     "tags": array,
     "saved": boolean,
     "liked": boolean,
@@ -502,8 +502,8 @@ If successful, this method returns a response body with the following structure:
 | Name        | Value      | Description                       |
 | ----------- | ---------- | --------------------------------- |
 | `id`        | `integer`  | SP's id                           |
-| `userId`    | `integer`  | User's id                         |
-| `storyId`   | `integer`  | Story's id                        |
+| `user_id`    | `integer`  | User's id                         |
+| `story_id`   | `integer`  | Story's id                        |
 | `caption`   | `string`   | SP's caption, max. 40 chrs        |
 | `public`    | `boolean`  | default: true                     |
 | `kind`      | `string`   | 'text', 'audio', 'image', 'video' |
@@ -513,8 +513,8 @@ If successful, this method returns a response body with the following structure:
 | `longitude` | `float`    |                                   |
 | `file`      | `string`   | file path                         |
 | `thumbnail` | `string`   | thumbnail path                    |
-| `createdAt` | `datetime` | "2016-02-09T09:23:23.000Z"        |
-| `updatedAt` | `datetime` | "2016-02-09T09:23:23.000Z"        |
+| `created_at` | `datetime` | "2016-02-09T09:23:23.000Z"        |
+| `updated_at` | `datetime` | "2016-02-09T09:23:23.000Z"        |
 | `tags`      | `array`    | ex. [ "usa", "museum", "2016" ]   |
 | `saved`     | `boolean`  | true/false                        |
 | `liked`     | `boolean`  | true/false                        |
@@ -525,7 +525,7 @@ If successful, this method returns a response body with the following structure:
 ```javascript
 {
   "error": {
-    "errorMessages": [ "You don't have permission to access" ]
+    "error_messages": [ "You don't have permission to access" ]
   }
 }
 ```
@@ -535,7 +535,7 @@ If successful, this method returns a response body with the following structure:
 ```javascript
 {
   "error": {
-    "errorMessages": [ "Couldn't find StoryPoint with 'id'=#{:id}" ]
+    "error_messages": [ "Couldn't find story_point with 'id'=#{:id}" ]
   }
 }
 ```
@@ -572,7 +572,7 @@ DELETE /api/v1/story_points/:id
 ```javascript
 {
   "error": {
-    "errorMessages": [ "You don't have permission to access" ]
+    "error_messages": [ "You don't have permission to access" ]
   }
 }
 ```
@@ -581,7 +581,7 @@ DELETE /api/v1/story_points/:id
 ```javascript
 {
   "error": {
-    "errorMessages": [ "Couldn't find StoryPoint with 'id'=#{:id}" ]
+    "error_messages": [ "Couldn't find story_point with 'id'=#{:id}" ]
   }
 }
 ```
@@ -621,8 +621,8 @@ If successful, this method returns a response body with the following structure:
   "data": {
     "id": integer,
     "kind": string,
-    "storyPointId:": integer,
-    "userId": integer
+    "story_point_id:": integer,
+    "user_id": integer
   }
 }
 ```
@@ -633,15 +633,15 @@ If successful, this method returns a response body with the following structure:
 | -------------- | ---------- | ------------------------ |
 | `id`           | `integer`  | Report's id              |
 | `kind`         | `string`   | Report's kind            |
-| `storyPointId` | `integer`  | SP's id                  |
-| `userId`       | `integer`  | User's id                |
+| `story_point_id` | `integer`  | SP's id                  |
+| `user_id`       | `integer`  | User's id                |
 
 **HTTP/1.1 403 Forbidden**
 
 ```javascript
 {
   "error": {
-    "errorMessages": [ "You don't have permission to access" ]
+    "error_messages": [ "You don't have permission to access" ]
   }
 }
 ```
@@ -651,7 +651,7 @@ If successful, this method returns a response body with the following structure:
 ```javascript
 {
   "error": {
-    "errorMessages": [ "Couldn't find StoryPoint with 'id'=#{:id}" ]
+    "error_messages": [ "Couldn't find story_point with 'id'=#{:id}" ]
   }
 }
 ```

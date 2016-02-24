@@ -14,12 +14,12 @@ RSpec.describe User, type: :model do
 
     it do
       is_expected.to have_many(:active_relationships)
-        .class_name('UserRelationship').with_foreign_key('follower_id')
+        .class_name(UserRelationship.name).with_foreign_key('follower_id')
     end
 
     it do
       is_expected.to have_many(:passive_relationships)
-        .class_name('UserRelationship').with_foreign_key('followed_id')
+        .class_name(UserRelationship.name).with_foreign_key('followed_id')
     end
 
     it do

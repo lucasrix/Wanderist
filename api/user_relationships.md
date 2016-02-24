@@ -14,7 +14,7 @@ POST /api/v1/user_relationships
 
 | Name        | Value     | Description                                        |
 | ----------- | --------- | -------------------------------------------------- |
-| `userId`    | `string`  | required, target user's id                         |
+| `user_id`    | `string`  | required, target user's id                         |
 
 #### Response
 
@@ -24,9 +24,9 @@ POST /api/v1/user_relationships
 {
   "data": {
     "id": integer,
-    "followerId": integer,
-    "followedId": integer,
-    "followedUser": relationships_object
+    "follower_id": integer,
+    "followed_id": integer,
+    "followed_user": relationships_object
   }
 }
 ```
@@ -36,9 +36,9 @@ POST /api/v1/user_relationships
 | Name          | Value      | Description                       |
 | ------------  | ---------- | --------------------------------- |
 | `id`          | `integer`  | relationship's id                 |
-| `followerId`  | `integer`  | follower's id                     |
-| `followedId`  | `integer`  | following's id                    |
-| `followedUser`| `object`   | followed user   in JSON           |
+| `follower_id`  | `integer`  | follower's id                     |
+| `followed_id`  | `integer`  | following's id                    |
+| `followed_user`| `object`   | followed user   in JSON           |
 
 ###### Followed User in JSON
 
@@ -51,12 +51,12 @@ POST /api/v1/user_relationships
   "avatar": string,
   "home": string,
   "about": text,
-  "personalUrl": string,
-  "storyPointsCount": integer,
+  "personal_url": string,
+  "story_points_count": integer,
   "followed": boolean,
-  "relationId": integer,
-  "createdAt": datetime,
-  "updatedAt": datetime
+  "relation_id": integer,
+  "created_at": datetime,
+  "updated_at": datetime
 }
 ```
 ###### Parameters
@@ -69,12 +69,12 @@ POST /api/v1/user_relationships
 |`avatar`|`string`|path to user's avatar|
 |`home`|`string`|user's address|
 |`about`|`text`|user's description|
-| `personalUrl`   | `string`   | optional, link to user's personal webpage|
-|`storyPointsCount`|`integer`|quantity of sPs created by user|
+| `personal_url`   | `string`   | optional, link to user's personal webpage|
+|`story_points_count`|`integer`|quantity of sPs created by user|
 |`followed`|`boolean`|true if followed user|
-|`relationId`|`integer`|optional if followed, id of relation object|
-|`createdAt`|`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
-|`updatedAt`|`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
+|`relation_id`|`integer`|optional if followed, id of relation object|
+|`created_at`|`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
+|`updated_at`|`datetime`|datetime, format:  YYYY-MM-DDTHH: mm:ss.sssZ|
 
 
 **HTTP/1.1 403 Forbidden**
@@ -82,7 +82,7 @@ POST /api/v1/user_relationships
 ```javascript
 {
   "error": {
-    "errorMessages": [ "You don't have permission to access" ]
+    "error_messages": [ "You don't have permission to access" ]
   }
 }
 
@@ -93,9 +93,9 @@ POST /api/v1/user_relationships
 ```javascript
 {
   "error": {
-    "errorMessages": [ "UserId can't be blank" ],
+    "error_messages": [ "user_id can't be blank" ],
     "details": {
-      "userId": ["can't be blank"]
+      "user_id": ["can't be blank"]
     }
   }
 }
@@ -130,7 +130,7 @@ DELETE /api/v1/user_relationships/:id
 ```javascript
 {
   "error": {
-    "errorMessages": [ "You don't have permission to access" ]
+    "error_messages": [ "You don't have permission to access" ]
   }
 }
 ```
@@ -140,7 +140,7 @@ DELETE /api/v1/user_relationships/:id
 ```javascript
 {
   "error": {
-    "errorMessages": [ "Couldn't find UserRelation with 'id'= #{id}" ]
+    "error_messages": [ "Couldn't find user_relation with 'id'= #{id}" ]
   }
 }
 ```

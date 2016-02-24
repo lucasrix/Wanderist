@@ -16,7 +16,7 @@ POST /api/v1/stories
 | --------------- |--------- | ----------- |
 | `name`          | `string` | required    |
 | `description`   | `text`   | optional    |
-| `storyPointIds` | `array`  | optional    |
+| `story_point_ids` | `array`  | optional    |
 
 #### Response
 
@@ -28,12 +28,12 @@ If successful, this method returns a response body with the following structure:
 {
   "data": {
     "id": integer,
-    "userId": integer,
+    "user_id": integer,
     "name": string,
     "description": text,
     "public": boolean,
-    "createdAt": datetime,
-    "updatedAt": datetime
+    "created_at": datetime,
+    "updated_at": datetime
   }
 }
 ```
@@ -43,19 +43,19 @@ If successful, this method returns a response body with the following structure:
 | Name          | Value      | Description              |
 | ------------- | ---------- | ------------------------ |
 | `id`          | `integer`  | Story's id               |
-| `userId`      | `integer`  | User's id                |
+| `user_id`      | `integer`  | User's id                |
 | `name`        | `string`   | Name                     |
 | `description` | `text`     | Description              |
 | `public`      | `boolean`  | true/false               |
-| `createdAt`   | `datetime` | 2016-02-09T09:23:23.000Z |
-| `updatedAt`   | `datetime` | 2016-02-09T09:23:23.000Z |
+| `created_at`   | `datetime` | 2016-02-09T09:23:23.000Z |
+| `updated_at`   | `datetime` | 2016-02-09T09:23:23.000Z |
 
 **HTTP/1.1 422 Unprocessable Entity**
 
 ```javascript
 {
   "error": {
-    "errorMessages": array,
+    "error_messages": array,
     "details": object
   }
 }
@@ -85,7 +85,7 @@ For example => Name can't be blank
 ```javascript
 {
   "error": {
-    "errorMessages": [ "You don't have permission to access" ]
+    "error_messages": [ "You don't have permission to access" ]
   }
 }
 ```
@@ -114,7 +114,7 @@ PUT /api/v1/stories/:id
 | --------------- |--------- | ----------- |
 | `name`          | `string` | required    |
 | `description`   | `text`   | optional    |
-| `storyPointIds` | `array`  | optional    |
+| `story_point_ids` | `array`  | optional    |
 
 #### Response
 
@@ -126,12 +126,12 @@ If successful, this method returns a response body with the following structure:
 {
   "data": {
     "id": integer,
-    "userId": integer,
+    "user_id": integer,
     "name": string,
     "description": text,
     "public": boolean,
-    "createdAt": datetime,
-    "updatedAt": datetime
+    "created_at": datetime,
+    "updated_at": datetime
   }
 }
 ```
@@ -141,19 +141,19 @@ If successful, this method returns a response body with the following structure:
 | Name          | Value      | Description              |
 | ------------- | ---------- | ------------------------ |
 | `id`          | `integer`  | Story's id               |
-| `userId`      | `integer`  | User's id                |
+| `user_id`      | `integer`  | User's id                |
 | `name`        | `string`   | Name                     |
 | `description` | `text`     | Description              |
 | `public`      | `boolean`  | true/false               |
-| `createdAt`   | `datetime` | 2016-02-09T09:23:23.000Z |
-| `updatedAt`   | `datetime` | 2016-02-09T09:23:23.000Z |
+| `created_at`   | `datetime` | 2016-02-09T09:23:23.000Z |
+| `updated_at`   | `datetime` | 2016-02-09T09:23:23.000Z |
 
 **HTTP/1.1 422 Unprocessable Entity**
 
 ```javascript
 {
   "error": {
-    "errorMessages": array,
+    "error_messages": array,
     "details": object
   }
 }
@@ -183,7 +183,7 @@ For example => Name can't be blank
 ```javascript
 {
   "error": {
-    "errorMessages": [ "You don't have permission to access" ]
+    "error_messages": [ "You don't have permission to access" ]
   }
 }
 ```
@@ -193,7 +193,7 @@ For example => Name can't be blank
 ```javascript
 {
   "error": {
-    "errorMessages": [ "Couldn't find Story with 'id'=#{:id}" ]
+    "error_messages": [ "Couldn't find Story with 'id'=#{:id}" ]
   }
 }
 ```
@@ -229,15 +229,15 @@ If successful, this method returns a response body with the following structure:
     "name": string,
     "public": boolean,
     "description": text,
-    "createdAt": datetime,
-    "updatedAt": datetime,
+    "created_at": datetime,
+    "updated_at": datetime,
     "followed": boolean,
-    "relationId": integer,
-    "storyPoints": [
+    "relation_id": integer,
+    "story_points": [
       {
         "id": integer,
-        "userId": integer,
-        "storyId": integer,
+        "user_id": integer,
+        "story_id": integer,
         "caption": string,
         "public": boolean,
         "kind": string,
@@ -247,10 +247,10 @@ If successful, this method returns a response body with the following structure:
         "longitude": float,
         "file": string,
         "thumbnail": string,
-        "createdAt": datetime,
-        "updatedAt": datetime,
+        "created_at": datetime,
+        "updated_at": datetime,
         "tags": array,
-        "relationId": integer,
+        "relation_id": integer,
         "saved": boolean,
         "liked": boolean
       }
@@ -264,22 +264,22 @@ If successful, this method returns a response body with the following structure:
 | Name          | Value      | Description                     |
 | ------------- |----------- | ------------------------------- |
 | `id`          | `integer`  | Story's id                      |
-| `userId`      | `integer`  | User's id                       |
+| `user_id`      | `integer`  | User's id                       |
 | `name`        | `string`   | Name                            |
 | `description` | `text`     | Description                     |
 | `public`      | `boolean`  | true/false                      |
-| `createdAt`   | `datetime` | 2016-02-09T09:23:23.000Z        |
-| `updatedAt`   | `datetime` | 2016-02-09T09:23:23.000Z        |
+| `created_at`   | `datetime` | 2016-02-09T09:23:23.000Z        |
+| `updated_at`   | `datetime` | 2016-02-09T09:23:23.000Z        |
 | `followed`    | `boolean`  | true/false                      |
-| `relationId`  | `integer`  | optional if followed, id of relation object|
-| `storyPoints` | `array`    | SPs in Story                    |
+| `relation_id`  | `integer`  | optional if followed, id of relation object|
+| `story_points` | `array`    | SPs in Story                    |
 
 **HTTP/1.1 403 Forbidden**
 
 ```javascript
 {
   "error": {
-    "errorMessages": [ "You don't have permission to access" ]
+    "error_messages": [ "You don't have permission to access" ]
   }
 }
 ```
@@ -289,7 +289,7 @@ If successful, this method returns a response body with the following structure:
 ```javascript
 {
   "error": {
-    "errorMessages": [ "Couldn't find Story with 'id'=#{:id}" ]
+    "error_messages": [ "Couldn't find Story with 'id'=#{:id}" ]
   }
 }
 ```
@@ -326,7 +326,7 @@ DELETE /api/v1/stories/:id
 ```javascript
 {
   "error": {
-    "errorMessages": [ "You don't have permission to access" ]
+    "error_messages": [ "You don't have permission to access" ]
   }
 }
 ```
@@ -336,7 +336,7 @@ DELETE /api/v1/stories/:id
 ```javascript
 {
   "error": {
-    "errorMessages": [ "Couldn't find Story with 'id'=#{:id}" ]
+    "error_messages": [ "Couldn't find Story with 'id'=#{:id}" ]
   }
 }
 ```

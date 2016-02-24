@@ -9,9 +9,9 @@ class User < ActiveRecord::Base
   has_many :story_points
   has_many :story_relationships
   has_many :followed_stories, through: :story_relationships, source: :story
-  has_many :active_relationships, class_name: 'UserRelationship',
+  has_many :active_relationships, class_name: UserRelationship.name,
                                   foreign_key: 'follower_id'
-  has_many :passive_relationships, class_name: 'UserRelationship',
+  has_many :passive_relationships, class_name: UserRelationship.name,
                                   foreign_key: 'followed_id'
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
