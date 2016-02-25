@@ -1,0 +1,9 @@
+{
+  "id": "deployer",
+  "password"  : "$1$pLkeCZ5O$zKvLFmXDtQhhB3Ur6ual71",
+  "ssh_keys"  : [
+    "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDArHrjsKp9bE7dzivua9/jMXLRk12RvwWm9RFh4scXd4OBEL0Z7vbqQSsK7IfBHaa4w3lzMdE72ZxBoTK32zL0trB2z5Kwk3UnyfjmV61qS4/CGu33ni5TIqJ3d2VkZElobdtVBCupLcr3aM4pdlkWWBNXuH/HhHl6HmUa5bveQv8dZA7eacYNRvrg1gaxNZS1w6QpvrU9aGxxtu7DsKjskKYgInr4RCpJWUlF4K8uTes97A/SmefAJTEmCVCwYcpkpc+5tLSyHn+aM1hE5P70E7J8vrsxO4nbPndcyVhtjuVneCEWne8OLwYQ+gFYqtVDJfR825gGQcqXBASTUJUGPT5mVvzd7Gt7UgErYHTlu6rsjSbCb61UlvRCTWAH/dOTyiXQqnA+axIrpSoHSAR46+C//ex/uDe8UA284p3OzQICTTsqsyal3eyTFjEuma8nATxkSlkiv6V8Q/h/qA0a/zcL+yH02joQKI7V0jVf7wP5yOCX6XoEHGNi+ui1z7BjZfT+s94kb6GbUuCcPvn8larkWIhCGcoA3LGaWUSxvAThXJaqmoG6k2ZdMdm6AFZg83HtA+KL27QMM7DwcQr3Eod68BnABj6vc5vqX2VIv6hnQgVTDW5vGE4ZNnM7vZhIu6tMz6b4JNNGtx0y8+Y1fwntXNiJCWVzt+yxhJpYsw== george@rubygarage.org"
+  ],
+  "groups"    : ["sudo" ,"sysadmin", "www-data", "rvm"],
+  "shell"     : "\/bin\/bash"
+}

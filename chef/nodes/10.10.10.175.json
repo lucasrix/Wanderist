@@ -1,0 +1,90 @@
+{
+  "authorization": {
+    "sudo": {
+      "groups": ["deployer", "sysadmin"],
+      "users": ["deployer"],
+      "passwordless": "false"
+    }
+  },
+  "users": ["deployer"],
+  "nodejs":{
+    "version": "0.10.31",
+    "install_method": "package"
+  },
+  "nginx": {
+    "version": "1.7.4",
+    "default_site_enabled": false,
+    "source": {
+      "modules": ["nginx::http_gzip_static_module", "nginx::http_ssl_module"],
+      "checksum": "935c5a5f35d8691d73d3477db2f936b2bbd3ee73668702af3f61b810587fbf68"
+    }
+  },
+  "rvm": {
+    "user_installs": [{
+      "user": "deployer",
+      "default_ruby": "2.2.3.0@global",
+      "rubies": ["2.2.3"]
+    }]
+  },
+  "postgresql": {
+    "version": "9.3",
+    "users": [
+      {
+        "username": "deployer",
+        "encrypted_password": "md57f2fdb0e89309845238da67f20167a5c",
+        "superuser": true,
+        "createdb": true,
+        "login": true
+      }
+    ],
+    "databases": [
+      {
+        "name": "wanderist_staging",
+        "owner": "deployer",
+        "template": "template0",
+        "encoding": "UTF-8",
+        "locale": "en_US.UTF-8"
+      }
+    ]
+  },
+  "firewall": {
+    "rules": [
+      {
+        "web server http":   { "port": "80",   "protocol": "tcp" },
+        "redis":             { "port": "6379", "protocol": "tcp" }
+      }
+    ]
+  },
+  "monit": {
+    "port": 2812,
+    "address": "0.0.0.0",
+    "allow": [
+      "pindify:d57f2fdb0e8"
+    ]
+  },
+  "swap_tuning": {
+    "minimum_size": 1024
+  },
+  "run_list": [
+    "recipe[sudo]",
+    "recipe[chef-solo-search]",
+    "recipe[users::sysadmins]",
+    "recipe[nodejs]",
+    "recipe[nginx::source]",
+    "recipe[monit]",
+    "recipe[rvm::user]",
+    "recipe[imagemagick::devel]",
+    "recipe[postgresql::server]",
+    "recipe[postgresql::server_dev]",
+    "recipe[postgresql::client]",
+    "recipe[rg-nginx-staging]",
+    "recipe[rg-monit-staging]",
+    "recipe[swap_tuning]",
+    "recipe[ufw]",
+    "role[redis]",
+    "role[ssh-security]"
+  ],
+  "automatic": {
+    "ipaddress": "10.10.10.175"
+  }
+}

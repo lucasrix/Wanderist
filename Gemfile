@@ -16,9 +16,6 @@ gem 'omniauth-facebook'
 gem 'cancancan', '~> 1.10'
 gem 'koala', '~> 2.2'
 
-gem 'rack-cors', require: 'rack/cors'
-gem 'carrierwave'
-
 # Auth
 gem 'devise_token_auth'
 gem 'omniauth-facebook'
@@ -35,12 +32,18 @@ group :development, :test do
 end
 
 group :development do
-  gem "capistrano", "~> 3.4"
   gem 'mailcatcher'
   gem 'brakeman', require: false
   gem 'rubocop', require: false
   gem "rubycritic", require: false
   gem "rails_best_practices"
+
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'rvm1-capistrano3', require: false
+  gem 'whenever', require: false
+
 end
 
 group :test do
