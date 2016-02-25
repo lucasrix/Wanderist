@@ -205,7 +205,6 @@ GEM
       pry (>= 0.9.10)
     puma (2.16.0)
     rack (1.6.4)
-    rack-cors (0.4.0)
     rack-protection (1.5.3)
       rack
     rack-test (0.6.3)
@@ -229,6 +228,9 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
     rails_best_practices (1.15.7)
       activesupport
       code_analyzer (>= 0.4.3)
@@ -238,6 +240,8 @@ GEM
       json
       require_all
       ruby-progressbar
+    rails_serve_static_assets (0.0.5)
+    rails_stdout_logging (0.0.4)
     railties (4.2.5.1)
       actionpack (= 4.2.5.1)
       activesupport (= 4.2.5.1)
@@ -368,6 +372,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   fuubar
+  haml
   koala (~> 2.2)
   mailcatcher
   maruku
@@ -376,8 +381,8 @@ DEPENDENCIES
   pry-byebug
   pry-rails
   puma
-  rack-cors
   rails (= 4.2.5.1)
+  rails_12factor
   rails_best_practices
   rspec-rails (~> 3.0)
   rubocop

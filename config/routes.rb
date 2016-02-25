@@ -14,6 +14,10 @@ Rails.application.routes.draw do
 
         resources :provider_sessions, only: [:create]
       end
+
+      get :terms_of_service, to: 'texts#terms_of_service'
+      get :privacy_policy, to: 'texts#privacy_policy'
+
     end
   end
 end

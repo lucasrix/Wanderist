@@ -6,10 +6,11 @@ gem 'pg', '~> 0.15'
 gem 'active_model_serializers'
 gem 'puma'
 
-gem 'rack-cors', require: 'rack/cors'
+# gem 'rack-cors', require: 'rack/cors'
 gem 'carrierwave'
 gem 'apipie-rails', github: 'Apipie/apipie-rails'
 gem 'maruku'
+gem 'haml'
 
 # Auth
 gem 'devise_token_auth'
@@ -17,11 +18,7 @@ gem 'omniauth-facebook'
 gem 'cancancan', '~> 1.10'
 gem 'koala', '~> 2.2'
 
-# Auth
-gem 'devise_token_auth'
-gem 'omniauth-facebook'
-gem 'cancancan', '~> 1.10'
-gem 'koala', '~> 2.2'
+gem 'rails_12factor'
 
 group :development, :test do
   gem 'pry-rails'
