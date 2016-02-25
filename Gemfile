@@ -9,6 +9,7 @@ gem 'puma'
 gem 'rack-cors', require: 'rack/cors'
 gem 'carrierwave'
 gem 'apipie-rails', github: 'Apipie/apipie-rails'
+gem 'maruku'
 
 # Auth
 gem 'devise_token_auth'

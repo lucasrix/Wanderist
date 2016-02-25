@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160215120345) do
+ActiveRecord::Schema.define(version: 20160219154244) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,20 @@ ActiveRecord::Schema.define(version: 20160215120345) do
   add_index "likes", ["story_point_id"], name: "index_likes_on_story_point_id", using: :btree
   add_index "likes", ["user_id"], name: "index_likes_on_user_id", using: :btree
 
+  create_table "profiles", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "city"
+    t.string   "url"
+    t.string   "about"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "photo"
+  end
+
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
+
   create_table "reports", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "reportable_id"
@@ -38,17 +52,6 @@ ActiveRecord::Schema.define(version: 20160215120345) do
 
   add_index "reports", ["reportable_type", "reportable_id"], name: "index_reports_on_reportable_type_and_reportable_id", using: :btree
   add_index "reports", ["user_id"], name: "index_reports_on_user_id", using: :btree
-
-  create_table "settings_suits", force: :cascade do |t|
-    t.integer  "user_id"
-    t.boolean  "notifications", default: true
-    t.boolean  "use_location",  default: true
-    t.boolean  "public",        default: true
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-  end
-
-  add_index "settings_suits", ["user_id"], name: "index_settings_suits_on_user_id", using: :btree
 
   create_table "stories", force: :cascade do |t|
     t.integer  "user_id"
@@ -130,16 +133,14 @@ ActiveRecord::Schema.define(version: 20160215120345) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "username"
-    t.string   "firstname"
-    t.string   "lastname"
-    t.string   "home"
-    t.text     "about"
-    t.string   "latitude"
-    t.string   "longitude"
-    t.string   "avatar"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string   "unconfirmed_email"
+    t.string   "name"
+    t.string   "nickname"
+    t.string   "image"
     t.string   "email"
-    t.string   "personal_url"
     t.json     "tokens"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -151,7 +152,7 @@ ActiveRecord::Schema.define(version: 20160215120345) do
 
   add_foreign_key "likes", "story_points"
   add_foreign_key "likes", "users"
-  add_foreign_key "settings_suits", "users"
+  add_foreign_key "profiles", "users"
   add_foreign_key "stories", "users"
   add_foreign_key "story_points", "users"
   add_foreign_key "story_relationships", "stories"

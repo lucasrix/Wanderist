@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   has_many :likes
   has_many :liked_story_points, through: :likes, source: :story_point
 
-  validates :username, presence: true, uniqueness: { case_sensitive: false }
+  # validates :username, presence: true, uniqueness: { case_sensitive: false }
   after_create do
     Profile.create(user: self)
   end
