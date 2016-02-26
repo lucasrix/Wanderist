@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: redirect('http://www.maplifyapp.com/')
+
   apipie
   namespace :api do
     namespace :v1 do

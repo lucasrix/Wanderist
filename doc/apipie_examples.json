@@ -252,44 +252,6 @@
       ],
       "query": null,
       "request_data": {
-        "email": "username@example.com",
-        "password": "password",
-        "password_confirmation": "password"
-      },
-      "response_data": {
-        "status": "error",
-        "data": {
-          "id": null,
-          "provider": "email",
-          "uid": "",
-          "name": null,
-          "nickname": null,
-          "image": null,
-          "email": "username@example.com",
-          "created_at": null,
-          "updated_at": null
-        },
-        "errors": {
-          "email": [
-            "already in use"
-          ],
-          "full_messages": [
-            "Email already in use"
-          ]
-        }
-      },
-      "code": 403,
-      "show_in_doc": 1,
-      "recorded": true
-    },
-    {
-      "verb": "POST",
-      "path": "/api/v1/auth",
-      "versions": [
-        "v1"
-      ],
-      "query": null,
-      "request_data": {
         "email": "username2@example.com",
         "password": "password",
         "password_confirmation": "password"

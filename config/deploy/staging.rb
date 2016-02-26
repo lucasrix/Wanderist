@@ -72,7 +72,7 @@ set :branch, 'apipie'
 server '10.10.10.175', user: 'deployer', roles: %w{web app}
 
 set :deploy_to, '/home/deployer/sites/wanderist'
-set :rvm_ruby_version, 'ruby-2.2.3@deployer --create'
+set :rvm_ruby_version, 'ruby-2.3.0@deployer --create'
 set :rails_env, "staging"
 
 def template(from, to, as_root = false)

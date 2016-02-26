@@ -13,7 +13,7 @@ set :keep_releases, 10
 set :log_level, :debug
 set :pty, true
 
-set :rvm1_ruby_version, "ruby-2.2.3"
+set :rvm1_ruby_version, "ruby-2.3.0"
 set :rvm_type, :user
 set :default_env, { rvm_bin_path: '~/.rvm/bin' }
 

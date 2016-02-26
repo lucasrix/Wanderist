@@ -1,12 +1,11 @@
 source 'https://rubygems.org'
-ruby '2.2.3'
+ruby '2.3.0'
 
 gem 'rails', '4.2.5.1'
 gem 'pg', '~> 0.15'
 gem 'active_model_serializers'
 gem 'puma'
 
-# gem 'rack-cors', require: 'rack/cors'
 gem 'carrierwave'
 gem 'apipie-rails', github: 'Apipie/apipie-rails'
 gem 'maruku'
@@ -41,7 +40,7 @@ group :development do
   gem 'capistrano-bundler'
   gem 'rvm1-capistrano3', require: false
   gem 'whenever', require: false
-
+  gem 'rack-cors', require: 'rack/cors'
 end
 
 group :test do
