@@ -62,12 +62,12 @@ module Api::V1
     end
 
     api! 'Update a story point'
-    param :type, ["audio", "video", "photo", "text"], required: true, desc: 'Type'
-    param :caption, String, required: true, desc: 'Caption'
-    param :attachment_id, Integer, required: true, desc: 'Attachment'
-    param :location, Hash, desc: "Location info", required: true do
-      param :latitude, Float, desc: "Latitude coordinate", required: true
-      param :longitude, Float, desc: "Longitude coordinate", required: true
+    param :type, ["audio", "video", "photo", "text"], required: false, desc: 'Type'
+    param :caption, String, required: false, desc: 'Caption'
+    param :attachment_id, Integer, required: false, desc: 'Attachment'
+    param :location, Hash, desc: "Location info", required: false do
+      param :latitude, Float, desc: "Latitude coordinate", required: false
+      param :longitude, Float, desc: "Longitude coordinate", required: false
     end
     param :tags, Array, of: String, desc: "List of tags"
     example <<-EOS
