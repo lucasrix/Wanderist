@@ -3,11 +3,15 @@ module Api::V1
     resource_description do
       short 'Attachments manager'
       api_versions 'v1'
+      error 401, 'Unauthorized action'
+
     end
 
     api! 'Create an attachment'
     param :type, ["audio", "video", "photo"], required: true, desc: 'Type'
     param :file, File, required: true, desc: 'File'
+    error 400, 'Too big file.'
+
     example <<-EOS
     POST /api/v1/attachments
     {

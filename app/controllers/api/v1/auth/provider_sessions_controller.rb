@@ -44,7 +44,7 @@ module Api::V1::Auth
       "status": "error",
       "error": {
         "error_messages": [
-          "User not found"
+          "Token not found"
         ]
       }
     }
@@ -81,7 +81,7 @@ module Api::V1::Auth
         render json: {
           status: 'error',
           error: {
-            error_messages: [I18n.t("user_not_found")]
+            error_messages: [I18n.t("token_not_found")]
           }
         }, status: 404
       end

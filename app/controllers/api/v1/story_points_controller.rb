@@ -3,6 +3,7 @@ module Api::V1
     resource_description do
       short 'Story points manager'
       api_versions 'v1'
+      error 401, 'Unauthorized action'
     end
 
     api! 'Create a story point'
@@ -70,6 +71,8 @@ module Api::V1
       param :longitude, Float, desc: "Longitude coordinate", required: false
     end
     param :tags, Array, of: String, desc: "List of tags"
+    error 404, 'Story Point not found.'
+
     example <<-EOS
     PUT /api/v1/story_points/13
     {
@@ -116,6 +119,8 @@ module Api::V1
 
 
     api! 'Delete a story point'
+    error 404, 'Story Point not found.'
+
     example <<-EOS
     DELETE /api/v1/story_points/13
     200
