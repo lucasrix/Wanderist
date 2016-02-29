@@ -1,6 +1,6 @@
 Apipie.configure do |config|
   config.app_name = "Wanderist"
-  config.copyright = "&copy; 2016"
+  config.copyright = "Wanderist &copy; 2016"
   config.doc_base_url = "/apipie"
   config.api_base_url = "/api"
   config.api_base_url["v1"] = "/api/v1"
