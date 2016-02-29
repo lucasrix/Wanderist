@@ -8,6 +8,7 @@ class ProviderAuthService < BaseService
       random_password = generate_random_password
 
       fields = {
+        username: profile['email'],
         name: profile['name'],
         email: profile['email'],
         password: random_password,

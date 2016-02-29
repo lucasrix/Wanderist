@@ -1,5 +1,5 @@
 class Tag < ActiveRecord::Base
-  has_and_belongs_to_many :story_points
+  belongs_to :taggable, polymorphic: true
 
   validates :name, presence: true
 end

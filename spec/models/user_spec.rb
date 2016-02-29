@@ -5,14 +5,6 @@ RSpec.describe User, type: :model do
     it { should have_one(:profile) }
     it { should have_many(:stories) }
     it { should have_many(:story_points) }
-    it { should have_many(:story_relationships) }
-    it { should have_many(:followed_stories).through(:story_relationships).source(:story) }
-    it { should have_many(:active_relationships).class_name(UserRelationship.name).with_foreign_key('follower_id') }
-    it { should have_many(:passive_relationships).class_name(UserRelationship.name).with_foreign_key('followed_id') }
-    it { should have_many(:following).through(:active_relationships).source(:followed) }
-    it { should have_many(:followers).through(:passive_relationships).source(:follower) }
-    it { should have_many(:likes) }
-    it { should have_many(:liked_story_points).through(:likes).source(:story_point) }
   end
 
   context 'Validations' do

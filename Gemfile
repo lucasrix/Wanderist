@@ -17,7 +17,6 @@ gem 'omniauth-facebook'
 gem 'cancancan', '~> 1.10'
 gem 'koala', '~> 2.2'
 
-gem 'rails_12factor'
 
 group :development, :test do
   gem 'pry-rails'
@@ -49,3 +48,6 @@ group :test do
   gem 'shoulda-matchers', '~> 3.1'
 end
 
+group :production do
+  gem 'rails_12factor'
+end

@@ -200,49 +200,6 @@
       "recorded": true
     }
   ],
-  "provider_sessions#create": [
-    {
-      "verb": "POST",
-      "path": "/api/v1/auth/provider_sessions",
-      "versions": [
-        "v1"
-      ],
-      "query": null,
-      "request_data": {
-        "facebook_access_token": "CAACEdEose0cBAOPBxZBBjFxdVZCEC4Ngv6rR4LBY9alqHLH3JxM9XlLwVHgjq1gLL5pFr5ti5j8UfD9ZCqDgIm4i5vO4dt1sdI8ShleWB0UHEaWCh3wtBDvhoCzDNZBdXAUk0l1NcO6lJemr9XWs8cH72zrKbTzPKDzDx004nmImbsJ1zxERUz9QIzDifiumftkswmRm2QZDZD"
-      },
-      "response_data": {
-        "success": true,
-        "data": {
-          "id": 2,
-          "provider": "email",
-          "uid": "george@rubygarage.org",
-          "name": null,
-          "nickname": null,
-          "image": null,
-          "email": "george@rubygarage.org"
-        }
-      },
-      "code": "200",
-      "show_in_doc": 1,
-      "recorded": true
-    },
-    {
-      "verb": "POST",
-      "path": "/api/v1/auth/provider_sessions",
-      "versions": [
-        "v1"
-      ],
-      "query": null,
-      "request_data": {
-        "facebook_access_token": "wrong access token"
-      },
-      "response_data": null,
-      "code": "404",
-      "show_in_doc": 1,
-      "recorded": true
-    }
-  ],
   "registrations#create": [
     {
       "verb": "POST",

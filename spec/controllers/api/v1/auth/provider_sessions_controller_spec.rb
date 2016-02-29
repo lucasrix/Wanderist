@@ -1,9 +1,14 @@
 require 'rails_helper'
 
 describe Api::V1::Auth::ProviderSessionsController do
+  let(:user) { create(:user) }
+
   describe "POST #create" do
     it 'should return 200' do
-      post :create, facebook_access_token: 'CAACEdEose0cBAOPBxcBBjFxdVZCEC4Ngv6rR4LBY9blqHLH3JxM9XlLwVHg2q1gLL5pFr5ti5j8UcD9ZCqDgIm4i5vO4dt1sdI8ShleWB0UHEaWCh3wtBDvhoCzDNZBdXAUk0l1NcO6lJemr9XWs8cH72zrKbTzPKDzDx004nmImbsJ1zxERUz9QIzDifiumftkswmRm2QZDZD'
+      token = Faker::Lorem.characters(212)
+      allow(ProviderAuthService).to receive(:facebook_auth).with(token).once.and_return(user)
+      expect(controller).to receive(:sign_in).once
+      post :create, facebook_access_token: token
       expect(response).to be_success
     end
 

@@ -53,7 +53,7 @@ module Api::V1::Auth
     def render_create_error
       render json: {
         status: 'error',
-        data:   @resource.as_json,
+        data: @resource.as_json,
         error: {
           error_messages: @resource.errors.full_messages,
           details: @resource.errors.to_hash
@@ -64,7 +64,7 @@ module Api::V1::Auth
     def render_create_error_email_already_exists
       render json: {
         status: 'error',
-        data:   @resource.as_json,
+        data: @resource.as_json,
         error: {
           error_messages: [I18n.t("devise_token_auth.registrations.email_already_exists", email: @resource.email)]
         }
