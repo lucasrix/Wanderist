@@ -20,7 +20,7 @@ Rails.application.routes.draw do
       get :terms_of_service, to: 'texts#terms_of_service'
       get :privacy_policy, to: 'texts#privacy_policy'
 
-      resources :story_points, only: [:create]
+      resources :story_points, only: [:create, :update, :destroy]
       resources :attachments, only: [:create]
 
     end

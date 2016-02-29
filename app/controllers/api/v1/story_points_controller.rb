@@ -61,5 +61,98 @@ module Api::V1
     def create
     end
 
+    api! 'Update a story point'
+    param :type, ["audio", "video", "photo", "text"], required: true, desc: 'Type'
+    param :caption, String, required: true, desc: 'Caption'
+    param :attachment_id, Integer, required: true, desc: 'Attachment'
+    param :location, Hash, desc: "Location info", required: true do
+      param :latitude, Float, desc: "Latitude coordinate", required: true
+      param :longitude, Float, desc: "Longitude coordinate", required: true
+    end
+    param :tags, Array, of: String, desc: "List of tags"
+    example <<-EOS
+    PUT /api/v1/story_points/13
+    {
+      "type": "photo",
+      "caption": "New Story Point Caption",
+      "attachment_id": 3,
+      "story_id": 1
+    }
+    200
+    {
+      "success": true,
+      "data": {
+        "story_point": {
+          "id": 13,
+          "type": "photo",
+          "caption": "New Story Point Caption",
+          "attachment_id": 3,
+          "story_id": 1,
+          "location": {
+            "id": 1,
+            "latitude": 48.4500,
+            "longitude": 34.9833
+          },
+          "tags": [
+            {
+              "id": 1,
+              "name": "tag1"
+            },
+            {
+              "id": 2,
+              "name": "tag2"
+            },
+            {
+              "id": 3,
+              "name": "tag3"
+            }
+          ]
+        }
+      }
+    }
+    EOS
+    def update
+    end
+
+
+    api! 'Delete a story point'
+    example <<-EOS
+    DELETE /api/v1/story_points/13
+    200
+    {
+      "success": true,
+      "data": {
+        "story_point": {
+          "id": 13,
+          "type": "photo",
+          "caption": "New Story Point Caption",
+          "attachment_id": 3,
+          "story_id": 1,
+          "location": {
+            "id": 1,
+            "latitude": 48.4500,
+            "longitude": 34.9833
+          },
+          "tags": [
+            {
+              "id": 1,
+              "name": "tag1"
+            },
+            {
+              "id": 2,
+              "name": "tag2"
+            },
+            {
+              "id": 3,
+              "name": "tag3"
+            }
+          ]
+        }
+      }
+    }
+    EOS
+    def destroy
+    end
+
   end
 end
