@@ -128,6 +128,10 @@ GEM
     fuubar (2.0.0)
       rspec (~> 3.0)
       ruby-progressbar (~> 1.4)
+    geokit (1.10.0)
+    geokit-rails (2.1.0)
+      geokit (~> 1.5)
+      rails (>= 3.0)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     haml (4.0.7)
@@ -368,6 +372,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   fuubar
+  geokit-rails
   haml
   koala (~> 2.2)
   mailcatcher

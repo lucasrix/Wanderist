@@ -6,6 +6,68 @@ module Api::V1
       error 401, 'Unauthorized action'
     end
 
+    api! 'List of story points'
+    param :location, Hash, desc: "Center location info", required: true do
+      param :latitude, Float, desc: "Latitude coordinate", required: true
+      param :longitude, Float, desc: "Longitude coordinate", required: true
+    end
+    param :radius, Float, desc: "Radius of area", required: true
+    example <<-EOS
+    GET /api/v1/story_points
+    {
+      "location[latitude]": 48.4500,
+      "location[longitude]": 34.9833,
+      "radius": 5.0
+    }
+    200
+    {
+      "success": true,
+      "data": {
+        "story_points": [
+          {
+            "id": 13,
+            "type": "photo",
+            "caption": "My Awesome Story Point",
+            "attachment_id": 1,
+            "location": {
+              "id": 1,
+              "latitude": 48.4500,
+              "longitude": 34.9833
+            },
+            "tags": [
+              {
+                "id": 1,
+                "name": "tag1"
+              },
+              {
+                "id": 2,
+                "name": "tag2"
+              },
+              {
+                "id": 3,
+                "name": "tag3"
+              }
+            ]
+          },
+          {
+            "id": 14,
+            "type": "photo",
+            "caption": "My Awesome Story Point 2",
+            "attachment_id": 1,
+            "location": {
+              "id": 1,
+              "latitude": 48.4501,
+              "longitude": 34.9843
+            },
+            "tags": []
+          },
+        ]
+      }
+    }
+    EOS
+    def index
+    end
+
     api! 'Create a story point'
     param :type, ["audio", "video", "photo", "text"], required: true, desc: 'Type'
     param :caption, String, required: true, desc: 'Caption'

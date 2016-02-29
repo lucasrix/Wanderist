@@ -10,6 +10,7 @@ gem 'carrierwave'
 gem 'apipie-rails', github: 'Apipie/apipie-rails'
 gem 'maruku'
 gem 'haml'
+gem 'geokit-rails'
 
 # Auth
 gem 'devise_token_auth'
