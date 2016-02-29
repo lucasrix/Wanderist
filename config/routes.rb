@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       get :privacy_policy, to: 'texts#privacy_policy'
 
       resources :story_points, only: [:create]
+      resources :attachments, only: [:create]
 
     end
   end

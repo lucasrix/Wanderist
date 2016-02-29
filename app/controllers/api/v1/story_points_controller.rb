@@ -6,7 +6,7 @@ module Api::V1
     end
 
     api! 'Create a story point'
-    param :type, [:audio, :video, :photo, :text], required: true, desc: 'Type'
+    param :type, ["audio", "video", "photo", "text"], required: true, desc: 'Type'
     param :caption, String, required: true, desc: 'Caption'
     param :attachment_id, Integer, required: true, desc: 'Attachment'
     param :location, Hash, desc: "Location info", required: true do

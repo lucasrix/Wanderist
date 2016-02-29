@@ -4,7 +4,7 @@ Apipie.configure do |config|
   config.doc_base_url = "/apipie"
   config.api_base_url = "/api"
   config.api_base_url["v1"] = "/api/v1"
-  config.validate = false
+  config.validate = Rails.env.development?
   config.markup = Apipie::Markup::Markdown.new
   config.reload_controllers = Rails.env.development?
   config.api_controllers_matcher = File.join(Rails.root, "app", "controllers", "**", "*.rb")
