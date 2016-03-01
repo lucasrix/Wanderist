@@ -4,6 +4,6 @@ class Ability
   def initialize(user)
     user ||= User.new
 
-    can :create, StoryPoint, user_id: user.id
+    can [:read, :create], StoryPoint, user_id: user.id
   end
 end
