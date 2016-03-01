@@ -1,5 +1,5 @@
 module Api::V1
-  class TextsController < Api::BaseController
+  class TextsController < Api::ApiController
     resource_description do
       short 'Texts manager'
       api_versions 'v1'

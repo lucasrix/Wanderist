@@ -1,5 +1,5 @@
 module Api::V1
-  class AttachmentsController < Api::BaseController
+  class AttachmentsController < Api::ApiController
     resource_description do
       short 'Attachments manager'
       api_versions 'v1'

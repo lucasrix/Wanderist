@@ -45,7 +45,9 @@ module Api::V1::Auth
     EOS
 
     def create
-      super
+      super do |user|
+        user.username = user.email
+      end
     end
 
     protected

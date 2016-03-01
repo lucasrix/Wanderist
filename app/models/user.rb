@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
   has_many :story_points
 
   validates :username,
-            presence: true,
+            # presence: true,
             uniqueness: {
               case_sensitive: false
             }

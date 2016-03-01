@@ -5,7 +5,7 @@ Apipie.configure do |config|
   config.api_base_url = "/api"
   config.api_base_url["v1"] = "/api/v1"
   config.disqus_shortname = "maplify" unless Rails.env.development?
-  config.validate = Rails.env.development?
+  config.validate = Rails.env.development? && false
   config.markup = Apipie::Markup::Markdown.new
   config.reload_controllers = Rails.env.development?
   config.api_controllers_matcher = File.join(Rails.root, "app", "controllers", "**", "*.rb")

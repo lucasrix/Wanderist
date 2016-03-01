@@ -12,7 +12,7 @@ describe Api::V1::Auth::ProviderSessionsController do
       expect(response).to be_success
     end
 
-    it 'should return 404', :show_in_doc do
+    it 'should return 404' do
       post :create, facebook_access_token: 'wrong access token'
       expect(response).to be_not_found
     end

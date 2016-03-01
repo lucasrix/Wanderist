@@ -1,10 +1,14 @@
 module Api::V1
-  class StoryPointsController < Api::BaseController
+  class StoryPointsController < Api::ApiController
     resource_description do
       short 'Story points manager'
       api_versions 'v1'
       error 401, 'Unauthorized action'
     end
+
+    load_and_authorize_resource
+
+    before_action :set_service
 
     api! 'List of story points'
     param :location, Hash, desc: "Center location info", required: true do
@@ -66,6 +70,7 @@ module Api::V1
     }
     EOS
     def index
+      render json: Response.new(@service.get_story_points)
     end
 
     api! 'Create a story point'
@@ -122,6 +127,11 @@ module Api::V1
     }
     EOS
     def create
+      if @story_point.save
+        render json: Response.new(@story_point), status: :created
+      else
+        render json: Response.new(@story_point), status: :unprocessable_entity
+      end
     end
 
     api! 'Update a story point'
@@ -219,6 +229,15 @@ module Api::V1
     }
     EOS
     def destroy
+    end
+
+    private
+    def set_service
+      @service = StoryPointsService.new
+    end
+
+    def story_point_params
+      params.permit(:caption)
     end
 
   end
