@@ -1,8 +1,13 @@
 FactoryGirl.define do
   factory :story_point do
     user
-    caption { Faker::Lorem.sentence }
+    caption { Faker::Hipster.word }
     location
-    kind { StoryPoint::KINDS.sample }
+    kind :text
+
+    factory :story_point_with_attachment do
+      kind :photo
+      attachment
+    end
   end
 end

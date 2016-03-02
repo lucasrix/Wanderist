@@ -209,7 +209,7 @@
       ],
       "query": null,
       "request_data": {
-        "facebook_access_token": "m8wi1lzss5ciau4zdlscs8xon9alay0pcbn6nic9te5ghhe97h0tbthj0puyieiufu4bd3951ak6kihbj3aya1w7erdj0gufzqk059i3gmi4by6t00gfmfrr03yc4mhkbtn5f7b8mjvkq4dzqtlclvjvf5tb541nt6qpnt5tq8qch6tvvl5hyrv2dqnqnouhhmk6uc4guvb490np90na"
+        "facebook_access_token": "w67zekmpwa0bu6k2j5byetw5awjlmceua9yp7a7mc91gpl0gn00jq82r7duj5m4thycjl183tkidyf9tqfybrgms3uh7g92pe5irsvxruvtr92i1mil4fynvpmih6qxiigcrcvzm6th5f90skgsvvlpge4n1l2xhjvyjhk8kyow7t9t4rdgf1eoxzzyebty6yinfonwcvd3w6t626mfw"
       },
       "response_data": {
         "status": "success",
@@ -217,15 +217,15 @@
           "user": {
             "id": 1,
             "provider": "email",
-            "uid": "warren@denesik.name",
-            "email": "warren@denesik.name",
-            "created_at": "2016-03-02T16:27:43.484Z",
-            "updated_at": "2016-03-02T16:27:43.609Z",
+            "uid": "abdul_grimes@crona.org",
+            "email": "abdul_grimes@crona.org",
+            "created_at": "2016-03-02T17:59:57.808Z",
+            "updated_at": "2016-03-02T17:59:57.937Z",
             "profile": {
               "id": 2,
-              "first_name": "Zena",
-              "last_name": "Schulist",
-              "about": "Bitters venmo fashion axe tote bag gentrify small batch vhs.",
+              "first_name": "Opal",
+              "last_name": "Abbott",
+              "about": "Intelligentsia trust fund cray mustache heirloom cornhole.",
               "photo_url": null
             }
           }
@@ -267,10 +267,10 @@
       ],
       "query": null,
       "request_data": {
-        "email": "noble_west@harvey.org",
-        "password": "EzZxGoSeK",
-        "first_name": "Raymond",
-        "last_name": "Zulauf",
+        "email": "amely_parisian@murphydickinson.org",
+        "password": "50HcAfQl0",
+        "first_name": "Skyla",
+        "last_name": "Spinka",
         "photo": "<FILE CONTENT 'sample.jpg'>"
       },
       "response_data": {
@@ -279,14 +279,14 @@
           "user": {
             "id": 2,
             "provider": "email",
-            "uid": "noble_west@harvey.org",
-            "email": "noble_west@harvey.org",
-            "created_at": "2016-03-02T16:27:44.388Z",
-            "updated_at": "2016-03-02T16:27:44.488Z",
+            "uid": "amely_parisian@murphydickinson.org",
+            "email": "amely_parisian@murphydickinson.org",
+            "created_at": "2016-03-02T17:59:58.319Z",
+            "updated_at": "2016-03-02T17:59:58.420Z",
             "profile": {
               "id": 3,
-              "first_name": "Raymond",
-              "last_name": "Zulauf",
+              "first_name": "Skyla",
+              "last_name": "Spinka",
               "about": null,
               "photo_url": "/uploads/profile/photo/3/sample.jpg"
             }
@@ -305,7 +305,7 @@
       ],
       "query": null,
       "request_data": {
-        "email": "pete.kautzer@williamson.net",
+        "email": "cierra.graham@ullrichcartwright.com",
         "password": null
       },
       "response_data": {
@@ -315,7 +315,7 @@
             "id": null,
             "provider": "email",
             "uid": "",
-            "email": "pete.kautzer@williamson.net",
+            "email": "cierra.graham@ullrichcartwright.com",
             "created_at": null,
             "updated_at": null,
             "profile": null
@@ -414,24 +414,29 @@
       ],
       "query": null,
       "request_data": {
-        "caption": "Labore ut voluptas magnam sit.",
-        "kind": "photo",
+        "caption": "gluten-free",
+        "kind": "text",
         "location": {
-          "latitude": "85.83",
-          "longitude": "15.38"
-        }
+          "latitude": "87.09",
+          "longitude": "47.35"
+        },
+        "attachment_id": "1"
       },
       "response_data": {
         "status": "success",
         "data": {
           "story_point": {
             "id": 1,
-            "caption": "Labore ut voluptas magnam sit.",
-            "kind": "photo",
+            "caption": "gluten-free",
+            "kind": "text",
+            "attachment": {
+              "id": 1,
+              "file_url": "/uploads/attachment/file/1/sample.jpg"
+            },
             "location": {
               "id": 1,
-              "latitude": 85.83,
-              "longitude": 15.38
+              "latitude": 87.09,
+              "longitude": 47.35
             },
             "tags": [
 
@@ -451,11 +456,11 @@
       ],
       "query": null,
       "request_data": {
-        "caption": "Qui sit dignissimos sit eum.",
-        "kind": "video",
+        "caption": "gastropub",
+        "kind": "text",
         "location": {
           "latitude": "",
-          "longitude": "11.88"
+          "longitude": "58.46"
         }
       },
       "response_data": {
@@ -463,12 +468,13 @@
         "data": {
           "story_point": {
             "id": null,
-            "caption": "Qui sit dignissimos sit eum.",
-            "kind": "video",
+            "caption": "gastropub",
+            "kind": "text",
+            "attachment": null,
             "location": {
               "id": null,
               "latitude": null,
-              "longitude": 11.88
+              "longitude": 58.46
             },
             "tags": [
 
@@ -489,6 +495,39 @@
         }
       },
       "code": "422",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "story_points#destroy": [
+    {
+      "verb": "DELETE",
+      "path": "/api/v1/story_points/2",
+      "versions": [
+        "v1"
+      ],
+      "query": "",
+      "request_data": null,
+      "response_data": {
+        "status": "success",
+        "data": {
+          "story_point": {
+            "id": 2,
+            "caption": "brunch",
+            "kind": "text",
+            "attachment": null,
+            "location": {
+              "id": 2,
+              "latitude": 33.82,
+              "longitude": 41.07
+            },
+            "tags": [
+
+            ]
+          }
+        }
+      },
+      "code": "200",
       "show_in_doc": 1,
       "recorded": true
     }

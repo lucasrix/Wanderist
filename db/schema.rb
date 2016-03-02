@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160302163331) do
+ActiveRecord::Schema.define(version: 20160302170811) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attachments", force: :cascade do |t|
+    t.string   "file"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "attachments", ["user_id"], name: "index_attachments_on_user_id", using: :btree
 
   create_table "likes", force: :cascade do |t|
     t.integer "user_id"
@@ -67,9 +76,10 @@ ActiveRecord::Schema.define(version: 20160302163331) do
     t.integer "story_id"
     t.integer "location_id"
     t.integer "kind"
-    t.string  "attachment"
+    t.integer "attachment_id"
   end
 
+  add_index "story_points", ["attachment_id"], name: "index_story_points_on_attachment_id", using: :btree
   add_index "story_points", ["location_id"], name: "index_story_points_on_location_id", using: :btree
   add_index "story_points", ["story_id"], name: "index_story_points_on_story_id", using: :btree
   add_index "story_points", ["user_id"], name: "index_story_points_on_user_id", using: :btree
@@ -113,10 +123,12 @@ ActiveRecord::Schema.define(version: 20160302163331) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   add_index "users", ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
 
+  add_foreign_key "attachments", "users"
   add_foreign_key "likes", "users"
   add_foreign_key "profiles", "users"
   add_foreign_key "reports", "users"
   add_foreign_key "stories", "users"
+  add_foreign_key "story_points", "attachments"
   add_foreign_key "story_points", "locations"
   add_foreign_key "story_points", "stories"
   add_foreign_key "story_points", "users"

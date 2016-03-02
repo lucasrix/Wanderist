@@ -13,7 +13,7 @@ describe Api::V1::StoryPointsController do
       {
         'location[latitude]' => '100',
         'location[longitude]' => '100',
-        'radius' => '1'
+        radius: '1'
       }
     end
 
@@ -35,7 +35,7 @@ describe Api::V1::StoryPointsController do
   end
 
   describe 'POST #create' do
-    let(:params){ attributes_for(:story_point).merge({ 'location' => attributes_for(:location) }) }
+    let(:params){ attributes_for(:story_point).merge({ location: attributes_for(:location) }) }
 
     it 'should be success' do
       post :create, params
@@ -53,13 +53,28 @@ describe Api::V1::StoryPointsController do
     end
 
     it 'should create a location', :show_in_doc do
+      attachment = create(:attachment, user: user)
+      params[:attachment_id] = attachment.id
       expect { post :create, params }.to change { Location.count }.by(1)
     end
 
     it 'should return status 422', :show_in_doc do
-      params['location']['latitude'] = ''
+      params[:location][:latitude] = nil
       post :create, params
       should respond_with :unprocessable_entity
+    end
+  end
+
+  describe 'DELETE #destroy' do
+    let!(:story_point) { create(:story_point, user: user) }
+
+    it 'should be success', :show_in_doc do
+      delete :destroy, id: story_point.id
+      should respond_with :ok
+    end
+
+    it 'should delete instance' do
+      expect { delete :destroy, id: story_point.id }.to change { StoryPoint.count }.by(-1)
     end
   end
 end

@@ -5,6 +5,7 @@ class StoryPoint < ActiveRecord::Base
   belongs_to :user
   belongs_to :story
   belongs_to :location
+  belongs_to :attachment
 
   has_and_belongs_to_many :tags
 
@@ -19,6 +20,5 @@ class StoryPoint < ActiveRecord::Base
 
   enum kind: KINDS
 
-  mount_uploader :attachment, AttachmentUploader
 
 end

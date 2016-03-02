@@ -7,6 +7,7 @@ RSpec.describe StoryPoint, type: :model do
     it { should belong_to(:user) }
     it { should belong_to(:story) }
     it { should belong_to(:location) }
+    it { should belong_to(:attachment) }
     it { should have_and_belong_to_many(:tags) }
 
   end
