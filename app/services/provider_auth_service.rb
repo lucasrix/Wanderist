@@ -7,6 +7,7 @@ class ProviderAuthService < BaseService
     if user.new_record?
       random_password = generate_random_password
 
+      first_name, last_name = profile['name'].split
       fields = {
         username: profile['email'],
         name: profile['name'],
@@ -15,6 +16,8 @@ class ProviderAuthService < BaseService
         password_confirmation: random_password
       }
       user.update(fields)
+
+      user.profile.update!(first_name: first_name, last_name: last_name)
     end
 
     user

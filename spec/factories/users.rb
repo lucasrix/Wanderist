@@ -6,5 +6,9 @@ FactoryGirl.define do
     name { Faker::Name.name }
     password { Faker::Internet.password }
     username { Faker::Internet.user_name }
+
+    after(:create) do |user, _evaluator|
+      create(:profile, user: user)
+    end
   end
 end

@@ -200,6 +200,64 @@
       "recorded": true
     }
   ],
+  "provider_sessions#create": [
+    {
+      "verb": "POST",
+      "path": "/api/v1/auth/provider_sessions",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "facebook_access_token": "bh8ifvf7shb5zf42rbsbbbvyzymyr9114gsuwoc6upffzri6ywmvx62ygx3fkbqluq5unwwo5rzrkc08xas16h9eurfbje7ygs8vnqdk7peye5fe8n8o8wiyjkciwfya9bbaazxcdlwkpkfbaeduuv1b5klzy5wk41aqed4uauftp84gl332zyvv8xfv19vawdftcsrt1t6qdh3njh5j"
+      },
+      "response_data": {
+        "status": "success",
+        "data": {
+          "user": {
+            "id": 1,
+            "provider": "email",
+            "uid": "mikayla@klein.co",
+            "email": "mikayla@klein.co",
+            "created_at": "2016-03-02T13:48:53.751Z",
+            "updated_at": "2016-03-02T13:48:53.882Z",
+            "profile": {
+              "id": 2,
+              "first_name": "Vincent",
+              "last_name": "Grant",
+              "about": "Pickled kale chips crucifix gentrify artisan humblebrag church-key freegan xoxo.",
+              "photo_url": null
+            }
+          }
+        }
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/api/v1/auth/provider_sessions",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "facebook_access_token": "wrong access token"
+      },
+      "response_data": {
+        "status": "error",
+        "error": {
+          "error_messages": [
+            "Token not found"
+          ]
+        }
+      },
+      "code": "404",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
   "registrations#create": [
     {
       "verb": "POST",
@@ -209,28 +267,28 @@
       ],
       "query": null,
       "request_data": {
-        "email": "raheem.roberts@nikolaus.biz",
-        "password": "8rM6D0R4H",
-        "first_name": "Jace",
-        "last_name": "Pagac",
+        "email": "rosamond@kshlerin.name",
+        "password": "G143GyAtI",
+        "first_name": "Johnnie",
+        "last_name": "Kuhn",
         "photo": "<FILE CONTENT 'sample.jpg'>"
       },
       "response_data": {
         "status": "success",
         "data": {
           "user": {
-            "id": 1,
+            "id": 2,
             "provider": "email",
-            "uid": "raheem.roberts@nikolaus.biz",
-            "email": "raheem.roberts@nikolaus.biz",
-            "created_at": "2016-03-02T12:11:02.553Z",
-            "updated_at": "2016-03-02T12:11:02.686Z",
+            "uid": "rosamond@kshlerin.name",
+            "email": "rosamond@kshlerin.name",
+            "created_at": "2016-03-02T13:48:54.275Z",
+            "updated_at": "2016-03-02T13:48:54.377Z",
             "profile": {
-              "id": 1,
-              "first_name": "Jace",
-              "last_name": "Pagac",
+              "id": 3,
+              "first_name": "Johnnie",
+              "last_name": "Kuhn",
               "about": null,
-              "photo_url": "/uploads/profile/photo/1/sample.jpg"
+              "photo_url": "/uploads/profile/photo/3/sample.jpg"
             }
           }
         }
@@ -247,7 +305,7 @@
       ],
       "query": null,
       "request_data": {
-        "email": "ignatius.willms@hermistonharvey.io",
+        "email": "philip@kuhlman.com",
         "password": null
       },
       "response_data": {
@@ -257,7 +315,7 @@
             "id": null,
             "provider": "email",
             "uid": "",
-            "email": "ignatius.willms@hermistonharvey.io",
+            "email": "philip@kuhlman.com",
             "created_at": null,
             "updated_at": null,
             "profile": null
