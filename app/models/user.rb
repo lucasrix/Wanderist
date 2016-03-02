@@ -4,15 +4,15 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   include DeviseTokenAuth::Concerns::User
 
-  has_one :profile
+  has_one :profile, dependent: :destroy
   has_many :stories
   has_many :story_points
 
-  validates :username,
-            # presence: true,
-            uniqueness: {
-              case_sensitive: false
-            }
+  # validates :username,
+  #           # presence: true,
+  #           uniqueness: {
+  #             case_sensitive: false
+  #           }
 
   after_create do
     Profile.create(user: self)

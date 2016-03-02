@@ -74,7 +74,7 @@ module Api::V1::Auth
             "first_name": "John",
             "last_name": "Smith",
             "about": null,
-            "photo": "{URL}",
+            "photo_url": "{URL}",
             "home_city": null
             "personal_url": null
           }
@@ -84,20 +84,19 @@ module Api::V1::Auth
     EOS
 
     def create
-      super
+      super do |user|
+        update_profile(user)
+      end
     end
 
     protected
 
+    def render_create_success
+      render json: Response.new(@resource), status: :created
+    end
+
     def render_create_error
-      render json: {
-        status: 'error',
-        data: @resource.as_json,
-        error: {
-          error_messages: @resource.errors.full_messages,
-          details: @resource.errors.to_hash
-        }
-      }, status: 403
+      render json: Response.new(@resource), status: 403
     end
 
     def render_create_error_email_already_exists
@@ -136,6 +135,15 @@ module Api::V1::Auth
           error_messages: [I18n.t("devise_token_auth.registrations.account_to_destroy_not_found")]
         }
       }, status: 404
+    end
+
+    private
+    def update_profile(user)
+      user.profile.update!(profile_params)
+    end
+
+    def profile_params
+      params.permit(:photo, :first_name, :last_name)
     end
 
   end

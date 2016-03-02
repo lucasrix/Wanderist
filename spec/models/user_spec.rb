@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   context 'relations' do
-    it { should have_one(:profile) }
+    it { should have_one(:profile).dependent(:destroy) }
     it { should have_many(:stories) }
     it { should have_many(:story_points) }
   end
