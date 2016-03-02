@@ -6,8 +6,6 @@ RSpec.describe Profile, type: :model do
   end
 
   context 'validations' do
-    it { should validate_presence_of(:first_name) }
-    it { should validate_presence_of(:last_name) }
     it { should validate_length_of(:about).is_at_most(Profile::ABOUT_MAX_LENGTH) }
   end
 

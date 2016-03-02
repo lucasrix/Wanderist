@@ -9,8 +9,8 @@ RSpec.describe User, type: :model do
 
   context 'Validations' do
     subject { build(:user) }
-    it { should validate_presence_of(:username) }
-    it { should validate_uniqueness_of(:username).case_insensitive }
+    # it { should validate_presence_of(:username) }
+    # it { should validate_uniqueness_of(:username).case_insensitive }
   end
 
   context 'callbacks' do
