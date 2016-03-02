@@ -35,16 +35,11 @@ describe Api::V1::StoryPointsController do
   end
 
   describe 'POST #create' do
-    let(:params){ attributes_for(:story_point) }
+    let(:params){ attributes_for(:story_point).merge({ 'location' => attributes_for(:location) }) }
 
     it 'should be success' do
       post :create, params
       should respond_with :created
-    end
-
-    it 'should be unprocessable entity' do
-      post :create
-      should respond_with :unprocessable_entity
     end
 
     it 'should create a story point' do
@@ -55,6 +50,16 @@ describe Api::V1::StoryPointsController do
       ability.cannot :create, StoryPoint
       post :create, params
       should respond_with :forbidden
+    end
+
+    it 'should create a location', :show_in_doc do
+      expect { post :create, params }.to change { Location.count }.by(1)
+    end
+
+    it 'should return status 422', :show_in_doc do
+      params['location']['latitude'] = ''
+      post :create, params
+      should respond_with :unprocessable_entity
     end
   end
 end

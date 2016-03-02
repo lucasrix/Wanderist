@@ -8,14 +8,14 @@ module Api::V1
     end
 
     api! 'Create an attachment'
-    param :type, ["audio", "video", "photo"], required: true, desc: 'Type'
+    param :kind, ["audio", "video", "photo"], required: true, desc: 'Kind'
     param :file, File, required: true, desc: 'File'
     error 400, 'Too big file.'
 
     example <<-EOS
     POST /api/v1/attachments
     {
-      "type": "photo",
+      "kind": "photo",
       "file": "{BLOB DATA}"
     }
     201
@@ -24,7 +24,7 @@ module Api::V1
       "data": {
         "attachment": {
           "id": 1,
-          "type": "photo",
+          "kind": "photo",
           "url": "/link/file_name.jpg"
         }
       }

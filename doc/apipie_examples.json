@@ -209,7 +209,7 @@
       ],
       "query": null,
       "request_data": {
-        "facebook_access_token": "bh8ifvf7shb5zf42rbsbbbvyzymyr9114gsuwoc6upffzri6ywmvx62ygx3fkbqluq5unwwo5rzrkc08xas16h9eurfbje7ygs8vnqdk7peye5fe8n8o8wiyjkciwfya9bbaazxcdlwkpkfbaeduuv1b5klzy5wk41aqed4uauftp84gl332zyvv8xfv19vawdftcsrt1t6qdh3njh5j"
+        "facebook_access_token": "m8wi1lzss5ciau4zdlscs8xon9alay0pcbn6nic9te5ghhe97h0tbthj0puyieiufu4bd3951ak6kihbj3aya1w7erdj0gufzqk059i3gmi4by6t00gfmfrr03yc4mhkbtn5f7b8mjvkq4dzqtlclvjvf5tb541nt6qpnt5tq8qch6tvvl5hyrv2dqnqnouhhmk6uc4guvb490np90na"
       },
       "response_data": {
         "status": "success",
@@ -217,15 +217,15 @@
           "user": {
             "id": 1,
             "provider": "email",
-            "uid": "mikayla@klein.co",
-            "email": "mikayla@klein.co",
-            "created_at": "2016-03-02T13:48:53.751Z",
-            "updated_at": "2016-03-02T13:48:53.882Z",
+            "uid": "warren@denesik.name",
+            "email": "warren@denesik.name",
+            "created_at": "2016-03-02T16:27:43.484Z",
+            "updated_at": "2016-03-02T16:27:43.609Z",
             "profile": {
               "id": 2,
-              "first_name": "Vincent",
-              "last_name": "Grant",
-              "about": "Pickled kale chips crucifix gentrify artisan humblebrag church-key freegan xoxo.",
+              "first_name": "Zena",
+              "last_name": "Schulist",
+              "about": "Bitters venmo fashion axe tote bag gentrify small batch vhs.",
               "photo_url": null
             }
           }
@@ -267,10 +267,10 @@
       ],
       "query": null,
       "request_data": {
-        "email": "rosamond@kshlerin.name",
-        "password": "G143GyAtI",
-        "first_name": "Johnnie",
-        "last_name": "Kuhn",
+        "email": "noble_west@harvey.org",
+        "password": "EzZxGoSeK",
+        "first_name": "Raymond",
+        "last_name": "Zulauf",
         "photo": "<FILE CONTENT 'sample.jpg'>"
       },
       "response_data": {
@@ -279,14 +279,14 @@
           "user": {
             "id": 2,
             "provider": "email",
-            "uid": "rosamond@kshlerin.name",
-            "email": "rosamond@kshlerin.name",
-            "created_at": "2016-03-02T13:48:54.275Z",
-            "updated_at": "2016-03-02T13:48:54.377Z",
+            "uid": "noble_west@harvey.org",
+            "email": "noble_west@harvey.org",
+            "created_at": "2016-03-02T16:27:44.388Z",
+            "updated_at": "2016-03-02T16:27:44.488Z",
             "profile": {
               "id": 3,
-              "first_name": "Johnnie",
-              "last_name": "Kuhn",
+              "first_name": "Raymond",
+              "last_name": "Zulauf",
               "about": null,
               "photo_url": "/uploads/profile/photo/3/sample.jpg"
             }
@@ -305,7 +305,7 @@
       ],
       "query": null,
       "request_data": {
-        "email": "philip@kuhlman.com",
+        "email": "pete.kautzer@williamson.net",
         "password": null
       },
       "response_data": {
@@ -315,7 +315,7 @@
             "id": null,
             "provider": "email",
             "uid": "",
-            "email": "philip@kuhlman.com",
+            "email": "pete.kautzer@williamson.net",
             "created_at": null,
             "updated_at": null,
             "profile": null
@@ -402,6 +402,124 @@
       },
       "code": 404,
       "show_in_doc": 0,
+      "recorded": true
+    }
+  ],
+  "story_points#create": [
+    {
+      "verb": "POST",
+      "path": "/api/v1/story_points",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "caption": "Labore ut voluptas magnam sit.",
+        "kind": "photo",
+        "location": {
+          "latitude": "85.83",
+          "longitude": "15.38"
+        }
+      },
+      "response_data": {
+        "status": "success",
+        "data": {
+          "story_point": {
+            "id": 1,
+            "caption": "Labore ut voluptas magnam sit.",
+            "kind": "photo",
+            "location": {
+              "id": 1,
+              "latitude": 85.83,
+              "longitude": 15.38
+            },
+            "tags": [
+
+            ]
+          }
+        }
+      },
+      "code": "201",
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/api/v1/story_points",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "caption": "Qui sit dignissimos sit eum.",
+        "kind": "video",
+        "location": {
+          "latitude": "",
+          "longitude": "11.88"
+        }
+      },
+      "response_data": {
+        "status": "error",
+        "data": {
+          "story_point": {
+            "id": null,
+            "caption": "Qui sit dignissimos sit eum.",
+            "kind": "video",
+            "location": {
+              "id": null,
+              "latitude": null,
+              "longitude": 11.88
+            },
+            "tags": [
+
+            ]
+          }
+        },
+        "error": {
+          "error_messages": [
+            [
+              "Location is invalid"
+            ]
+          ],
+          "details": {
+            "location": [
+              "is invalid"
+            ]
+          }
+        }
+      },
+      "code": "422",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "texts#privacy_policy": [
+    {
+      "verb": "GET",
+      "path": "/api/v1/privacy_policy",
+      "versions": [
+        "v1"
+      ],
+      "query": "",
+      "request_data": null,
+      "response_data": null,
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "texts#terms_of_service": [
+    {
+      "verb": "GET",
+      "path": "/api/v1/terms_of_service",
+      "versions": [
+        "v1"
+      ],
+      "query": "",
+      "request_data": null,
+      "response_data": null,
+      "code": "200",
+      "show_in_doc": 1,
       "recorded": true
     }
   ],

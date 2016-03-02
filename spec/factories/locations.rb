@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :location do
-    latitude 1.5
-    longitude 1.5
+    latitude { Faker::Number.decimal(2) }
+    longitude { Faker::Number.decimal(2) }
   end
 end

@@ -30,7 +30,7 @@ module Api::V1
         "story_points": [
           {
             "id": 13,
-            "type": "photo",
+            "kind": "photo",
             "caption": "My Awesome Story Point",
             "attachment_id": 1,
             "location": {
@@ -55,7 +55,7 @@ module Api::V1
           },
           {
             "id": 14,
-            "type": "photo",
+            "kind": "photo",
             "caption": "My Awesome Story Point 2",
             "attachment_id": 1,
             "location": {
@@ -74,7 +74,7 @@ module Api::V1
     end
 
     api! 'Create a story point'
-    param :type, ["audio", "video", "photo", "text"], required: true, desc: 'Type'
+    param :kind, StoryPoint::KINDS, required: true, desc: 'Kind'
     param :caption, String, required: true, desc: 'Caption'
     param :attachment_id, Integer, required: true, desc: 'Attachment'
     param :location, Hash, desc: "Location info", required: true do
@@ -85,7 +85,7 @@ module Api::V1
     example <<-EOS
     POST /api/v1/story_points
     {
-      "type": "photo",
+      "kind": "photo",
       "caption": "My Awesome Story Point",
       "attachment_id": 1,
       "location": {
@@ -100,7 +100,7 @@ module Api::V1
       "data": {
         "story_point": {
           "id": 13,
-          "type": "photo",
+          "kind": "photo",
           "caption": "My Awesome Story Point",
           "attachment_id": 1,
           "location": {
@@ -127,6 +127,18 @@ module Api::V1
     }
     EOS
     def create
+      @story_point.kind = StoryPoint::kinds[params[:kind]]
+      @story_point.location = Location.create(location_params)
+
+      if params[:tags].present?
+        tags_params = params[:tags].map do |tag|
+          {
+            name: tag
+          }
+        end
+        @story_point.tags.build(tags_params)
+      end
+
       if @story_point.save
         render json: Response.new(@story_point), status: :created
       else
@@ -135,7 +147,7 @@ module Api::V1
     end
 
     api! 'Update a story point'
-    param :type, ["audio", "video", "photo", "text"], required: false, desc: 'Type'
+    param :kind, ["audio", "video", "photo", "text"], required: false, desc: 'Kind'
     param :caption, String, required: false, desc: 'Caption'
     param :attachment_id, Integer, required: false, desc: 'Attachment'
     param :location, Hash, desc: "Location info", required: false do
@@ -148,7 +160,7 @@ module Api::V1
     example <<-EOS
     PUT /api/v1/story_points/13
     {
-      "type": "photo",
+      "kind": "photo",
       "caption": "New Story Point Caption",
       "attachment_id": 3,
       "story_id": 1
@@ -159,7 +171,7 @@ module Api::V1
       "data": {
         "story_point": {
           "id": 13,
-          "type": "photo",
+          "kind": "photo",
           "caption": "New Story Point Caption",
           "attachment_id": 3,
           "story_id": 1,
@@ -201,7 +213,7 @@ module Api::V1
       "data": {
         "story_point": {
           "id": 13,
-          "type": "photo",
+          "kind": "photo",
           "caption": "New Story Point Caption",
           "attachment_id": 3,
           "story_id": 1,
@@ -232,12 +244,17 @@ module Api::V1
     end
 
     private
+
     def set_service
       @service = StoryPointsService.new
     end
 
     def story_point_params
       params.permit(:caption)
+    end
+
+    def location_params
+      params.require(:location).permit(:latitude, :longitude)
     end
 
   end

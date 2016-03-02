@@ -6,21 +6,11 @@ module Api::V1
     end
 
 
-    api! 'Terms of service'
-    example <<-EOS
-    GET /api/v1/terms_of_service
-    200
-    <h1>Policy</h1>
-    EOS
+    api! 'Terms of service. Respond with HTML content.'
     def terms_of_service
     end
 
-    api! 'Privacy policy'
-    example <<-EOS
-    GET /api/v1/privacy_policy
-    200
-    <h1>Policy</h1>
-    EOS
+    api! 'Privacy policy. Respond with HTML content.'
     def privacy_policy
     end
 
