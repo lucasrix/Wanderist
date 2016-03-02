@@ -27,45 +27,29 @@ module Api::V1::Auth
     end
 
     def render_create_error
-      render json: Response.new(@resource), status: 403
+      render json: Response.new(@resource), status: :forbidden
     end
 
     def render_create_error_email_already_exists
-      render json: {
-        status: 'error',
-        data: @resource.as_json,
-        error: {
-          error_messages: [I18n.t("devise_token_auth.registrations.email_already_exists", email: @resource.email)]
-        }
-      }, status: 403
+      response = Response.new(@resource)
+      response.add_error_message I18n.t("devise_token_auth.registrations.email_already_exists", email: @resource.email)
+      render json: response, status: :forbidden
     end
 
     def render_update_error
-      render json: {
-        status: 'error',
-        error: {
-          error_messages: @resource.errors.full_messages,
-          details: @resource.errors.to_hash
-        }
-      }, status: 403
+      render json: Response.new(@resource), status: :forbidden
     end
 
     def render_update_error_user_not_found
-      render json: {
-        status: 'error',
-        error: {
-          error_messages: [I18n.t("devise_token_auth.registrations.user_not_found")]
-        }
-      }, status: 404
+      response = Response.new(@resource)
+      response.add_error_message I18n.t("devise_token_auth.registrations.user_not_found")
+      render json: response, status: :not_found
     end
 
     def render_destroy_error
-      render json: {
-        status: 'error',
-        error: {
-          error_messages: [I18n.t("devise_token_auth.registrations.account_to_destroy_not_found")]
-        }
-      }, status: 404
+      response = Response.new(@resource)
+      response.add_error_message I18n.t("devise_token_auth.registrations.account_to_destroy_not_found")
+      render json: response, status: :not_found
     end
 
     private
