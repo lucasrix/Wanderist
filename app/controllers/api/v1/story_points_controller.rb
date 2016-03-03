@@ -88,14 +88,14 @@ module Api::V1
       @story_point.kind = StoryPoint::kinds[params[:kind]]
       @story_point.location = Location.create(location_params)
 
-      if params[:tags].present?
-        tags_params = params[:tags].map do |tag|
-          {
-            name: tag
-          }
-        end
-        @story_point.tags.build(tags_params)
-      end
+      # if params[:tags].present?
+      #   tags_params = params[:tags].map do |tag|
+      #     {
+      #       name: tag
+      #     }
+      #   end
+      #   @story_point.tags.build(tags_params)
+      # end
 
       if @story_point.save
         render json: Response.new(@story_point), status: :created
@@ -116,47 +116,6 @@ module Api::V1
     param :tags, Array, of: String, desc: "List of tags"
     error 404, 'Story Point not found.'
 
-    example <<-EOS
-    PUT /api/v1/story_points/13
-    {
-      "kind": "photo",
-      "caption": "New Story Point Caption",
-      "attachment_id": 3,
-      "story_id": 1
-    }
-    200
-    {
-      "success": true,
-      "data": {
-        "story_point": {
-          "id": 13,
-          "kind": "photo",
-          "caption": "New Story Point Caption",
-          "attachment_id": 3,
-          "story_id": 1,
-          "location": {
-            "id": 1,
-            "latitude": 48.4500,
-            "longitude": 34.9833
-          },
-          "tags": [
-            {
-              "id": 1,
-              "name": "tag1"
-            },
-            {
-              "id": 2,
-              "name": "tag2"
-            },
-            {
-              "id": 3,
-              "name": "tag3"
-            }
-          ]
-        }
-      }
-    }
-    EOS
     def update
       if @story_point.update(story_point_params)
         render json: Response.new(@story_point)
