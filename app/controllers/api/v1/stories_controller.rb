@@ -12,7 +12,7 @@ module Api::V1
     param :description, String, desc: 'Description', required: true
     param :private, [true, false], desc: 'Discoverable state', required: true
     example <<-EOS
-    GET /api/v1/stories
+    POST /api/v1/stories
     {
       "name": "Story",
       "description": "Story description",
@@ -34,6 +34,36 @@ module Api::V1
     }
     EOS
     def create
+    end
+
+
+    api! 'Update a story'
+    param :name, String, desc: 'Name', required: false
+    param :description, String, desc: 'Description', required: false
+    param :private, [true, false], desc: 'Discoverable state', required: false
+    example <<-EOS
+    PUT /api/v1/stories/1
+    {
+      "name": "New Story Name",
+      "description": "New story description",
+      "private": true
+    }
+    200
+    {
+      "success": true,
+      "data": {
+        "story": [
+          {
+            "id": 1,
+            "name": "New Story Name",
+            "description": "New story description",
+            "private": true
+          }
+        ]
+      }
+    }
+    EOS
+    def update
     end
   end
 end
