@@ -92,6 +92,65 @@
       "recorded": true
     }
   ],
+  "attachments#create": [
+    {
+      "verb": "POST",
+      "path": "/api/v1/attachments",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "file": "<FILE CONTENT 'sample.jpg'>"
+      },
+      "response_data": {
+        "status": "success",
+        "data": {
+          "attachment": {
+            "id": 1,
+            "file_url": "/uploads/attachment/file/1/sample.jpg"
+          }
+        }
+      },
+      "code": "201",
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/api/v1/attachments",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+      },
+      "response_data": {
+        "status": "error",
+        "data": {
+          "attachment": {
+            "id": null,
+            "file_url": null
+          }
+        },
+        "error": {
+          "error_messages": [
+            [
+              "File can't be blank"
+            ]
+          ],
+          "details": {
+            "file": [
+              "can't be blank"
+            ]
+          }
+        }
+      },
+      "code": "422",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
   "omniauth_callbacks#omniauth_success": [
     {
       "verb": "GET",
@@ -209,7 +268,7 @@
       ],
       "query": null,
       "request_data": {
-        "facebook_access_token": "w67zekmpwa0bu6k2j5byetw5awjlmceua9yp7a7mc91gpl0gn00jq82r7duj5m4thycjl183tkidyf9tqfybrgms3uh7g92pe5irsvxruvtr92i1mil4fynvpmih6qxiigcrcvzm6th5f90skgsvvlpge4n1l2xhjvyjhk8kyow7t9t4rdgf1eoxzzyebty6yinfonwcvd3w6t626mfw"
+        "facebook_access_token": "qc09a1ntkc9mcozvyg6fbk0qpfij8w8yk9r4atdv1cbz9of4f0ccxp8euspqn8e38doeiabxgfb43otp21ysxo7mzwzee941xevd18evycgs7zd1c42myki112x3ovk39gv4ctzcvqp2f0rlhpb4aume1hc1j7zm5y7fl0joizknpi4m5jwazr5gxmizy3kw99dreqlmf7jg3hvg0x7o"
       },
       "response_data": {
         "status": "success",
@@ -217,15 +276,15 @@
           "user": {
             "id": 1,
             "provider": "email",
-            "uid": "abdul_grimes@crona.org",
-            "email": "abdul_grimes@crona.org",
-            "created_at": "2016-03-02T17:59:57.808Z",
-            "updated_at": "2016-03-02T17:59:57.937Z",
+            "uid": "orval@lynch.co",
+            "email": "orval@lynch.co",
+            "created_at": "2016-03-03T11:25:49.637Z",
+            "updated_at": "2016-03-03T11:25:49.777Z",
             "profile": {
               "id": 2,
-              "first_name": "Opal",
-              "last_name": "Abbott",
-              "about": "Intelligentsia trust fund cray mustache heirloom cornhole.",
+              "first_name": "Jaylan",
+              "last_name": "Kutch",
+              "about": "Mlkshk craft beer meggings vice.",
               "photo_url": null
             }
           }
@@ -267,10 +326,10 @@
       ],
       "query": null,
       "request_data": {
-        "email": "amely_parisian@murphydickinson.org",
-        "password": "50HcAfQl0",
-        "first_name": "Skyla",
-        "last_name": "Spinka",
+        "email": "freeman@bednar.com",
+        "password": "3jQaXxSr",
+        "first_name": "Cristobal",
+        "last_name": "Muller",
         "photo": "<FILE CONTENT 'sample.jpg'>"
       },
       "response_data": {
@@ -279,14 +338,14 @@
           "user": {
             "id": 2,
             "provider": "email",
-            "uid": "amely_parisian@murphydickinson.org",
-            "email": "amely_parisian@murphydickinson.org",
-            "created_at": "2016-03-02T17:59:58.319Z",
-            "updated_at": "2016-03-02T17:59:58.420Z",
+            "uid": "freeman@bednar.com",
+            "email": "freeman@bednar.com",
+            "created_at": "2016-03-03T11:25:50.135Z",
+            "updated_at": "2016-03-03T11:25:50.235Z",
             "profile": {
               "id": 3,
-              "first_name": "Skyla",
-              "last_name": "Spinka",
+              "first_name": "Cristobal",
+              "last_name": "Muller",
               "about": null,
               "photo_url": "/uploads/profile/photo/3/sample.jpg"
             }
@@ -305,7 +364,7 @@
       ],
       "query": null,
       "request_data": {
-        "email": "cierra.graham@ullrichcartwright.com",
+        "email": "lee_boyer@murray.biz",
         "password": null
       },
       "response_data": {
@@ -315,7 +374,7 @@
             "id": null,
             "provider": "email",
             "uid": "",
-            "email": "cierra.graham@ullrichcartwright.com",
+            "email": "lee_boyer@murray.biz",
             "created_at": null,
             "updated_at": null,
             "profile": null
@@ -414,29 +473,29 @@
       ],
       "query": null,
       "request_data": {
-        "caption": "gluten-free",
+        "caption": "truffaut",
         "kind": "text",
         "location": {
-          "latitude": "87.09",
-          "longitude": "47.35"
+          "latitude": "81.54",
+          "longitude": "94.15"
         },
-        "attachment_id": "1"
+        "attachment_id": "2"
       },
       "response_data": {
         "status": "success",
         "data": {
           "story_point": {
             "id": 1,
-            "caption": "gluten-free",
+            "caption": "truffaut",
             "kind": "text",
             "attachment": {
-              "id": 1,
-              "file_url": "/uploads/attachment/file/1/sample.jpg"
+              "id": 2,
+              "file_url": "/uploads/attachment/file/2/sample.jpg"
             },
             "location": {
               "id": 1,
-              "latitude": 87.09,
-              "longitude": 47.35
+              "latitude": 81.54,
+              "longitude": 94.15
             },
             "tags": [
 
@@ -456,11 +515,11 @@
       ],
       "query": null,
       "request_data": {
-        "caption": "gastropub",
+        "caption": "forage",
         "kind": "text",
         "location": {
-          "latitude": "",
-          "longitude": "58.46"
+          "latitude": null,
+          "longitude": "40.83"
         }
       },
       "response_data": {
@@ -468,13 +527,13 @@
         "data": {
           "story_point": {
             "id": null,
-            "caption": "gastropub",
+            "caption": "forage",
             "kind": "text",
             "attachment": null,
             "location": {
               "id": null,
               "latitude": null,
-              "longitude": 58.46
+              "longitude": 40.83
             },
             "tags": [
 
@@ -497,12 +556,39 @@
       "code": "422",
       "show_in_doc": 1,
       "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/api/v1/story_points",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "caption": "gastropub",
+        "kind": "text",
+        "location": {
+          "latitude": "62.43",
+          "longitude": "21.72"
+        }
+      },
+      "response_data": {
+        "status": "error",
+        "error": {
+          "error_messages": [
+            "You are not authorized to access this page."
+          ]
+        }
+      },
+      "code": "403",
+      "show_in_doc": 1,
+      "recorded": true
     }
   ],
   "story_points#destroy": [
     {
       "verb": "DELETE",
-      "path": "/api/v1/story_points/2",
+      "path": "/api/v1/story_points/3",
       "versions": [
         "v1"
       ],
@@ -512,14 +598,49 @@
         "status": "success",
         "data": {
           "story_point": {
+            "id": 3,
+            "caption": "pug",
+            "kind": "text",
+            "attachment": null,
+            "location": {
+              "id": 3,
+              "latitude": 43.14,
+              "longitude": 62.14
+            },
+            "tags": [
+
+            ]
+          }
+        }
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "story_points#update": [
+    {
+      "verb": "PUT",
+      "path": "/api/v1/story_points/2",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "story_id": "1"
+      },
+      "response_data": {
+        "status": "success",
+        "data": {
+          "story_point": {
             "id": 2,
-            "caption": "brunch",
+            "caption": "semiotics",
             "kind": "text",
             "attachment": null,
             "location": {
               "id": 2,
-              "latitude": 33.82,
-              "longitude": 41.07
+              "latitude": 14.95,
+              "longitude": 67.57
             },
             "tags": [
 

@@ -7,6 +7,8 @@ module Api::V1
     end
 
     load_and_authorize_resource
+    load_and_authorize_resource :attachment, only: [:create, :update]
+    load_and_authorize_resource :story, only: [:create, :update]
 
     before_action :set_service
 
@@ -106,6 +108,7 @@ module Api::V1
     param :kind, StoryPoint::KINDS, required: false, desc: 'Kind'
     param :caption, String, required: false, desc: 'Caption'
     param :attachment_id, Integer, required: false, desc: 'Attachment'
+    param :story_id, Integer, required: false, desc: 'Story id'
     param :location, Hash, desc: "Location info", required: false do
       param :latitude, Float, desc: "Latitude coordinate", required: false
       param :longitude, Float, desc: "Longitude coordinate", required: false
@@ -155,6 +158,11 @@ module Api::V1
     }
     EOS
     def update
+      if @story_point.update(story_point_params)
+        render json: Response.new(@story_point)
+      else
+        render json: Response.new(@story_point), status: :unprocessable_entity
+      end
     end
 
 
@@ -176,7 +184,7 @@ module Api::V1
     end
 
     def story_point_params
-      params.permit(:caption, :attachment_id, :kind)
+      params.permit(:caption, :attachment_id, :kind, :story_id)
     end
 
     def location_params

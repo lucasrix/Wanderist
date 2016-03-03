@@ -63,6 +63,41 @@ describe Api::V1::StoryPointsController do
       post :create, params
       should respond_with :unprocessable_entity
     end
+
+    it 'should return status 403', :show_in_doc do
+      ability.cannot :create, StoryPoint
+      post :create, params
+      should respond_with :forbidden
+    end
+  end
+
+  describe 'PUT #update' do
+    let!(:story_point) { create(:story_point, user: user) }
+
+    it 'should return status 200', :show_in_doc do
+      story = create(:story, user: user)
+
+      put :update, id: story_point.id, story_id: story.id
+      should respond_with :ok
+    end
+
+    it 'updates story point' do
+      new_caption = Faker::Hipster.word
+      put :update, id: story_point.id, caption: new_caption
+      expect(StoryPoint.where(caption: new_caption)).not_to be_empty
+    end
+
+    it 'should return 422' do
+      wrong_caption = Faker::Lorem.paragraph
+      put :update, id: story_point.id, caption: wrong_caption
+      should respond_with :unprocessable_entity
+    end
+
+    it 'should return 403' do
+      foreign_story = create(:story)
+      put :update, id: story_point.id, story_id: foreign_story.id
+      should respond_with :forbidden
+    end
   end
 
   describe 'DELETE #destroy' do

@@ -11,20 +11,14 @@ RSpec.describe Ability, type: :model do
     let(:story_point) { build(:story_point, user: user) }
     let(:foreign_story_point) { build(:story_point, user: another_user) }
 
-
     describe 'create' do
       it { should be_able_to(:create, story_point) }
       it { should_not be_able_to(:create, foreign_story_point) }
+    end
 
-      context 'with attachment' do
-        let(:attachment) { create(:attachment, user: user) }
-        let(:foreign_attachment) { create(:attachment, user: another_user) }
-        let(:story_point) { build(:story_point, user: user, attachment: attachment) }
-        let(:story_point_with_foreign_attachment) { build(:story_point, user: user, attachment: foreign_attachment) }
-
-        it { should be_able_to(:create, story_point) }
-        it { should_not be_able_to(:create, story_point_with_foreign_attachment) }
-      end
+    describe 'update' do
+      it { should be_able_to(:update, story_point) }
+      it { should_not be_able_to(:update, foreign_story_point) }
     end
 
     describe 'read' do
@@ -37,16 +31,30 @@ RSpec.describe Ability, type: :model do
       it { should_not be_able_to(:destroy, foreign_story_point) }
     end
 
-
   end
 
   context 'attachment' do
     let(:attachment) { build(:attachment, user: user) }
     let(:foreign_attachment) { build(:attachment, user: another_user) }
 
+    describe 'read' do
+      it { should be_able_to(:read, attachment) }
+      it { should_not be_able_to(:read, foreign_attachment) }
+    end
+
     describe 'create' do
       it { should be_able_to(:create, attachment) }
       it { should_not be_able_to(:create, foreign_attachment) }
+    end
+  end
+
+  context 'story' do
+    let(:story) { build(:story, user: user) }
+    let(:foreign_story) { build(:story, user: another_user) }
+
+    describe 'read' do
+      it { should be_able_to(:read, story) }
+      it { should_not be_able_to(:read, foreign_story) }
     end
   end
 

@@ -7,30 +7,23 @@ module Api::V1
 
     end
 
+    load_and_authorize_resource
+
     api! 'Create an attachment'
-    param :kind, ["audio", "video", "photo"], required: true, desc: 'Kind'
     param :file, File, required: true, desc: 'File'
     error 400, 'Too big file.'
 
-    example <<-EOS
-    POST /api/v1/attachments
-    {
-      "kind": "photo",
-      "file": "{BLOB DATA}"
-    }
-    201
-    {
-      "success": true,
-      "data": {
-        "attachment": {
-          "id": 1,
-          "kind": "photo",
-          "url": "/link/file_name.jpg"
-        }
-      }
-    }
-    EOS
     def create
+      if @attachment.save
+        render json: Response.new(@attachment), status: :created
+      else
+        render json: Response.new(@attachment), status: :unprocessable_entity
+      end
+    end
+
+    private
+    def attachment_params
+      params.permit(:kind, :file)
     end
   end
 end
