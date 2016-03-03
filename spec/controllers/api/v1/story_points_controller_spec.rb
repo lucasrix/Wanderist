@@ -46,12 +46,6 @@ describe Api::V1::StoryPointsController do
       expect { post :create, params }.to change { StoryPoint.count }.by(1)
     end
 
-    it 'should be unauthorized' do
-      ability.cannot :create, StoryPoint
-      post :create, params
-      should respond_with :forbidden
-    end
-
     it 'should create a location', :show_in_doc do
       attachment = create(:attachment, user: user)
       params[:attachment_id] = attachment.id
@@ -64,11 +58,30 @@ describe Api::V1::StoryPointsController do
       should respond_with :unprocessable_entity
     end
 
-    it 'should return status 403', :show_in_doc do
-      ability.cannot :create, StoryPoint
-      post :create, params
-      should respond_with :forbidden
+    context 'unauthorized' do
+      it 'should return status 403', :show_in_doc do
+        ability.cannot :create, StoryPoint
+        post :create, params
+        should respond_with :forbidden
+      end
+
+      it 'should return status 403' do
+        ability.cannot :read, Story
+        story = create(:story, user: user)
+        params[:story_id] = story.id
+        post :create, params
+        should respond_with :forbidden
+      end
+
+      it 'should return status 403' do
+        ability.cannot :read, Attachment
+        attachment = create(:attachment, user: user)
+        params[:attachment_id] = attachment.id
+        post :create, params
+        should respond_with :forbidden
+      end
     end
+
   end
 
   describe 'PUT #update' do

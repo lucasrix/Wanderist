@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       passwords: 'api/v1/auth/passwords'
     },
     skip: [:omniauth_callbacks]
+
   namespace :api do
     namespace :v1 do
       namespace :auth do
@@ -22,6 +23,7 @@ Rails.application.routes.draw do
 
       resources :story_points, only: [:index, :create, :update, :destroy]
       resources :attachments, only: [:create]
+      resources :stories, only: [:create]
 
     end
   end
