@@ -65,5 +65,27 @@ module Api::V1
     EOS
     def update
     end
+
+    api! 'Delete a story'
+    error 404, 'Story not found.'
+    example <<-EOS
+    DELETE /api/v1/stories/1
+    200
+    {
+      "success": true,
+      "data": {
+        "story": [
+          {
+            "id": 1,
+            "name": "New Story Name",
+            "description": "New story description",
+            "private": true
+          }
+        ]
+      }
+    }
+    EOS
+    def destroy
+    end
   end
 end
