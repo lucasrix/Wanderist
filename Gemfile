@@ -39,16 +39,10 @@ group :development do
   gem "rubycritic", require: false
   gem "rails_best_practices"
 
-  gem 'capistrano'
-  gem 'capistrano-rails'
-  gem 'capistrano-bundler'
-  gem 'rvm1-capistrano3', require: false
-  gem 'whenever', require: false
   gem 'rack-cors', require: 'rack/cors'
 end
 
 group :test do
-  gem 'database_cleaner'
   gem 'simplecov', require: false
   gem 'shoulda-matchers', '~> 3.1'
 end
