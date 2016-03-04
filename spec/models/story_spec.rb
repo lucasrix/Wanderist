@@ -9,10 +9,12 @@ RSpec.describe Story, type: :model do
   end
 
   context 'Validations' do
+    it { should validate_presence_of(:user) }
     it { should validate_presence_of(:name) }
     it { should validate_presence_of(:description) }
     it { should validate_length_of(:name).is_at_most(Story::NAME_MAX_LENGTH) }
     it { should validate_length_of(:description).is_at_most(Story::DESCRIPTION_MAX_LENGTH) }
+    it { should validate_inclusion_of(:discoverable).in_array([true, false]) }
 
   end
 end

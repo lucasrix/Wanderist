@@ -56,6 +56,7 @@ class Response
 
   def set_data_serializer(data)
     serializer = ActiveModel::Serializer.serializer_for(data)
+    raise "Serializer not found for #{data.class.name}" unless serializer
     @data = serializer.new(data)
     if data.is_a?(ActiveRecord::Relation)
       element_serializer = get_element_serializer(data)

@@ -1,12 +1,7 @@
 require 'rails_helper'
 
 describe Api::V1::StoryPointsController do
-  let(:user) { create(:user) }
-  let(:ability) { Ability.new(user) }
-
-  before do
-    allow(@controller).to receive(:current_ability).and_return(ability)
-  end
+  include_context "ability"
 
   describe 'GET #index' do
     let(:params) do
