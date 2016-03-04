@@ -3,7 +3,7 @@ class Attachment < ActiveRecord::Base
 
   mount_uploader :file, FileUploader
 
-  validates :file, presence: true
+  validates :file, presence: true, file_size: { less_than: 100.megabytes }
   validates :user, presence: true
 
 end

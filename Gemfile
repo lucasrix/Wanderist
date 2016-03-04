@@ -6,18 +6,22 @@ gem 'pg', '~> 0.15'
 gem 'active_model_serializers'
 gem 'puma'
 
-gem 'carrierwave'
-gem 'apipie-rails', github: 'Apipie/apipie-rails'
-gem 'maruku'
 gem 'haml'
 gem 'geokit-rails'
+
+# Docs
+gem 'apipie-rails', github: 'Apipie/apipie-rails'
+gem 'maruku'
+
+# Attachment
+gem 'carrierwave'
+gem 'file_validators'
 
 # Auth
 gem 'devise_token_auth'
 gem 'omniauth-facebook'
 gem 'cancancan', '~> 1.10'
 gem 'koala', '~> 2.2'
-
 
 group :development, :test do
   gem 'pry-rails'
