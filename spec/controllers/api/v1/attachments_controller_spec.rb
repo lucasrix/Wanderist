@@ -1,6 +1,13 @@
 require 'rails_helper'
 
 describe Api::V1::AttachmentsController do
+  let(:user) { create(:user) }
+  let(:ability) { Ability.new(user) }
+
+  before do
+    allow(@controller).to receive(:current_ability).and_return(ability)
+  end
+
   describe 'POST #create' do
     let(:params) { attributes_for(:attachment) }
 

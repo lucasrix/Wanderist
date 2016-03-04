@@ -6,17 +6,21 @@ module Api::V1
       error 401, 'Unauthorized action'
     end
 
+    def_param_group :story do
+      param :name, String, desc: 'Name', required: true, action_aware: true
+      param :description, String, desc: 'Description', required: true, action_aware: true
+      param :discoverable, [true, false], desc: 'Discoverable state', required: true, action_aware: true
+    end
+
 
     api! 'Create a story'
-    param :name, String, desc: 'Name', required: true
-    param :description, String, desc: 'Description', required: true
-    param :private, [true, false], desc: 'Discoverable state', required: true
+    param_group :story
     example <<-EOS
     POST /api/v1/stories
     {
       "name": "Story",
       "description": "Story description",
-      "private": false
+      "discoverable": false
     }
     201
     {
@@ -27,7 +31,7 @@ module Api::V1
             "id": 1,
             "name": "Story",
             "description": "Story description",
-            "private": false
+            "discoverable": false
           }
         ]
       }
@@ -38,15 +42,13 @@ module Api::V1
 
 
     api! 'Update a story'
-    param :name, String, desc: 'Name', required: false
-    param :description, String, desc: 'Description', required: false
-    param :private, [true, false], desc: 'Discoverable state', required: false
+    param_group :story
     example <<-EOS
     PUT /api/v1/stories/1
     {
       "name": "New Story Name",
       "description": "New story description",
-      "private": true
+      "discoverable": true
     }
     200
     {
@@ -57,7 +59,7 @@ module Api::V1
             "id": 1,
             "name": "New Story Name",
             "description": "New story description",
-            "private": true
+            "discoverable": true
           }
         ]
       }

@@ -12,11 +12,15 @@ module Api::V1
 
     before_action :set_service
 
-    api! 'List of story points'
-    param :location, Hash, desc: "Center location info", required: true do
-      param :latitude, Float, desc: "Latitude coordinate", required: true
-      param :longitude, Float, desc: "Longitude coordinate", required: true
+    def_param_group :location do
+      param :location, Hash,  action_aware: true, desc: "Center location info", required: true do
+        param :latitude, Float, desc: "Latitude coordinate", required: true
+        param :longitude, Float, desc: "Longitude coordinate", required: true
+      end
     end
+
+    api! 'List of story points'
+    param_group :location, as: :create
     param :radius, Float, desc: "Radius of area", required: true
     example <<-EOS
     GET /api/v1/story_points
@@ -79,11 +83,10 @@ module Api::V1
     param :kind, StoryPoint::KINDS, required: true, desc: 'Kind'
     param :caption, String, required: true, desc: 'Caption'
     param :attachment_id, Integer, required: false, desc: 'Attachment'
-    param :location, Hash, desc: "Location info", required: true do
-      param :latitude, Float, desc: "Latitude coordinate", required: true
-      param :longitude, Float, desc: "Longitude coordinate", required: true
-    end
+    param_group :location
     param :tags, Array, of: String, desc: "List of tags"
+    see "attachments#create", "Attachment"
+    see "stories#create", "Story"
     def create
       @story_point.kind = StoryPoint::kinds[params[:kind]]
       @story_point.location = Location.create(location_params)
@@ -109,10 +112,7 @@ module Api::V1
     param :caption, String, required: false, desc: 'Caption'
     param :attachment_id, Integer, required: false, desc: 'Attachment'
     param :story_id, Integer, required: false, desc: 'Story id'
-    param :location, Hash, desc: "Location info", required: false do
-      param :latitude, Float, desc: "Latitude coordinate", required: false
-      param :longitude, Float, desc: "Longitude coordinate", required: false
-    end
+    param_group :location
     param :tags, Array, of: String, desc: "List of tags"
     error 404, 'Story Point not found.'
 

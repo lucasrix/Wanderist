@@ -23,7 +23,7 @@ module Api::V1
 
     private
     def attachment_params
-      params.permit(:kind, :file)
+      params.permit(:file)
     end
   end
 end

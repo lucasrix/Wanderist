@@ -15,6 +15,6 @@ class Story < ActiveRecord::Base
             length: {
               maximum: DESCRIPTION_MAX_LENGTH
             }
-  validates :private, presence: true
+  validates :discoverable, inclusion: { in: [true, false] }
 
 end
