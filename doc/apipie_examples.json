@@ -107,8 +107,8 @@
         "status": "success",
         "data": {
           "attachment": {
-            "id": 1,
-            "file_url": "/uploads/attachment/file/1/sample.jpg"
+            "id": 13,
+            "file_url": "/uploads/attachment/file/13/sample.jpg"
           }
         }
       },
@@ -259,6 +259,66 @@
       "recorded": true
     }
   ],
+  "profiles#update": [
+    {
+      "verb": "PUT",
+      "path": "/api/v1/profile",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "first_name": "Conner",
+        "last_name": "Kessler",
+        "city": "East Coltenmouth",
+        "url": "http://mcclure.name/willard_mohr",
+        "about": "Pitchfork pug beard biodiesel pop-up.",
+        "photo": "<FILE CONTENT 'sample.jpg'>"
+      },
+      "response_data": {
+        "status": "success",
+        "data": {
+          "profile": {
+            "id": 520,
+            "first_name": "Conner",
+            "last_name": "Kessler",
+            "about": "Pitchfork pug beard biodiesel pop-up.",
+            "photo_url": "/uploads/profile/photo/520/sample.jpg"
+          }
+        }
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "PUT",
+      "path": "/api/v1/profile",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "first_name": "Hassie",
+        "last_name": "Hilll",
+        "city": "Langworthfort",
+        "url": "http://langosh.io/pinkie",
+        "about": "Cliche meggings farm-to-table try-hard carry stumptown echo.",
+        "photo": "<FILE CONTENT 'sample.jpg'>"
+      },
+      "response_data": {
+        "status": "error",
+        "error": {
+          "error_messages": [
+            "You are not authorized to access this page."
+          ]
+        }
+      },
+      "code": "403",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
   "provider_sessions#create": [
     {
       "verb": "POST",
@@ -268,24 +328,24 @@
       ],
       "query": null,
       "request_data": {
-        "facebook_access_token": "qc09a1ntkc9mcozvyg6fbk0qpfij8w8yk9r4atdv1cbz9of4f0ccxp8euspqn8e38doeiabxgfb43otp21ysxo7mzwzee941xevd18evycgs7zd1c42myki112x3ovk39gv4ctzcvqp2f0rlhpb4aume1hc1j7zm5y7fl0joizknpi4m5jwazr5gxmizy3kw99dreqlmf7jg3hvg0x7o"
+        "facebook_access_token": "ekgx1tiqpionh1mz78puo7rl8aj57zubs2pvchbdlo4a6d8041betp2v4hpvvpbl6e02v6yle4jj125ruqe4oicntvohkrpjdvtr6o7mez2z5ppjsufi94gael562i8fvhy8m6vxhzvybzpfioyw8v1kgtgbh9u1k14afxvdolo8qar3wa3zzpcglrvtzs7u8acyni2rboh0sab3e6ir"
       },
       "response_data": {
         "status": "success",
         "data": {
           "user": {
-            "id": 1,
+            "id": 272,
             "provider": "email",
-            "uid": "orval@lynch.co",
-            "email": "orval@lynch.co",
-            "created_at": "2016-03-03T11:25:49.637Z",
-            "updated_at": "2016-03-03T11:25:49.777Z",
+            "uid": "lloyd@stehrmann.biz",
+            "email": "lloyd@stehrmann.biz",
+            "created_at": "2016-03-07T12:17:02.007Z",
+            "updated_at": "2016-03-07T12:17:02.122Z",
             "profile": {
-              "id": 2,
-              "first_name": "Jaylan",
-              "last_name": "Kutch",
-              "about": "Mlkshk craft beer meggings vice.",
-              "photo_url": null
+              "id": 515,
+              "first_name": "Kathleen",
+              "last_name": "Kilback",
+              "about": "Selvage tilde meh shoreditch roof five dollar toast quinoa heirloom.",
+              "photo_url": "/uploads/profile/photo/515/sample.jpg"
             }
           }
         }
@@ -326,28 +386,28 @@
       ],
       "query": null,
       "request_data": {
-        "email": "freeman@bednar.com",
-        "password": "3jQaXxSr",
-        "first_name": "Cristobal",
-        "last_name": "Muller",
+        "email": "imani.nikolaus@buckridge.name",
+        "password": "1bA8I0RoM",
+        "first_name": "Kellie",
+        "last_name": "Hintz",
         "photo": "<FILE CONTENT 'sample.jpg'>"
       },
       "response_data": {
         "status": "success",
         "data": {
           "user": {
-            "id": 2,
+            "id": 273,
             "provider": "email",
-            "uid": "freeman@bednar.com",
-            "email": "freeman@bednar.com",
-            "created_at": "2016-03-03T11:25:50.135Z",
-            "updated_at": "2016-03-03T11:25:50.235Z",
+            "uid": "imani.nikolaus@buckridge.name",
+            "email": "imani.nikolaus@buckridge.name",
+            "created_at": "2016-03-07T12:17:02.943Z",
+            "updated_at": "2016-03-07T12:17:03.055Z",
             "profile": {
-              "id": 3,
-              "first_name": "Cristobal",
-              "last_name": "Muller",
+              "id": 516,
+              "first_name": "Kellie",
+              "last_name": "Hintz",
               "about": null,
-              "photo_url": "/uploads/profile/photo/3/sample.jpg"
+              "photo_url": "/uploads/profile/photo/516/sample.jpg"
             }
           }
         }
@@ -364,7 +424,7 @@
       ],
       "query": null,
       "request_data": {
-        "email": "lee_boyer@murray.biz",
+        "email": "kameron@rice.com",
         "password": null
       },
       "response_data": {
@@ -374,7 +434,7 @@
             "id": null,
             "provider": "email",
             "uid": "",
-            "email": "lee_boyer@murray.biz",
+            "email": "kameron@rice.com",
             "created_at": null,
             "updated_at": null,
             "profile": null
@@ -464,6 +524,134 @@
       "recorded": true
     }
   ],
+  "stories#create": [
+    {
+      "verb": "POST",
+      "path": "/api/v1/stories",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "name": "kinfolk",
+        "description": "Nostrum et voluptas explicabo sunt quia. Itaque nihil vel facere vero. Et inventore aliquam est omnis. Rerum quis aut totam porro officia nihil."
+      },
+      "response_data": {
+        "status": "success",
+        "data": {
+          "story": {
+            "id": 31
+          }
+        }
+      },
+      "code": "201",
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/api/v1/stories",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "name": "roof",
+        "description": "Consequatur est accusamus. Nisi laudantium et. Blanditiis tenetur quia dolorum. Hic consequuntur mollitia ullam repudiandae aut vitae cum."
+      },
+      "response_data": {
+        "status": "error",
+        "error": {
+          "error_messages": [
+            "You are not authorized to access this page."
+          ]
+        }
+      },
+      "code": "403",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "stories#destroy": [
+    {
+      "verb": "DELETE",
+      "path": "/api/v1/stories/34",
+      "versions": [
+        "v1"
+      ],
+      "query": "",
+      "request_data": null,
+      "response_data": {
+        "status": "success",
+        "data": {
+          "story": {
+            "id": 34
+          }
+        }
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
+  "stories#update": [
+    {
+      "verb": "PUT",
+      "path": "/api/v1/stories/32",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "name": "truffaut"
+      },
+      "response_data": {
+        "status": "success",
+        "data": {
+          "story": {
+            "id": 32
+          }
+        }
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "PUT",
+      "path": "/api/v1/stories/33",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "name": "Temporibus et architecto provident voluptatem modi eveniet. Eos sed provident ea. Tempora omnis recusandae optio. Debitis qui non."
+      },
+      "response_data": {
+        "status": "error",
+        "data": {
+          "story": {
+            "id": 33
+          }
+        },
+        "error": {
+          "error_messages": [
+            [
+              "Name is too long (maximum is 25 characters)"
+            ]
+          ],
+          "details": {
+            "name": [
+              "is too long (maximum is 25 characters)"
+            ]
+          }
+        }
+      },
+      "code": "422",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
   "story_points#create": [
     {
       "verb": "POST",
@@ -473,29 +661,29 @@
       ],
       "query": null,
       "request_data": {
-        "caption": "truffaut",
+        "caption": "kogi",
         "kind": "text",
         "location": {
-          "latitude": "81.54",
-          "longitude": "94.15"
+          "latitude": "42.48",
+          "longitude": "56.55"
         },
-        "attachment_id": "2"
+        "attachment_id": "14"
       },
       "response_data": {
         "status": "success",
         "data": {
           "story_point": {
-            "id": 1,
-            "caption": "truffaut",
+            "id": 25,
+            "caption": "kogi",
             "kind": "text",
             "attachment": {
-              "id": 2,
-              "file_url": "/uploads/attachment/file/2/sample.jpg"
+              "id": 14,
+              "file_url": "/uploads/attachment/file/14/sample.jpg"
             },
             "location": {
-              "id": 1,
-              "latitude": 81.54,
-              "longitude": 94.15
+              "id": 57,
+              "latitude": 42.48,
+              "longitude": 56.55
             },
             "tags": [
 
@@ -519,7 +707,7 @@
         "kind": "text",
         "location": {
           "latitude": null,
-          "longitude": "40.83"
+          "longitude": "56.89"
         }
       },
       "response_data": {
@@ -533,7 +721,7 @@
             "location": {
               "id": null,
               "latitude": null,
-              "longitude": 40.83
+              "longitude": 56.89
             },
             "tags": [
 
@@ -565,11 +753,11 @@
       ],
       "query": null,
       "request_data": {
-        "caption": "gastropub",
+        "caption": "ethical",
         "kind": "text",
         "location": {
-          "latitude": "62.43",
-          "longitude": "21.72"
+          "latitude": "35.73",
+          "longitude": "28.05"
         }
       },
       "response_data": {
@@ -588,7 +776,7 @@
   "story_points#destroy": [
     {
       "verb": "DELETE",
-      "path": "/api/v1/story_points/3",
+      "path": "/api/v1/story_points/27",
       "versions": [
         "v1"
       ],
@@ -598,14 +786,14 @@
         "status": "success",
         "data": {
           "story_point": {
-            "id": 3,
-            "caption": "pug",
+            "id": 27,
+            "caption": "cray",
             "kind": "text",
             "attachment": null,
             "location": {
-              "id": 3,
-              "latitude": 43.14,
-              "longitude": 62.14
+              "id": 59,
+              "latitude": 96.66,
+              "longitude": 79.98
             },
             "tags": [
 
@@ -621,26 +809,26 @@
   "story_points#update": [
     {
       "verb": "PUT",
-      "path": "/api/v1/story_points/2",
+      "path": "/api/v1/story_points/26",
       "versions": [
         "v1"
       ],
       "query": null,
       "request_data": {
-        "story_id": "1"
+        "story_id": "35"
       },
       "response_data": {
         "status": "success",
         "data": {
           "story_point": {
-            "id": 2,
-            "caption": "semiotics",
+            "id": 26,
+            "caption": "kombucha",
             "kind": "text",
             "attachment": null,
             "location": {
-              "id": 2,
-              "latitude": 14.95,
-              "longitude": 67.57
+              "id": 58,
+              "latitude": 16.71,
+              "longitude": 54.41
             },
             "tags": [
 

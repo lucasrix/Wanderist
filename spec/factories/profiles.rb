@@ -6,5 +6,6 @@ FactoryGirl.define do
     city { Faker::Address.city }
     url { Faker::Internet.url }
     about { Faker::Hipster.sentence }
+    photo { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'fixtures', 'files', 'sample.jpg')) }
   end
 end

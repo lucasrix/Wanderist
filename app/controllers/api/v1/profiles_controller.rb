@@ -42,6 +42,18 @@ module Api::V1
     }
     EOS
     def update
+      profile = current_user.profile
+      authorize! :update, profile
+      if profile.update(profile_params)
+        render json: Response.new(profile)
+      else
+        render json: Response.new(profile), status: :unprocessable_entity
+      end
+    end
+
+    private
+    def profile_params
+      params.permit(:first_name, :last_name, :about, :url, :city, :photo)
     end
   end
 end

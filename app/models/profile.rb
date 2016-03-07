@@ -11,7 +11,7 @@ class Profile < ActiveRecord::Base
               less_than: 10.megabytes
             },
             file_content_type: {
-              allow: /^image\/.*/,
+              #allow: /^image\/.*/,
               exclude: ['image/gif']
             }
 

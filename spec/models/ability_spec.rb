@@ -73,4 +73,14 @@ RSpec.describe Ability, type: :model do
     end
   end
 
+  context 'profile' do
+    let(:profile) { build(:profile, user: user) }
+    let(:foreign_profile) { build(:profile, user: another_user) }
+
+    describe 'update' do
+      it { should be_able_to(:update, profile) }
+      it { should_not be_able_to(:update, foreign_profile) }
+    end
+  end
+
 end
