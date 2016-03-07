@@ -13,6 +13,9 @@ module Api::V1::Auth
     param :photo, File, required: false, desc: 'Photo'
     param :password, String, required: true, desc: 'Password'
     param :password_confirmation, String, required: false, desc: 'Password confirmation'
+    error 403, 'Email already in use'
+    error 422, 'Validation failed'
+
 
     def create
       super do |user|

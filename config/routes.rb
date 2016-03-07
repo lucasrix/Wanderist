@@ -25,6 +25,8 @@ Rails.application.routes.draw do
       resources :attachments, only: [:create]
       resources :stories, only: [:create, :update, :destroy]
 
+      resource :profile, only: [:update]
+
     end
   end
 end

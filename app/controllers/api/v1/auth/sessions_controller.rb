@@ -97,7 +97,6 @@ module Api::V1::Auth
     error 401, 'A confirmation email was sent to your account at {{email}}.' +
                  'You must follow the instructions in the email before your account ' +
                  'can be activated'
-    error 403, 'Email already in use'
     def create
       super
     end
