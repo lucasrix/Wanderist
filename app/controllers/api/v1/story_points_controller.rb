@@ -12,6 +12,12 @@ module Api::V1
 
     before_action :set_service
 
+    def_param_group :story_point do
+      param :name, String, desc: 'Name', required: true, action_aware: true
+      param :description, String, desc: 'Description', required: true, action_aware: true
+      param :discoverable, [true, false], desc: 'Discoverable state', required: true, action_aware: true
+    end
+
     def_param_group :location do
       param :location, Hash,  action_aware: true, desc: "Center location info", required: true do
         param :latitude, Float, desc: "Latitude coordinate", required: true
@@ -82,6 +88,7 @@ module Api::V1
     api! 'Create a story point'
     param :kind, StoryPoint::KINDS, required: true, desc: 'Kind'
     param :caption, String, required: true, desc: 'Caption'
+    param :text, String, required: false, desc: 'Text'
     param :attachment_id, Integer, required: false, desc: 'Attachment'
     param_group :location
     param :tags, Array, of: String, desc: "List of tags"
@@ -110,6 +117,7 @@ module Api::V1
     api! 'Update a story point'
     param :kind, StoryPoint::KINDS, required: false, desc: 'Kind'
     param :caption, String, required: false, desc: 'Caption'
+    param :text, String, required: false, desc: 'Text'
     param :attachment_id, Integer, required: false, desc: 'Attachment'
     param :story_id, Integer, required: false, desc: 'Story id'
     param_group :location
@@ -143,7 +151,7 @@ module Api::V1
     end
 
     def story_point_params
-      params.permit(:caption, :attachment_id, :kind, :story_id)
+      params.permit(:caption, :text, :attachment_id, :kind, :story_id)
     end
 
     def location_params
