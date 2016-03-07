@@ -14,6 +14,8 @@ gem 'apipie-rails', github: 'Apipie/apipie-rails'
 gem 'maruku'
 
 # Attachment
+gem 'fog'
+gem 'fog-aws'
 gem 'carrierwave'
 gem 'file_validators'
 
