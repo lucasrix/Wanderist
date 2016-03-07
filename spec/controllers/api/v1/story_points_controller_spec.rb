@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Api::V1::StoryPointsController do
-  include_context "ability"
+  include_context 'ability'
 
   describe 'GET #index' do
     let(:params) do
@@ -120,6 +120,12 @@ describe Api::V1::StoryPointsController do
 
     it 'should delete instance' do
       expect { delete :destroy, id: story_point.id }.to change { StoryPoint.count }.by(-1)
+    end
+
+    it 'should return status 422' do
+      allow_any_instance_of(StoryPoint).to receive(:destroy).and_return(false)
+      delete :destroy, id: story_point.id
+      should respond_with :unprocessable_entity
     end
   end
 end

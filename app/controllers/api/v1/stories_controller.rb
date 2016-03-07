@@ -38,6 +38,7 @@ module Api::V1
 
     api! 'Delete a story'
     error 404, 'Story not found.'
+    error 422, 'Validation errors.'
     def destroy
       if @story.destroy
         render json: Response.new(@story)

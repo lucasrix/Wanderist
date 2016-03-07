@@ -31,9 +31,9 @@ class Response
 
   def status
     if success?
-      "success"
+      'success'
     else
-      "error"
+      'error'
     end
   end
 

@@ -20,6 +20,12 @@ describe Api::V1::ProfilesController do
       expect(Profile.exists?(first_name: params[:first_name])).to be_truthy
     end
 
+    it 'should return status 422' do
+      allow_any_instance_of(Profile).to receive(:update).and_return(false)
+      put :update, params
+      should respond_with :unprocessable_entity
+    end
+
     context 'unauthorized' do
       it 'should return status 403', :show_in_doc do
         ability.cannot :update, Profile

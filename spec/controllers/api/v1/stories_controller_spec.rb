@@ -15,6 +15,12 @@ describe Api::V1::StoriesController do
       expect { post :create, params }.to change { Story.count }.by(1)
     end
 
+    it 'should return status 422' do
+      allow_any_instance_of(Story).to receive(:save).and_return(false)
+      post :create, params
+      should respond_with :unprocessable_entity
+    end
+
     context 'unauthorized' do
       it 'should return status 403', :show_in_doc do
         ability.cannot :create, Story
@@ -57,6 +63,12 @@ describe Api::V1::StoriesController do
 
     it 'should delete instance' do
       expect { delete :destroy, id: story.id }.to change { Story.count }.by(-1)
+    end
+
+    it 'should return status 422' do
+      allow_any_instance_of(Story).to receive(:destroy).and_return(false)
+      delete :destroy, id: story.id
+      should respond_with :unprocessable_entity
     end
   end
 end
