@@ -1,3 +1,3 @@
 class StorySerializer < ApplicationSerializer
-  attributes :id
+  attributes :id, :name, :description, :discoverable
 end

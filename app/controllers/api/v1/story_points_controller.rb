@@ -12,17 +12,18 @@ module Api::V1
 
     before_action :set_service
 
-    def_param_group :story_point do
-      param :name, String, desc: 'Name', required: true, action_aware: true
-      param :description, String, desc: 'Description', required: true, action_aware: true
-      param :discoverable, [true, false], desc: 'Discoverable state', required: true, action_aware: true
+    def_param_group :location do
+      param :location, Hash,  action_aware: true, desc: 'Location info' do
+        param :latitude, Float, desc: 'Latitude coordinate', required: true
+        param :longitude, Float, desc: 'Longitude coordinate', required: true
+      end
     end
 
-    def_param_group :location do
-      param :location, Hash,  action_aware: true, desc: "Center location info", required: true do
-        param :latitude, Float, desc: "Latitude coordinate", required: true
-        param :longitude, Float, desc: "Longitude coordinate", required: true
-      end
+    def_param_group :story_point do
+      param :caption, String, required: true, desc: 'Caption', action_aware: true
+      param :text, String, required: false, desc: 'Text'
+      param :attachment_id, Integer, required: false, desc: 'Attachment'
+      param_group :location
     end
 
     api! 'List of story points'
@@ -87,10 +88,7 @@ module Api::V1
 
     api! 'Create a story point'
     param :kind, StoryPoint::KINDS, required: true, desc: 'Kind'
-    param :caption, String, required: true, desc: 'Caption'
-    param :text, String, required: false, desc: 'Text'
-    param :attachment_id, Integer, required: false, desc: 'Attachment'
-    param_group :location
+    param_group :story_point
     param :tags, Array, of: String, desc: "List of tags"
     see "attachments#create", "Attachment"
     see "stories#create", "Story"
@@ -115,12 +113,8 @@ module Api::V1
     end
 
     api! 'Update a story point'
-    param :kind, StoryPoint::KINDS, required: false, desc: 'Kind'
-    param :caption, String, required: false, desc: 'Caption'
-    param :text, String, required: false, desc: 'Text'
-    param :attachment_id, Integer, required: false, desc: 'Attachment'
+    param_group :story_point
     param :story_id, Integer, required: false, desc: 'Story id'
-    param_group :location
     param :tags, Array, of: String, desc: "List of tags"
     error 404, 'Story Point not found.'
 

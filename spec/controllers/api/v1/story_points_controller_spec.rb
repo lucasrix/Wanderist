@@ -83,9 +83,11 @@ describe Api::V1::StoryPointsController do
     let!(:story_point) { create(:story_point, user: user) }
 
     it 'should return status 200', :show_in_doc do
-      story = create(:story, user: user)
+      params = attributes_for(:story_point)
+      params[:id] = story_point.id
+      params.delete(:kind)
 
-      put :update, id: story_point.id, story_id: story.id
+      put :update, params
       should respond_with :ok
     end
 

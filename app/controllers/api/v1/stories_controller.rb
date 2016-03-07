@@ -16,28 +16,7 @@ module Api::V1
 
     api! 'Create a story'
     param_group :story
-    example <<-EOS
-    POST /api/v1/stories
-    {
-      "name": "Story",
-      "description": "Story description",
-      "discoverable": false
-    }
-    201
-    {
-      "success": true,
-      "data": {
-        "story": [
-          {
-            "id": 1,
-            "name": "Story",
-            "description": "Story description",
-            "discoverable": false
-          }
-        ]
-      }
-    }
-    EOS
+    error 422, 'Validation error.'
     def create
       if @story.save
         render json: Response.new(@story), status: :created
@@ -46,31 +25,9 @@ module Api::V1
       end
     end
 
-
     api! 'Update a story'
     param_group :story
-    example <<-EOS
-    PUT /api/v1/stories/1
-    {
-      "name": "New Story Name",
-      "description": "New story description",
-      "discoverable": true
-    }
-    200
-    {
-      "success": true,
-      "data": {
-        "story": [
-          {
-            "id": 1,
-            "name": "New Story Name",
-            "description": "New story description",
-            "discoverable": true
-          }
-        ]
-      }
-    }
-    EOS
+    error 422, 'Validation error.'
     def update
       if @story.update(story_params)
         render json: Response.new(@story)
@@ -81,23 +38,6 @@ module Api::V1
 
     api! 'Delete a story'
     error 404, 'Story not found.'
-    example <<-EOS
-    DELETE /api/v1/stories/1
-    200
-    {
-      "success": true,
-      "data": {
-        "story": [
-          {
-            "id": 1,
-            "name": "New Story Name",
-            "description": "New story description",
-            "private": true
-          }
-        ]
-      }
-    }
-    EOS
     def destroy
       if @story.destroy
         render json: Response.new(@story)
