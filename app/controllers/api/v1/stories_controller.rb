@@ -18,33 +18,21 @@ module Api::V1
     param_group :story
     error 422, 'Validation error.'
     def create
-      if @story.save
-        render json: Response.new(@story), status: :created
-      else
-        render json: Response.new(@story), status: :unprocessable_entity
-      end
+      create_entity(@story)
     end
 
     api! 'Update a story'
     param_group :story
     error 422, 'Validation error.'
     def update
-      if @story.update(story_params)
-        render json: Response.new(@story)
-      else
-        render json: Response.new(@story), status: :unprocessable_entity
-      end
+      update_entity(@story, story_params)
     end
 
     api! 'Delete a story'
     error 404, 'Story not found.'
     error 422, 'Validation errors.'
     def destroy
-      if @story.destroy
-        render json: Response.new(@story)
-      else
-        render json: Response.new(@story), status: :unprocessable_entity
-      end
+      destroy_entity(@story)
     end
 
     private

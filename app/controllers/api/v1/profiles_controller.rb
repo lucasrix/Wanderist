@@ -44,11 +44,7 @@ module Api::V1
     def update
       profile = current_user.profile
       authorize! :update, profile
-      if profile.update(profile_params)
-        render json: Response.new(profile)
-      else
-        render json: Response.new(profile), status: :unprocessable_entity
-      end
+      update_entity(profile, profile_params)
     end
 
     private

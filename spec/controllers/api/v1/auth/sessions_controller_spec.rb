@@ -22,5 +22,5 @@ describe Api::V1::Auth::SessionsController do
     end
 
   end
-  
+
 end

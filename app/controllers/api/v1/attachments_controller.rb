@@ -14,11 +14,7 @@ module Api::V1
     error 400, 'Too big file.'
 
     def create
-      if @attachment.save
-        render json: Response.new(@attachment), status: :created
-      else
-        render json: Response.new(@attachment), status: :unprocessable_entity
-      end
+      create_entity(@attachment)
     end
 
     private

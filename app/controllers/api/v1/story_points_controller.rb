@@ -105,11 +105,7 @@ module Api::V1
       #   @story_point.tags.build(tags_params)
       # end
 
-      if @story_point.save
-        render json: Response.new(@story_point), status: :created
-      else
-        render json: Response.new(@story_point), status: :unprocessable_entity
-      end
+      create_entity(@story_point)
     end
 
     api! 'Update a story point'
@@ -119,11 +115,7 @@ module Api::V1
     error 404, 'Story Point not found.'
 
     def update
-      if @story_point.update(story_point_params)
-        render json: Response.new(@story_point)
-      else
-        render json: Response.new(@story_point), status: :unprocessable_entity
-      end
+      update_entity(@story_point, story_point_params)
     end
 
 
@@ -131,11 +123,7 @@ module Api::V1
     error 404, 'Story Point not found.'
 
     def destroy
-      if @story_point.destroy
-        render json: Response.new(@story_point)
-      else
-        render json: Response.new(@story_point), status: :unprocessable_entity
-      end
+      destroy_entity(@story_point)
     end
 
     private
