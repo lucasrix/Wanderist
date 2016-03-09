@@ -10,7 +10,7 @@ module Api::V1
     load_and_authorize_resource :attachment, only: [:create, :update]
     load_and_authorize_resource :story, only: [:create, :update]
 
-    before_action :set_service
+    before_action :set_service, only: [:index]
 
     def_param_group :location do
       param :location, Hash,  action_aware: true, desc: 'Location info' do
@@ -129,7 +129,7 @@ module Api::V1
     private
 
     def set_service
-      @service = StoryPointsService.new
+      @service = StoryPointsService.new(@story_points)
     end
 
     def story_point_params
