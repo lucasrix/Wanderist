@@ -1,4 +1,5 @@
 class Response
+
   include ActiveModel::Serialization
 
   attr_reader :status, :data, :error

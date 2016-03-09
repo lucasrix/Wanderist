@@ -40,9 +40,9 @@ describe Api::V1::StoriesController do
     end
 
     it 'updates story', :show_in_doc do
-      name = Faker::Hipster.word
-      put :update, id: story.id, name: name
-      expect(Story.where(name: name)).not_to be_empty
+      params = attributes_for(:story)
+      put :update, id: story.id, **params
+      expect(Story.exists?(name: params[:name])).to be_truthy
     end
 
     it 'should return 422', :show_in_doc do
