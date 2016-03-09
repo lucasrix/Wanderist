@@ -107,8 +107,8 @@
         "status": "success",
         "data": {
           "attachment": {
-            "id": 45,
-            "file_url": "/uploads/attachment/file/45/sample.jpg"
+            "id": 122,
+            "file_url": "/uploads/attachment/file/122/sample.jpg"
           }
         }
       },
@@ -268,22 +268,22 @@
       ],
       "query": null,
       "request_data": {
-        "first_name": "Talia",
-        "last_name": "Dietrich",
-        "city": "Earleneborough",
-        "url": "http://crookskeebler.info/maximus.gleichner",
-        "about": "Fanny pack xoxo marfa slow-carb intelligentsia cred ramps migas deep v.",
+        "first_name": "Trever",
+        "last_name": "Ankunding",
+        "city": "West Josiah",
+        "url": "http://rempel.biz/adelia",
+        "about": "Truffaut typewriter flannel stumptown cleanse ethical bitters semiotics franzen.",
         "photo": "<FILE CONTENT 'sample.jpg'>"
       },
       "response_data": {
         "status": "success",
         "data": {
           "profile": {
-            "id": 1496,
-            "first_name": "Talia",
-            "last_name": "Dietrich",
-            "about": "Fanny pack xoxo marfa slow-carb intelligentsia cred ramps migas deep v.",
-            "photo_url": "/uploads/profile/photo/1496/sample.jpg"
+            "id": 4047,
+            "first_name": "Trever",
+            "last_name": "Ankunding",
+            "about": "Truffaut typewriter flannel stumptown cleanse ethical bitters semiotics franzen.",
+            "photo_url": "/uploads/profile/photo/4047/sample.jpg"
           }
         }
       },
@@ -299,11 +299,11 @@
       ],
       "query": null,
       "request_data": {
-        "first_name": "Brandyn",
-        "last_name": "Sanford",
-        "city": "Everettmouth",
-        "url": "http://beahan.name/jalyn",
-        "about": "Cliche bicycle rights stumptown yuccie cray tumblr try-hard hoodie single-origin coffee.",
+        "first_name": "Lazaro",
+        "last_name": "Wiegand",
+        "city": "New Salliefurt",
+        "url": "http://nienow.com/lelia_pouros",
+        "about": "Typewriter chillwave bushwick wes anderson kickstarter.",
         "photo": "<FILE CONTENT 'sample.jpg'>"
       },
       "response_data": {
@@ -328,24 +328,24 @@
       ],
       "query": null,
       "request_data": {
-        "facebook_access_token": "b27o4327nba4jmpj8gsvqox2cq1bej1amq9tm6vn9a9zn407hxuoicycr8gojtpftnufmbpnp3my1xlcb65n13xxjon0pf7ruxhjuq0sm8l1p0e93hzz2qon1egbtczvngfbxs0twtbr740gzgbia5p3uouabxtyenxlvragq8th8mjfwgmux3gvr4ru9hvt1vlhl12fhffiaqeojj59"
+        "facebook_access_token": "1hiz05zansoh3uxgmcf2bw9zdd866tzrdulk59jgu2u0spb3un52xw02rjst8eywv07n530bx34pvwtvfr6t4hozy52odpdvnlleuwn702xghow1au8wob3y5600rx6rra7uvjweti94vn7igg34iaqx5jaskwgr4diyfjhbbtq8frjs7scxliqlvamq48qbn96wymaaaf9blmic55bt"
       },
       "response_data": {
         "status": "success",
         "data": {
           "user": {
-            "id": 777,
+            "id": 2099,
             "provider": "email",
-            "uid": "carmine@krajcik.org",
-            "email": "carmine@krajcik.org",
-            "created_at": "2016-03-07T13:48:46.610Z",
-            "updated_at": "2016-03-07T13:48:46.726Z",
+            "uid": "raymundo@prohaska.biz",
+            "email": "raymundo@prohaska.biz",
+            "created_at": "2016-03-09T10:00:16.627Z",
+            "updated_at": "2016-03-09T10:00:16.735Z",
             "profile": {
-              "id": 1491,
-              "first_name": "Morton",
-              "last_name": "Mosciski",
-              "about": "Williamsburg fashion axe kogi 8-bit cred gluten-free.",
-              "photo_url": "/uploads/profile/photo/1491/sample.jpg"
+              "id": 4040,
+              "first_name": "Ima",
+              "last_name": "King",
+              "about": "Forage waistcoat cliche authentic ethical.",
+              "photo_url": "/uploads/profile/photo/4040/sample.jpg"
             }
           }
         }
@@ -386,28 +386,28 @@
       ],
       "query": null,
       "request_data": {
-        "email": "kevon@nikolausdubuque.net",
-        "password": "V4Ul1vOl",
-        "first_name": "Loren",
-        "last_name": "Bashirian",
+        "email": "viola_zieme@gulgowski.org",
+        "password": "Ld6o0dZnX",
+        "first_name": "Bulah",
+        "last_name": "Weber",
         "photo": "<FILE CONTENT 'sample.jpg'>"
       },
       "response_data": {
         "status": "success",
         "data": {
           "user": {
-            "id": 778,
+            "id": 2100,
             "provider": "email",
-            "uid": "kevon@nikolausdubuque.net",
-            "email": "kevon@nikolausdubuque.net",
-            "created_at": "2016-03-07T13:48:47.089Z",
-            "updated_at": "2016-03-07T13:48:47.196Z",
+            "uid": "viola_zieme@gulgowski.org",
+            "email": "viola_zieme@gulgowski.org",
+            "created_at": "2016-03-09T10:00:17.101Z",
+            "updated_at": "2016-03-09T10:00:17.208Z",
             "profile": {
-              "id": 1492,
-              "first_name": "Loren",
-              "last_name": "Bashirian",
+              "id": 4041,
+              "first_name": "Bulah",
+              "last_name": "Weber",
               "about": null,
-              "photo_url": "/uploads/profile/photo/1492/sample.jpg"
+              "photo_url": "/uploads/profile/photo/4041/sample.jpg"
             }
           }
         }
@@ -424,7 +424,7 @@
       ],
       "query": null,
       "request_data": {
-        "email": "keely@jakubowski.biz",
+        "email": "hillary.barton@schinner.co",
         "password": null
       },
       "response_data": {
@@ -434,7 +434,7 @@
             "id": null,
             "provider": "email",
             "uid": "",
-            "email": "keely@jakubowski.biz",
+            "email": "hillary.barton@schinner.co",
             "created_at": null,
             "updated_at": null,
             "profile": null
@@ -471,21 +471,53 @@
       ],
       "query": null,
       "request_data": {
-        "email": "george@rubygarage.org",
-        "password": "password"
+        "email": "lyda@kreiger.org",
+        "password": "FxN87zYd"
       },
       "response_data": {
+        "status": "success",
         "data": {
-          "id": 2,
-          "provider": "email",
-          "uid": "george@rubygarage.org",
-          "name": null,
-          "nickname": null,
-          "image": null,
-          "email": "george@rubygarage.org"
+          "user": {
+            "id": 2102,
+            "provider": "email",
+            "uid": "lyda@kreiger.org",
+            "email": "lyda@kreiger.org",
+            "created_at": "2016-03-09T10:00:17.267Z",
+            "updated_at": "2016-03-09T10:00:17.389Z",
+            "profile": {
+              "id": 4045,
+              "first_name": "Alivia",
+              "last_name": "Lang",
+              "about": "Quinoa cred chicharrones pour-over literally williamsburg lo-fi asymmetrical helvetica.",
+              "photo_url": "/uploads/profile/photo/4045/sample.jpg"
+            }
+          }
         }
       },
-      "code": 200,
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/api/v1/auth/sign_in",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "email": "garland@marvin.info",
+        "password": "331i0sG67"
+      },
+      "response_data": {
+        "status": "error",
+        "error": {
+          "error_messages": [
+            "Invalid login credentials. Please try again."
+          ]
+        }
+      },
+      "code": "401",
       "show_in_doc": 1,
       "recorded": true
     }
@@ -533,16 +565,16 @@
       ],
       "query": null,
       "request_data": {
-        "name": "park",
-        "description": "Alias fugiat suscipit. Officiis doloremque pariatur fugit ipsam. Sit minima et suscipit deleniti veniam quo. Ea id mollitia sed. Expedita amet est enim."
+        "name": "vinyl",
+        "description": "Non sequi tempore doloribus labore atque blanditiis. Id praesentium voluptas libero veniam. Consequatur magnam temporibus expedita illo eveniet."
       },
       "response_data": {
         "status": "success",
         "data": {
           "story": {
-            "id": 108,
-            "name": "park",
-            "description": "Alias fugiat suscipit. Officiis doloremque pariatur fugit ipsam. Sit minima et suscipit deleniti veniam quo. Ea id mollitia sed. Expedita amet est enim.",
+            "id": 278,
+            "name": "vinyl",
+            "description": "Non sequi tempore doloribus labore atque blanditiis. Id praesentium voluptas libero veniam. Consequatur magnam temporibus expedita illo eveniet.",
             "discoverable": true
           }
         }
@@ -559,8 +591,8 @@
       ],
       "query": null,
       "request_data": {
-        "name": "meh",
-        "description": "Exercitationem voluptatem consequatur. Dolor id laborum numquam quia. Ut eum vel et sunt. Quos et quaerat saepe reprehenderit dignissimos. Fugiat aut et sit neque."
+        "name": "tilde",
+        "description": "Autem et et amet. Facere asperiores velit dolore qui. Voluptatibus et similique autem delectus nobis."
       },
       "response_data": {
         "status": "error",
@@ -578,7 +610,7 @@
   "stories#destroy": [
     {
       "verb": "DELETE",
-      "path": "/api/v1/stories/111",
+      "path": "/api/v1/stories/281",
       "versions": [
         "v1"
       ],
@@ -588,9 +620,9 @@
         "status": "success",
         "data": {
           "story": {
-            "id": 111,
-            "name": "pinterest",
-            "description": "Suscipit odio delectus quia. Quo rem id ut beatae. Aperiam deleniti non ab non quasi corporis labore. Neque qui non.",
+            "id": 281,
+            "name": "aesthetic",
+            "description": "Fugiat quos architecto explicabo sint. Quia perferendis et distinctio non quia est inventore. Est laborum totam necessitatibus mollitia aliquid eaque ducimus. Saepe optio adipisci velit occaecati. Nulla adipisci aut vitae.",
             "discoverable": true
           }
         }
@@ -603,21 +635,21 @@
   "stories#update": [
     {
       "verb": "PUT",
-      "path": "/api/v1/stories/109",
+      "path": "/api/v1/stories/279",
       "versions": [
         "v1"
       ],
       "query": null,
       "request_data": {
-        "name": "cold-pressed"
+        "name": "PBR&B"
       },
       "response_data": {
         "status": "success",
         "data": {
           "story": {
-            "id": 109,
-            "name": "cold-pressed",
-            "description": "Eum cumque enim ex. Magni quaerat ipsum neque dicta reprehenderit. Nesciunt pariatur et alias quae qui minima in.",
+            "id": 279,
+            "name": "PBR&B",
+            "description": "Vitae ratione odit recusandae. Quos et excepturi voluptates ipsum explicabo culpa veritatis. Corporis expedita quas doloribus atque. Ullam odio animi perferendis dolorum.",
             "discoverable": true
           }
         }
@@ -628,21 +660,21 @@
     },
     {
       "verb": "PUT",
-      "path": "/api/v1/stories/110",
+      "path": "/api/v1/stories/280",
       "versions": [
         "v1"
       ],
       "query": null,
       "request_data": {
-        "name": "Atque recusandae ratione eum quia. Ea voluptatum repudiandae corporis cumque eum possimus. Illo natus aut ullam veritatis. Quibusdam minus repellat. Fuga ex autem dolores."
+        "name": "Eveniet et temporibus culpa earum. Maiores atque sed provident pariatur dolorem. Eos fuga non. Voluptas quia omnis."
       },
       "response_data": {
         "status": "error",
         "data": {
           "story": {
-            "id": 110,
-            "name": "Atque recusandae ratione eum quia. Ea voluptatum repudiandae corporis cumque eum possimus. Illo natus aut ullam veritatis. Quibusdam minus repellat. Fuga ex autem dolores.",
-            "description": "Commodi autem corrupti. Molestiae qui rem dignissimos assumenda voluptatum laborum. Expedita eaque asperiores qui voluptatem sed ut officiis. Et suscipit quo qui nisi quia. Maiores blanditiis sed sed et.",
+            "id": 280,
+            "name": "Eveniet et temporibus culpa earum. Maiores atque sed provident pariatur dolorem. Eos fuga non. Voluptas quia omnis.",
+            "description": "Tenetur tempore alias architecto sequi nesciunt consequuntur. Quod ratione id repellat. Veniam debitis non nemo ad odio rerum eius. Ut aliquid itaque minima ea asperiores autem quos.",
             "discoverable": true
           }
         },
@@ -673,30 +705,30 @@
       ],
       "query": null,
       "request_data": {
-        "caption": "kogi",
-        "text": "Cardigan shoreditch twee. Asymmetrical +1 thundercats tumblr pug helvetica. Tofu pork belly franzen raw denim iphone.",
+        "caption": "ramps",
+        "text": "Direct trade sriracha cray mixtape wes anderson microdosing tofu williamsburg. Kombucha street sriracha truffaut you probably haven't heard of them post-ironic mixtape. Truffaut organic twee chia plaid humblebrag. Disrupt health distillery hoodie green juice.",
         "kind": "text",
         "location": {
-          "latitude": "89.98",
-          "longitude": "23.24"
+          "latitude": "78.94",
+          "longitude": "14.37"
         },
-        "attachment_id": "46"
+        "attachment_id": "123"
       },
       "response_data": {
         "status": "success",
         "data": {
           "story_point": {
-            "id": 79,
-            "caption": "kogi",
+            "id": 279,
+            "caption": "ramps",
             "kind": "text",
             "attachment": {
-              "id": 46,
-              "file_url": "/uploads/attachment/file/46/sample.jpg"
+              "id": 123,
+              "file_url": "/uploads/attachment/file/123/sample.jpg"
             },
             "location": {
-              "id": 171,
-              "latitude": 89.98,
-              "longitude": 23.24
+              "id": 502,
+              "latitude": 78.94,
+              "longitude": 14.37
             },
             "tags": [
 
@@ -716,12 +748,12 @@
       ],
       "query": null,
       "request_data": {
-        "caption": "sriracha",
-        "text": "Ethical austin chicharrones. Pabst selfies venmo. Xoxo artisan poutine leggings cleanse. Truffaut xoxo gastropub vinegar crucifix food truck. Poutine quinoa banh mi truffaut tacos xoxo artisan.",
+        "caption": "bespoke",
+        "text": "Chillwave actually meh hella chambray letterpress. Taxidermy pabst chartreuse wes anderson dreamcatcher kombucha. Literally paleo listicle hella taxidermy tofu.",
         "kind": "text",
         "location": {
           "latitude": null,
-          "longitude": "37.73"
+          "longitude": "19.25"
         }
       },
       "response_data": {
@@ -729,13 +761,13 @@
         "data": {
           "story_point": {
             "id": null,
-            "caption": "sriracha",
+            "caption": "bespoke",
             "kind": "text",
             "attachment": null,
             "location": {
               "id": null,
               "latitude": null,
-              "longitude": 37.73
+              "longitude": 19.25
             },
             "tags": [
 
@@ -767,12 +799,12 @@
       ],
       "query": null,
       "request_data": {
-        "caption": "brunch",
-        "text": "Lumbersexual vegan readymade. Offal austin typewriter. Crucifix neutra narwhal blue bottle tacos etsy readymade wolf. You probably haven't heard of them health kale chips.",
+        "caption": "DIY",
+        "text": "Pickled carry food truck poutine. Freegan offal tattooed etsy literally godard. Vegan paleo dreamcatcher church-key blue bottle ugh godard mlkshk. Tacos humblebrag master neutra offal biodiesel.",
         "kind": "text",
         "location": {
-          "latitude": "91.43",
-          "longitude": "25.39"
+          "latitude": "59.38",
+          "longitude": "24.25"
         }
       },
       "response_data": {
@@ -791,7 +823,7 @@
   "story_points#destroy": [
     {
       "verb": "DELETE",
-      "path": "/api/v1/story_points/81",
+      "path": "/api/v1/story_points/281",
       "versions": [
         "v1"
       ],
@@ -801,14 +833,14 @@
         "status": "success",
         "data": {
           "story_point": {
-            "id": 81,
-            "caption": "sustainable",
+            "id": 281,
+            "caption": "+1",
             "kind": "text",
             "attachment": null,
             "location": {
-              "id": 173,
-              "latitude": 51.74,
-              "longitude": 57.53
+              "id": 504,
+              "latitude": 21.62,
+              "longitude": 22.08
             },
             "tags": [
 
@@ -824,27 +856,27 @@
   "story_points#update": [
     {
       "verb": "PUT",
-      "path": "/api/v1/story_points/80",
+      "path": "/api/v1/story_points/280",
       "versions": [
         "v1"
       ],
       "query": null,
       "request_data": {
-        "caption": "gentrify",
-        "text": "Trust fund retro locavore readymade. Authentic freegan 8-bit. Viral pinterest hashtag kinfolk meggings artisan single-origin coffee. Seitan chartreuse try-hard master typewriter. Craft beer mumblecore sartorial."
+        "caption": "meditation",
+        "text": "+1 shoreditch flexitarian cold-pressed. Kitsch 8-bit fap selfies. Everyday distillery blue bottle. Gastropub five dollar toast twee hoodie sartorial lomo. Fap gluten-free craft beer chia deep v."
       },
       "response_data": {
         "status": "success",
         "data": {
           "story_point": {
-            "id": 80,
-            "caption": "gentrify",
+            "id": 280,
+            "caption": "meditation",
             "kind": "text",
             "attachment": null,
             "location": {
-              "id": 172,
-              "latitude": 81.44,
-              "longitude": 59.21
+              "id": 503,
+              "latitude": 68.61,
+              "longitude": 65.65
             },
             "tags": [
 

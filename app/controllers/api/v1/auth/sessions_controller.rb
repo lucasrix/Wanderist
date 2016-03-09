@@ -90,6 +90,8 @@ module Api::V1::Auth
 
     end
 
+    skip_after_action :update_auth_header, only: [:create]
+
     api! 'Email authentication.'
     param :email, String, desc: 'Email address'
     param :password, String, desc: 'Password', required: true
@@ -101,10 +103,28 @@ module Api::V1::Auth
       super
     end
 
-    api :DELETE, '/auth/sessions', "Use this route to end the user's current session. This route will invalidate the user's authentication token."
+    api! "Use this route to end the user's current session. This route will invalidate the user's authentication token."
 
     def destroy
       super
+    end
+
+    protected
+    def render_create_success
+      update_auth_header
+      render json: Response.new(@resource)
+    end
+
+    def render_create_error_not_confirmed
+      response = Response.new
+      response.add_error_message I18n.t("devise_token_auth.sessions.not_confirmed", email: @resource.email)
+      render json: response, status: 401
+    end
+
+    def render_create_error_bad_credentials
+      response = Response.new
+      response.add_error_message I18n.t("devise_token_auth.sessions.bad_credentials")
+      render json: response, status: 401
     end
 
   end
