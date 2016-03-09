@@ -75,6 +75,11 @@ RSpec.describe Response, type: :model do
       expect(subject).to receive(:set_errors).once.with(data).and_call_original
       subject.prepare(data)
     end
+
+    it 'gets serializer for empty collection' do
+      expect_any_instance_of(String).to receive(:constantize).and_call_original
+      subject.prepare(Story.none)
+    end
   end
 
   describe '#attributes' do
