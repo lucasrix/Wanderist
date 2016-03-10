@@ -3,9 +3,10 @@ class StoryPointsService < BaseService
     @collection = collection
   end
 
-  def get_story_points
-    locations = LocationsService.new
-    locations = locations.within_origin(48.4640, 35.0538, 1)
+  def within_origin(latitude, longitude, radius)
+    origin = Location.new(latitude: latitude, longitude: longitude)
+    locations = Location.within(radius, origin: origin)
+
     @collection.where(location: locations)
   end
 

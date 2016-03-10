@@ -10,8 +10,8 @@ describe Api::V1::Auth::RegistrationsController do
   describe "POST #create" do
     let(:params) do
       {
-        'email' => Faker::Internet.email,
-        'password' => Faker::Internet.password
+        email: Faker::Internet.email,
+        password: Faker::Internet.password
       }
     end
 
@@ -28,9 +28,9 @@ describe Api::V1::Auth::RegistrationsController do
       first_name = Faker::Name.first_name
       last_name = Faker::Name.last_name
       params.merge!({
-        'first_name' => first_name,
-        'last_name' => last_name,
-        'photo' => fixture_file_upload('files/sample.jpg', 'image/jpeg')
+        first_name: first_name,
+        last_name: last_name,
+        photo: fixture_file_upload('files/sample.jpg', 'image/jpeg')
       })
 
       post :create, params
@@ -43,8 +43,8 @@ describe Api::V1::Auth::RegistrationsController do
 
     context 'email already in use' do
       it 'returns 403', :show_in_doc do
-        params['password'] = nil
-        create(:user, email: params['email'])
+        params[:password] = nil
+        create(:user, email: params[:email])
 
         post :create, params
         should respond_with :forbidden

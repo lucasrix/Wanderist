@@ -10,12 +10,11 @@ describe StoryPointsService do
     end
   end
 
-  describe '#get_story_points' do
+  describe '#within_origin' do
     it 'returns StoryPoint relation' do
-      expect(subject.get_story_points).to be_a(StoryPoint::ActiveRecord_Relation)
+      expect(subject.within_origin(1,1,1)).to be_a(StoryPoint::ActiveRecord_Relation)
     end
 
   end
-
 
 end

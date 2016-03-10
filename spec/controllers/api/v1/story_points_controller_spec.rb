@@ -6,9 +6,11 @@ describe Api::V1::StoryPointsController do
   describe 'GET #index' do
     let(:params) do
       {
-        'location[latitude]' => '100',
-        'location[longitude]' => '100',
-        radius: '1'
+        radius: 1,
+        location: {
+          latitude: 100,
+          longitude: 100
+        }
       }
     end
 
@@ -22,8 +24,8 @@ describe Api::V1::StoryPointsController do
       get :index, params
     end
 
-    it 'calls StoryPointsService#get_story_points' do
-      expect_any_instance_of(StoryPointsService).to receive(:get_story_points)
+    it 'calls StoryPointsService#within_origin' do
+      expect_any_instance_of(StoryPointsService).to receive(:within_origin)
       get :index, params
     end
 

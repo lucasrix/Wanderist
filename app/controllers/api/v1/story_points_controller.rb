@@ -28,7 +28,7 @@ module Api::V1
 
     api! 'List of story points'
     param_group :location, as: :create
-    param :radius, Float, desc: "Radius of area", required: true
+    param :radius, Float, desc: 'Radius of area in miles', required: true
     example <<-EOS
     GET /api/v1/story_points
     {
@@ -83,7 +83,8 @@ module Api::V1
     }
     EOS
     def index
-      render json: Response.new(@service.get_story_points)
+      @story_points = @service.within_origin(params[:latitude], params[:longitude], params[:radius])
+      render json: Response.new(@story_points)
     end
 
     api! 'Create a story point'
