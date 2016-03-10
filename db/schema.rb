@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160307125526) do
+ActiveRecord::Schema.define(version: 20160310115828) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,9 +26,11 @@ ActiveRecord::Schema.define(version: 20160307125526) do
   add_index "attachments", ["user_id"], name: "index_attachments_on_user_id", using: :btree
 
   create_table "likes", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "likable_id"
-    t.string  "likable_type"
+    t.integer  "user_id"
+    t.integer  "likable_id"
+    t.string   "likable_type"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   add_index "likes", ["likable_type", "likable_id"], name: "index_likes_on_likable_type_and_likable_id", using: :btree
@@ -42,43 +44,51 @@ ActiveRecord::Schema.define(version: 20160307125526) do
   end
 
   create_table "profiles", force: :cascade do |t|
-    t.integer "user_id"
-    t.string  "first_name"
-    t.string  "last_name"
-    t.string  "city"
-    t.string  "url"
-    t.text    "about"
-    t.string  "photo"
+    t.integer  "user_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "city"
+    t.string   "url"
+    t.text     "about"
+    t.string   "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
 
   create_table "reports", force: :cascade do |t|
-    t.integer "reportable_id"
-    t.string  "reportable_type"
-    t.integer "user_id"
+    t.integer  "reportable_id"
+    t.string   "reportable_type"
+    t.integer  "user_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   add_index "reports", ["reportable_type", "reportable_id"], name: "index_reports_on_reportable_type_and_reportable_id", using: :btree
   add_index "reports", ["user_id"], name: "index_reports_on_user_id", using: :btree
 
   create_table "stories", force: :cascade do |t|
-    t.integer "user_id"
-    t.string  "name"
-    t.text    "description"
-    t.boolean "discoverable", default: true
+    t.integer  "user_id"
+    t.string   "name"
+    t.text     "description"
+    t.boolean  "discoverable", default: true
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   add_index "stories", ["user_id"], name: "index_stories_on_user_id", using: :btree
 
   create_table "story_points", force: :cascade do |t|
-    t.integer "user_id"
-    t.string  "caption"
-    t.integer "story_id"
-    t.integer "location_id"
-    t.integer "kind"
-    t.integer "attachment_id"
-    t.text    "text"
+    t.integer  "user_id"
+    t.string   "caption"
+    t.integer  "story_id"
+    t.integer  "location_id"
+    t.integer  "kind"
+    t.integer  "attachment_id"
+    t.text     "text"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   add_index "story_points", ["attachment_id"], name: "index_story_points_on_attachment_id", using: :btree
@@ -87,13 +97,17 @@ ActiveRecord::Schema.define(version: 20160307125526) do
   add_index "story_points", ["user_id"], name: "index_story_points_on_user_id", using: :btree
 
   create_table "story_points_tags", id: false, force: :cascade do |t|
-    t.integer "tag_id",         null: false
-    t.integer "story_point_id", null: false
+    t.integer  "tag_id",         null: false
+    t.integer  "story_point_id", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "tags", force: :cascade do |t|
-    t.string  "name"
-    t.integer "author"
+    t.string   "name"
+    t.integer  "author"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

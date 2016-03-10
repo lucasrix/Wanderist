@@ -1,6 +1,6 @@
 class StoryPointsService < BaseService
   def initialize(collection)
-    @collection = collection
+    @collection = collection.order(created_at: :desc)
   end
 
   def within_origin(latitude, longitude, radius)
