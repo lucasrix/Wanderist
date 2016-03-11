@@ -41,6 +41,8 @@ describe Api::V1::StoriesController do
 
     it 'updates story', :show_in_doc do
       params = attributes_for(:story)
+      story_points = create_list(:story_point, 3)
+      params[:story_point_ids] = story_points.map(&:id)
       put :update, id: story.id, **params
       expect(Story.exists?(name: params[:name])).to be_truthy
     end
@@ -49,6 +51,22 @@ describe Api::V1::StoriesController do
       wrong_name = Faker::Lorem.paragraph
       put :update, id: story.id, name: wrong_name
       should respond_with :unprocessable_entity
+    end
+
+    it 'should return 404', :show_in_doc do
+      params = attributes_for(:story)
+      params[:story_point_ids] = [101]
+      put :update, id: story.id, **params
+      should respond_with :not_found
+    end
+
+    it 'should return 404' do
+      ability.cannot :read, StoryPoint
+      params = attributes_for(:story)
+      story_points = create_list(:story_point, 3)
+      params[:story_point_ids] = story_points.map(&:id)
+      put :update, id: story.id, **params
+      should respond_with :not_found
     end
 
   end

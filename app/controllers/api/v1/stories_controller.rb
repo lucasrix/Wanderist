@@ -12,6 +12,7 @@ module Api::V1
       param :name, String, desc: 'Name', required: true, action_aware: true
       param :description, String, desc: 'Description', required: true, action_aware: true
       param :discoverable, [true, false], desc: 'Discoverable state', required: true, action_aware: true
+      param :story_point_ids, Array, of: Integer, required: false
     end
 
     api! 'Create a story'
@@ -25,6 +26,10 @@ module Api::V1
     param_group :story
     error 422, 'Validation error.'
     def update
+      if params[:story_point_ids].present?
+        StoryPoint.accessible_by(current_ability, :read).find(params[:story_point_ids])
+      end
+
       update_entity(@story, story_params)
     end
 
@@ -37,7 +42,7 @@ module Api::V1
 
     private
     def story_params
-      params.permit(:name, :description, :discoverable)
+      params.permit(:name, :description, :discoverable, story_point_ids: [])
     end
   end
 end

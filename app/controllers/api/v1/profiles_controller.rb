@@ -3,8 +3,10 @@ module Api::V1
     resource_description do
       short 'Profile manager'
       api_versions 'v1'
-      error 401, 'Unauthorized action'
+      error 403, 'Forbidden action'
     end
+
+    load_and_authorize_resource through: :current_user, singleton: true
 
     api! 'Update a profile'
     param :photo, File, required: false, desc: 'New profile photo'
@@ -42,9 +44,7 @@ module Api::V1
     }
     EOS
     def update
-      profile = current_user.profile
-      authorize! :update, profile
-      update_entity(profile, profile_params)
+      update_entity(@profile, profile_params)
     end
 
     private

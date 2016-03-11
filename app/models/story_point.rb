@@ -4,10 +4,10 @@ class StoryPoint < ActiveRecord::Base
   TEXT_MAX_LENGTH = 1500
 
   belongs_to :user
-  belongs_to :story
   belongs_to :location
   belongs_to :attachment
 
+  has_and_belongs_to_many :stories
   has_and_belongs_to_many :tags
 
   validates :caption, presence: true, length: { maximum: CAPTION_MAX_LENGTH }

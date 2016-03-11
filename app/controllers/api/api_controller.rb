@@ -7,6 +7,12 @@ module Api
       render json: response, status: :forbidden
     end
 
+    rescue_from ActiveRecord::RecordNotFound do |exception|
+      response = Response.new
+      response.add_error_message(exception.message)
+      render json: response, status: :not_found
+    end
+
     def create_entity(entity)
       if entity.save
         render json: Response.new(entity), status: :created

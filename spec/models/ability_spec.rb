@@ -23,7 +23,7 @@ RSpec.describe Ability, type: :model do
 
     describe 'read' do
       it { should be_able_to(:read, story_point) }
-      it { should_not be_able_to(:read, foreign_story_point) }
+      it { should be_able_to(:read, foreign_story_point) }
     end
 
     describe 'destroy' do

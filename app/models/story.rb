@@ -4,6 +4,8 @@ class Story < ActiveRecord::Base
 
   belongs_to :user
 
+  has_and_belongs_to_many :story_points
+
   validates :user, presence: true
   validates :name, presence: true
   validates :name,

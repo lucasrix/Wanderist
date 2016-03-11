@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160310115828) do
+ActiveRecord::Schema.define(version: 20160310144207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,10 +79,14 @@ ActiveRecord::Schema.define(version: 20160310115828) do
 
   add_index "stories", ["user_id"], name: "index_stories_on_user_id", using: :btree
 
+  create_table "stories_story_points", id: false, force: :cascade do |t|
+    t.integer "story_point_id", null: false
+    t.integer "story_id",       null: false
+  end
+
   create_table "story_points", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "caption"
-    t.integer  "story_id"
     t.integer  "location_id"
     t.integer  "kind"
     t.integer  "attachment_id"
@@ -93,7 +97,6 @@ ActiveRecord::Schema.define(version: 20160310115828) do
 
   add_index "story_points", ["attachment_id"], name: "index_story_points_on_attachment_id", using: :btree
   add_index "story_points", ["location_id"], name: "index_story_points_on_location_id", using: :btree
-  add_index "story_points", ["story_id"], name: "index_story_points_on_story_id", using: :btree
   add_index "story_points", ["user_id"], name: "index_story_points_on_user_id", using: :btree
 
   create_table "story_points_tags", id: false, force: :cascade do |t|
@@ -146,6 +149,5 @@ ActiveRecord::Schema.define(version: 20160310115828) do
   add_foreign_key "stories", "users"
   add_foreign_key "story_points", "attachments"
   add_foreign_key "story_points", "locations"
-  add_foreign_key "story_points", "stories"
   add_foreign_key "story_points", "users"
 end

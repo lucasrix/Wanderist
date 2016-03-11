@@ -63,14 +63,6 @@ describe Api::V1::StoryPointsController do
       end
 
       it 'should return status 403' do
-        ability.cannot :read, Story
-        story = create(:story, user: user)
-        params[:story_id] = story.id
-        post :create, params
-        should respond_with :forbidden
-      end
-
-      it 'should return status 403' do
         ability.cannot :read, Attachment
         attachment = create(:attachment, user: user)
         params[:attachment_id] = attachment.id
@@ -105,11 +97,6 @@ describe Api::V1::StoryPointsController do
       should respond_with :unprocessable_entity
     end
 
-    it 'should return 403' do
-      foreign_story = create(:story)
-      put :update, id: story_point.id, story_id: foreign_story.id
-      should respond_with :forbidden
-    end
   end
 
   describe 'DELETE #destroy' do

@@ -8,7 +8,6 @@ module Api::V1
 
     load_and_authorize_resource
     load_and_authorize_resource :attachment, only: [:create, :update]
-    load_and_authorize_resource :story, only: [:create, :update]
 
     before_action :set_service, only: [:index]
 
@@ -24,6 +23,7 @@ module Api::V1
       param :text, String, required: false, desc: 'Text'
       param :attachment_id, Integer, required: false, desc: 'Attachment'
       param_group :location
+      param :tags, Array, of: String, desc: 'List of tags'
     end
 
     api! 'List of story points'
@@ -90,7 +90,6 @@ module Api::V1
     api! 'Create a story point'
     param :kind, StoryPoint::KINDS, required: true, desc: 'Kind'
     param_group :story_point
-    param :tags, Array, of: String, desc: "List of tags"
     see "attachments#create", "Attachment"
     see "stories#create", "Story"
     def create
@@ -111,8 +110,6 @@ module Api::V1
 
     api! 'Update a story point'
     param_group :story_point
-    param :story_id, Integer, required: false, desc: 'Story id'
-    param :tags, Array, of: String, desc: "List of tags"
     error 404, 'Story Point not found.'
 
     def update
@@ -134,7 +131,7 @@ module Api::V1
     end
 
     def story_point_params
-      params.permit(:caption, :text, :attachment_id, :kind, :story_id)
+      params.permit(:caption, :text, :attachment_id, :kind)
     end
 
     def location_params

@@ -10,7 +10,6 @@ describe StoryPointsService do
     end
 
     it 'order descending by created_at' do
-      # binding.pry
       old_story_point = create(:story_point, created_at: 2.hour.ago)
       new_story_point = create(:story_point, created_at: 1.hour.ago)
       expect(subject.instance_variable_get(:@collection).to_a).to eq([new_story_point, old_story_point])

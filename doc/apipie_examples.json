@@ -101,29 +101,6 @@
       ],
       "query": null,
       "request_data": {
-        "file": "<FILE CONTENT 'sample.jpg'>"
-      },
-      "response_data": {
-        "status": "success",
-        "data": {
-          "attachment": {
-            "id": 7,
-            "file_url": "/uploads/attachment/file/7/sample.jpg"
-          }
-        }
-      },
-      "code": "201",
-      "show_in_doc": 1,
-      "recorded": true
-    },
-    {
-      "verb": "POST",
-      "path": "/api/v1/attachments",
-      "versions": [
-        "v1"
-      ],
-      "query": null,
-      "request_data": {
       },
       "response_data": {
         "status": "error",
@@ -147,6 +124,29 @@
         }
       },
       "code": "422",
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/api/v1/attachments",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "file": "<FILE CONTENT 'sample.jpg'>"
+      },
+      "response_data": {
+        "status": "success",
+        "data": {
+          "attachment": {
+            "id": 89,
+            "file_url": "/uploads/attachment/file/89/sample.jpg"
+          }
+        }
+      },
+      "code": "201",
       "show_in_doc": 1,
       "recorded": true
     }
@@ -268,22 +268,22 @@
       ],
       "query": null,
       "request_data": {
-        "first_name": "London",
-        "last_name": "Schmidt",
-        "city": "West Minachester",
-        "url": "http://reilly.info/delmer.dooley",
-        "about": "Polaroid wolf selfies drinking neutra pour-over gastropub.",
+        "first_name": "Taylor",
+        "last_name": "Bashirian",
+        "city": "Edatown",
+        "url": "http://gulgowskiwuckert.biz/adrienne_jacobi",
+        "about": "Intelligentsia ugh cray 3 wolf moon slow-carb trust fund.",
         "photo": "<FILE CONTENT 'sample.jpg'>"
       },
       "response_data": {
         "status": "success",
         "data": {
           "profile": {
-            "id": 207,
-            "first_name": "London",
-            "last_name": "Schmidt",
-            "about": "Polaroid wolf selfies drinking neutra pour-over gastropub.",
-            "photo_url": "/uploads/profile/photo/207/sample.jpg"
+            "id": 4027,
+            "first_name": "Taylor",
+            "last_name": "Bashirian",
+            "about": "Intelligentsia ugh cray 3 wolf moon slow-carb trust fund.",
+            "photo_url": "/uploads/profile/photo/4027/sample.jpg"
           }
         }
       },
@@ -299,11 +299,11 @@
       ],
       "query": null,
       "request_data": {
-        "first_name": "Brittany",
-        "last_name": "Padberg",
-        "city": "Elvieberg",
-        "url": "http://schmidtlittel.org/kailee.jacobs",
-        "about": "Pbr&b selfies cred kitsch shoreditch celiac.",
+        "first_name": "Earnestine",
+        "last_name": "Abshire",
+        "city": "North Deshaunshire",
+        "url": "http://lehner.info/victoria.schoen",
+        "about": "Paleo wayfarers xoxo locavore small batch 3 wolf moon messenger bag gastropub.",
         "photo": "<FILE CONTENT 'sample.jpg'>"
       },
       "response_data": {
@@ -328,24 +328,24 @@
       ],
       "query": null,
       "request_data": {
-        "facebook_access_token": "fei104apl76me4yzythg0dyc9gb3cv68a3g8wr1zzv2t51vp1cj4stsh3vfomipd89a2krmi0l1paab0e8xhz38lax8svstvsxpgrohdhuo6przb4i5ucb3zsehyizk65kp20wyvxfkfu1io7i6zykzdy1smir86b16v59el480cst29mhl7cqxqdt0hnr7qnur8m0flkl9j1xnyaowg"
+        "facebook_access_token": "g1a17y72l991k45yfra3gdwb3hhozzesowcfpd5rn5f79f09q0ea5oww8x7vnefz8hoyz1cyghzh7b3kxzt67h37xv55z012y77gmj1ix832vzwyqrqqjdnvdicqcuwx8bmy1e3r6kv6mjuyp2489t98g2vxg2jxvglcabvfmtvns4b0ogyrav3tp3e26lplb6h50xr28ioai6df0cqv"
       },
       "response_data": {
         "status": "success",
         "data": {
           "user": {
-            "id": 103,
+            "id": 2068,
             "provider": "email",
-            "uid": "minnie@swaniawski.org",
-            "email": "minnie@swaniawski.org",
-            "created_at": "2016-03-09T14:21:06.436Z",
-            "updated_at": "2016-03-09T14:21:06.546Z",
+            "uid": "keven@durganjohnson.name",
+            "email": "keven@durganjohnson.name",
+            "created_at": "2016-03-11T09:31:23.477Z",
+            "updated_at": "2016-03-11T09:31:23.576Z",
             "profile": {
-              "id": 200,
-              "first_name": "Gaylord",
-              "last_name": "Ryan",
-              "about": "Vhs craft beer ramps park keffiyeh franzen squid green juice.",
-              "photo_url": "/uploads/profile/photo/200/sample.jpg"
+              "id": 4025,
+              "first_name": "Jackie",
+              "last_name": "O'Kon",
+              "about": "Blog helvetica cold-pressed stumptown 3 wolf moon master chambray vhs tote bag.",
+              "photo_url": "/uploads/profile/photo/4025/sample.jpg"
             }
           }
         }
@@ -386,28 +386,28 @@
       ],
       "query": null,
       "request_data": {
-        "email": "ricky_purdy@bogan.biz",
-        "password": "Wx71JsBx3",
-        "first_name": "Missouri",
-        "last_name": "Johnston",
+        "email": "ron_price@harvey.info",
+        "password": "LnB5D4Iz4",
+        "first_name": "Leon",
+        "last_name": "Leffler",
         "photo": "<FILE CONTENT 'sample.jpg'>"
       },
       "response_data": {
         "status": "success",
         "data": {
           "user": {
-            "id": 104,
+            "id": 2056,
             "provider": "email",
-            "uid": "ricky_purdy@bogan.biz",
-            "email": "ricky_purdy@bogan.biz",
-            "created_at": "2016-03-09T14:21:06.910Z",
-            "updated_at": "2016-03-09T14:21:07.025Z",
+            "uid": "ron_price@harvey.info",
+            "email": "ron_price@harvey.info",
+            "created_at": "2016-03-11T09:31:22.667Z",
+            "updated_at": "2016-03-11T09:31:22.787Z",
             "profile": {
-              "id": 201,
-              "first_name": "Missouri",
-              "last_name": "Johnston",
+              "id": 4001,
+              "first_name": "Leon",
+              "last_name": "Leffler",
               "about": null,
-              "photo_url": "/uploads/profile/photo/201/sample.jpg"
+              "photo_url": "/uploads/profile/photo/4001/sample.jpg"
             }
           }
         }
@@ -424,7 +424,7 @@
       ],
       "query": null,
       "request_data": {
-        "email": "lillian@schneider.name",
+        "email": "terry@adams.biz",
         "password": null
       },
       "response_data": {
@@ -434,7 +434,7 @@
             "id": null,
             "provider": "email",
             "uid": "",
-            "email": "lillian@schneider.name",
+            "email": "terry@adams.biz",
             "created_at": null,
             "updated_at": null,
             "profile": null
@@ -471,25 +471,25 @@
       ],
       "query": null,
       "request_data": {
-        "email": "dorcas@sporer.biz",
-        "password": "65J7S3VdO"
+        "email": "ryann_quigley@grady.co",
+        "password": "3zVh84Ka4"
       },
       "response_data": {
         "status": "success",
         "data": {
           "user": {
-            "id": 106,
+            "id": 2058,
             "provider": "email",
-            "uid": "dorcas@sporer.biz",
-            "email": "dorcas@sporer.biz",
-            "created_at": "2016-03-09T14:21:07.100Z",
-            "updated_at": "2016-03-09T14:21:07.242Z",
+            "uid": "ryann_quigley@grady.co",
+            "email": "ryann_quigley@grady.co",
+            "created_at": "2016-03-11T09:31:22.908Z",
+            "updated_at": "2016-03-11T09:31:23.015Z",
             "profile": {
-              "id": 204,
-              "first_name": null,
-              "last_name": null,
-              "about": null,
-              "photo_url": null
+              "id": 4005,
+              "first_name": "Albina",
+              "last_name": "Emmerich",
+              "about": "Jean shorts artisan seitan mustache vinyl retro next level.",
+              "photo_url": "/uploads/profile/photo/4005/sample.jpg"
             }
           }
         }
@@ -506,8 +506,8 @@
       ],
       "query": null,
       "request_data": {
-        "email": "rod_langworth@oconnerhammes.org",
-        "password": "Gz3kF7XeZ"
+        "email": "katlyn.kuhlman@schroederconroy.org",
+        "password": "3tAfMmNy"
       },
       "response_data": {
         "status": "error",
@@ -565,18 +565,18 @@
       ],
       "query": null,
       "request_data": {
-        "name": "shoreditch",
-        "description": "Rerum qui quaerat veritatis eum ullam. Officia nihil rem ullam. Aspernatur sint tenetur officiis fugit voluptatem. Ratione id sunt non neque atque velit. Veniam distinctio enim sint officiis soluta dolor.",
-        "discoverable": true
+        "name": "sustainable",
+        "description": "Laboriosam necessitatibus velit enim deleniti. Illo ducimus amet facere aperiam autem dolorem. Commodi voluptatem eligendi nihil expedita quia dolor.",
+        "discoverable": false
       },
       "response_data": {
         "status": "success",
         "data": {
           "story": {
-            "id": 15,
-            "name": "shoreditch",
-            "description": "Rerum qui quaerat veritatis eum ullam. Officia nihil rem ullam. Aspernatur sint tenetur officiis fugit voluptatem. Ratione id sunt non neque atque velit. Veniam distinctio enim sint officiis soluta dolor.",
-            "discoverable": true
+            "id": 267,
+            "name": "sustainable",
+            "description": "Laboriosam necessitatibus velit enim deleniti. Illo ducimus amet facere aperiam autem dolorem. Commodi voluptatem eligendi nihil expedita quia dolor.",
+            "discoverable": false
           }
         }
       },
@@ -592,9 +592,9 @@
       ],
       "query": null,
       "request_data": {
-        "name": "hoodie",
-        "description": "Officia quos optio aspernatur. Rerum qui et nisi magni reprehenderit. Corrupti eligendi rem. Maxime illum ipsam minus ad sint optio.",
-        "discoverable": true
+        "name": "selfies",
+        "description": "Consequatur consequatur adipisci ratione. Iusto in tenetur sit facilis. Ut et rem. Eius excepturi et facilis illo. Ipsa molestiae amet blanditiis nihil ullam.",
+        "discoverable": false
       },
       "response_data": {
         "status": "error",
@@ -612,7 +612,7 @@
   "stories#destroy": [
     {
       "verb": "DELETE",
-      "path": "/api/v1/stories/18",
+      "path": "/api/v1/stories/268",
       "versions": [
         "v1"
       ],
@@ -622,9 +622,9 @@
         "status": "success",
         "data": {
           "story": {
-            "id": 18,
-            "name": "crucifix",
-            "description": "Et suscipit et excepturi. Harum architecto sint ea delectus debitis soluta. Sint aut est excepturi. Dignissimos labore quia eveniet.",
+            "id": 268,
+            "name": "cornhole",
+            "description": "Aut cum quia rerum est. Minus quia maiores aperiam. Et libero cum est eos sint.",
             "discoverable": false
           }
         }
@@ -637,23 +637,28 @@
   "stories#update": [
     {
       "verb": "PUT",
-      "path": "/api/v1/stories/16",
+      "path": "/api/v1/stories/269",
       "versions": [
         "v1"
       ],
       "query": null,
       "request_data": {
-        "name": "cronut",
-        "description": "Nulla ullam harum ut ipsa ipsum excepturi. Incidunt atque aut quam aut velit. Est omnis dolorem non ex a et. Minus aperiam non odio mollitia dignissimos. Sit aliquam cumque quisquam.",
-        "discoverable": true
+        "name": "blog",
+        "description": "Minus eum illo porro qui. Aspernatur est inventore fuga voluptatem. Velit quae et.",
+        "discoverable": true,
+        "story_point_ids": [
+          "452",
+          "453",
+          "454"
+        ]
       },
       "response_data": {
         "status": "success",
         "data": {
           "story": {
-            "id": 16,
-            "name": "cronut",
-            "description": "Nulla ullam harum ut ipsa ipsum excepturi. Incidunt atque aut quam aut velit. Est omnis dolorem non ex a et. Minus aperiam non odio mollitia dignissimos. Sit aliquam cumque quisquam.",
+            "id": 269,
+            "name": "blog",
+            "description": "Minus eum illo porro qui. Aspernatur est inventore fuga voluptatem. Velit quae et.",
             "discoverable": true
           }
         }
@@ -664,21 +669,48 @@
     },
     {
       "verb": "PUT",
-      "path": "/api/v1/stories/17",
+      "path": "/api/v1/stories/270",
       "versions": [
         "v1"
       ],
       "query": null,
       "request_data": {
-        "name": "Assumenda voluptas eum cumque et possimus officiis ex. Laborum eos vel vitae ratione fuga est. Odit ut iure repellat. Aut sint incidunt quis voluptatem numquam. Facilis fugit repudiandae."
+        "name": "etsy",
+        "description": "Voluptatibus ut facilis rerum odit repellat consequatur deserunt. Tempora consectetur ut. Sit officia cum ipsa delectus perspiciatis voluptas qui. Earum voluptas ut ipsum ex et sunt et.",
+        "discoverable": true,
+        "story_point_ids": [
+          "101"
+        ]
+      },
+      "response_data": {
+        "status": "error",
+        "error": {
+          "error_messages": [
+            "Couldn't find StoryPoint with 'id'=101"
+          ]
+        }
+      },
+      "code": "404",
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "PUT",
+      "path": "/api/v1/stories/271",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "name": "Eos quia voluptatem quaerat officia enim. Libero consequatur aut non ad. Est cupiditate dignissimos. Quae autem quis consequatur labore voluptatem."
       },
       "response_data": {
         "status": "error",
         "data": {
           "story": {
-            "id": 17,
-            "name": "Assumenda voluptas eum cumque et possimus officiis ex. Laborum eos vel vitae ratione fuga est. Odit ut iure repellat. Aut sint incidunt quis voluptatem numquam. Facilis fugit repudiandae.",
-            "description": "Explicabo dolores fuga aperiam. Odit et laborum delectus et. Accusamus corrupti expedita harum incidunt voluptatem. Ut voluptatem eos et tempora facilis. Veritatis modi incidunt voluptas laborum expedita.",
+            "id": 271,
+            "name": "Eos quia voluptatem quaerat officia enim. Libero consequatur aut non ad. Est cupiditate dignissimos. Quae autem quis consequatur labore voluptatem.",
+            "description": "Totam rerum provident reprehenderit enim. Voluptatum quos ut laborum ea nisi. A quibusdam voluptatem rerum eum aspernatur.",
             "discoverable": false
           }
         },
@@ -709,55 +741,12 @@
       ],
       "query": null,
       "request_data": {
-        "caption": "loko",
-        "text": "Irony wolf street pabst tote bag normcore semiotics. Cold-pressed kickstarter thundercats. Sustainable mlkshk listicle hashtag. Blue bottle roof bushwick bicycle rights 8-bit hashtag. Iphone kickstarter vinyl.",
-        "kind": "text",
-        "location": {
-          "latitude": "67.49",
-          "longitude": "58.48"
-        },
-        "attachment_id": "8"
-      },
-      "response_data": {
-        "status": "success",
-        "data": {
-          "story_point": {
-            "id": 16,
-            "caption": "loko",
-            "kind": "text",
-            "attachment": {
-              "id": 8,
-              "file_url": "/uploads/attachment/file/8/sample.jpg"
-            },
-            "location": {
-              "id": 25,
-              "latitude": 67.49,
-              "longitude": 58.48
-            },
-            "tags": [
-
-            ]
-          }
-        }
-      },
-      "code": "201",
-      "show_in_doc": 1,
-      "recorded": true
-    },
-    {
-      "verb": "POST",
-      "path": "/api/v1/story_points",
-      "versions": [
-        "v1"
-      ],
-      "query": null,
-      "request_data": {
-        "caption": "drinking",
-        "text": "+1 put a bird on it fap tacos vinegar. Craft beer food truck chillwave tilde plaid portland cronut cardigan. Williamsburg semiotics humblebrag sustainable. Meh cleanse vinegar etsy disrupt thundercats hashtag.",
+        "caption": "normcore",
+        "text": "Brooklyn vinegar wayfarers shoreditch yuccie put a bird on it twee. Ugh health freegan tumblr heirloom. Hoodie neutra franzen. Tote bag plaid listicle portland banh mi tumblr mustache. Franzen pinterest slow-carb marfa chillwave celiac xoxo fashion axe.",
         "kind": "text",
         "location": {
           "latitude": null,
-          "longitude": "20.58"
+          "longitude": "93.32"
         }
       },
       "response_data": {
@@ -765,13 +754,13 @@
         "data": {
           "story_point": {
             "id": null,
-            "caption": "drinking",
+            "caption": "normcore",
             "kind": "text",
             "attachment": null,
             "location": {
               "id": null,
               "latitude": null,
-              "longitude": 20.58
+              "longitude": 93.32
             },
             "tags": [
 
@@ -803,12 +792,55 @@
       ],
       "query": null,
       "request_data": {
-        "caption": "marfa",
-        "text": "Organic park gentrify vinyl. Tacos park crucifix authentic. Kombucha chicharrones sartorial kinfolk cornhole vhs.",
+        "caption": "beard",
+        "text": "Carry direct trade marfa mumblecore before they sold out next level. Cred meditation pork belly. Pickled before they sold out franzen. Health direct trade wolf cold-pressed thundercats freegan hoodie meggings.",
         "kind": "text",
         "location": {
-          "latitude": "38.27",
-          "longitude": "99.14"
+          "latitude": "11.28",
+          "longitude": "69.95"
+        },
+        "attachment_id": "90"
+      },
+      "response_data": {
+        "status": "success",
+        "data": {
+          "story_point": {
+            "id": 456,
+            "caption": "beard",
+            "kind": "text",
+            "attachment": {
+              "id": 90,
+              "file_url": "/uploads/attachment/file/90/sample.jpg"
+            },
+            "location": {
+              "id": 654,
+              "latitude": 11.28,
+              "longitude": 69.95
+            },
+            "tags": [
+
+            ]
+          }
+        }
+      },
+      "code": "201",
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/api/v1/story_points",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "caption": "scenester",
+        "text": "Franzen jean shorts everyday locavore wes anderson. Artisan yolo raw denim pabst aesthetic. Banjo irony taxidermy single-origin coffee kitsch cred. Ugh venmo leggings. Portland helvetica slow-carb tattooed humblebrag freegan.",
+        "kind": "text",
+        "location": {
+          "latitude": "54.34",
+          "longitude": "74.98"
         }
       },
       "response_data": {
@@ -827,7 +859,7 @@
   "story_points#destroy": [
     {
       "verb": "DELETE",
-      "path": "/api/v1/story_points/18",
+      "path": "/api/v1/story_points/455",
       "versions": [
         "v1"
       ],
@@ -837,14 +869,14 @@
         "status": "success",
         "data": {
           "story_point": {
-            "id": 18,
-            "caption": "asymmetrical",
+            "id": 455,
+            "caption": "kombucha",
             "kind": "text",
             "attachment": null,
             "location": {
-              "id": 27,
-              "latitude": 50.25,
-              "longitude": 96.77
+              "id": 653,
+              "latitude": 66.74,
+              "longitude": 38.72
             },
             "tags": [
 
@@ -860,27 +892,27 @@
   "story_points#update": [
     {
       "verb": "PUT",
-      "path": "/api/v1/story_points/17",
+      "path": "/api/v1/story_points/457",
       "versions": [
         "v1"
       ],
       "query": null,
       "request_data": {
-        "caption": "letterpress",
-        "text": "Hoodie kinfolk brooklyn. Pop-up pbr&b blog poutine readymade. Viral artisan xoxo ennui. Authentic blue bottle celiac bushwick etsy. Kickstarter craft beer fixie literally hella wes anderson."
+        "caption": "selfies",
+        "text": "Asymmetrical deep v bushwick. Knausgaard skateboard kitsch salvia drinking sartorial. Keytar echo thundercats pbr&b truffaut gastropub. Listicle ugh slow-carb tilde forage. Street cardigan pabst shoreditch jean shorts irony 8-bit butcher."
       },
       "response_data": {
         "status": "success",
         "data": {
           "story_point": {
-            "id": 17,
-            "caption": "letterpress",
+            "id": 457,
+            "caption": "selfies",
             "kind": "text",
             "attachment": null,
             "location": {
-              "id": 26,
-              "latitude": 49.84,
-              "longitude": 95.18
+              "id": 655,
+              "latitude": 78.58,
+              "longitude": 89.57
             },
             "tags": [
 
