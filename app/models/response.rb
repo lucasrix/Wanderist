@@ -4,9 +4,10 @@ class Response
 
   attr_reader :status, :data, :error
 
-  def initialize(data = nil)
+  def initialize(data = nil, element_serializer = nil)
     @error_messages = []
     @details = {}
+    @element_serializer = element_serializer if element_serializer
     prepare(data) if data
   end
 
@@ -49,6 +50,8 @@ class Response
 
   private
   def get_element_serializer(collection)
+    return @element_serializer if @element_serializer
+
     if collection.exists?
       ActiveModel::Serializer.serializer_for(collection.first)
     else
@@ -69,7 +72,7 @@ class Response
   def set_errors(data)
     if data.is_a?(ActiveRecord::Base)
       unless data.valid?
-        @error_messages << data.errors.full_messages
+        @error_messages += data.errors.full_messages
         @details.merge! data.errors.to_hash
       end
     end

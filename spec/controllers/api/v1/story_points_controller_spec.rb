@@ -31,6 +31,15 @@ describe Api::V1::StoryPointsController do
 
   end
 
+  describe 'GET #show' do
+    let(:story_point) { create(:story_point, user: user) }
+
+    it 'should be success', :show_in_doc do
+      get :show, id: story_point.id
+      should respond_with :ok
+    end
+  end
+
   describe 'POST #create' do
     let(:params){ attributes_for(:story_point).merge({ location: attributes_for(:location) }) }
 

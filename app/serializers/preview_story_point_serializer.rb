@@ -1,4 +1,4 @@
-class StoryPointSerializer < ApplicationSerializer
+class PreviewStoryPointSerializer < ApplicationSerializer
   attributes :id, :caption, :kind
 
   has_one :user

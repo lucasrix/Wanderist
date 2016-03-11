@@ -84,7 +84,55 @@ module Api::V1
     EOS
     def index
       @story_points = @service.within_origin(params[:latitude], params[:longitude], params[:radius])
-      render json: Response.new(@story_points)
+      render json: Response.new(@story_points, PreviewStoryPointSerializer)
+    end
+
+    api! 'Show a story point info'
+    error 404, 'Story point not found'
+
+    example <<-EOS
+    GET /api/v1/story_points/1
+    200
+    {
+      "success": true,
+      "data": {
+        "story_point": {
+          "id": 1,
+          "kind": "photo",
+          "caption": "My Awesome Story Point",
+          "attachment": {
+            "id": 1,
+            "file_url": "FILE_URL"
+          },
+          "location": {
+            "id": 1,
+            "latitude": 48.4500,
+            "longitude": 34.9833
+          },
+          "tags": [
+            {
+              "id": 1,
+              "name": "tag1"
+            },
+            {
+              "id": 2,
+              "name": "tag2"
+            },
+            {
+              "id": 3,
+              "name": "tag3"
+            }
+          ]
+        }
+      },
+      "error": {
+        "error_messages": [],
+        "details": {}
+      }
+    }
+    EOS
+    def show
+      render json: Response.new(@story_point)
     end
 
     api! 'Create a story point'
