@@ -54,12 +54,12 @@ RSpec.describe Response, type: :model do
 
     it 'contains error_messages' do
       subject.instance_variable_set(:@error_messages, [Faker::Hipster.paragraph])
-      expect(subject.error).to have_key('error_messages')
+      expect(subject.error).to have_key(:error_messages)
     end
 
     it 'contains details' do
       subject.instance_variable_set(:@details, Faker::Hipster.paragraph)
-      expect(subject.error).to have_key('details')
+      expect(subject.error).to have_key(:details)
     end
   end
 

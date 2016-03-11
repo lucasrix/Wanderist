@@ -24,9 +24,10 @@ class Response
   end
 
   def error
-    result = {}
-    result['error_messages'] = @error_messages unless @error_messages.empty?
-    result['details'] = @details unless @details.empty?
+    result = {
+      error_messages: @error_messages,
+      details: @details
+    }
     result
   end
 
