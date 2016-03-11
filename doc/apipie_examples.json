@@ -101,36 +101,6 @@
       ],
       "query": null,
       "request_data": {
-        "file": "<FILE CONTENT 'sample.jpg'>"
-      },
-      "response_data": {
-        "status": "success",
-        "data": {
-          "attachment": {
-            "id": 121,
-            "file_url": "/uploads/attachment/file/121/sample.jpg"
-          }
-        },
-        "error": {
-          "error_messages": [
-
-          ],
-          "details": {
-          }
-        }
-      },
-      "code": "201",
-      "show_in_doc": 1,
-      "recorded": true
-    },
-    {
-      "verb": "POST",
-      "path": "/api/v1/attachments",
-      "versions": [
-        "v1"
-      ],
-      "query": null,
-      "request_data": {
       },
       "response_data": {
         "status": "error",
@@ -154,6 +124,36 @@
         }
       },
       "code": "422",
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/api/v1/attachments",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "file": "<FILE CONTENT 'sample.jpg'>"
+      },
+      "response_data": {
+        "status": "success",
+        "data": {
+          "attachment": {
+            "id": 124,
+            "file_url": "/uploads/attachment/file/124/sample.jpg"
+          }
+        },
+        "error": {
+          "error_messages": [
+
+          ],
+          "details": {
+          }
+        }
+      },
+      "code": "201",
       "show_in_doc": 1,
       "recorded": true
     }
@@ -275,22 +275,24 @@
       ],
       "query": null,
       "request_data": {
-        "first_name": "Hertha",
-        "last_name": "VonRueden",
-        "city": "South Emmaleebury",
-        "url": "http://lakin.co/hattie_abernathy",
-        "about": "Hammock church-key intelligentsia franzen jean shorts tacos.",
+        "first_name": "Horace",
+        "last_name": "Streich",
+        "city": "Port Jaidatown",
+        "url": "http://lubowitzanderson.net/gregory_leffler",
+        "about": "Vinyl ugh schlitz cred hella.",
         "photo": "<FILE CONTENT 'sample.jpg'>"
       },
       "response_data": {
         "status": "success",
         "data": {
           "profile": {
-            "id": 5149,
-            "first_name": "Hertha",
-            "last_name": "VonRueden",
-            "about": "Hammock church-key intelligentsia franzen jean shorts tacos.",
-            "photo_url": "/uploads/profile/photo/5149/sample.jpg"
+            "id": 5691,
+            "first_name": "Horace",
+            "last_name": "Streich",
+            "city": "Port Jaidatown",
+            "url": "http://lubowitzanderson.net/gregory_leffler",
+            "about": "Vinyl ugh schlitz cred hella.",
+            "photo_url": "/uploads/profile/photo/5691/sample.jpg"
           }
         },
         "error": {
@@ -313,11 +315,11 @@
       ],
       "query": null,
       "request_data": {
-        "first_name": "Fabian",
-        "last_name": "Prosacco",
-        "city": "East Alexandreabury",
-        "url": "http://walsh.net/judd",
-        "about": "Normcore artisan fanny pack polaroid venmo helvetica pop-up.",
+        "first_name": "Clementina",
+        "last_name": "Abshire",
+        "city": "East Neldamouth",
+        "url": "http://beatty.io/duane",
+        "about": "Freegan asymmetrical bitters goth poutine single-origin coffee.",
         "photo": "<FILE CONTENT 'sample.jpg'>"
       },
       "response_data": {
@@ -345,24 +347,26 @@
       ],
       "query": null,
       "request_data": {
-        "facebook_access_token": "j65bwtjr3lwbdkhxfjhh0yml8tqcwix205l27si4drj0q9b573o9k38puj8vpm5sadcajtu38s2ixocfqhj1zh5a01iyrlo4qfp837h2danpdnm1r25rg3zbhwlpomf6vuningbk9fxmzq5e875g4mu8lhbc5pup4pvm9afq7ado5nruk6ezgjbbb8hjpx4fz9dplyvl96iuv4qilc7g"
+        "facebook_access_token": "xg5axr82soixq1lzovzkg13bj98u15mrrvlztsjk0ijhl5itocc0yvrlsdmigxl4hvi8674js55skqh9riux29a3mxmmxsd3n42q7w03shbcubcewxosuilx1fftgy7826e1jthfeq7d409l9wo44uhez0e4x6v2qfgf9m7wfc11k6u52dfzzd68b0uu7q8e2g7p61gjynxrjk74zv2j"
       },
       "response_data": {
         "status": "success",
         "data": {
           "user": {
-            "id": 2649,
+            "id": 2916,
             "provider": "email",
-            "uid": "griffin.bednar@hagenehanahan.co",
-            "email": "griffin.bednar@hagenehanahan.co",
-            "created_at": "2016-03-11T10:45:42.464Z",
-            "updated_at": "2016-03-11T10:45:42.567Z",
+            "uid": "lyric_heathcote@wintheiserdietrich.net",
+            "email": "lyric_heathcote@wintheiserdietrich.net",
+            "created_at": "2016-03-11T11:56:53.163Z",
+            "updated_at": "2016-03-11T11:56:53.269Z",
             "profile": {
-              "id": 5157,
-              "first_name": "Blair",
-              "last_name": "Daniel",
-              "about": "Letterpress slow-carb freegan crucifix raw denim.",
-              "photo_url": "/uploads/profile/photo/5157/sample.jpg"
+              "id": 5689,
+              "first_name": "Desmond",
+              "last_name": "Yundt",
+              "city": "Lake Noelfort",
+              "url": "http://grimes.biz/cara",
+              "about": "Franzen plaid gentrify iphone vinegar fanny pack blue bottle.",
+              "photo_url": "/uploads/profile/photo/5689/sample.jpg"
             }
           }
         },
@@ -413,28 +417,30 @@
       ],
       "query": null,
       "request_data": {
-        "email": "delmer@spencerrempel.io",
-        "password": "8lJ5F2WzM",
-        "first_name": "Ernestina",
-        "last_name": "Schaden",
+        "email": "savanah.gibson@cummingsleuschke.co",
+        "password": "V4FqX4Co8",
+        "first_name": "Yessenia",
+        "last_name": "Kertzmann",
         "photo": "<FILE CONTENT 'sample.jpg'>"
       },
       "response_data": {
         "status": "success",
         "data": {
           "user": {
-            "id": 2655,
+            "id": 2900,
             "provider": "email",
-            "uid": "delmer@spencerrempel.io",
-            "email": "delmer@spencerrempel.io",
-            "created_at": "2016-03-11T10:45:43.658Z",
-            "updated_at": "2016-03-11T10:45:43.760Z",
+            "uid": "savanah.gibson@cummingsleuschke.co",
+            "email": "savanah.gibson@cummingsleuschke.co",
+            "created_at": "2016-03-11T11:56:52.230Z",
+            "updated_at": "2016-03-11T11:56:52.334Z",
             "profile": {
-              "id": 5168,
-              "first_name": "Ernestina",
-              "last_name": "Schaden",
+              "id": 5657,
+              "first_name": "Yessenia",
+              "last_name": "Kertzmann",
+              "city": null,
+              "url": null,
               "about": null,
-              "photo_url": "/uploads/profile/photo/5168/sample.jpg"
+              "photo_url": "/uploads/profile/photo/5657/sample.jpg"
             }
           }
         },
@@ -458,7 +464,7 @@
       ],
       "query": null,
       "request_data": {
-        "email": "eldred@ziemann.name",
+        "email": "candice@cummerata.net",
         "password": null
       },
       "response_data": {
@@ -468,7 +474,7 @@
             "id": null,
             "provider": "email",
             "uid": "",
-            "email": "eldred@ziemann.name",
+            "email": "candice@cummerata.net",
             "created_at": null,
             "updated_at": null,
             "profile": null
@@ -505,25 +511,27 @@
       ],
       "query": null,
       "request_data": {
-        "email": "asia@brown.info",
-        "password": "IbKvSkG17"
+        "email": "moriah@bogisich.biz",
+        "password": "5i1tPtYpQ"
       },
       "response_data": {
         "status": "success",
         "data": {
           "user": {
-            "id": 2644,
+            "id": 2899,
             "provider": "email",
-            "uid": "asia@brown.info",
-            "email": "asia@brown.info",
-            "created_at": "2016-03-11T10:45:42.071Z",
-            "updated_at": "2016-03-11T10:45:42.184Z",
+            "uid": "moriah@bogisich.biz",
+            "email": "moriah@bogisich.biz",
+            "created_at": "2016-03-11T11:56:52.058Z",
+            "updated_at": "2016-03-11T11:56:52.189Z",
             "profile": {
-              "id": 5147,
-              "first_name": "Lessie",
-              "last_name": "Wintheiser",
-              "about": "Actually leggings sriracha art party tacos kinfolk shoreditch migas roof.",
-              "photo_url": "/uploads/profile/photo/5147/sample.jpg"
+              "id": 5655,
+              "first_name": null,
+              "last_name": null,
+              "city": null,
+              "url": null,
+              "about": null,
+              "photo_url": null
             }
           }
         },
@@ -547,8 +555,8 @@
       ],
       "query": null,
       "request_data": {
-        "email": "amely@kris.biz",
-        "password": "Bo3fO2Ye0"
+        "email": "dolores_dickinson@johnston.name",
+        "password": "0uY48b3pW"
       },
       "response_data": {
         "status": "error",
@@ -609,18 +617,18 @@
       ],
       "query": null,
       "request_data": {
-        "name": "ramps",
-        "description": "Error quasi architecto dignissimos laboriosam repellat unde ea. Itaque nihil voluptatem consequatur. Ipsa iusto assumenda dignissimos sint debitis. Eum sed perferendis aliquam. Alias quibusdam tempore iste.",
-        "discoverable": true
+        "name": "lomo",
+        "description": "Impedit doloremque ea placeat nesciunt alias qui. Perferendis consequatur distinctio atque. Est iste a distinctio id illo.",
+        "discoverable": false
       },
       "response_data": {
         "status": "success",
         "data": {
           "story": {
-            "id": 352,
-            "name": "ramps",
-            "description": "Error quasi architecto dignissimos laboriosam repellat unde ea. Itaque nihil voluptatem consequatur. Ipsa iusto assumenda dignissimos sint debitis. Eum sed perferendis aliquam. Alias quibusdam tempore iste.",
-            "discoverable": true
+            "id": 473,
+            "name": "lomo",
+            "description": "Impedit doloremque ea placeat nesciunt alias qui. Perferendis consequatur distinctio atque. Est iste a distinctio id illo.",
+            "discoverable": false
           }
         },
         "error": {
@@ -643,8 +651,8 @@
       ],
       "query": null,
       "request_data": {
-        "name": "loko",
-        "description": "Reprehenderit tempore minus nemo aut. Labore temporibus eaque doloribus ipsam eos aut. Possimus dolor ex vero.",
+        "name": "sriracha",
+        "description": "Odit provident autem rerum modi. Nesciunt qui aliquid quis magnam saepe. Excepturi non fuga vel. Aut quia consequatur deleniti enim. Earum et voluptas blanditiis sed nulla.",
         "discoverable": false
       },
       "response_data": {
@@ -666,7 +674,7 @@
   "stories#destroy": [
     {
       "verb": "DELETE",
-      "path": "/api/v1/stories/351",
+      "path": "/api/v1/stories/469",
       "versions": [
         "v1"
       ],
@@ -676,10 +684,10 @@
         "status": "success",
         "data": {
           "story": {
-            "id": 351,
-            "name": "truffaut",
-            "description": "Vel reprehenderit quibusdam non quos quam a. Facilis quibusdam accusamus commodi. Et cumque aspernatur aut aut rem et aut. Recusandae magnam rerum porro.",
-            "discoverable": true
+            "id": 469,
+            "name": "irony",
+            "description": "Voluptatem nostrum voluptatem. A ipsa sunt quos adipisci rerum ipsam. Ea consectetur architecto sint. Sint nesciunt quo. Repudiandae voluptas laboriosam blanditiis vel pariatur velit et.",
+            "discoverable": false
           }
         },
         "error": {
@@ -698,61 +706,22 @@
   "stories#update": [
     {
       "verb": "PUT",
-      "path": "/api/v1/stories/348",
+      "path": "/api/v1/stories/470",
       "versions": [
         "v1"
       ],
       "query": null,
       "request_data": {
-        "name": "gentrify",
-        "description": "Est omnis non quos vel aliquam. Voluptatum consequatur nemo temporibus qui. Suscipit voluptates architecto est. Vero mollitia eum cumque ut et iste ad. In praesentium eos.",
-        "discoverable": false,
-        "story_point_ids": [
-          "584",
-          "585",
-          "586"
-        ]
-      },
-      "response_data": {
-        "status": "success",
-        "data": {
-          "story": {
-            "id": 348,
-            "name": "gentrify",
-            "description": "Est omnis non quos vel aliquam. Voluptatum consequatur nemo temporibus qui. Suscipit voluptates architecto est. Vero mollitia eum cumque ut et iste ad. In praesentium eos.",
-            "discoverable": false
-          }
-        },
-        "error": {
-          "error_messages": [
-
-          ],
-          "details": {
-          }
-        }
-      },
-      "code": "200",
-      "show_in_doc": 1,
-      "recorded": true
-    },
-    {
-      "verb": "PUT",
-      "path": "/api/v1/stories/349",
-      "versions": [
-        "v1"
-      ],
-      "query": null,
-      "request_data": {
-        "name": "Quos ex aliquid eaque culpa tempore. Eum ducimus blanditiis similique sit. Deleniti ullam in aperiam molestiae quidem laboriosam porro. Repellat et quisquam facilis."
+        "name": "Dolor velit earum. Sed sint veritatis dolore et et quidem tempora. Saepe provident nam rerum ut qui ea blanditiis. Et corrupti minima est voluptates eligendi. Dolorum odit laboriosam ut aliquam consequatur."
       },
       "response_data": {
         "status": "error",
         "data": {
           "story": {
-            "id": 349,
-            "name": "Quos ex aliquid eaque culpa tempore. Eum ducimus blanditiis similique sit. Deleniti ullam in aperiam molestiae quidem laboriosam porro. Repellat et quisquam facilis.",
-            "description": "Voluptates delectus perspiciatis repellat autem. Tenetur totam qui. Aspernatur qui eum laborum.",
-            "discoverable": true
+            "id": 470,
+            "name": "Dolor velit earum. Sed sint veritatis dolore et et quidem tempora. Saepe provident nam rerum ut qui ea blanditiis. Et corrupti minima est voluptates eligendi. Dolorum odit laboriosam ut aliquam consequatur.",
+            "description": "Fuga a enim magni quis ea odit. Eius exercitationem dolor autem. Voluptatum autem natus voluptates magni. Molestias consequatur commodi ut. Qui eaque accusantium possimus sed quam tenetur.",
+            "discoverable": false
           }
         },
         "error": {
@@ -774,14 +743,14 @@
     },
     {
       "verb": "PUT",
-      "path": "/api/v1/stories/350",
+      "path": "/api/v1/stories/471",
       "versions": [
         "v1"
       ],
       "query": null,
       "request_data": {
-        "name": "brunch",
-        "description": "Corrupti animi ea consequatur. Nihil consequatur iste odit aperiam quo. Accusamus facilis animi. Ut pariatur tenetur est.",
+        "name": "helvetica",
+        "description": "Facilis non reprehenderit autem distinctio. Est neque voluptas corrupti voluptatem sint et nobis. Ut eum commodi architecto animi deserunt eligendi amet.",
         "discoverable": false,
         "story_point_ids": [
           "101"
@@ -801,6 +770,45 @@
       "code": "404",
       "show_in_doc": 1,
       "recorded": true
+    },
+    {
+      "verb": "PUT",
+      "path": "/api/v1/stories/472",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "name": "occupy",
+        "description": "Id officiis aut libero vitae. Voluptatibus ut dolorem. Consequatur mollitia eveniet numquam est.",
+        "discoverable": true,
+        "story_point_ids": [
+          "698",
+          "699",
+          "700"
+        ]
+      },
+      "response_data": {
+        "status": "success",
+        "data": {
+          "story": {
+            "id": 472,
+            "name": "occupy",
+            "description": "Id officiis aut libero vitae. Voluptatibus ut dolorem. Consequatur mollitia eveniet numquam est.",
+            "discoverable": true
+          }
+        },
+        "error": {
+          "error_messages": [
+
+          ],
+          "details": {
+          }
+        }
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
     }
   ],
   "story_points#create": [
@@ -812,12 +820,12 @@
       ],
       "query": null,
       "request_data": {
-        "caption": "lumbersexual",
-        "text": "Pickled butcher hammock intelligentsia williamsburg. Hoodie normcore umami. Raw denim schlitz chia helvetica irony portland etsy keffiyeh. Shoreditch vice direct trade hoodie selfies wolf. Cliche pitchfork mustache cronut tattooed.",
+        "caption": "wayfarers",
+        "text": "Brunch fingerstache kinfolk. Cardigan williamsburg cleanse meggings pinterest pitchfork authentic echo. Ugh offal gentrify. Tacos viral skateboard kitsch raw denim.",
         "kind": "text",
         "location": {
           "latitude": null,
-          "longitude": "22.32"
+          "longitude": "46.36"
         }
       },
       "response_data": {
@@ -825,13 +833,13 @@
         "data": {
           "story_point": {
             "id": null,
-            "caption": "lumbersexual",
+            "caption": "wayfarers",
             "kind": "text",
             "attachment": null,
             "location": {
               "id": null,
               "latitude": null,
-              "longitude": 22.32
+              "longitude": 46.36
             },
             "tags": [
 
@@ -863,30 +871,30 @@
       ],
       "query": null,
       "request_data": {
-        "caption": "vice",
-        "text": "Neutra skateboard brooklyn kickstarter vice disrupt tacos. Ramps ugh meggings. Tacos put a bird on it street. Swag tumblr ethical hashtag gentrify pbr&b pinterest.",
+        "caption": "vinegar",
+        "text": "Crucifix street brunch actually. Chia pop-up brunch raw denim health wolf williamsburg. Shoreditch letterpress tattooed messenger bag selvage.",
         "kind": "text",
         "location": {
-          "latitude": "70.01",
-          "longitude": "65.56"
+          "latitude": "93.77",
+          "longitude": "61.91"
         },
-        "attachment_id": "122"
+        "attachment_id": "123"
       },
       "response_data": {
         "status": "success",
         "data": {
           "story_point": {
-            "id": 589,
-            "caption": "vice",
+            "id": 702,
+            "caption": "vinegar",
             "kind": "text",
             "attachment": {
-              "id": 122,
-              "file_url": "/uploads/attachment/file/122/sample.jpg"
+              "id": 123,
+              "file_url": "/uploads/attachment/file/123/sample.jpg"
             },
             "location": {
-              "id": 832,
-              "latitude": 70.01,
-              "longitude": 65.56
+              "id": 945,
+              "latitude": 93.77,
+              "longitude": 61.91
             },
             "tags": [
 
@@ -913,12 +921,12 @@
       ],
       "query": null,
       "request_data": {
-        "caption": "kogi",
-        "text": "Jean shorts ennui schlitz green juice. Normcore hammock pour-over heirloom venmo ramps blue bottle. Williamsburg squid single-origin coffee cray pug trust fund vinegar.",
+        "caption": "waistcoat",
+        "text": "Distillery small batch shoreditch tilde tacos pug cronut 3 wolf moon. Forage small batch intelligentsia chillwave. Hammock letterpress skateboard knausgaard.",
         "kind": "text",
         "location": {
-          "latitude": "34.06",
-          "longitude": "30.25"
+          "latitude": "94.23",
+          "longitude": "62.75"
         }
       },
       "response_data": {
@@ -940,7 +948,7 @@
   "story_points#destroy": [
     {
       "verb": "DELETE",
-      "path": "/api/v1/story_points/588",
+      "path": "/api/v1/story_points/703",
       "versions": [
         "v1"
       ],
@@ -950,14 +958,14 @@
         "status": "success",
         "data": {
           "story_point": {
-            "id": 588,
-            "caption": "PBR&B",
+            "id": 703,
+            "caption": "post-ironic",
             "kind": "text",
             "attachment": null,
             "location": {
-              "id": 831,
-              "latitude": 12.78,
-              "longitude": 18.62
+              "id": 946,
+              "latitude": 74.77,
+              "longitude": 26.18
             },
             "tags": [
 
@@ -980,27 +988,27 @@
   "story_points#update": [
     {
       "verb": "PUT",
-      "path": "/api/v1/story_points/587",
+      "path": "/api/v1/story_points/701",
       "versions": [
         "v1"
       ],
       "query": null,
       "request_data": {
-        "caption": "tattooed",
-        "text": "Echo skateboard etsy synth bitters post-ironic stumptown. Godard carry offal truffaut synth vegan pickled. Butcher sriracha quinoa narwhal park readymade. Trust fund listicle +1 readymade carry tote bag chartreuse kitsch. Mlkshk bitters kitsch single-origin coffee knausgaard photo booth typewriter 90's."
+        "caption": "meditation",
+        "text": "Craft beer ugh direct trade vegan kickstarter mumblecore 90's deep v. Umami distillery thundercats fashion axe. Blue bottle keffiyeh hashtag. Vhs letterpress before they sold out locavore bitters ramps twee."
       },
       "response_data": {
         "status": "success",
         "data": {
           "story_point": {
-            "id": 587,
-            "caption": "tattooed",
+            "id": 701,
+            "caption": "meditation",
             "kind": "text",
             "attachment": null,
             "location": {
-              "id": 830,
-              "latitude": 10.23,
-              "longitude": 19.06
+              "id": 944,
+              "latitude": 23.39,
+              "longitude": 59.05
             },
             "tags": [
 

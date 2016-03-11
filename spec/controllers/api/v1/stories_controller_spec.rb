@@ -47,6 +47,13 @@ describe Api::V1::StoriesController do
       expect(Story.exists?(name: params[:name])).to be_truthy
     end
 
+    it 'should remove story points from story' do
+      story = create(:story_with_story_points)
+      put :update, id: story.id, story_point_ids: []
+      story = Story.find(story.id)
+      expect(story.story_points).to be_empty
+    end
+
     it 'should return 422', :show_in_doc do
       wrong_name = Faker::Lorem.paragraph
       put :update, id: story.id, name: wrong_name
