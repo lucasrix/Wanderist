@@ -1,2 +1,5 @@
 en:
   token_not_found: Token not found
+
+  story_points:
+    missing_params: Missing params

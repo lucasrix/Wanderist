@@ -8,6 +8,7 @@ gem 'puma'
 
 gem 'haml'
 gem 'geokit-rails'
+gem 'kaminari'
 
 # Docs
 gem 'apipie-rails', github: 'Apipie/apipie-rails'
@@ -38,8 +39,8 @@ group :development do
   gem 'mailcatcher'
   gem 'brakeman', require: false
   gem 'rubocop', require: false
-  gem "rubycritic", require: false
-  gem "rails_best_practices"
+  gem 'rubycritic', require: false
+  gem 'rails_best_practices'
 
   gem 'rack-cors', require: 'rack/cors'
 end

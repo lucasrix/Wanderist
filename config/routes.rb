@@ -23,7 +23,9 @@ Rails.application.routes.draw do
 
       resources :story_points, only: [:index, :show, :create, :update, :destroy]
       resources :attachments, only: [:create]
-      resources :stories, only: [:create, :update, :destroy]
+      resources :stories, only: [:create, :update, :destroy] do
+        resources :story_points, only: [:index]
+      end
 
       resource :profile, only: [:update]
 

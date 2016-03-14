@@ -249,6 +249,9 @@ GEM
     ipaddress (0.8.3)
     json (1.8.3)
     jwt (1.5.1)
+    kaminari (0.16.3)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     koala (2.2.0)
       addressable
       faraday
@@ -475,6 +478,7 @@ DEPENDENCIES
   fuubar
   geokit-rails
   haml
+  kaminari
   koala (~> 2.2)
   mailcatcher
   maruku

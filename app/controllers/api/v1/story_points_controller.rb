@@ -6,7 +6,8 @@ module Api::V1
       error 401, 'Unauthorized action'
     end
 
-    load_and_authorize_resource
+    load_and_authorize_resource :story, only: [:index]
+    load_and_authorize_resource through: :story, shallow: true
     load_and_authorize_resource :attachment, only: [:create, :update]
 
     before_action :set_service, only: [:index]
@@ -83,8 +84,14 @@ module Api::V1
     }
     EOS
     def index
-      @story_points = @service.within_origin(params[:latitude], params[:longitude], params[:radius])
-      render json: Response.new(@story_points, PreviewStoryPointSerializer)
+      if params[:location].present? and params[:location][:latitude].present? and params[:location][:longitude].present? and params[:radius].present?
+        @story_points = @service.within_origin(params[:location][:latitude], params[:location][:longitude], params[:radius])
+        render json: Response.new(@story_points, PreviewStoryPointSerializer)
+      else
+        response = Response.new
+        response.add_error_message I18n.t('story_points.missing_params')
+        render json: response
+      end
     end
 
     api! 'Show a story point info'
