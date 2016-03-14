@@ -79,7 +79,7 @@ RSpec.describe Ability, type: :model do
 
     describe 'read' do
       it { should be_able_to(:read, profile) }
-      it { should_not be_able_to(:read, foreign_profile) }
+      it { should be_able_to(:read, foreign_profile) }
     end
 
     describe 'update' do

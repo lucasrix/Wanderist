@@ -28,6 +28,7 @@ Rails.application.routes.draw do
       end
 
       resource :profile, only: [:show, :update]
+      resources :profiles, only: [:show]
 
     end
   end

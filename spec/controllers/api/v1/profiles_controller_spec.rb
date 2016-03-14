@@ -12,6 +12,12 @@ describe Api::V1::ProfilesController do
       get :show
       should respond_with :ok
     end
+
+    it 'should be success', :show_in_doc do
+      profile = create(:profile)
+      get :show, id: profile.id
+      should respond_with :ok
+    end
   end
 
   describe 'PUT #update' do
