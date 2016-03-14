@@ -107,8 +107,13 @@
         "status": "success",
         "data": {
           "attachment": {
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
             "id": 150,
             "file_url": "/uploads/attachment/file/150/sample.jpg"
+=======
+            "id": 168,
+            "file_url": "/uploads/attachment/file/168/sample.jpg"
+>>>>>>> added show profile action with base docs
           }
         },
         "error": {
@@ -264,6 +269,46 @@
       "recorded": true
     }
   ],
+  "profiles#show": [
+    {
+      "verb": "GET",
+      "path": "/api/v1/profile",
+      "versions": [
+        "v1"
+      ],
+      "query": "",
+      "request_data": null,
+      "response_data": {
+        "status": "success",
+        "data": {
+          "my_profile": {
+            "id": 7524,
+            "first_name": "Freeman",
+            "last_name": "Turner",
+            "city": "Moorefort",
+            "url": "http://thompson.net/ocie_turner",
+            "about": "Craft beer kickstarter pickled hoodie loko lumbersexual lomo tofu tumblr.",
+            "photo_url": "/uploads/profile/photo/7524/sample.jpg",
+            "posts_count": 0,
+            "followers_count": 0,
+            "following_count": 0,
+            "likes_count": 0,
+            "saves_count": 0
+          }
+        },
+        "error": {
+          "error_messages": [
+
+          ],
+          "details": {
+          }
+        }
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    }
+  ],
   "profiles#update": [
     {
       "verb": "PUT",
@@ -273,17 +318,26 @@
       ],
       "query": null,
       "request_data": {
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
         "first_name": "Felicita",
         "last_name": "Rogahn",
         "city": "Wildermanport",
         "url": "http://waelchisteuber.co/karlie.barrows",
         "about": "Asymmetrical cliche vinyl mixtape lumbersexual migas irony.",
+=======
+        "first_name": "Vernie",
+        "last_name": "Prosacco",
+        "city": "Fernberg",
+        "url": "http://huel.co/larue",
+        "about": "90's fanny pack yuccie ennui blog brooklyn 3 wolf moon sustainable.",
+>>>>>>> added show profile action with base docs
         "photo": "<FILE CONTENT 'sample.jpg'>"
       },
       "response_data": {
         "status": "success",
         "data": {
           "profile": {
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
             "id": 4665,
             "first_name": "Felicita",
             "last_name": "Rogahn",
@@ -291,6 +345,16 @@
             "url": "http://waelchisteuber.co/karlie.barrows",
             "about": "Asymmetrical cliche vinyl mixtape lumbersexual migas irony.",
             "photo_url": "/uploads/profile/photo/4665/sample.jpg"
+=======
+            "id": 7520,
+            "first_name": "Vernie",
+            "last_name": "Prosacco",
+            "city": "Fernberg",
+            "url": "http://huel.co/larue",
+            "about": "90's fanny pack yuccie ennui blog brooklyn 3 wolf moon sustainable.",
+            "photo_url": "/uploads/profile/photo/7520/sample.jpg",
+            "posts_count": 0
+>>>>>>> added show profile action with base docs
           }
         },
         "error": {
@@ -313,11 +377,19 @@
       ],
       "query": null,
       "request_data": {
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
         "first_name": "Kayli",
         "last_name": "Stokes",
         "city": "Fabianfurt",
         "url": "http://yost.net/donnie.bogisich",
         "about": "Green juice tumblr brooklyn post-ironic food truck beard put a bird on it direct trade tacos.",
+=======
+        "first_name": "Madisyn",
+        "last_name": "Kulas",
+        "city": "Gaylebury",
+        "url": "http://steuber.name/yoshiko",
+        "about": "Slow-carb cleanse cray forage shabby chic franzen lumbersexual.",
+>>>>>>> added show profile action with base docs
         "photo": "<FILE CONTENT 'sample.jpg'>"
       },
       "response_data": {
@@ -345,12 +417,17 @@
       ],
       "query": null,
       "request_data": {
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
         "facebook_access_token": "ppf242odjs9bmfjkc49zs4n0u47o43fhwngpnw2nplnwyy283btv28ol32t7q6mtlv7uifn6glezctqff2kp99j3j48krffwuzq58acwhbtr490zvfmzjxgu1wy74cglbzp28lr1sgdslsbddsmoqzmpr3glvcks460o8pqxf0iqvjkyow4fi0jtz9diojcjrnqozsg6imffy4ddcbqb"
+=======
+        "facebook_access_token": "9ya5u2evlh1b0x4yrguf88t6xtovzwecq1tavyu7mk0wcg23qy02rfie5sva7xb6z2rx18q5bdotdgcvcrdxv7qrnb7ijrtbkbaol0iialwh61az3ok5tygq2i0x16ha7ee8qmrxy3yfetnp6btsy0pwdniqt00r9dzdioeadrw2zqibug3hbqc1yzvn78xf1mro94eureyah0f8x9nq"
+>>>>>>> added show profile action with base docs
       },
       "response_data": {
         "status": "success",
         "data": {
           "user": {
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
             "id": 2387,
             "provider": "email",
             "uid": "donnie@wiegand.org",
@@ -365,6 +442,23 @@
               "url": "http://greenfeldermorar.co/kirsten",
               "about": "Shabby chic kale chips selvage organic tacos godard.",
               "photo_url": "/uploads/profile/photo/4669/sample.jpg"
+=======
+            "id": 3853,
+            "provider": "email",
+            "uid": "rylan@langworth.com",
+            "email": "rylan@langworth.com",
+            "created_at": "2016-03-14T09:58:52.418Z",
+            "updated_at": "2016-03-14T09:58:52.548Z",
+            "profile": {
+              "id": 7518,
+              "first_name": "Mattie",
+              "last_name": "Sipes",
+              "city": "Groverfort",
+              "url": "http://vonrueden.name/luella",
+              "about": "Paleo chartreuse trust fund echo chia chambray messenger bag church-key.",
+              "photo_url": "/uploads/profile/photo/7518/sample.jpg",
+              "posts_count": 0
+>>>>>>> added show profile action with base docs
             }
           }
         },
@@ -415,16 +509,24 @@
       ],
       "query": null,
       "request_data": {
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
         "email": "josephine@rathhansen.biz",
         "password": "8dY7523n",
         "first_name": "Emmanuel",
         "last_name": "Hintz",
+=======
+        "email": "dax@paucek.com",
+        "password": "V7WiZ4HmH",
+        "first_name": "Devon",
+        "last_name": "Lowe",
+>>>>>>> added show profile action with base docs
         "photo": "<FILE CONTENT 'sample.jpg'>"
       },
       "response_data": {
         "status": "success",
         "data": {
           "user": {
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
             "id": 2404,
             "provider": "email",
             "uid": "josephine@rathhansen.biz",
@@ -439,6 +541,23 @@
               "url": null,
               "about": null,
               "photo_url": "/uploads/profile/photo/4702/sample.jpg"
+=======
+            "id": 3857,
+            "provider": "email",
+            "uid": "dax@paucek.com",
+            "email": "dax@paucek.com",
+            "created_at": "2016-03-14T09:58:53.238Z",
+            "updated_at": "2016-03-14T09:58:53.342Z",
+            "profile": {
+              "id": 7525,
+              "first_name": "Devon",
+              "last_name": "Lowe",
+              "city": null,
+              "url": null,
+              "about": null,
+              "photo_url": "/uploads/profile/photo/7525/sample.jpg",
+              "posts_count": 0
+>>>>>>> added show profile action with base docs
             }
           }
         },
@@ -462,7 +581,11 @@
       ],
       "query": null,
       "request_data": {
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
         "email": "julia@hageneshand.name",
+=======
+        "email": "jaylen@schamberger.name",
+>>>>>>> added show profile action with base docs
         "password": null
       },
       "response_data": {
@@ -472,7 +595,11 @@
             "id": null,
             "provider": "email",
             "uid": "",
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
             "email": "julia@hageneshand.name",
+=======
+            "email": "jaylen@schamberger.name",
+>>>>>>> added show profile action with base docs
             "created_at": null,
             "updated_at": null,
             "profile": null
@@ -507,8 +634,13 @@
       ],
       "query": null,
       "request_data": {
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
         "email": "dusty@kocronin.net",
         "password": "I79q3tVu8"
+=======
+        "email": "queen_willms@baileypollich.biz",
+        "password": "88Cc1uTm0"
+>>>>>>> added show profile action with base docs
       },
       "response_data": {
         "status": "success",
@@ -551,12 +683,40 @@
       ],
       "query": null,
       "request_data": {
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
         "email": "erick.johns@okeefe.org",
         "password": "XwF2NjBfZ"
       },
       "response_data": {
         "status": "error",
         "data": null,
+=======
+        "email": "carmine@lehner.info",
+        "password": "1hB1C4YiB"
+      },
+      "response_data": {
+        "status": "success",
+        "data": {
+          "user": {
+            "id": 3859,
+            "provider": "email",
+            "uid": "carmine@lehner.info",
+            "email": "carmine@lehner.info",
+            "created_at": "2016-03-14T09:58:53.425Z",
+            "updated_at": "2016-03-14T09:58:53.538Z",
+            "profile": {
+              "id": 7529,
+              "first_name": "Norberto",
+              "last_name": "Lind",
+              "city": "Palmabury",
+              "url": "http://huelslemke.net/marina",
+              "about": "Vice put a bird on it fashion axe xoxo pop-up kombucha hammock knausgaard.",
+              "photo_url": "/uploads/profile/photo/7529/sample.jpg",
+              "posts_count": 0
+            }
+          }
+        },
+>>>>>>> added show profile action with base docs
         "error": {
           "error_messages": [
             "Invalid login credentials. Please try again."
@@ -613,17 +773,28 @@
       ],
       "query": null,
       "request_data": {
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
         "name": "cornhole",
         "description": "Vel sit similique a ipsum quia maiores. Aliquam qui aut. Quasi suscipit autem velit ut aut asperiores.",
+=======
+        "name": "ennui",
+        "description": "Sit ea illum sed tenetur sit corrupti. Est ut facilis et dignissimos facere. Tenetur velit dolores earum eius. Fugit sed velit minus perspiciatis sequi.",
+>>>>>>> added show profile action with base docs
         "discoverable": true
       },
       "response_data": {
         "status": "success",
         "data": {
           "story": {
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
             "id": 374,
             "name": "cornhole",
             "description": "Vel sit similique a ipsum quia maiores. Aliquam qui aut. Quasi suscipit autem velit ut aut asperiores.",
+=======
+            "id": 627,
+            "name": "ennui",
+            "description": "Sit ea illum sed tenetur sit corrupti. Est ut facilis et dignissimos facere. Tenetur velit dolores earum eius. Fugit sed velit minus perspiciatis sequi.",
+>>>>>>> added show profile action with base docs
             "discoverable": true
           }
         },
@@ -647,8 +818,13 @@
       ],
       "query": null,
       "request_data": {
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
         "name": "marfa",
         "description": "Officiis accusamus perferendis. Ullam laboriosam sapiente qui fugiat rerum ut. Dolorum est est.",
+=======
+        "name": "wolf",
+        "description": "Dicta cumque optio dolor. Nam quia temporibus sint dolores est qui. Omnis nobis officia nulla.",
+>>>>>>> added show profile action with base docs
         "discoverable": false
       },
       "response_data": {
@@ -670,7 +846,11 @@
   "stories#destroy": [
     {
       "verb": "DELETE",
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
       "path": "/api/v1/stories/373",
+=======
+      "path": "/api/v1/stories/621",
+>>>>>>> added show profile action with base docs
       "versions": [
         "v1"
       ],
@@ -680,9 +860,15 @@
         "status": "success",
         "data": {
           "story": {
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
             "id": 373,
             "name": "pitchfork",
             "description": "Modi et ipsum adipisci distinctio saepe et a. Dolorem molestiae voluptatem sed et. Et ipsum explicabo quasi libero. Et quia aperiam harum.",
+=======
+            "id": 621,
+            "name": "cold-pressed",
+            "description": "Delectus rerum eum voluptatum officiis. Ut ipsam autem nisi itaque eum aspernatur ea. Sint non aut unde veniam alias accusamus. Provident et illum facere a blanditiis sint.",
+>>>>>>> added show profile action with base docs
             "discoverable": false
           }
         },
@@ -702,12 +888,17 @@
   "stories#update": [
     {
       "verb": "PUT",
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
       "path": "/api/v1/stories/368",
+=======
+      "path": "/api/v1/stories/622",
+>>>>>>> added show profile action with base docs
       "versions": [
         "v1"
       ],
       "query": null,
       "request_data": {
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
         "name": "health",
         "description": "Eos repellendus nihil dolores vel sed perspiciatis. Velit sint et quas molestiae fugiat consequatur. Aliquam corporis voluptas a aut alias. Eum quibusdam natus dignissimos sequi non. Qui quos quibusdam.",
         "discoverable": true,
@@ -715,15 +906,30 @@
           "721",
           "722",
           "723"
+=======
+        "name": "polaroid",
+        "description": "Veritatis eligendi voluptas amet vero ab atque numquam. Eos aut fugiat id a ullam. Perspiciatis aut dolores hic.",
+        "discoverable": true,
+        "story_point_ids": [
+          "962",
+          "963",
+          "964"
+>>>>>>> added show profile action with base docs
         ]
       },
       "response_data": {
         "status": "success",
         "data": {
           "story": {
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
             "id": 368,
             "name": "health",
             "description": "Eos repellendus nihil dolores vel sed perspiciatis. Velit sint et quas molestiae fugiat consequatur. Aliquam corporis voluptas a aut alias. Eum quibusdam natus dignissimos sequi non. Qui quos quibusdam.",
+=======
+            "id": 622,
+            "name": "polaroid",
+            "description": "Veritatis eligendi voluptas amet vero ab atque numquam. Eos aut fugiat id a ullam. Perspiciatis aut dolores hic.",
+>>>>>>> added show profile action with base docs
             "discoverable": true
           }
         },
@@ -741,12 +947,17 @@
     },
     {
       "verb": "PUT",
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
       "path": "/api/v1/stories/369",
+=======
+      "path": "/api/v1/stories/623",
+>>>>>>> added show profile action with base docs
       "versions": [
         "v1"
       ],
       "query": null,
       "request_data": {
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
         "name": "retro",
         "description": "Nihil ad ducimus laboriosam mollitia error. Enim fuga porro dolor amet ex culpa. Ipsa sed consequatur debitis molestiae ducimus voluptatibus.",
         "discoverable": false,
@@ -757,6 +968,20 @@
       "response_data": {
         "status": "error",
         "data": null,
+=======
+        "name": "Et voluptatem non saepe est voluptatibus aut. Aspernatur beatae corrupti voluptatem aut est. Eos aut eligendi ullam modi. Sequi molestiae saepe facere ut nihil."
+      },
+      "response_data": {
+        "status": "error",
+        "data": {
+          "story": {
+            "id": 623,
+            "name": "Et voluptatem non saepe est voluptatibus aut. Aspernatur beatae corrupti voluptatem aut est. Eos aut eligendi ullam modi. Sequi molestiae saepe facere ut nihil.",
+            "description": "Eos libero ullam aut laudantium est pariatur. Omnis in non. Voluptatem ipsa hic magni dolor. Laudantium qui recusandae. Libero quod provident temporibus sint.",
+            "discoverable": false
+          }
+        },
+>>>>>>> added show profile action with base docs
         "error": {
           "error_messages": [
             "Couldn't find StoryPoint with 'id'=101"
@@ -771,7 +996,11 @@
     },
     {
       "verb": "PUT",
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
       "path": "/api/v1/stories/370",
+=======
+      "path": "/api/v1/stories/625",
+>>>>>>> added show profile action with base docs
       "versions": [
         "v1"
       ],
@@ -783,9 +1012,15 @@
         "status": "error",
         "data": {
           "story": {
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
             "id": 370,
             "name": "Quis et perferendis enim necessitatibus repellat fugit doloremque. Esse nostrum nemo et earum neque commodi cupiditate. Harum voluptas necessitatibus omnis. Optio inventore enim fugiat amet sunt sapiente quia.",
             "description": "Ad sed est et eaque et dolore. Velit sint vel. Ipsa iste voluptatibus praesentium fugiat. Vel est aut accusamus aut.",
+=======
+            "id": 625,
+            "name": "beard",
+            "description": "Amet rerum exercitationem eligendi consequatur. Veniam blanditiis quidem voluptate recusandae consequatur. Doloremque dolor ut.",
+>>>>>>> added show profile action with base docs
             "discoverable": false
           }
         },
@@ -806,12 +1041,17 @@
     },
     {
       "verb": "PUT",
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
       "path": "/api/v1/stories/372",
+=======
+      "path": "/api/v1/stories/626",
+>>>>>>> added show profile action with base docs
       "versions": [
         "v1"
       ],
       "query": null,
       "request_data": {
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
         "story_point_ids": [
 
         ]
@@ -826,15 +1066,27 @@
             "discoverable": true
           }
         },
+=======
+        "name": "bushwick",
+        "description": "Accusamus ducimus ipsam vero laboriosam non beatae. Velit sed numquam error eaque repellat. Ut et assumenda dolor et aliquam ut.",
+        "discoverable": false,
+        "story_point_ids": [
+          "101"
+        ]
+      },
+      "response_data": {
+        "status": "error",
+        "data": null,
+>>>>>>> added show profile action with base docs
         "error": {
           "error_messages": [
-
+            "Couldn't find StoryPoint with 'id'=101"
           ],
           "details": {
           }
         }
       },
-      "code": "200",
+      "code": "404",
       "show_in_doc": 1,
       "recorded": true
     }
@@ -848,6 +1100,7 @@
       ],
       "query": null,
       "request_data": {
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
         "caption": "beard",
         "text": "Celiac scenester letterpress 8-bit cleanse pitchfork roof photo booth. Tote bag listicle deep v ethical you probably haven't heard of them fashion axe readymade cold-pressed. Pour-over cornhole poutine.",
         "kind": "text",
@@ -856,11 +1109,21 @@
           "longitude": "63.82"
         },
         "attachment_id": "151"
+=======
+        "caption": "cornhole",
+        "text": "Distillery migas hella vhs twee. Offal mlkshk pop-up bushwick. Semiotics umami drinking fingerstache forage master paleo brooklyn. Etsy bicycle rights wolf lomo.",
+        "kind": "text",
+        "location": {
+          "latitude": null,
+          "longitude": "89.48"
+        }
+>>>>>>> added show profile action with base docs
       },
       "response_data": {
-        "status": "success",
+        "status": "error",
         "data": {
           "story_point": {
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
             "id": 728,
             "caption": "beard",
             "kind": "text",
@@ -889,68 +1152,33 @@
             "attachment": {
               "id": 151,
               "file_url": "/uploads/attachment/file/151/sample.jpg"
-            },
-            "tags": [
-
-            ]
-          }
-        },
-        "error": {
-          "error_messages": [
-
-          ],
-          "details": {
-          }
-        }
-      },
-      "code": "201",
-      "show_in_doc": 1,
-      "recorded": true
-    },
-    {
-      "verb": "POST",
-      "path": "/api/v1/story_points",
-      "versions": [
-        "v1"
-      ],
-      "query": null,
-      "request_data": {
-        "caption": "dreamcatcher",
-        "text": "Wolf kale chips food truck single-origin coffee bushwick cred. Polaroid mumblecore health tofu cliche blog intelligentsia. Pickled hashtag roof put a bird on it pbr&b. Normcore listicle farm-to-table. Food truck organic kinfolk.",
-        "kind": "text",
-        "location": {
-          "latitude": null,
-          "longitude": "15.69"
-        }
-      },
-      "response_data": {
-        "status": "error",
-        "data": {
-          "story_point": {
+=======
             "id": null,
-            "caption": "dreamcatcher",
+            "caption": "cornhole",
             "kind": "text",
             "user": {
-              "id": 2408,
+              "id": 3863,
               "provider": "email",
-              "uid": "clotilde@oconnerlehner.org",
-              "email": "clotilde@oconnerlehner.org",
-              "created_at": "2016-03-27T14:23:17.332Z",
-              "updated_at": "2016-03-27T14:23:17.332Z",
+              "uid": "lou.satterfield@ziemannspencer.com",
+              "email": "lou.satterfield@ziemannspencer.com",
+              "created_at": "2016-03-14T09:58:53.789Z",
+              "updated_at": "2016-03-14T09:58:53.789Z",
               "profile": {
-                "id": 4710,
-                "first_name": "Annamae",
-                "last_name": "Jast",
-                "city": "Port Sebastianfort",
-                "url": "http://tremblaykuhlman.biz/eda_lakin",
-                "about": "Neutra kombucha seitan taxidermy.",
-                "photo_url": "/uploads/profile/photo/4710/sample.jpg"
+                "id": 7537,
+                "first_name": "Evie",
+                "last_name": "D'Amore",
+                "city": "New Jordaneborough",
+                "url": "http://bogandavis.co/jonatan.ziemann",
+                "about": "Locavore squid kombucha carry heirloom selfies tote bag.",
+                "photo_url": "/uploads/profile/photo/7537/sample.jpg",
+                "posts_count": 0
               }
             },
             "location": {
               "id": null,
               "latitude": null,
-              "longitude": 15.69
+              "longitude": 89.48
+>>>>>>> added show profile action with base docs
             },
             "attachment": null,
             "tags": [
@@ -981,12 +1209,126 @@
       ],
       "query": null,
       "request_data": {
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
+        "caption": "dreamcatcher",
+        "text": "Wolf kale chips food truck single-origin coffee bushwick cred. Polaroid mumblecore health tofu cliche blog intelligentsia. Pickled hashtag roof put a bird on it pbr&b. Normcore listicle farm-to-table. Food truck organic kinfolk.",
+        "kind": "text",
+        "location": {
+          "latitude": null,
+          "longitude": "15.69"
+        }
+=======
+        "caption": "gastropub",
+        "text": "Try-hard sartorial helvetica. Stumptown quinoa 8-bit yr mixtape cronut next level. Small batch before they sold out deep v yr single-origin coffee. Ethical master shabby chic.",
+        "kind": "text",
+        "location": {
+          "latitude": "99.97",
+          "longitude": "72.64"
+        },
+        "attachment_id": "167"
+>>>>>>> added show profile action with base docs
+      },
+      "response_data": {
+        "status": "success",
+        "data": {
+          "story_point": {
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
+            "id": null,
+            "caption": "dreamcatcher",
+            "kind": "text",
+            "user": {
+              "id": 2408,
+              "provider": "email",
+              "uid": "clotilde@oconnerlehner.org",
+              "email": "clotilde@oconnerlehner.org",
+              "created_at": "2016-03-27T14:23:17.332Z",
+              "updated_at": "2016-03-27T14:23:17.332Z",
+              "profile": {
+                "id": 4710,
+                "first_name": "Annamae",
+                "last_name": "Jast",
+                "city": "Port Sebastianfort",
+                "url": "http://tremblaykuhlman.biz/eda_lakin",
+                "about": "Neutra kombucha seitan taxidermy.",
+                "photo_url": "/uploads/profile/photo/4710/sample.jpg"
+              }
+            },
+            "location": {
+              "id": null,
+              "latitude": null,
+              "longitude": 15.69
+=======
+            "id": 961,
+            "caption": "gastropub",
+            "kind": "text",
+            "user": {
+              "id": 3864,
+              "provider": "email",
+              "uid": "myrtie_gutmann@larson.co",
+              "email": "myrtie_gutmann@larson.co",
+              "created_at": "2016-03-14T09:58:53.855Z",
+              "updated_at": "2016-03-14T09:58:53.855Z",
+              "profile": {
+                "id": 7539,
+                "first_name": "Santiago",
+                "last_name": "Wisozk",
+                "city": "Kuhlmanborough",
+                "url": "http://lockmangreen.biz/janick.hermann",
+                "about": "Direct trade franzen synth fingerstache +1 street shoreditch tacos slow-carb.",
+                "photo_url": "/uploads/profile/photo/7539/sample.jpg",
+                "posts_count": 0
+              }
+            },
+            "location": {
+              "id": 1276,
+              "latitude": 99.97,
+              "longitude": 72.64
+            },
+            "attachment": {
+              "id": 167,
+              "file_url": "/uploads/attachment/file/167/sample.jpg"
+>>>>>>> added show profile action with base docs
+            },
+            "tags": [
+
+            ]
+          }
+        },
+        "error": {
+          "error_messages": [
+
+          ],
+          "details": {
+          }
+        }
+      },
+      "code": "201",
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/api/v1/story_points",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
         "caption": "90's",
         "text": "Raw denim farm-to-table lo-fi chartreuse. Keytar chartreuse mlkshk goth echo direct trade fashion axe scenester. Everyday polaroid next level kombucha asymmetrical. Meditation tofu flexitarian.",
         "kind": "text",
         "location": {
           "latitude": "50.24",
           "longitude": "19.79"
+=======
+        "caption": "salvia",
+        "text": "8-bit microdosing tote bag. Taxidermy small batch sartorial church-key. Banh mi cronut master chambray celiac.",
+        "kind": "text",
+        "location": {
+          "latitude": "54.09",
+          "longitude": "52.51"
+>>>>>>> added show profile action with base docs
         }
       },
       "response_data": {
@@ -1008,7 +1350,11 @@
   "story_points#destroy": [
     {
       "verb": "DELETE",
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
       "path": "/api/v1/story_points/727",
+=======
+      "path": "/api/v1/story_points/959",
+>>>>>>> added show profile action with base docs
       "versions": [
         "v1"
       ],
@@ -1018,6 +1364,7 @@
         "status": "success",
         "data": {
           "story_point": {
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
             "id": 727,
             "caption": "intelligentsia",
             "kind": "text",
@@ -1042,6 +1389,33 @@
               "id": 874,
               "latitude": 29.71,
               "longitude": 35.78
+=======
+            "id": 959,
+            "caption": "mixtape",
+            "kind": "text",
+            "user": {
+              "id": 3861,
+              "provider": "email",
+              "uid": "idell@hillsritchie.info",
+              "email": "idell@hillsritchie.info",
+              "created_at": "2016-03-14T09:58:53.660Z",
+              "updated_at": "2016-03-14T09:58:53.660Z",
+              "profile": {
+                "id": 7533,
+                "first_name": "Sandra",
+                "last_name": "Jacobson",
+                "city": "Kesslerton",
+                "url": "http://smitham.com/nora",
+                "about": "Vinyl five dollar toast austin chartreuse offal.",
+                "photo_url": "/uploads/profile/photo/7533/sample.jpg",
+                "posts_count": 0
+              }
+            },
+            "location": {
+              "id": 1274,
+              "latitude": 75.19,
+              "longitude": 87.46
+>>>>>>> added show profile action with base docs
             },
             "attachment": null,
             "tags": [
@@ -1175,7 +1549,11 @@
   "story_points#show": [
     {
       "verb": "GET",
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
       "path": "/api/v1/story_points/729",
+=======
+      "path": "/api/v1/story_points/958",
+>>>>>>> added show profile action with base docs
       "versions": [
         "v1"
       ],
@@ -1185,6 +1563,7 @@
         "status": "success",
         "data": {
           "story_point": {
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
             "id": 729,
             "caption": "chartreuse",
             "kind": "text",
@@ -1209,6 +1588,33 @@
               "id": 876,
               "latitude": 65.27,
               "longitude": 60.84
+=======
+            "id": 958,
+            "caption": "PBR&B",
+            "kind": "text",
+            "user": {
+              "id": 3860,
+              "provider": "email",
+              "uid": "karl_stanton@cronin.info",
+              "email": "karl_stanton@cronin.info",
+              "created_at": "2016-03-14T09:58:53.559Z",
+              "updated_at": "2016-03-14T09:58:53.559Z",
+              "profile": {
+                "id": 7531,
+                "first_name": "Tressie",
+                "last_name": "Turcotte",
+                "city": "Rodrigueztown",
+                "url": "http://skileshuel.net/chance",
+                "about": "Pitchfork heirloom diy mlkshk bushwick small batch.",
+                "photo_url": "/uploads/profile/photo/7531/sample.jpg",
+                "posts_count": 0
+              }
+            },
+            "location": {
+              "id": 1273,
+              "latitude": 65.85,
+              "longitude": 99.69
+>>>>>>> added show profile action with base docs
             },
             "attachment": null,
             "tags": [
@@ -1232,19 +1638,29 @@
   "story_points#update": [
     {
       "verb": "PUT",
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
       "path": "/api/v1/story_points/732",
+=======
+      "path": "/api/v1/story_points/960",
+>>>>>>> added show profile action with base docs
       "versions": [
         "v1"
       ],
       "query": null,
       "request_data": {
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
         "caption": "loko",
         "text": "Sartorial distillery church-key tote bag literally craft beer. Yr synth cold-pressed mlkshk intelligentsia. Pork belly meh biodiesel. 8-bit chambray twee chartreuse. Meditation neutra keffiyeh you probably haven't heard of them chartreuse."
+=======
+        "caption": "dreamcatcher",
+        "text": "Narwhal cliche art party mixtape ennui biodiesel blog. Fanny pack migas umami vhs xoxo taxidermy. Semiotics tumblr tote bag kogi. Chicharrones neutra fingerstache hoodie."
+>>>>>>> added show profile action with base docs
       },
       "response_data": {
         "status": "success",
         "data": {
           "story_point": {
+<<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
             "id": 732,
             "caption": "loko",
             "kind": "text",
@@ -1269,6 +1685,33 @@
               "id": 878,
               "latitude": 69.91,
               "longitude": 93.86
+=======
+            "id": 960,
+            "caption": "dreamcatcher",
+            "kind": "text",
+            "user": {
+              "id": 3862,
+              "provider": "email",
+              "uid": "darrick@rosenbaumgutmann.co",
+              "email": "darrick@rosenbaumgutmann.co",
+              "created_at": "2016-03-14T09:58:53.721Z",
+              "updated_at": "2016-03-14T09:58:53.721Z",
+              "profile": {
+                "id": 7535,
+                "first_name": "Iva",
+                "last_name": "White",
+                "city": "Noeliaton",
+                "url": "http://kochharris.com/dolores",
+                "about": "Meditation jean shorts intelligentsia try-hard venmo kombucha.",
+                "photo_url": "/uploads/profile/photo/7535/sample.jpg",
+                "posts_count": 0
+              }
+            },
+            "location": {
+              "id": 1275,
+              "latitude": 95.65,
+              "longitude": 73.71
+>>>>>>> added show profile action with base docs
             },
             "attachment": null,
             "tags": [

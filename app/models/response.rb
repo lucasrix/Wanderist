@@ -60,7 +60,11 @@ class Response
   end
 
   def set_data_serializer(data)
-    serializer = ActiveModel::Serializer.serializer_for(data)
+    serializer = if data.is_a?(ActiveRecord::Relation)
+      ActiveModel::Serializer.serializer_for(data)
+    else
+      @element_serializer || ActiveModel::Serializer.serializer_for(data)
+    end
     raise "Serializer not found for #{data.class.name}" unless serializer
     @data = serializer.new(data)
     if data.is_a?(ActiveRecord::Relation)

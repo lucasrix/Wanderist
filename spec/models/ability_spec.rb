@@ -77,10 +77,16 @@ RSpec.describe Ability, type: :model do
     let(:profile) { build(:profile, user: user) }
     let(:foreign_profile) { build(:profile, user: another_user) }
 
+    describe 'read' do
+      it { should be_able_to(:read, profile) }
+      it { should_not be_able_to(:read, foreign_profile) }
+    end
+
     describe 'update' do
       it { should be_able_to(:update, profile) }
       it { should_not be_able_to(:update, foreign_profile) }
     end
+
   end
 
 end

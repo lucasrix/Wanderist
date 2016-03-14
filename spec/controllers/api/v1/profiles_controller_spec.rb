@@ -7,6 +7,13 @@ describe Api::V1::ProfilesController do
     allow(@controller).to receive(:current_user).and_return(user)
   end
 
+  describe 'GET #show' do
+    it 'should be success', :show_in_doc do
+      get :show
+      should respond_with :ok
+    end
+  end
+
   describe 'PUT #update' do
     let(:params){ attributes_for(:profile) }
 
