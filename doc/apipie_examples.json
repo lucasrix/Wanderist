@@ -101,12 +101,12 @@
       ],
       "query": null,
       "request_data": {
-        "file": "<FILE CONTENT 'sample.jpg'>"
       },
       "response_data": {
-        "status": "success",
+        "status": "error",
         "data": {
           "attachment": {
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
 <<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
@@ -124,35 +124,10 @@
             "id": 188,
             "file_url": "/uploads/attachment/file/188/sample.jpg"
 >>>>>>> added text field to story point serializer
-          }
-        },
-        "error": {
-          "error_messages": [
-
-          ],
-          "details": {
-          }
-        }
-      },
-      "code": "201",
-      "show_in_doc": 1,
-      "recorded": true
-    },
-    {
-      "verb": "POST",
-      "path": "/api/v1/attachments",
-      "versions": [
-        "v1"
-      ],
-      "query": null,
-      "request_data": {
-      },
-      "response_data": {
-        "status": "error",
-        "data": {
-          "attachment": {
+=======
             "id": null,
             "file_url": null
+>>>>>>> added index sp to docs
           }
         },
         "error": {
@@ -167,6 +142,36 @@
         }
       },
       "code": "422",
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/api/v1/attachments",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "file": "<FILE CONTENT 'sample.jpg'>"
+      },
+      "response_data": {
+        "status": "success",
+        "data": {
+          "attachment": {
+            "id": 191,
+            "file_url": "/uploads/attachment/file/191/sample.jpg"
+          }
+        },
+        "error": {
+          "error_messages": [
+
+          ],
+          "details": {
+          }
+        }
+      },
+      "code": "201",
       "show_in_doc": 1,
       "recorded": true
     }
@@ -282,7 +287,30 @@
   "profiles#show": [
     {
       "verb": "GET",
-      "path": "/api/v1/profiles/8395",
+      "path": "/api/v1/profiles/-3",
+      "versions": [
+        "v1"
+      ],
+      "query": "",
+      "request_data": null,
+      "response_data": {
+        "status": "error",
+        "data": null,
+        "error": {
+          "error_messages": [
+            "Couldn't find Profile with 'id'=-3"
+          ],
+          "details": {
+          }
+        }
+      },
+      "code": "404",
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
+      "path": "/api/v1/profiles/8510",
       "versions": [
         "v1"
       ],
@@ -292,13 +320,13 @@
         "status": "success",
         "data": {
           "profile": {
-            "id": 8395,
-            "first_name": "Julianne",
-            "last_name": "Muller",
-            "city": "North Jazminshire",
-            "url": "http://schroeder.io/garry",
-            "about": "Put a bird on it food truck 8-bit flexitarian wes anderson bushwick pickled letterpress.",
-            "photo_url": "/uploads/profile/photo/8395/sample.jpg",
+            "id": 8510,
+            "first_name": "Korbin",
+            "last_name": "Jakubowski",
+            "city": "West Dorismouth",
+            "url": "http://metz.net/marcia_hickle",
+            "about": "Lomo meggings tousled knausgaard fap street park.",
+            "photo_url": "/uploads/profile/photo/8510/sample.jpg",
             "posts_count": 0
           }
         },
@@ -316,29 +344,6 @@
     },
     {
       "verb": "GET",
-      "path": "/api/v1/profiles/-7",
-      "versions": [
-        "v1"
-      ],
-      "query": "",
-      "request_data": null,
-      "response_data": {
-        "status": "error",
-        "data": null,
-        "error": {
-          "error_messages": [
-            "Couldn't find Profile with 'id'=-7"
-          ],
-          "details": {
-          }
-        }
-      },
-      "code": "404",
-      "show_in_doc": 1,
-      "recorded": true
-    },
-    {
-      "verb": "GET",
       "path": "/api/v1/profile",
       "versions": [
         "v1"
@@ -349,13 +354,13 @@
         "status": "success",
         "data": {
           "my_profile": {
-            "id": 8399,
-            "first_name": "Federico",
-            "last_name": "Sawayn",
-            "city": "South Malinda",
-            "url": "http://wiegand.com/maia",
-            "about": "Kitsch schlitz bushwick drinking before they sold out yuccie listicle whatever lo-fi.",
-            "photo_url": "/uploads/profile/photo/8399/sample.jpg",
+            "id": 8512,
+            "first_name": "Rosalia",
+            "last_name": "Lakin",
+            "city": "Port Darrinborough",
+            "url": "http://runolfsdottir.biz/kaia_cormier",
+            "about": "Twee kombucha banh mi butcher godard tousled art party paleo fixie.",
+            "photo_url": "/uploads/profile/photo/8512/sample.jpg",
             "posts_count": 0,
             "followers_count": 0,
             "following_count": 0,
@@ -385,6 +390,7 @@
       ],
       "query": null,
       "request_data": {
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -422,12 +428,20 @@
         "url": "http://welch.com/elisa_gaylord",
         "about": "8-bit carry vhs chia lomo.",
 >>>>>>> added text field to story point serializer
+=======
+        "first_name": "Enrique",
+        "last_name": "Mohr",
+        "city": "Rutherfordhaven",
+        "url": "http://weinat.net/jade",
+        "about": "Neutra chicharrones hoodie art party ugh.",
+>>>>>>> added index sp to docs
         "photo": "<FILE CONTENT 'sample.jpg'>"
       },
       "response_data": {
         "status": "success",
         "data": {
           "profile": {
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -474,6 +488,15 @@
             "about": "8-bit carry vhs chia lomo.",
             "photo_url": "/uploads/profile/photo/8388/sample.jpg",
 >>>>>>> added text field to story point serializer
+=======
+            "id": 8514,
+            "first_name": "Enrique",
+            "last_name": "Mohr",
+            "city": "Rutherfordhaven",
+            "url": "http://weinat.net/jade",
+            "about": "Neutra chicharrones hoodie art party ugh.",
+            "photo_url": "/uploads/profile/photo/8514/sample.jpg",
+>>>>>>> added index sp to docs
             "posts_count": 0
 >>>>>>> added show profile action with base docs
           }
@@ -498,6 +521,7 @@
       ],
       "query": null,
       "request_data": {
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -535,6 +559,13 @@
         "url": "http://hilll.biz/alaina",
         "about": "Asymmetrical mlkshk ramps yolo put a bird on it yuccie.",
 >>>>>>> added text field to story point serializer
+=======
+        "first_name": "Vernon",
+        "last_name": "Hodkiewicz",
+        "city": "West Alberthabury",
+        "url": "http://upton.co/jonathon.kuhlman",
+        "about": "Master cornhole retro bicycle rights godard artisan semiotics shoreditch put a bird on it.",
+>>>>>>> added index sp to docs
         "photo": "<FILE CONTENT 'sample.jpg'>"
       },
       "response_data": {
@@ -562,6 +593,7 @@
       ],
       "query": null,
       "request_data": {
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -579,11 +611,15 @@
 =======
         "facebook_access_token": "c4w0mev0fg1kf1y7nj747njgu4rajo453sf5qhmqmpkzmxjuzaa46i3m98xdkq5c28wpcjxt4y01io3b40nex1lwfuzrw76s48mvqcjn2jm8mgf4hx2gwde4od419r5f26zzdb0obo6p20oyxelopvg1ieti1fvhqgw26lfh6lx4s9lv83vn4rke9rgxi9x0c766cyocoh3klefrbgs4"
 >>>>>>> added text field to story point serializer
+=======
+        "facebook_access_token": "gzmwwtyqtcrsf4ejanhtiiv7h1tk1gvwuockk4ggnlrs1cqjoiperpuka08u64ewjybv2k5toi0v0faxbjy1lnnucrrgm6zmn0typ9lqt6422p6jtzjnk0wqkp6je569ar3ky8mrl3hvwsqci3mbb3olc4y0yrr1b4pb3rcis4xnr580g122qyiroutmpv8k2ulpp0yof2qzyydsojun"
+>>>>>>> added index sp to docs
       },
       "response_data": {
         "status": "success",
         "data": {
           "user": {
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -613,19 +649,22 @@
 =======
             "id": 4280,
 >>>>>>> added text field to story point serializer
+=======
+            "id": 4337,
+>>>>>>> added index sp to docs
             "provider": "email",
-            "uid": "reyna_connelly@leschcrona.net",
-            "email": "reyna_connelly@leschcrona.net",
-            "created_at": "2016-03-23T13:23:20.565Z",
-            "updated_at": "2016-03-23T13:23:20.698Z",
+            "uid": "rhoda.schinner@bruen.org",
+            "email": "rhoda.schinner@bruen.org",
+            "created_at": "2016-03-24T09:51:25.491Z",
+            "updated_at": "2016-03-24T09:51:25.593Z",
             "profile": {
-              "id": 8358,
-              "first_name": "Lysanne",
-              "last_name": "Walter",
-              "city": "New Kelsiton",
-              "url": "http://stroman.co/abigail_thiel",
-              "about": "Next level yolo yuccie actually brooklyn vinyl ramps pug street.",
-              "photo_url": "/uploads/profile/photo/8358/sample.jpg",
+              "id": 8472,
+              "first_name": "Amani",
+              "last_name": "O'Keefe",
+              "city": "North Braxton",
+              "url": "http://powlowski.co/tyrese.rutherford",
+              "about": "Biodiesel meggings vice raw denim photo booth church-key tousled intelligentsia asymmetrical.",
+              "photo_url": "/uploads/profile/photo/8472/sample.jpg",
               "posts_count": 0
 >>>>>>> added show profile action with base docs
             }
@@ -678,6 +717,7 @@
       ],
       "query": null,
       "request_data": {
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -710,12 +750,19 @@
         "first_name": "Rose",
         "last_name": "Kautzer",
 >>>>>>> added text field to story point serializer
+=======
+        "email": "donnie@wisoky.name",
+        "password": "7zSyCeLnR",
+        "first_name": "Cole",
+        "last_name": "Pollich",
+>>>>>>> added index sp to docs
         "photo": "<FILE CONTENT 'sample.jpg'>"
       },
       "response_data": {
         "status": "success",
         "data": {
           "user": {
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -745,19 +792,22 @@
 =======
             "id": 4301,
 >>>>>>> added text field to story point serializer
+=======
+            "id": 4351,
+>>>>>>> added index sp to docs
             "provider": "email",
-            "uid": "alex@krajcik.io",
-            "email": "alex@krajcik.io",
-            "created_at": "2016-03-23T13:23:22.298Z",
-            "updated_at": "2016-03-23T13:23:22.413Z",
+            "uid": "donnie@wisoky.name",
+            "email": "donnie@wisoky.name",
+            "created_at": "2016-03-24T09:51:26.596Z",
+            "updated_at": "2016-03-24T09:51:26.695Z",
             "profile": {
-              "id": 8400,
-              "first_name": "Rose",
-              "last_name": "Kautzer",
+              "id": 8499,
+              "first_name": "Cole",
+              "last_name": "Pollich",
               "city": null,
               "url": null,
               "about": null,
-              "photo_url": "/uploads/profile/photo/8400/sample.jpg",
+              "photo_url": "/uploads/profile/photo/8499/sample.jpg",
               "posts_count": 0
 >>>>>>> added show profile action with base docs
             }
@@ -783,6 +833,7 @@
       ],
       "query": null,
       "request_data": {
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -800,6 +851,9 @@
 =======
         "email": "sabryna@schoen.name",
 >>>>>>> added text field to story point serializer
+=======
+        "email": "unique.herman@wiegand.co",
+>>>>>>> added index sp to docs
         "password": null
       },
       "response_data": {
@@ -809,6 +863,7 @@
             "id": null,
             "provider": "email",
             "uid": "",
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -826,6 +881,9 @@
 =======
             "email": "sabryna@schoen.name",
 >>>>>>> added text field to story point serializer
+=======
+            "email": "unique.herman@wiegand.co",
+>>>>>>> added index sp to docs
             "created_at": null,
             "updated_at": null,
             "profile": null
@@ -860,6 +918,7 @@
       ],
       "query": null,
       "request_data": {
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -921,6 +980,10 @@
 =======
         "email": "benny@romaguera.co",
         "password": "X65cIxN45"
+=======
+        "email": "burnice_labadie@buckridge.info",
+        "password": "YeE8VoMqW"
+>>>>>>> added index sp to docs
       },
       "response_data": {
         "status": "error",
@@ -946,6 +1009,7 @@
       ],
       "query": null,
       "request_data": {
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -998,25 +1062,29 @@
 =======
         "email": "titus.effertz@shanahan.io",
         "password": "FsDnO95yH"
+=======
+        "email": "dewitt.pollich@crist.com",
+        "password": "5eAg41412"
+>>>>>>> added index sp to docs
       },
       "response_data": {
         "status": "success",
         "data": {
           "user": {
-            "id": 4281,
+            "id": 4353,
             "provider": "email",
-            "uid": "titus.effertz@shanahan.io",
-            "email": "titus.effertz@shanahan.io",
-            "created_at": "2016-03-23T13:23:21.089Z",
-            "updated_at": "2016-03-23T13:23:21.209Z",
+            "uid": "dewitt.pollich@crist.com",
+            "email": "dewitt.pollich@crist.com",
+            "created_at": "2016-03-24T09:51:26.766Z",
+            "updated_at": "2016-03-24T09:51:26.875Z",
             "profile": {
-              "id": 8360,
-              "first_name": "Hudson",
-              "last_name": "Powlowski",
-              "city": "Kathlynstad",
-              "url": "http://mayer.org/daryl",
-              "about": "Cliche wolf microdosing chambray meditation bitters drinking.",
-              "photo_url": "/uploads/profile/photo/8360/sample.jpg",
+              "id": 8503,
+              "first_name": "Abdullah",
+              "last_name": "Prosacco",
+              "city": "Oberbrunnerburgh",
+              "url": "http://davis.org/efrain.walker",
+              "about": "Yr ugh helvetica diy lo-fi locavore.",
+              "photo_url": "/uploads/profile/photo/8503/sample.jpg",
               "posts_count": 0
             }
           }
@@ -1078,6 +1146,7 @@
       ],
       "query": null,
       "request_data": {
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -1102,11 +1171,17 @@
 >>>>>>> added text field to story point serializer
         "discoverable": false
 >>>>>>> added profile spec for 404 error
+=======
+        "name": "taxidermy",
+        "description": "Quo sunt est. Reprehenderit voluptas et quam doloribus. Occaecati possimus officia distinctio voluptatem quidem in.",
+        "discoverable": true
+>>>>>>> added index sp to docs
       },
       "response_data": {
         "status": "success",
         "data": {
           "story": {
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -1136,6 +1211,12 @@
 >>>>>>> added text field to story point serializer
             "discoverable": false
 >>>>>>> added profile spec for 404 error
+=======
+            "id": 699,
+            "name": "taxidermy",
+            "description": "Quo sunt est. Reprehenderit voluptas et quam doloribus. Occaecati possimus officia distinctio voluptatem quidem in.",
+            "discoverable": true
+>>>>>>> added index sp to docs
           }
         },
         "error": {
@@ -1158,6 +1239,7 @@
       ],
       "query": null,
       "request_data": {
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -1183,6 +1265,11 @@
         "description": "Perferendis quas ab ut. Asperiores excepturi eveniet nostrum quos exercitationem provident quisquam. Aut iusto et odit ad aliquid. Dignissimos qui ratione vel.",
         "discoverable": false
 >>>>>>> added text field to story point serializer
+=======
+        "name": "organic",
+        "description": "Enim recusandae tempora nemo architecto aut. Nisi animi corporis ab quisquam. Eos qui odit atque. Voluptatum quis laboriosam sint molestias.",
+        "discoverable": true
+>>>>>>> added index sp to docs
       },
       "response_data": {
         "status": "error",
@@ -1203,6 +1290,7 @@
   "stories#destroy": [
     {
       "verb": "DELETE",
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -1220,6 +1308,9 @@
 =======
       "path": "/api/v1/stories/686",
 >>>>>>> added text field to story point serializer
+=======
+      "path": "/api/v1/stories/705",
+>>>>>>> added index sp to docs
       "versions": [
         "v1"
       ],
@@ -1229,6 +1320,7 @@
         "status": "success",
         "data": {
           "story": {
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -1256,6 +1348,11 @@
             "id": 686,
             "name": "chia",
             "description": "Doloremque quibusdam tempora. Deleniti cum reprehenderit perspiciatis. Omnis voluptate ex.",
+=======
+            "id": 705,
+            "name": "crucifix",
+            "description": "Maxime et placeat deleniti libero aut enim nemo. Quis totam vero aut voluptas aut. Ullam mollitia inventore.",
+>>>>>>> added index sp to docs
             "discoverable": true
 >>>>>>> added text field to story point serializer
           }
@@ -1276,6 +1373,7 @@
   "stories#update": [
     {
       "verb": "PUT",
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -1293,6 +1391,9 @@
 =======
       "path": "/api/v1/stories/688",
 >>>>>>> added text field to story point serializer
+=======
+      "path": "/api/v1/stories/701",
+>>>>>>> added index sp to docs
       "versions": [
         "v1"
       ],
@@ -1365,10 +1466,10 @@
         "status": "success",
         "data": {
           "story": {
-            "id": 688,
-            "name": "knausgaard",
-            "description": "Aspernatur fugiat maiores. Est laborum quo qui. Quae ea ea non omnis quidem libero et. Ad corrupti consequatur.",
-            "discoverable": true
+            "id": 701,
+            "name": "drinking",
+            "description": "Harum sit ea. Et soluta veniam rem eos atque. Qui unde similique tempore autem non.",
+            "discoverable": false
           }
         },
 >>>>>>> added text field to story point serializer
@@ -1386,6 +1487,7 @@
     },
     {
       "verb": "PUT",
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -1403,11 +1505,15 @@
 =======
       "path": "/api/v1/stories/689",
 >>>>>>> added text field to story point serializer
+=======
+      "path": "/api/v1/stories/702",
+>>>>>>> added index sp to docs
       "versions": [
         "v1"
       ],
       "query": null,
       "request_data": {
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -1437,10 +1543,15 @@
         "description": "Aut maxime animi officiis. Cum voluptatibus dolorem sit. Minus ea consequatur rem soluta facere ipsum recusandae. Modi nobis nulla enim temporibus molestiae facilis sunt. Necessitatibus blanditiis iste maiores ea aut cum.",
         "discoverable": true,
 >>>>>>> added text field to story point serializer
+=======
+        "name": "narwhal",
+        "description": "Laudantium qui ut. Impedit id alias illo enim necessitatibus incidunt. Dolor et qui unde ut et a ut.",
+        "discoverable": false,
+>>>>>>> added index sp to docs
         "story_point_ids": [
-          "1074",
-          "1075",
-          "1076"
+          "1090",
+          "1091",
+          "1092"
         ]
 >>>>>>> added other user profile show action
       },
@@ -1448,10 +1559,10 @@
         "status": "success",
         "data": {
           "story": {
-            "id": 689,
-            "name": "tacos",
-            "description": "Aut maxime animi officiis. Cum voluptatibus dolorem sit. Minus ea consequatur rem soluta facere ipsum recusandae. Modi nobis nulla enim temporibus molestiae facilis sunt. Necessitatibus blanditiis iste maiores ea aut cum.",
-            "discoverable": true
+            "id": 702,
+            "name": "narwhal",
+            "description": "Laudantium qui ut. Impedit id alias illo enim necessitatibus incidunt. Dolor et qui unde ut et a ut.",
+            "discoverable": false
           }
         },
 >>>>>>> added show profile action with base docs
@@ -1477,6 +1588,7 @@
     },
     {
       "verb": "PUT",
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -1494,11 +1606,15 @@
 =======
       "path": "/api/v1/stories/690",
 >>>>>>> added text field to story point serializer
+=======
+      "path": "/api/v1/stories/703",
+>>>>>>> added index sp to docs
       "versions": [
         "v1"
       ],
       "query": null,
       "request_data": {
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -1530,6 +1646,10 @@
         "name": "heirloom",
         "description": "Officiis cumque quae ut. Ipsam ad aliquid qui aut laudantium maiores. Sunt accusamus similique esse dicta repellat error sint. Natus quod laboriosam aperiam quae. Ad autem et quia et sed sunt.",
 >>>>>>> added text field to story point serializer
+=======
+        "name": "plaid",
+        "description": "Fuga totam et quia omnis rerum. Vitae debitis quos assumenda numquam. Odio consequatur quisquam aut repellendus ut. Sed possimus dolorum nam voluptatem deserunt optio veritatis. Qui rerum quaerat illo.",
+>>>>>>> added index sp to docs
         "discoverable": false,
         "story_point_ids": [
           "101"
@@ -1579,6 +1699,7 @@
     },
     {
       "verb": "PUT",
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -1596,11 +1717,15 @@
 =======
       "path": "/api/v1/stories/691",
 >>>>>>> added text field to story point serializer
+=======
+      "path": "/api/v1/stories/704",
+>>>>>>> added index sp to docs
       "versions": [
         "v1"
       ],
       "query": null,
       "request_data": {
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
 <<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
@@ -1650,14 +1775,17 @@
 >>>>>>> added profile spec for 404 error
 =======
         "name": "Qui sed rem nobis tempora nihil in. Magnam dolorum veniam corrupti. Possimus accusamus vel et distinctio sed quasi doloremque. Quos voluptatem eligendi. Rerum ut aliquid minus placeat dolor qui."
+=======
+        "name": "Aliquid omnis cumque nulla. Amet sit aut sunt recusandae tempora expedita dicta. Dolor cum itaque magnam et. Rem non recusandae ut."
+>>>>>>> added index sp to docs
       },
       "response_data": {
         "status": "error",
         "data": {
           "story": {
-            "id": 691,
-            "name": "Qui sed rem nobis tempora nihil in. Magnam dolorum veniam corrupti. Possimus accusamus vel et distinctio sed quasi doloremque. Quos voluptatem eligendi. Rerum ut aliquid minus placeat dolor qui.",
-            "description": "Cumque at sed est. Qui molestiae odit similique culpa nihil. Ullam totam ea rerum dignissimos. Est quibusdam sequi et eos ipsam incidunt ullam.",
+            "id": 704,
+            "name": "Aliquid omnis cumque nulla. Amet sit aut sunt recusandae tempora expedita dicta. Dolor cum itaque magnam et. Rem non recusandae ut.",
+            "description": "Expedita exercitationem quam. Deserunt ipsum a nihil aut explicabo officiis sed. Voluptatem ratione quia recusandae ipsum tempora est. Id dicta occaecati praesentium ad saepe sed.",
             "discoverable": true
 >>>>>>> added text field to story point serializer
           }
@@ -1688,6 +1816,7 @@
       ],
       "query": null,
       "request_data": {
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -1730,10 +1859,14 @@
 =======
         "caption": "pabst",
         "text": "Authentic kale chips organic. Cornhole kinfolk master pitchfork franzen lo-fi xoxo. Cliche thundercats typewriter deep v pop-up actually hella. Farm-to-table butcher fanny pack fingerstache +1 ennui flannel drinking.",
+=======
+        "caption": "goth",
+        "text": "Biodiesel chartreuse cred flannel fixie scenester yuccie. Roof vinyl pickled. Asymmetrical raw denim banjo artisan.",
+>>>>>>> added index sp to docs
         "kind": "text",
         "location": {
           "latitude": null,
-          "longitude": "28.57"
+          "longitude": "28.35"
         }
 >>>>>>> added text field to story point serializer
       },
@@ -1786,25 +1919,29 @@
 >>>>>>> added profile spec for 404 error
 =======
             "id": null,
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
             "caption": "pabst",
 >>>>>>> added text field to story point serializer
+=======
+            "caption": "goth",
+>>>>>>> added index sp to docs
             "kind": "text",
-            "text": "Authentic kale chips organic. Cornhole kinfolk master pitchfork franzen lo-fi xoxo. Cliche thundercats typewriter deep v pop-up actually hella. Farm-to-table butcher fanny pack fingerstache +1 ennui flannel drinking.",
+            "text": "Biodiesel chartreuse cred flannel fixie scenester yuccie. Roof vinyl pickled. Asymmetrical raw denim banjo artisan.",
             "user": {
-              "id": 4275,
+              "id": 4360,
               "provider": "email",
-              "uid": "alan_funk@beatty.name",
-              "email": "alan_funk@beatty.name",
-              "created_at": "2016-03-23T13:23:20.024Z",
-              "updated_at": "2016-03-23T13:23:20.024Z",
+              "uid": "maud_jast@upton.io",
+              "email": "maud_jast@upton.io",
+              "created_at": "2016-03-24T09:51:27.162Z",
+              "updated_at": "2016-03-24T09:51:27.162Z",
               "profile": {
-                "id": 8348,
-                "first_name": "Brando",
-                "last_name": "Krajcik",
-                "city": "Wilkinsonbury",
-                "url": "http://wyman.io/cullen",
-                "about": "Selfies wolf gluten-free vegan selvage lumbersexual stumptown.",
-                "photo_url": "/uploads/profile/photo/8348/sample.jpg",
+                "id": 8518,
+                "first_name": "Lew",
+                "last_name": "Batz",
+                "city": "North Connortown",
+                "url": "http://ritchie.org/adela",
+                "about": "Sriracha actually bespoke butcher fixie kombucha cold-pressed park green juice.",
+                "photo_url": "/uploads/profile/photo/8518/sample.jpg",
                 "posts_count": 0
               }
             },
@@ -1837,8 +1974,12 @@
 =======
               "id": null,
               "latitude": null,
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
               "longitude": 28.57
 >>>>>>> added text field to story point serializer
+=======
+              "longitude": 28.35
+>>>>>>> added index sp to docs
             },
             "attachment": null,
             "tags": [
@@ -1869,6 +2010,7 @@
       ],
       "query": null,
       "request_data": {
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -1906,18 +2048,27 @@
 =======
         "caption": "listicle",
         "text": "Craft beer sartorial photo booth hella pabst wayfarers church-key readymade. Dreamcatcher 3 wolf moon synth selfies. Vice pour-over cray food truck pinterest. Mumblecore cronut offal helvetica blue bottle.",
+=======
+        "caption": "vice",
+        "text": "Ethical street twee hella cold-pressed yuccie vice. Slow-carb ethical thundercats hashtag sustainable occupy butcher. Master austin plaid cold-pressed hella park.",
+>>>>>>> added index sp to docs
         "kind": "text",
         "location": {
-          "latitude": "38.42",
-          "longitude": "71.16"
+          "latitude": "84.98",
+          "longitude": "80.04"
         },
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
         "attachment_id": "187"
 >>>>>>> added text field to story point serializer
+=======
+        "attachment_id": "192"
+>>>>>>> added index sp to docs
       },
       "response_data": {
         "status": "success",
         "data": {
           "story_point": {
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
 <<<<<<< 3808b3ede59088d6f5e9d547be3326e5cd5c5ecf
@@ -1960,27 +2111,32 @@
             "id": 1070,
             "caption": "listicle",
 >>>>>>> added text field to story point serializer
+=======
+            "id": 1093,
+            "caption": "vice",
+>>>>>>> added index sp to docs
             "kind": "text",
-            "text": "Craft beer sartorial photo booth hella pabst wayfarers church-key readymade. Dreamcatcher 3 wolf moon synth selfies. Vice pour-over cray food truck pinterest. Mumblecore cronut offal helvetica blue bottle.",
+            "text": "Ethical street twee hella cold-pressed yuccie vice. Slow-carb ethical thundercats hashtag sustainable occupy butcher. Master austin plaid cold-pressed hella park.",
             "user": {
-              "id": 4276,
+              "id": 4361,
               "provider": "email",
-              "uid": "darrin_reichert@conroytorphy.io",
-              "email": "darrin_reichert@conroytorphy.io",
-              "created_at": "2016-03-23T13:23:20.093Z",
-              "updated_at": "2016-03-23T13:23:20.093Z",
+              "uid": "dion_romaguera@lind.io",
+              "email": "dion_romaguera@lind.io",
+              "created_at": "2016-03-24T09:51:27.233Z",
+              "updated_at": "2016-03-24T09:51:27.233Z",
               "profile": {
-                "id": 8350,
-                "first_name": "Armani",
-                "last_name": "Oberbrunner",
-                "city": "Port Donald",
-                "url": "http://schmitt.info/benny.oconnell",
-                "about": "Kogi gentrify viral fap banjo 8-bit knausgaard leggings.",
-                "photo_url": "/uploads/profile/photo/8350/sample.jpg",
+                "id": 8520,
+                "first_name": "Bobby",
+                "last_name": "Kozey",
+                "city": "Cydneyberg",
+                "url": "http://gerlachcronin.org/marcellus_conn",
+                "about": "Gentrify readymade artisan neutra locavore bushwick.",
+                "photo_url": "/uploads/profile/photo/8520/sample.jpg",
                 "posts_count": 0
               }
             },
             "location": {
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
               "id": 1276,
@@ -2009,6 +2165,15 @@
               "id": 187,
               "file_url": "/uploads/attachment/file/187/sample.jpg"
 >>>>>>> added text field to story point serializer
+=======
+              "id": 1435,
+              "latitude": 84.98,
+              "longitude": 80.04
+            },
+            "attachment": {
+              "id": 192,
+              "file_url": "/uploads/attachment/file/192/sample.jpg"
+>>>>>>> added index sp to docs
             },
             "tags": [
 
@@ -2035,6 +2200,7 @@
       ],
       "query": null,
       "request_data": {
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -2077,6 +2243,14 @@
           "latitude": "21.95",
           "longitude": "43.86"
 >>>>>>> added text field to story point serializer
+=======
+        "caption": "quinoa",
+        "text": "Skateboard direct trade cronut taxidermy. Roof keytar viral austin chia twee iphone. Mumblecore flannel occupy migas tofu beard fashion axe dreamcatcher. Thundercats shoreditch tousled cred viral mustache vhs. Twee food truck meh.",
+        "kind": "text",
+        "location": {
+          "latitude": "92.96",
+          "longitude": "33.39"
+>>>>>>> added index sp to docs
         }
       },
       "response_data": {
@@ -2098,6 +2272,7 @@
   "story_points#destroy": [
     {
       "verb": "DELETE",
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -2115,6 +2290,9 @@
 =======
       "path": "/api/v1/story_points/1069",
 >>>>>>> added text field to story point serializer
+=======
+      "path": "/api/v1/story_points/1106",
+>>>>>>> added index sp to docs
       "versions": [
         "v1"
       ],
@@ -2124,6 +2302,7 @@
         "status": "success",
         "data": {
           "story_point": {
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -2167,27 +2346,32 @@
             "id": 1069,
             "caption": "roof",
 >>>>>>> added text field to story point serializer
+=======
+            "id": 1106,
+            "caption": "DIY",
+>>>>>>> added index sp to docs
             "kind": "text",
-            "text": "Godard pork belly bespoke meh shoreditch pop-up brunch marfa. Keffiyeh pug +1 blue bottle. +1 readymade ethical.",
+            "text": "Skateboard etsy asymmetrical squid scenester biodiesel beard tumblr. Ethical cronut heirloom keytar photo booth chartreuse blog ramps. Stumptown aesthetic wolf try-hard readymade viral salvia. Lo-fi cred ramps crucifix vice 8-bit ugh.",
             "user": {
-              "id": 4274,
+              "id": 4366,
               "provider": "email",
-              "uid": "kathlyn@mohrgrimes.com",
-              "email": "kathlyn@mohrgrimes.com",
-              "created_at": "2016-03-23T13:23:19.948Z",
-              "updated_at": "2016-03-23T13:23:19.948Z",
+              "uid": "makayla_oconner@reichert.net",
+              "email": "makayla_oconner@reichert.net",
+              "created_at": "2016-03-24T09:51:27.663Z",
+              "updated_at": "2016-03-24T09:51:27.663Z",
               "profile": {
-                "id": 8346,
-                "first_name": "Roberta",
-                "last_name": "Stehr",
-                "city": "Lehnerland",
-                "url": "http://yundt.biz/adele_cruickshank",
-                "about": "Waistcoat skateboard cornhole thundercats.",
-                "photo_url": "/uploads/profile/photo/8346/sample.jpg",
+                "id": 8530,
+                "first_name": "Narciso",
+                "last_name": "Sanford",
+                "city": "New Ubaldoberg",
+                "url": "http://hudson.name/anthony",
+                "about": "Swag skateboard slow-carb selvage.",
+                "photo_url": "/uploads/profile/photo/8530/sample.jpg",
                 "posts_count": 0
               }
             },
             "location": {
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -2210,6 +2394,11 @@
               "latitude": 80.38,
               "longitude": 56.12
 >>>>>>> added text field to story point serializer
+=======
+              "id": 1439,
+              "latitude": 26.54,
+              "longitude": 79.29
+>>>>>>> added index sp to docs
             },
             "attachment": null,
             "tags": [
@@ -2237,11 +2426,16 @@
       "versions": [
         "v1"
       ],
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
       "query": "location%5Blatitude%5D=53.83&location%5Blongitude%5D=56.73&radius=1",
+=======
+      "query": "location%5Blatitude%5D=100&location%5Blongitude%5D=100&radius=1",
+>>>>>>> added index sp to docs
       "request_data": null,
       "response_data": {
         "status": "success",
         "data": {
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
           "story_points": [
             {
               "id": 731,
@@ -2323,6 +2517,337 @@
                   "id": 22,
                   "name": "nihil"
                 }
+=======
+          "preview_story_points": [
+            {
+              "id": 1103,
+              "caption": "franzen",
+              "kind": "text",
+              "text": "Scenester kickstarter tofu viral messenger bag trust fund keytar. Offal vegan aesthetic. Microdosing biodiesel wolf distillery bitters 3 wolf moon.",
+              "user": {
+                "id": 4363,
+                "provider": "email",
+                "uid": "evan.gusikowski@koepp.name",
+                "email": "evan.gusikowski@koepp.name",
+                "created_at": "2016-03-24T09:51:27.362Z",
+                "updated_at": "2016-03-24T09:51:27.362Z",
+                "profile": {
+                  "id": 8524,
+                  "first_name": "Hulda",
+                  "last_name": "Swift",
+                  "city": "Gulgowskiburgh",
+                  "url": "http://lebsack.io/lilian",
+                  "about": "Street lo-fi loko quinoa mixtape chambray viral kinfolk.",
+                  "photo_url": "/uploads/profile/photo/8524/sample.jpg",
+                  "posts_count": 0
+                }
+              },
+              "location": {
+                "id": 1436,
+                "latitude": 100.0,
+                "longitude": 100.0
+              },
+              "attachment": null,
+              "tags": [
+
+              ]
+            },
+            {
+              "id": 1102,
+              "caption": "dreamcatcher",
+              "kind": "text",
+              "text": "3 wolf moon wolf small batch mustache roof yr. 8-bit polaroid fingerstache butcher master tote bag selfies. Gastropub dreamcatcher sustainable. Yuccie cardigan heirloom direct trade tumblr truffaut.",
+              "user": {
+                "id": 4363,
+                "provider": "email",
+                "uid": "evan.gusikowski@koepp.name",
+                "email": "evan.gusikowski@koepp.name",
+                "created_at": "2016-03-24T09:51:27.362Z",
+                "updated_at": "2016-03-24T09:51:27.362Z",
+                "profile": {
+                  "id": 8524,
+                  "first_name": "Hulda",
+                  "last_name": "Swift",
+                  "city": "Gulgowskiburgh",
+                  "url": "http://lebsack.io/lilian",
+                  "about": "Street lo-fi loko quinoa mixtape chambray viral kinfolk.",
+                  "photo_url": "/uploads/profile/photo/8524/sample.jpg",
+                  "posts_count": 0
+                }
+              },
+              "location": {
+                "id": 1436,
+                "latitude": 100.0,
+                "longitude": 100.0
+              },
+              "attachment": null,
+              "tags": [
+
+              ]
+            },
+            {
+              "id": 1101,
+              "caption": "tattooed",
+              "kind": "text",
+              "text": "Cronut raw denim hoodie salvia. Cred twee microdosing. Roof try-hard ennui scenester. Iphone schlitz readymade vice kitsch kinfolk actually ugh.",
+              "user": {
+                "id": 4363,
+                "provider": "email",
+                "uid": "evan.gusikowski@koepp.name",
+                "email": "evan.gusikowski@koepp.name",
+                "created_at": "2016-03-24T09:51:27.362Z",
+                "updated_at": "2016-03-24T09:51:27.362Z",
+                "profile": {
+                  "id": 8524,
+                  "first_name": "Hulda",
+                  "last_name": "Swift",
+                  "city": "Gulgowskiburgh",
+                  "url": "http://lebsack.io/lilian",
+                  "about": "Street lo-fi loko quinoa mixtape chambray viral kinfolk.",
+                  "photo_url": "/uploads/profile/photo/8524/sample.jpg",
+                  "posts_count": 0
+                }
+              },
+              "location": {
+                "id": 1436,
+                "latitude": 100.0,
+                "longitude": 100.0
+              },
+              "attachment": null,
+              "tags": [
+
+              ]
+            },
+            {
+              "id": 1100,
+              "caption": "dreamcatcher",
+              "kind": "text",
+              "text": "Tousled gentrify pitchfork synth. Cardigan chambray bushwick franzen taxidermy distillery. Fap knausgaard umami scenester typewriter. Bicycle rights street yr kale chips meditation portland.",
+              "user": {
+                "id": 4363,
+                "provider": "email",
+                "uid": "evan.gusikowski@koepp.name",
+                "email": "evan.gusikowski@koepp.name",
+                "created_at": "2016-03-24T09:51:27.362Z",
+                "updated_at": "2016-03-24T09:51:27.362Z",
+                "profile": {
+                  "id": 8524,
+                  "first_name": "Hulda",
+                  "last_name": "Swift",
+                  "city": "Gulgowskiburgh",
+                  "url": "http://lebsack.io/lilian",
+                  "about": "Street lo-fi loko quinoa mixtape chambray viral kinfolk.",
+                  "photo_url": "/uploads/profile/photo/8524/sample.jpg",
+                  "posts_count": 0
+                }
+              },
+              "location": {
+                "id": 1436,
+                "latitude": 100.0,
+                "longitude": 100.0
+              },
+              "attachment": null,
+              "tags": [
+
+              ]
+            },
+            {
+              "id": 1099,
+              "caption": "pour-over",
+              "kind": "text",
+              "text": "Portland meditation small batch listicle. Semiotics organic forage celiac literally locavore banh mi deep v. Xoxo post-ironic squid biodiesel. Retro listicle lo-fi truffaut.",
+              "user": {
+                "id": 4363,
+                "provider": "email",
+                "uid": "evan.gusikowski@koepp.name",
+                "email": "evan.gusikowski@koepp.name",
+                "created_at": "2016-03-24T09:51:27.362Z",
+                "updated_at": "2016-03-24T09:51:27.362Z",
+                "profile": {
+                  "id": 8524,
+                  "first_name": "Hulda",
+                  "last_name": "Swift",
+                  "city": "Gulgowskiburgh",
+                  "url": "http://lebsack.io/lilian",
+                  "about": "Street lo-fi loko quinoa mixtape chambray viral kinfolk.",
+                  "photo_url": "/uploads/profile/photo/8524/sample.jpg",
+                  "posts_count": 0
+                }
+              },
+              "location": {
+                "id": 1436,
+                "latitude": 100.0,
+                "longitude": 100.0
+              },
+              "attachment": null,
+              "tags": [
+
+              ]
+            },
+            {
+              "id": 1098,
+              "caption": "waistcoat",
+              "kind": "text",
+              "text": "You probably haven't heard of them pickled wes anderson schlitz kombucha farm-to-table messenger bag vhs. Keytar hashtag austin butcher shabby chic ramps cray polaroid. Selvage kickstarter before they sold out.",
+              "user": {
+                "id": 4363,
+                "provider": "email",
+                "uid": "evan.gusikowski@koepp.name",
+                "email": "evan.gusikowski@koepp.name",
+                "created_at": "2016-03-24T09:51:27.362Z",
+                "updated_at": "2016-03-24T09:51:27.362Z",
+                "profile": {
+                  "id": 8524,
+                  "first_name": "Hulda",
+                  "last_name": "Swift",
+                  "city": "Gulgowskiburgh",
+                  "url": "http://lebsack.io/lilian",
+                  "about": "Street lo-fi loko quinoa mixtape chambray viral kinfolk.",
+                  "photo_url": "/uploads/profile/photo/8524/sample.jpg",
+                  "posts_count": 0
+                }
+              },
+              "location": {
+                "id": 1436,
+                "latitude": 100.0,
+                "longitude": 100.0
+              },
+              "attachment": null,
+              "tags": [
+
+              ]
+            },
+            {
+              "id": 1097,
+              "caption": "brooklyn",
+              "kind": "text",
+              "text": "Helvetica salvia waistcoat biodiesel tacos celiac. Gastropub seitan mumblecore portland put a bird on it mixtape. Ramps mlkshk jean shorts letterpress hoodie.",
+              "user": {
+                "id": 4363,
+                "provider": "email",
+                "uid": "evan.gusikowski@koepp.name",
+                "email": "evan.gusikowski@koepp.name",
+                "created_at": "2016-03-24T09:51:27.362Z",
+                "updated_at": "2016-03-24T09:51:27.362Z",
+                "profile": {
+                  "id": 8524,
+                  "first_name": "Hulda",
+                  "last_name": "Swift",
+                  "city": "Gulgowskiburgh",
+                  "url": "http://lebsack.io/lilian",
+                  "about": "Street lo-fi loko quinoa mixtape chambray viral kinfolk.",
+                  "photo_url": "/uploads/profile/photo/8524/sample.jpg",
+                  "posts_count": 0
+                }
+              },
+              "location": {
+                "id": 1436,
+                "latitude": 100.0,
+                "longitude": 100.0
+              },
+              "attachment": null,
+              "tags": [
+
+              ]
+            },
+            {
+              "id": 1096,
+              "caption": "locavore",
+              "kind": "text",
+              "text": "Wes anderson chambray vinyl drinking. Squid artisan jean shorts bicycle rights. Single-origin coffee hammock kickstarter.",
+              "user": {
+                "id": 4363,
+                "provider": "email",
+                "uid": "evan.gusikowski@koepp.name",
+                "email": "evan.gusikowski@koepp.name",
+                "created_at": "2016-03-24T09:51:27.362Z",
+                "updated_at": "2016-03-24T09:51:27.362Z",
+                "profile": {
+                  "id": 8524,
+                  "first_name": "Hulda",
+                  "last_name": "Swift",
+                  "city": "Gulgowskiburgh",
+                  "url": "http://lebsack.io/lilian",
+                  "about": "Street lo-fi loko quinoa mixtape chambray viral kinfolk.",
+                  "photo_url": "/uploads/profile/photo/8524/sample.jpg",
+                  "posts_count": 0
+                }
+              },
+              "location": {
+                "id": 1436,
+                "latitude": 100.0,
+                "longitude": 100.0
+              },
+              "attachment": null,
+              "tags": [
+
+              ]
+            },
+            {
+              "id": 1095,
+              "caption": "typewriter",
+              "kind": "text",
+              "text": "Selfies aesthetic pbr&b. Vinyl cred kogi photo booth. Blog asymmetrical narwhal pinterest seitan bicycle rights food truck.",
+              "user": {
+                "id": 4363,
+                "provider": "email",
+                "uid": "evan.gusikowski@koepp.name",
+                "email": "evan.gusikowski@koepp.name",
+                "created_at": "2016-03-24T09:51:27.362Z",
+                "updated_at": "2016-03-24T09:51:27.362Z",
+                "profile": {
+                  "id": 8524,
+                  "first_name": "Hulda",
+                  "last_name": "Swift",
+                  "city": "Gulgowskiburgh",
+                  "url": "http://lebsack.io/lilian",
+                  "about": "Street lo-fi loko quinoa mixtape chambray viral kinfolk.",
+                  "photo_url": "/uploads/profile/photo/8524/sample.jpg",
+                  "posts_count": 0
+                }
+              },
+              "location": {
+                "id": 1436,
+                "latitude": 100.0,
+                "longitude": 100.0
+              },
+              "attachment": null,
+              "tags": [
+
+              ]
+            },
+            {
+              "id": 1094,
+              "caption": "brunch",
+              "kind": "text",
+              "text": "Viral seitan wayfarers bicycle rights. Plaid yr echo vinegar humblebrag. Pour-over celiac kogi craft beer waistcoat chartreuse biodiesel skateboard. Venmo brunch deep v pork belly seitan.",
+              "user": {
+                "id": 4363,
+                "provider": "email",
+                "uid": "evan.gusikowski@koepp.name",
+                "email": "evan.gusikowski@koepp.name",
+                "created_at": "2016-03-24T09:51:27.362Z",
+                "updated_at": "2016-03-24T09:51:27.362Z",
+                "profile": {
+                  "id": 8524,
+                  "first_name": "Hulda",
+                  "last_name": "Swift",
+                  "city": "Gulgowskiburgh",
+                  "url": "http://lebsack.io/lilian",
+                  "about": "Street lo-fi loko quinoa mixtape chambray viral kinfolk.",
+                  "photo_url": "/uploads/profile/photo/8524/sample.jpg",
+                  "posts_count": 0
+                }
+              },
+              "location": {
+                "id": 1436,
+                "latitude": 100.0,
+                "longitude": 100.0
+              },
+              "attachment": null,
+              "tags": [
+
+>>>>>>> added index sp to docs
               ]
             }
           ]
@@ -2343,6 +2868,7 @@
   "story_points#show": [
     {
       "verb": "GET",
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -2360,6 +2886,9 @@
 =======
       "path": "/api/v1/story_points/1068",
 >>>>>>> added text field to story point serializer
+=======
+      "path": "/api/v1/story_points/1105",
+>>>>>>> added index sp to docs
       "versions": [
         "v1"
       ],
@@ -2369,6 +2898,7 @@
         "status": "success",
         "data": {
           "story_point": {
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -2412,27 +2942,32 @@
             "id": 1068,
             "caption": "heirloom",
 >>>>>>> added text field to story point serializer
+=======
+            "id": 1105,
+            "caption": "sustainable",
+>>>>>>> added index sp to docs
             "kind": "text",
-            "text": "Literally farm-to-table +1 deep v migas hella. Crucifix wayfarers typewriter. Everyday tofu chartreuse asymmetrical loko slow-carb. Meggings twee beard brooklyn cred sustainable. Portland wolf gastropub 8-bit carry.",
+            "text": "Flannel skateboard narwhal williamsburg +1 stumptown microdosing. Gastropub pbr&b church-key messenger bag slow-carb. Squid offal pinterest.",
             "user": {
-              "id": 4273,
+              "id": 4365,
               "provider": "email",
-              "uid": "scot.roob@mcdermottbeahan.info",
-              "email": "scot.roob@mcdermottbeahan.info",
-              "created_at": "2016-03-23T13:23:19.881Z",
-              "updated_at": "2016-03-23T13:23:19.881Z",
+              "uid": "rebeka@fritsch.biz",
+              "email": "rebeka@fritsch.biz",
+              "created_at": "2016-03-24T09:51:27.612Z",
+              "updated_at": "2016-03-24T09:51:27.612Z",
               "profile": {
-                "id": 8344,
-                "first_name": "Bradly",
-                "last_name": "Wolf",
-                "city": "West Michelle",
-                "url": "http://hyatt.biz/agustina",
-                "about": "Retro yolo brunch kinfolk.",
-                "photo_url": "/uploads/profile/photo/8344/sample.jpg",
+                "id": 8528,
+                "first_name": "Vergie",
+                "last_name": "Thiel",
+                "city": "Brandtview",
+                "url": "http://quigley.info/hyman",
+                "about": "Helvetica offal brunch authentic dreamcatcher fap food truck disrupt.",
+                "photo_url": "/uploads/profile/photo/8528/sample.jpg",
                 "posts_count": 0
               }
             },
             "location": {
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -2455,6 +2990,11 @@
               "latitude": 49.52,
               "longitude": 37.38
 >>>>>>> added text field to story point serializer
+=======
+              "id": 1438,
+              "latitude": 53.58,
+              "longitude": 29.38
+>>>>>>> added index sp to docs
             },
             "attachment": null,
             "tags": [
@@ -2478,6 +3018,7 @@
   "story_points#update": [
     {
       "verb": "PUT",
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -2495,11 +3036,15 @@
 =======
       "path": "/api/v1/story_points/1067",
 >>>>>>> added text field to story point serializer
+=======
+      "path": "/api/v1/story_points/1104",
+>>>>>>> added index sp to docs
       "versions": [
         "v1"
       ],
       "query": null,
       "request_data": {
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -2522,11 +3067,16 @@
         "caption": "keffiyeh",
         "text": "Farm-to-table cliche freegan mlkshk ugh franzen wes anderson. Marfa carry whatever keytar leggings schlitz. Forage letterpress sartorial. Freegan pork belly mlkshk raw denim pitchfork. Roof crucifix pabst locavore messenger bag vice beard."
 >>>>>>> added text field to story point serializer
+=======
+        "caption": "neutra",
+        "text": "Direct trade goth pug actually literally authentic. Taxidermy organic fingerstache church-key. Freegan etsy vhs whatever portland. Raw denim crucifix vinyl. Franzen shoreditch church-key typewriter diy echo paleo intelligentsia."
+>>>>>>> added index sp to docs
       },
       "response_data": {
         "status": "success",
         "data": {
           "story_point": {
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -2570,27 +3120,32 @@
             "id": 1067,
             "caption": "keffiyeh",
 >>>>>>> added text field to story point serializer
+=======
+            "id": 1104,
+            "caption": "neutra",
+>>>>>>> added index sp to docs
             "kind": "text",
-            "text": "Farm-to-table cliche freegan mlkshk ugh franzen wes anderson. Marfa carry whatever keytar leggings schlitz. Forage letterpress sartorial. Freegan pork belly mlkshk raw denim pitchfork. Roof crucifix pabst locavore messenger bag vice beard.",
+            "text": "Direct trade goth pug actually literally authentic. Taxidermy organic fingerstache church-key. Freegan etsy vhs whatever portland. Raw denim crucifix vinyl. Franzen shoreditch church-key typewriter diy echo paleo intelligentsia.",
             "user": {
-              "id": 4272,
+              "id": 4364,
               "provider": "email",
-              "uid": "edwardo.ebert@macejkovic.biz",
-              "email": "edwardo.ebert@macejkovic.biz",
-              "created_at": "2016-03-23T13:23:19.646Z",
-              "updated_at": "2016-03-23T13:23:19.646Z",
+              "uid": "velma@padberg.biz",
+              "email": "velma@padberg.biz",
+              "created_at": "2016-03-24T09:51:27.533Z",
+              "updated_at": "2016-03-24T09:51:27.533Z",
               "profile": {
-                "id": 8342,
-                "first_name": "Dalton",
-                "last_name": "Considine",
-                "city": "Gorczanybury",
-                "url": "http://moen.io/patricia_hudson",
-                "about": "Wayfarers chillwave brunch cleanse wes anderson pork belly locavore.",
-                "photo_url": "/uploads/profile/photo/8342/sample.jpg",
+                "id": 8526,
+                "first_name": "Rhianna",
+                "last_name": "Jones",
+                "city": "Rohanstad",
+                "url": "http://gradyokeefe.net/trinity",
+                "about": "Street pop-up leggings crucifix viral wayfarers taxidermy.",
+                "photo_url": "/uploads/profile/photo/8526/sample.jpg",
                 "posts_count": 0
               }
             },
             "location": {
+<<<<<<< 6b1b52fa3c761bc2706311adc4452040801b0f55
 <<<<<<< 9c632665d1a7f3e4fd8774e27df7b8ca92b527de
 <<<<<<< 08a0c5d2dec5935131854b862c7df958d3bac72f
 <<<<<<< ca809d8f78b8c46cb194af7a4ce9d2974a40eb3d
@@ -2613,6 +3168,11 @@
               "latitude": 46.79,
               "longitude": 33.66
 >>>>>>> added text field to story point serializer
+=======
+              "id": 1437,
+              "latitude": 96.51,
+              "longitude": 28.67
+>>>>>>> added index sp to docs
             },
             "attachment": null,
             "tags": [
