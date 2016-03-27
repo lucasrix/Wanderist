@@ -4,17 +4,19 @@ describe Api::V1::StoryPointsController do
   include_context 'ability'
 
   describe 'GET #index' do
+    let(:location) { create(:location) }
+    let!(:story_points) { create_list(:story_point_with_attachment, 2, :with_tags, location: location) }
     let(:params) do
       {
         radius: 1,
         location: {
-          latitude: 100,
-          longitude: 100
+          latitude:  location.latitude,
+          longitude: location.longitude
         }
       }
     end
 
-    it 'should be success' do
+    it 'should be success', :show_in_doc do
       get :index, params
       should respond_with :ok
     end
