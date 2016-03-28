@@ -27,7 +27,8 @@ Rails.application.routes.draw do
         resources :story_points, only: [:index]
       end
 
-      resource :profile, only: [:update]
+      resource :profile, only: [:show, :update]
+      resources :profiles, only: [:show]
 
     end
   end

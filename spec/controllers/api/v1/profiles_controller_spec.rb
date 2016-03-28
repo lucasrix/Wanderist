@@ -7,6 +7,24 @@ describe Api::V1::ProfilesController do
     allow(@controller).to receive(:current_user).and_return(user)
   end
 
+  describe 'GET #show' do
+    it 'should be success', :show_in_doc do
+      get :show
+      should respond_with :ok
+    end
+
+    it 'should be success', :show_in_doc do
+      profile = create(:profile)
+      get :show, id: profile.id
+      should respond_with :ok
+    end
+
+    it 'should returns status 404', :show_in_doc do
+      get :show, id: Faker::Number.between(-10, -1)
+      should respond_with :not_found
+    end
+  end
+
   describe 'PUT #update' do
     let(:params){ attributes_for(:profile) }
 

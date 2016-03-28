@@ -1,5 +1,5 @@
 class StoryPointSerializer < ApplicationSerializer
-  attributes :id, :caption, :kind
+  attributes :id, :caption, :kind, :text
 
   has_one :user
   has_one :location

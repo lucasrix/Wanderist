@@ -6,7 +6,20 @@ module Api::V1
       error 403, 'Forbidden action'
     end
 
-    load_and_authorize_resource through: :current_user, singleton: true
+    load_and_authorize_resource through: :current_user, singleton: true, only: [:update]
+
+    api! 'Show a profile'
+    error 404, 'Profile not found'
+    def show
+      if params[:id].present?
+        @profile = Profile.find(params[:id])
+        authorize! :read, @profile
+        render json: Response.new(@profile, ProfileSerializer)
+      else
+        @profile = current_user.profile
+        render json: Response.new(@profile, MyProfileSerializer)
+      end
+    end
 
     api! 'Update a profile'
     param :photo, File, required: false, desc: 'New profile photo'
@@ -25,5 +38,6 @@ module Api::V1
     def profile_params
       params.permit(:first_name, :last_name, :about, :url, :city, :photo)
     end
+
   end
 end
