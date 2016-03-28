@@ -7,7 +7,7 @@ class Response
   def initialize(data = nil, element_serializer = nil)
     @error_messages = []
     @details = {}
-    @element_serializer = element_serializer if element_serializer
+    @element_serializer = element_serializer
     prepare(data) if data
   end
 

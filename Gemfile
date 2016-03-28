@@ -22,7 +22,6 @@ gem 'file_validators'
 
 # Auth
 gem 'devise_token_auth'
-gem 'omniauth-facebook'
 gem 'cancancan', '~> 1.10'
 gem 'koala', '~> 2.2'
 
