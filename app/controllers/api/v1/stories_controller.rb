@@ -10,7 +10,7 @@ module Api::V1
 
     def_param_group :story do
       param :name, String, desc: 'Name', required: true, action_aware: true
-      param :description, String, desc: 'Description', required: true, action_aware: true
+      param :description, String, desc: 'Description', required: false, action_aware: true
       param :discoverable, [true, false], desc: 'Discoverable state', required: true, action_aware: true
       param :story_point_ids, Array, of: Integer, required: false
     end

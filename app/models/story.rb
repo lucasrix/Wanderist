@@ -14,7 +14,6 @@ class Story < ActiveRecord::Base
               maximum: NAME_MAX_LENGTH
             }
   validates :description,
-            presence: true,
             length: {
               maximum: DESCRIPTION_MAX_LENGTH
             }
