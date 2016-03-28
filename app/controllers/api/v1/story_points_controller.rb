@@ -30,63 +30,11 @@ module Api::V1
     api! 'List of story points'
     param_group :location, as: :create
     param :radius, Float, desc: 'Radius of area in miles', required: true
-    example <<-EOS
-    GET /api/v1/story_points
-    {
-      "location[latitude]": 48.4500,
-      "location[longitude]": 34.9833,
-      "radius": 5.0
-    }
-    200
-    {
-      "success": true,
-      "data": {
-        "story_points": [
-          {
-            "id": 13,
-            "kind": "photo",
-            "caption": "My Awesome Story Point",
-            "attachment_id": 1,
-            "location": {
-              "id": 1,
-              "latitude": 48.4500,
-              "longitude": 34.9833
-            },
-            "tags": [
-              {
-                "id": 1,
-                "name": "tag1"
-              },
-              {
-                "id": 2,
-                "name": "tag2"
-              },
-              {
-                "id": 3,
-                "name": "tag3"
-              }
-            ]
-          },
-          {
-            "id": 14,
-            "kind": "photo",
-            "caption": "My Awesome Story Point 2",
-            "attachment_id": 1,
-            "location": {
-              "id": 1,
-              "latitude": 48.4501,
-              "longitude": 34.9843
-            },
-            "tags": []
-          },
-        ]
-      }
-    }
-    EOS
     def index
-      if params[:location].present? and params[:location][:latitude].present? and params[:location][:longitude].present? and params[:radius].present?
-        @story_points = @service.within_origin(params[:location][:latitude], params[:location][:longitude], params[:radius])
-        render json: Response.new(@story_points, PreviewStoryPointSerializer)
+      origin_params = build_origin_params
+      if origin_params
+        @story_points = @service.within_origin(*origin_params)
+        render json: Response.new(@story_points, StoryPointSerializer)
       else
         response = Response.new
         response.add_error_message I18n.t('story_points.missing_params')
@@ -171,7 +119,6 @@ module Api::V1
       update_entity(@story_point, story_point_params)
     end
 
-
     api! 'Delete a story point'
     error 404, 'Story Point not found.'
 
@@ -180,6 +127,15 @@ module Api::V1
     end
 
     private
+
+    def build_origin_params
+      return unless origin_params_valid?
+      location_params.values << params[:radius]
+    end
+
+    def origin_params_valid?
+      Location.new(location_params).valid? && params[:radius].present?
+    end
 
     def set_service
       @service = StoryPointsService.new(@story_points)
@@ -192,6 +148,5 @@ module Api::V1
     def location_params
       params.require(:location).permit(:latitude, :longitude)
     end
-
   end
 end
