@@ -21,11 +21,21 @@ Rails.application.routes.draw do
       get :terms_of_service, to: 'texts#terms_of_service'
       get :privacy_policy, to: 'texts#privacy_policy'
 
-      resources :story_points, only: [:index, :show, :create, :update, :destroy]
+      concern :likeable do
+        resource :like, only: [:create, :destroy]
+      end
+
+      concern :followable do
+        resource :following, only: [:create, :destroy]
+      end
+
+      resources :story_points, concerns: :likeable, only: [:index, :show, :create, :update, :destroy]
       resources :attachments, only: [:create]
-      resources :stories, only: [:create, :update, :destroy] do
+      resources :stories, concerns: [:likeable, :followable], only: [:show, :create, :update, :destroy] do
         resources :story_points, only: [:index]
       end
+
+      get :discover, to:  'discovers#discover'
 
       resource :profile, only: [:show, :update]
       resources :profiles, only: [:show]

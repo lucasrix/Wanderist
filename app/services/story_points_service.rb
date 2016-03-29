@@ -9,5 +9,4 @@ class StoryPointsService < BaseService
 
     @collection.where(location: locations)
   end
-
 end
