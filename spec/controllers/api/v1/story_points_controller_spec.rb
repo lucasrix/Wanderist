@@ -30,7 +30,6 @@ describe Api::V1::StoryPointsController do
       expect_any_instance_of(StoryPointsService).to receive(:within_origin)
       get :index, params
     end
-
   end
 
   describe 'GET #show' do

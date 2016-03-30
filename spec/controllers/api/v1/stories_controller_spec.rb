@@ -3,6 +3,38 @@ require 'rails_helper'
 describe Api::V1::StoriesController do
   include_context "ability"
 
+
+  describe 'GET #my_stories' do
+    let(:user) { create(:user) }
+    let!(:story) { create(:story_with_story_points, user: user) }
+
+    before do
+      allow(@controller).to receive(:current_user).and_return(user)
+    end
+
+    it 'should be success', :show_in_doc do
+      get :my_stories
+      should respond_with :ok
+    end
+
+    it 'paginates stories' do
+      create_list(:story, 30, user: user)
+      per_page = Kaminari.config.default_per_page
+      get :my_stories
+      resp = ActiveSupport::JSON.decode(response.body)
+      stories = resp["data"]["stories"]
+      expect(stories.length).to eq(per_page)
+    end
+
+    context 'unauthorized' do
+      it 'should return status 403', :show_in_doc do
+        ability.cannot :my_stories, Story
+        get :my_stories
+        should respond_with :forbidden
+      end
+    end
+  end
+
   describe 'POST #create' do
     let(:params){ attributes_for(:story) }
 
@@ -32,7 +64,7 @@ describe Api::V1::StoriesController do
   end
 
   describe 'PUT #update' do
-    let!(:story) { create(:story, user: user) }
+    let!(:story) { create(:story_with_story_points, user: user) }
 
     it 'should return status 200' do
       put :update, id: story.id

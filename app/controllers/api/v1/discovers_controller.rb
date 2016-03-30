@@ -15,8 +15,13 @@ module Api::V1
 
     api! 'List of discovered points and stories'
     param_group :location, as: :create
-    param :radius, Float, desc: 'Radius of area in miles', required: true
+    param :radius, Float, desc: 'Radius of area in miles', required: false
     param :page, Integer, desc: 'Pagination page', required: false
+    description <<-EOS
+      If location and radius are presented - "Near You" mode.\n
+      If location is presented and radius not presented - "City" mode.\n
+      If location ans radius aren't presented - "Whole World" mode.\n
+    EOS
     example <<-EOS
     GET /api/v1/discover?location[latitude]=10.66&location[longitude]=50.39&radius=1&page=1
     200

@@ -7,7 +7,8 @@ class Ability
     can :read, StoryPoint
     can [:create, :update, :destroy], StoryPoint, user_id: user.id
     can [:read, :create], Attachment, user_id: user.id
-    can [:create, :read, :update, :destroy], Story, user_id: user.id
+    can [:create, :my_stories, :update, :destroy], Story, user_id: user.id
+    can :read, Story
     can :read, Profile
     can [:update], Profile, user_id: user.id
 
