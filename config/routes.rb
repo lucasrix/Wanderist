@@ -33,6 +33,9 @@ Rails.application.routes.draw do
       resources :attachments, only: [:create]
       resources :stories, concerns: [:likeable, :followable], only: [:show, :create, :update, :destroy] do
         resources :story_points, only: [:index]
+        collection do
+          get :my_stories
+        end
       end
 
       get :discover, to:  'discovers#discover'

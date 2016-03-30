@@ -6,13 +6,21 @@ module Api::V1
       error 401, 'Unauthorized action'
     end
 
-    load_and_authorize_resource
+    load_and_authorize_resource only: [:show, :create, :update, :destroy]
+    load_and_authorize_resource through: :current_user, only: :my_stories
 
     def_param_group :story do
       param :name, String, desc: 'Name', required: true, action_aware: true
       param :description, String, desc: 'Description', required: false, action_aware: true
       param :discoverable, [true, false], desc: 'Discoverable state', required: true, action_aware: true
       param :story_point_ids, Array, of: Integer, required: false
+    end
+
+    api! "Show my stories"
+    param :page, Integer, desc: 'Page number for pagination', required: false
+    def my_stories
+      stories = @stories.page(params[:page])
+      render json: Response.new(stories)
     end
 
 
