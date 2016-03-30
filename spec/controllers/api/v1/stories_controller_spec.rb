@@ -32,7 +32,7 @@ describe Api::V1::StoriesController do
   end
 
   describe 'PUT #update' do
-    let!(:story) { create(:story, user: user) }
+    let!(:story) { create(:story_with_story_points, user: user) }
 
     it 'should return status 200' do
       put :update, id: story.id
