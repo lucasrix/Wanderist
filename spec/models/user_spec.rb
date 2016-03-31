@@ -5,6 +5,7 @@ RSpec.describe User, type: :model do
     it { should have_one(:profile).dependent(:destroy) }
     it { should have_many(:stories) }
     it { should have_many(:story_points) }
+    it { should have_many(:likes) }
   end
 
   context 'Validations' do

@@ -10,6 +10,7 @@ RSpec.describe StoryPoint, type: :model do
     it { should belong_to(:attachment) }
     it { should have_and_belong_to_many(:tags) }
     it { should have_and_belong_to_many(:stories) }
+    it { should have_many(:likes) }
 
   end
 

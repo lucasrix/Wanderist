@@ -3,7 +3,6 @@ require 'rails_helper'
 describe Api::V1::StoriesController do
   include_context "ability"
 
-
   describe 'GET #my_stories' do
     let(:user) { create(:user) }
     let!(:story) { create(:story_with_story_points, user: user) }

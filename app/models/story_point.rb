@@ -1,4 +1,6 @@
 class StoryPoint < ActiveRecord::Base
+  include Likable
+
   KINDS = %i(audio video photo text)
   CAPTION_MAX_LENGTH = 30
   TEXT_MAX_LENGTH = 1500
@@ -21,6 +23,4 @@ class StoryPoint < ActiveRecord::Base
   validates_presence_of :attachment, unless: :text?
 
   enum kind: KINDS
-
-
 end

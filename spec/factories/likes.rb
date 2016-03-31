@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :like do
     user
-    story_point
+    association :likable
   end
 end

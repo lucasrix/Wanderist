@@ -1,4 +1,6 @@
 class Story < ActiveRecord::Base
+  include Likable
+
   NAME_MAX_LENGTH = 25
   DESCRIPTION_MAX_LENGTH = 512
 
@@ -18,5 +20,4 @@ class Story < ActiveRecord::Base
               maximum: DESCRIPTION_MAX_LENGTH
             }
   validates :discoverable, inclusion: { in: [true, false] }
-
 end
