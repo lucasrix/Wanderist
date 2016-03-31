@@ -4,7 +4,7 @@ describe Api::V1::LikesController do
   include_context "ability"
 
   let(:user) { create(:user) }
-  let!(:story) { create(:story) }
+  let!(:story) { create(:story_with_story_points) }
   let!(:story_point) { create(:story_point) }
 
   before do
