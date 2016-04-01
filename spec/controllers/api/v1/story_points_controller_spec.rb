@@ -42,7 +42,8 @@ describe Api::V1::StoryPointsController do
   end
 
   describe 'POST #create' do
-    let(:params){ attributes_for(:story_point).merge({ location: attributes_for(:location) }) }
+    let!(:stories){ create_list(:story, 3, user: user) }
+    let(:params){ attributes_for(:story_point).merge({ location: attributes_for(:location), story_ids: stories.map(&:id) }) }
 
     it 'should be success' do
       post :create, params

@@ -14,8 +14,8 @@
         "status": "success",
         "data": {
           "attachment": {
-            "id": 548,
-            "file_url": "/uploads/attachment/file/548/sample.jpg"
+            "id": 646,
+            "file_url": "/uploads/attachment/file/646/sample.jpg"
           }
         },
         "error": {
@@ -66,6 +66,40 @@
   "profiles#show": [
     {
       "verb": "GET",
+      "path": "/api/v1/profiles/20792",
+      "versions": [
+        "v1"
+      ],
+      "query": "",
+      "request_data": null,
+      "response_data": {
+        "status": "success",
+        "data": {
+          "profile": {
+            "id": 20792,
+            "first_name": "Ayana",
+            "last_name": "Gorczany",
+            "city": "Lorenzbury",
+            "url": "http://gleason.info/brooke_parker",
+            "about": "Green juice pbr&b chambray iphone try-hard meh.",
+            "photo_url": "/uploads/profile/photo/20792/sample.jpg",
+            "posts_count": 0
+          }
+        },
+        "error": {
+          "error_messages": [
+
+          ],
+          "details": {
+          }
+        }
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "GET",
       "path": "/api/v1/profile",
       "versions": [
         "v1"
@@ -76,13 +110,13 @@
         "status": "success",
         "data": {
           "my_profile": {
-            "id": 19191,
-            "first_name": "Hugh",
-            "last_name": "Marquardt",
-            "city": "Cummerataberg",
-            "url": "http://koelpinbarrows.info/juliana_emmerich",
-            "about": "Normcore organic ugh keytar blog craft beer polaroid small batch.",
-            "photo_url": "/uploads/profile/photo/19191/sample.jpg",
+            "id": 20794,
+            "first_name": "Nayeli",
+            "last_name": "Wiza",
+            "city": "New Kianafurt",
+            "url": "http://price.net/otilia.volkman",
+            "about": "Chicharrones you probably haven't heard of them pork belly thundercats jean shorts cleanse.",
+            "photo_url": "/uploads/profile/photo/20794/sample.jpg",
             "posts_count": 0,
             "followers_count": 0,
             "following_count": 0,
@@ -104,7 +138,7 @@
     },
     {
       "verb": "GET",
-      "path": "/api/v1/profiles/-6",
+      "path": "/api/v1/profiles/-5",
       "versions": [
         "v1"
       ],
@@ -115,47 +149,13 @@
         "data": null,
         "error": {
           "error_messages": [
-            "Couldn't find Profile with 'id'=-6"
+            "Couldn't find Profile with 'id'=-5"
           ],
           "details": {
           }
         }
       },
       "code": "404",
-      "show_in_doc": 1,
-      "recorded": true
-    },
-    {
-      "verb": "GET",
-      "path": "/api/v1/profiles/19198",
-      "versions": [
-        "v1"
-      ],
-      "query": "",
-      "request_data": null,
-      "response_data": {
-        "status": "success",
-        "data": {
-          "profile": {
-            "id": 19198,
-            "first_name": "Neil",
-            "last_name": "Wiza",
-            "city": "Marioshire",
-            "url": "http://emmerichklein.org/crawford",
-            "about": "Viral crucifix yolo lumbersexual semiotics taxidermy whatever kinfolk mixtape.",
-            "photo_url": "/uploads/profile/photo/19198/sample.jpg",
-            "posts_count": 0
-          }
-        },
-        "error": {
-          "error_messages": [
-
-          ],
-          "details": {
-          }
-        }
-      },
-      "code": "200",
       "show_in_doc": 1,
       "recorded": true
     }
@@ -169,24 +169,24 @@
       ],
       "query": null,
       "request_data": {
-        "first_name": "Brent",
-        "last_name": "Kirlin",
-        "city": "Leximouth",
-        "url": "http://ankunding.biz/willow",
-        "about": "Franzen cleanse messenger bag meditation wayfarers thundercats.",
+        "first_name": "Marshall",
+        "last_name": "Dibbert",
+        "city": "South Bobbiebury",
+        "url": "http://rowe.name/christy.gislason",
+        "about": "Bushwick hammock deep v brunch trust fund slow-carb authentic locavore.",
         "photo": "<FILE CONTENT 'sample.jpg'>"
       },
       "response_data": {
         "status": "success",
         "data": {
           "profile": {
-            "id": 19187,
-            "first_name": "Brent",
-            "last_name": "Kirlin",
-            "city": "Leximouth",
-            "url": "http://ankunding.biz/willow",
-            "about": "Franzen cleanse messenger bag meditation wayfarers thundercats.",
-            "photo_url": "/uploads/profile/photo/19187/sample.jpg",
+            "id": 20798,
+            "first_name": "Marshall",
+            "last_name": "Dibbert",
+            "city": "South Bobbiebury",
+            "url": "http://rowe.name/christy.gislason",
+            "about": "Bushwick hammock deep v brunch trust fund slow-carb authentic locavore.",
+            "photo_url": "/uploads/profile/photo/20798/sample.jpg",
             "posts_count": 0
           }
         },
@@ -210,11 +210,11 @@
       ],
       "query": null,
       "request_data": {
-        "first_name": "Leola",
-        "last_name": "O'Hara",
-        "city": "Kurtismouth",
-        "url": "http://klocko.net/hilario",
-        "about": "Occupy shabby chic organic pabst shoreditch hashtag.",
+        "first_name": "Pedro",
+        "last_name": "Collier",
+        "city": "Port Skylarside",
+        "url": "http://cruickshank.biz/camryn",
+        "about": "Pork belly skateboard cray vhs fashion axe schlitz franzen aesthetic tofu.",
         "photo": "<FILE CONTENT 'sample.jpg'>"
       },
       "response_data": {
@@ -242,26 +242,26 @@
       ],
       "query": null,
       "request_data": {
-        "facebook_access_token": "4pwq30m99dsk32g419turfw87xqdx2ay7jx42e0fmi328kbr4v1noe8s0kaaurk7u75ytae8o5dx4s7u260mwbbyfdo7s745q4tt1ow7melzt76cmi3aid7ei9bav7inxy33g0euraqyoafkovzhl4foropgnb11y43brpbmrxh6mznpyfbn316ckhkxkybq0ud32zw8b9fptjn9gifs"
+        "facebook_access_token": "pmzzkw44a4c60djvfvk3j9akg53jwv2cjhbk0hazgz68djzks35llfkh42p6s0rx1gr14dqg9a8nah5b9asds1esz8bjd1eu19h632hirwkaurzr1773wc1uyg1aqd2jpde2fuuge433yk2dt1nr3zw502q7ugxew6rotnef6p3vd3bv79b29ozyspw3gua1mmaq0w47ia5nndok6se4"
       },
       "response_data": {
         "status": "success",
         "data": {
           "user": {
-            "id": 9733,
+            "id": 10542,
             "provider": "email",
-            "uid": "baron_brekke@hintz.net",
-            "email": "baron_brekke@hintz.net",
-            "created_at": "2016-04-01T07:43:43.866Z",
-            "updated_at": "2016-04-01T07:43:43.955Z",
+            "uid": "wilfred.thiel@thompson.net",
+            "email": "wilfred.thiel@thompson.net",
+            "created_at": "2016-04-01T10:10:31.305Z",
+            "updated_at": "2016-04-01T10:10:31.392Z",
             "profile": {
-              "id": 19225,
-              "first_name": "Claudine",
-              "last_name": "Armstrong",
-              "city": "North Mathewmouth",
-              "url": "http://littel.info/vivien.rath",
-              "about": "Offal craft beer viral pabst squid cred.",
-              "photo_url": "/uploads/profile/photo/19225/sample.jpg",
+              "id": 20831,
+              "first_name": "Arielle",
+              "last_name": "Schuppe",
+              "city": "Tillmanburgh",
+              "url": "http://veum.io/emilia_cummings",
+              "about": "Retro farm-to-table salvia truffaut next level brooklyn banjo leggings gastropub.",
+              "photo_url": "/uploads/profile/photo/20831/sample.jpg",
               "posts_count": 0
             }
           }
@@ -313,30 +313,30 @@
       ],
       "query": null,
       "request_data": {
-        "email": "roman.kemmer@haag.co",
-        "password": "Zx0eUoFgE",
-        "first_name": "Madalyn",
-        "last_name": "Kessler",
+        "email": "abdullah@greenholt.net",
+        "password": "6iH4EcXl9",
+        "first_name": "Selmer",
+        "last_name": "Will",
         "photo": "<FILE CONTENT 'sample.jpg'>"
       },
       "response_data": {
         "status": "success",
         "data": {
           "user": {
-            "id": 9731,
+            "id": 10527,
             "provider": "email",
-            "uid": "roman.kemmer@haag.co",
-            "email": "roman.kemmer@haag.co",
-            "created_at": "2016-04-01T07:43:43.739Z",
-            "updated_at": "2016-04-01T07:43:43.819Z",
+            "uid": "abdullah@greenholt.net",
+            "email": "abdullah@greenholt.net",
+            "created_at": "2016-04-01T10:10:30.571Z",
+            "updated_at": "2016-04-01T10:10:30.652Z",
             "profile": {
-              "id": 19221,
-              "first_name": "Madalyn",
-              "last_name": "Kessler",
+              "id": 20801,
+              "first_name": "Selmer",
+              "last_name": "Will",
               "city": null,
               "url": null,
               "about": null,
-              "photo_url": "/uploads/profile/photo/19221/sample.jpg",
+              "photo_url": "/uploads/profile/photo/20801/sample.jpg",
               "posts_count": 0
             }
           }
@@ -361,7 +361,7 @@
       ],
       "query": null,
       "request_data": {
-        "email": "kirstin@thompson.biz",
+        "email": "clementine_skiles@morarkoepp.name",
         "password": null
       },
       "response_data": {
@@ -371,7 +371,7 @@
             "id": null,
             "provider": "email",
             "uid": "",
-            "email": "kirstin@thompson.biz",
+            "email": "clementine_skiles@morarkoepp.name",
             "created_at": null,
             "updated_at": null,
             "profile": null
@@ -406,53 +406,27 @@
       ],
       "query": null,
       "request_data": {
-        "email": "janet@hane.io",
-        "password": "6dOfZyLl0"
-      },
-      "response_data": {
-        "status": "error",
-        "data": null,
-        "error": {
-          "error_messages": [
-            "Invalid login credentials. Please try again."
-          ],
-          "details": {
-          }
-        }
-      },
-      "code": "401",
-      "show_in_doc": 1,
-      "recorded": true
-    },
-    {
-      "verb": "POST",
-      "path": "/api/v1/auth/sign_in",
-      "versions": [
-        "v1"
-      ],
-      "query": null,
-      "request_data": {
-        "email": "thomas@armstrong.net",
-        "password": "7oC1LgUrW"
+        "email": "allie@crookspacocha.name",
+        "password": "7c44Q5GrW"
       },
       "response_data": {
         "status": "success",
         "data": {
           "user": {
-            "id": 9734,
+            "id": 10543,
             "provider": "email",
-            "uid": "thomas@armstrong.net",
-            "email": "thomas@armstrong.net",
-            "created_at": "2016-04-01T07:43:45.205Z",
-            "updated_at": "2016-04-01T07:43:45.298Z",
+            "uid": "allie@crookspacocha.name",
+            "email": "allie@crookspacocha.name",
+            "created_at": "2016-04-01T10:10:31.690Z",
+            "updated_at": "2016-04-01T10:10:31.781Z",
             "profile": {
-              "id": 19227,
-              "first_name": "Ryley",
-              "last_name": "Nienow",
-              "city": "Beerview",
-              "url": "http://hudsonhodkiewicz.com/jeff",
-              "about": "Shabby chic pug cronut twee.",
-              "photo_url": "/uploads/profile/photo/19227/sample.jpg",
+              "id": 20833,
+              "first_name": "Norberto",
+              "last_name": "Thompson",
+              "city": "Kuhicborough",
+              "url": "http://hermiston.biz/florencio",
+              "about": "Swag pitchfork intelligentsia leggings church-key.",
+              "photo_url": "/uploads/profile/photo/20833/sample.jpg",
               "posts_count": 0
             }
           }
@@ -468,6 +442,32 @@
       "code": "200",
       "show_in_doc": 1,
       "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/api/v1/auth/sign_in",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "email": "cara.kutch@harber.org",
+        "password": "69E9Xh53L"
+      },
+      "response_data": {
+        "status": "error",
+        "data": null,
+        "error": {
+          "error_messages": [
+            "Invalid login credentials. Please try again."
+          ],
+          "details": {
+          }
+        }
+      },
+      "code": "401",
+      "show_in_doc": 1,
+      "recorded": true
     }
   ],
   "stories#create": [
@@ -479,18 +479,18 @@
       ],
       "query": null,
       "request_data": {
-        "name": "mumblecore",
-        "description": "Eveniet voluptatem deserunt mollitia maxime quo molestiae. Aut repudiandae illum. Non fuga et. Ea adipisci soluta.",
-        "discoverable": true
+        "name": "vice",
+        "description": "Molestias molestiae ab corrupti natus esse et. Quisquam et aut. Ipsa labore inventore omnis consequatur. Esse quisquam architecto ea occaecati.",
+        "discoverable": false
       },
       "response_data": {
         "status": "success",
         "data": {
           "story": {
-            "id": 2703,
-            "name": "mumblecore",
-            "description": "Eveniet voluptatem deserunt mollitia maxime quo molestiae. Aut repudiandae illum. Non fuga et. Ea adipisci soluta.",
-            "discoverable": true,
+            "id": 3011,
+            "name": "vice",
+            "description": "Molestias molestiae ab corrupti natus esse et. Quisquam et aut. Ipsa labore inventore omnis consequatur. Esse quisquam architecto ea occaecati.",
+            "discoverable": false,
             "story_points": [
 
             ]
@@ -516,9 +516,9 @@
       ],
       "query": null,
       "request_data": {
-        "name": "vice",
-        "description": "Id vel est ipsa dolor magnam alias. Corporis dolorem dolores quia. Totam aut corrupti. Velit libero qui adipisci veritatis sit voluptatum.",
-        "discoverable": false
+        "name": "chartreuse",
+        "description": "In veritatis aliquam nisi exercitationem cum voluptatem. Sunt rerum explicabo voluptatem. Dolore minima omnis. Quibusdam qui expedita rerum aliquid consequatur et autem.",
+        "discoverable": true
       },
       "response_data": {
         "status": "error",
@@ -539,7 +539,7 @@
   "stories#destroy": [
     {
       "verb": "DELETE",
-      "path": "/api/v1/stories/2709",
+      "path": "/api/v1/stories/3017",
       "versions": [
         "v1"
       ],
@@ -549,9 +549,9 @@
         "status": "success",
         "data": {
           "story": {
-            "id": 2709,
-            "name": "biodiesel",
-            "description": "Distinctio ullam dolores laudantium corrupti quis voluptatem. Debitis placeat officia. Et expedita assumenda. Nemo quam praesentium. Et dicta ea aut eum odio laborum illum.",
+            "id": 3017,
+            "name": "DIY",
+            "description": "Veritatis culpa officiis est id. Autem laudantium ut. Necessitatibus dolorem repellat aut qui labore ut. Eligendi aut ut.",
             "discoverable": true,
             "story_points": [
 
@@ -585,38 +585,38 @@
         "data": {
           "stories": [
             {
-              "id": 2710,
-              "name": "Thundercats",
-              "description": "Nesciunt est illum. Vel soluta enim molestias et voluptatem cumque. Laboriosam ex possimus. Rerum dolor est nam.",
+              "id": 3009,
+              "name": "mumblecore",
+              "description": "Est aut quia sed. Veritatis eveniet in. Est doloribus reiciendis nobis voluptatem ea. Est eaque occaecati et magnam explicabo.",
               "discoverable": false,
               "story_points": [
                 {
-                  "id": 3576,
-                  "caption": "asymmetrical",
+                  "id": 3923,
+                  "caption": "pickled",
                   "kind": "text",
-                  "text": "Cronut schlitz normcore. Swag flexitarian direct trade marfa ennui lomo ramps small batch. Raw denim yuccie bicycle rights iphone intelligentsia literally pinterest. Franzen irony semiotics. Cleanse mumblecore microdosing xoxo.",
+                  "text": "Bitters readymade keytar forage schlitz butcher banjo chartreuse. Diy fixie quinoa brunch squid you probably haven't heard of them. Yolo selvage vhs gentrify cornhole freegan wayfarers tattooed. Cleanse vinyl tousled viral etsy. Tilde stumptown pabst.",
                   "user": {
-                    "id": 9705,
+                    "id": 10489,
                     "provider": "email",
-                    "uid": "christopher@bailey.org",
-                    "email": "christopher@bailey.org",
-                    "created_at": "2016-04-01T07:43:42.684Z",
-                    "updated_at": "2016-04-01T07:43:42.684Z",
+                    "uid": "hayden@reillybednar.net",
+                    "email": "hayden@reillybednar.net",
+                    "created_at": "2016-04-01T10:10:29.297Z",
+                    "updated_at": "2016-04-01T10:10:29.297Z",
                     "profile": {
-                      "id": 19169,
-                      "first_name": "Corrine",
-                      "last_name": "Flatley",
-                      "city": "Lake Shaynashire",
-                      "url": "http://klein.biz/asia.maggio",
-                      "about": "Squid 3 wolf moon keytar whatever mlkshk.",
-                      "photo_url": "/uploads/profile/photo/19169/sample.jpg",
+                      "id": 20725,
+                      "first_name": "Orval",
+                      "last_name": "Donnelly",
+                      "city": "East Sibyl",
+                      "url": "http://hilpert.net/lea",
+                      "about": "Everyday vinyl offal artisan taxidermy synth readymade.",
+                      "photo_url": "/uploads/profile/photo/20725/sample.jpg",
                       "posts_count": 0
                     }
                   },
                   "location": {
-                    "id": 3935,
-                    "latitude": 36.21,
-                    "longitude": 38.68
+                    "id": 4275,
+                    "latitude": 98.62,
+                    "longitude": 79.62
                   },
                   "attachment": null,
                   "tags": [
@@ -624,32 +624,32 @@
                   ]
                 },
                 {
-                  "id": 3577,
-                  "caption": "knausgaard",
+                  "id": 3924,
+                  "caption": "ugh",
                   "kind": "text",
-                  "text": "Vinyl franzen kickstarter cred cardigan food truck vice. Gastropub shoreditch taxidermy twee. Banjo schlitz kitsch cold-pressed lomo yr. Chartreuse helvetica messenger bag. Mustache health tofu salvia humblebrag farm-to-table williamsburg fanny pack.",
+                  "text": "Meggings ramps tacos lo-fi literally echo street. Pork belly tumblr 90's. Irony paleo kitsch stumptown put a bird on it.",
                   "user": {
-                    "id": 9706,
+                    "id": 10490,
                     "provider": "email",
-                    "uid": "nikki.douglas@denesik.com",
-                    "email": "nikki.douglas@denesik.com",
-                    "created_at": "2016-04-01T07:43:42.709Z",
-                    "updated_at": "2016-04-01T07:43:42.709Z",
+                    "uid": "maxime@mckenzie.info",
+                    "email": "maxime@mckenzie.info",
+                    "created_at": "2016-04-01T10:10:29.329Z",
+                    "updated_at": "2016-04-01T10:10:29.329Z",
                     "profile": {
-                      "id": 19171,
-                      "first_name": "Frank",
-                      "last_name": "McDermott",
-                      "city": "Mortimerland",
-                      "url": "http://dickicronin.com/nicole",
-                      "about": "Flannel banh mi locavore venmo paleo kale chips cleanse pabst.",
-                      "photo_url": "/uploads/profile/photo/19171/sample.jpg",
+                      "id": 20727,
+                      "first_name": "Ashlee",
+                      "last_name": "Altenwerth",
+                      "city": "West Mario",
+                      "url": "http://langkemmer.info/ansel",
+                      "about": "Carry lomo hella irony.",
+                      "photo_url": "/uploads/profile/photo/20727/sample.jpg",
                       "posts_count": 0
                     }
                   },
                   "location": {
-                    "id": 3936,
-                    "latitude": 59.43,
-                    "longitude": 61.73
+                    "id": 4276,
+                    "latitude": 63.29,
+                    "longitude": 73.36
                   },
                   "attachment": null,
                   "tags": [
@@ -657,32 +657,32 @@
                   ]
                 },
                 {
-                  "id": 3578,
-                  "caption": "Godard",
+                  "id": 3925,
+                  "caption": "cronut",
                   "kind": "text",
-                  "text": "Meh ennui tilde umami sriracha salvia master. Raw denim artisan lomo stumptown 90's. Tumblr cornhole asymmetrical chicharrones tousled kitsch. Normcore bushwick butcher try-hard post-ironic mustache wolf squid.",
+                  "text": "Hashtag artisan skateboard messenger bag. Pitchfork authentic normcore typewriter +1 pickled. Mlkshk heirloom williamsburg jean shorts loko. Etsy vinyl dreamcatcher swag chicharrones chia.",
                   "user": {
-                    "id": 9707,
+                    "id": 10491,
                     "provider": "email",
-                    "uid": "frieda.keebler@spinka.io",
-                    "email": "frieda.keebler@spinka.io",
-                    "created_at": "2016-04-01T07:43:42.735Z",
-                    "updated_at": "2016-04-01T07:43:42.735Z",
+                    "uid": "darion.deckow@botsford.co",
+                    "email": "darion.deckow@botsford.co",
+                    "created_at": "2016-04-01T10:10:29.353Z",
+                    "updated_at": "2016-04-01T10:10:29.353Z",
                     "profile": {
-                      "id": 19173,
-                      "first_name": "Erna",
-                      "last_name": "Wiegand",
-                      "city": "Hiltonborough",
-                      "url": "http://cristleannon.com/kaitlyn",
-                      "about": "Lomo meggings yuccie bitters quinoa.",
-                      "photo_url": "/uploads/profile/photo/19173/sample.jpg",
+                      "id": 20729,
+                      "first_name": "Florian",
+                      "last_name": "Schmeler",
+                      "city": "West Sofiamouth",
+                      "url": "http://labadiekreiger.info/myra",
+                      "about": "Readymade pour-over chia yuccie vice cronut lo-fi kombucha.",
+                      "photo_url": "/uploads/profile/photo/20729/sample.jpg",
                       "posts_count": 0
                     }
                   },
                   "location": {
-                    "id": 3937,
-                    "latitude": 67.81,
-                    "longitude": 15.42
+                    "id": 4277,
+                    "latitude": 25.31,
+                    "longitude": 51.08
                   },
                   "attachment": null,
                   "tags": [
@@ -732,50 +732,50 @@
   "stories#update": [
     {
       "verb": "PUT",
-      "path": "/api/v1/stories/2704",
+      "path": "/api/v1/stories/3012",
       "versions": [
         "v1"
       ],
       "query": null,
       "request_data": {
-        "name": "Qui quis quo temporibus voluptate pariatur inventore. Sunt sit earum. Et aut velit. Optio quia non distinctio qui non eius. Adipisci nam hic aut."
+        "name": "Quaerat nemo soluta voluptas sunt assumenda voluptas. Quisquam et quis est totam. Exercitationem delectus qui repellendus quidem at. Adipisci quia eos veniam ut sunt molestias."
       },
       "response_data": {
         "status": "error",
         "data": {
           "story": {
-            "id": 2704,
-            "name": "Qui quis quo temporibus voluptate pariatur inventore. Sunt sit earum. Et aut velit. Optio quia non distinctio qui non eius. Adipisci nam hic aut.",
-            "description": "Explicabo tempora ex voluptates recusandae cum qui temporibus. Unde dolor aliquid quia et at odio. Aut doloribus voluptate eum. Magnam veritatis occaecati quos voluptatem laborum eum. Nam non non quas aliquam accusamus similique deserunt.",
-            "discoverable": false,
+            "id": 3012,
+            "name": "Quaerat nemo soluta voluptas sunt assumenda voluptas. Quisquam et quis est totam. Exercitationem delectus qui repellendus quidem at. Adipisci quia eos veniam ut sunt molestias.",
+            "description": "Est et enim laboriosam similique odio dolor nostrum. Aut veritatis corporis ea fugiat facilis nihil. Sed doloribus illo debitis. Rerum qui exercitationem sunt. Incidunt rerum ut.",
+            "discoverable": true,
             "story_points": [
               {
-                "id": 3558,
-                "caption": "hoodie",
+                "id": 3929,
+                "caption": "chartreuse",
                 "kind": "text",
-                "text": "Next level fashion axe hashtag chia vinyl echo umami squid. Tousled flannel messenger bag lo-fi normcore distillery. Leggings five dollar toast 90's master beard seitan roof sartorial. +1 actually waistcoat.",
+                "text": "Poutine trust fund mlkshk twee street. Try-hard venmo yolo ethical cold-pressed. Gentrify venmo tilde kinfolk meh twee. Schlitz pork belly swag xoxo organic master whatever. 3 wolf moon green juice selfies.",
                 "user": {
-                  "id": 9682,
+                  "id": 10499,
                   "provider": "email",
-                  "uid": "kennedi@mcclureemmerich.biz",
-                  "email": "kennedi@mcclureemmerich.biz",
-                  "created_at": "2016-04-01T07:43:41.954Z",
-                  "updated_at": "2016-04-01T07:43:41.954Z",
+                  "uid": "keshawn@klockokeeling.net",
+                  "email": "keshawn@klockokeeling.net",
+                  "created_at": "2016-04-01T10:10:29.680Z",
+                  "updated_at": "2016-04-01T10:10:29.680Z",
                   "profile": {
-                    "id": 19123,
-                    "first_name": "Branson",
-                    "last_name": "Robel",
-                    "city": "Port Raquel",
-                    "url": "http://schuster.io/pierre",
-                    "about": "Five dollar toast tofu 3 wolf moon microdosing butcher blue bottle.",
-                    "photo_url": "/uploads/profile/photo/19123/sample.jpg",
+                    "id": 20745,
+                    "first_name": "Violette",
+                    "last_name": "Bernier",
+                    "city": "Port Missouriton",
+                    "url": "http://bechtelarlittle.org/caroline_anderson",
+                    "about": "Paleo taxidermy ugh banh mi kombucha leggings cardigan.",
+                    "photo_url": "/uploads/profile/photo/20745/sample.jpg",
                     "posts_count": 0
                   }
                 },
                 "location": {
-                  "id": 3917,
-                  "latitude": 77.36,
-                  "longitude": 77.75
+                  "id": 4281,
+                  "latitude": 29.83,
+                  "longitude": 75.09
                 },
                 "attachment": null,
                 "tags": [
@@ -783,32 +783,32 @@
                 ]
               },
               {
-                "id": 3559,
-                "caption": "asymmetrical",
+                "id": 3930,
+                "caption": "locavore",
                 "kind": "text",
-                "text": "Five dollar toast art party ennui try-hard kickstarter. Next level park normcore meditation neutra 90's hoodie. Hashtag typewriter organic health umami cornhole aesthetic literally. Craft beer health waistcoat cred farm-to-table retro. Synth aesthetic beard echo pinterest ramps bespoke.",
+                "text": "Mumblecore meditation tattooed. Craft beer drinking stumptown five dollar toast disrupt meditation jean shorts pitchfork. Drinking narwhal xoxo ennui migas before they sold out authentic yolo.",
                 "user": {
-                  "id": 9683,
+                  "id": 10500,
                   "provider": "email",
-                  "uid": "adriel.stehr@waters.co",
-                  "email": "adriel.stehr@waters.co",
-                  "created_at": "2016-04-01T07:43:41.984Z",
-                  "updated_at": "2016-04-01T07:43:41.984Z",
+                  "uid": "mallie.prohaska@zboncak.com",
+                  "email": "mallie.prohaska@zboncak.com",
+                  "created_at": "2016-04-01T10:10:29.703Z",
+                  "updated_at": "2016-04-01T10:10:29.703Z",
                   "profile": {
-                    "id": 19125,
-                    "first_name": "Sally",
-                    "last_name": "Schimmel",
-                    "city": "Nolanside",
-                    "url": "http://schuppe.co/lina",
-                    "about": "Quinoa squid knausgaard 8-bit everyday bushwick.",
-                    "photo_url": "/uploads/profile/photo/19125/sample.jpg",
+                    "id": 20747,
+                    "first_name": "Aric",
+                    "last_name": "Nicolas",
+                    "city": "Nehamouth",
+                    "url": "http://haag.io/adriana_buckridge",
+                    "about": "Occupy celiac chia church-key pitchfork kitsch ethical whatever.",
+                    "photo_url": "/uploads/profile/photo/20747/sample.jpg",
                     "posts_count": 0
                   }
                 },
                 "location": {
-                  "id": 3918,
-                  "latitude": 62.87,
-                  "longitude": 80.65
+                  "id": 4282,
+                  "latitude": 67.19,
+                  "longitude": 89.05
                 },
                 "attachment": null,
                 "tags": [
@@ -816,32 +816,32 @@
                 ]
               },
               {
-                "id": 3560,
-                "caption": "paleo",
+                "id": 3931,
+                "caption": "semiotics",
                 "kind": "text",
-                "text": "Franzen intelligentsia migas pbr&b tilde aesthetic. Direct trade jean shorts before they sold out venmo mumblecore. You probably haven't heard of them 90's pop-up. Occupy cred you probably haven't heard of them chartreuse shoreditch.",
+                "text": "You probably haven't heard of them flannel fanny pack readymade. You probably haven't heard of them fap jean shorts hoodie cred five dollar toast bicycle rights. 3 wolf moon intelligentsia retro green juice ramps loko.",
                 "user": {
-                  "id": 9684,
+                  "id": 10501,
                   "provider": "email",
-                  "uid": "laurine@weberzemlak.io",
-                  "email": "laurine@weberzemlak.io",
-                  "created_at": "2016-04-01T07:43:42.007Z",
-                  "updated_at": "2016-04-01T07:43:42.007Z",
+                  "uid": "mallie@hauck.co",
+                  "email": "mallie@hauck.co",
+                  "created_at": "2016-04-01T10:10:29.724Z",
+                  "updated_at": "2016-04-01T10:10:29.724Z",
                   "profile": {
-                    "id": 19127,
-                    "first_name": "Demarco",
-                    "last_name": "Robel",
-                    "city": "South Marlinton",
-                    "url": "http://hermiston.io/chandler",
-                    "about": "Green juice wes anderson cardigan cleanse narwhal portland put a bird on it pickled shabby chic.",
-                    "photo_url": "/uploads/profile/photo/19127/sample.jpg",
+                    "id": 20749,
+                    "first_name": "Ed",
+                    "last_name": "Lubowitz",
+                    "city": "New Hiram",
+                    "url": "http://mayertbauch.co/chadd",
+                    "about": "Hoodie shabby chic forage messenger bag before they sold out.",
+                    "photo_url": "/uploads/profile/photo/20749/sample.jpg",
                     "posts_count": 0
                   }
                 },
                 "location": {
-                  "id": 3919,
-                  "latitude": 26.64,
-                  "longitude": 33.47
+                  "id": 4283,
+                  "latitude": 98.01,
+                  "longitude": 93.04
                 },
                 "attachment": null,
                 "tags": [
@@ -868,57 +868,57 @@
     },
     {
       "verb": "PUT",
-      "path": "/api/v1/stories/2705",
+      "path": "/api/v1/stories/3013",
       "versions": [
         "v1"
       ],
       "query": null,
       "request_data": {
-        "name": "marfa",
-        "description": "Sit et quis deserunt sint quo sed beatae. Et perspiciatis aliquid itaque soluta quia molestias. Delectus voluptas placeat et explicabo sunt dolor.",
+        "name": "kombucha",
+        "description": "Pariatur in rerum dignissimos velit modi dolor. Molestiae ipsa tempora fugit. Quos excepturi qui voluptatem. Illo qui neque necessitatibus eaque hic.",
         "discoverable": true,
         "story_point_ids": [
-          "3564",
-          "3565",
-          "3566"
+          "3935",
+          "3936",
+          "3937"
         ]
       },
       "response_data": {
         "status": "success",
         "data": {
           "story": {
-            "id": 2705,
-            "name": "marfa",
-            "description": "Sit et quis deserunt sint quo sed beatae. Et perspiciatis aliquid itaque soluta quia molestias. Delectus voluptas placeat et explicabo sunt dolor.",
+            "id": 3013,
+            "name": "kombucha",
+            "description": "Pariatur in rerum dignissimos velit modi dolor. Molestiae ipsa tempora fugit. Quos excepturi qui voluptatem. Illo qui neque necessitatibus eaque hic.",
             "discoverable": true,
             "story_points": [
               {
-                "id": 3564,
-                "caption": "stumptown",
+                "id": 3935,
+                "caption": "lomo",
                 "kind": "text",
-                "text": "Iphone portland organic distillery meh. Butcher chartreuse marfa dreamcatcher truffaut sriracha pickled. Butcher occupy cornhole meh fashion axe mumblecore. Whatever wayfarers raw denim bushwick vegan meggings readymade.",
+                "text": "Kinfolk viral jean shorts keytar ennui tilde. Microdosing yolo polaroid. Chambray sriracha chartreuse.",
                 "user": {
-                  "id": 9689,
+                  "id": 10506,
                   "provider": "email",
-                  "uid": "ola@faysmith.co",
-                  "email": "ola@faysmith.co",
-                  "created_at": "2016-04-01T07:43:42.195Z",
-                  "updated_at": "2016-04-01T07:43:42.195Z",
+                  "uid": "carley_okon@paucekwest.org",
+                  "email": "carley_okon@paucekwest.org",
+                  "created_at": "2016-04-01T10:10:29.889Z",
+                  "updated_at": "2016-04-01T10:10:29.889Z",
                   "profile": {
-                    "id": 19137,
-                    "first_name": "Janie",
-                    "last_name": "Considine",
-                    "city": "Mariloutown",
-                    "url": "http://gusikowskiwyman.net/darron",
-                    "about": "Street chia poutine kinfolk ethical brunch readymade.",
-                    "photo_url": "/uploads/profile/photo/19137/sample.jpg",
+                    "id": 20759,
+                    "first_name": "Lamont",
+                    "last_name": "Stiedemann",
+                    "city": "Eliseburgh",
+                    "url": "http://marquardt.net/hector.mayert",
+                    "about": "Scenester meditation pork belly sriracha.",
+                    "photo_url": "/uploads/profile/photo/20759/sample.jpg",
                     "posts_count": 0
                   }
                 },
                 "location": {
-                  "id": 3923,
-                  "latitude": 45.28,
-                  "longitude": 66.76
+                  "id": 4287,
+                  "latitude": 63.96,
+                  "longitude": 28.54
                 },
                 "attachment": null,
                 "tags": [
@@ -926,32 +926,32 @@
                 ]
               },
               {
-                "id": 3565,
-                "caption": "schlitz",
+                "id": 3936,
+                "caption": "marfa",
                 "kind": "text",
-                "text": "Chartreuse post-ironic keytar kombucha. Shoreditch readymade tattooed. Butcher synth franzen echo kinfolk five dollar toast slow-carb. Taxidermy chia green juice.",
+                "text": "Venmo selvage taxidermy cray. Kombucha lumbersexual tilde cleanse direct trade mlkshk organic polaroid. Irony food truck literally chambray disrupt. +1 heirloom pop-up humblebrag polaroid. Crucifix loko portland heirloom meditation.",
                 "user": {
-                  "id": 9690,
+                  "id": 10507,
                   "provider": "email",
-                  "uid": "janiya.hartmann@willms.net",
-                  "email": "janiya.hartmann@willms.net",
-                  "created_at": "2016-04-01T07:43:42.218Z",
-                  "updated_at": "2016-04-01T07:43:42.218Z",
+                  "uid": "mckayla@bartoletti.com",
+                  "email": "mckayla@bartoletti.com",
+                  "created_at": "2016-04-01T10:10:29.910Z",
+                  "updated_at": "2016-04-01T10:10:29.910Z",
                   "profile": {
-                    "id": 19139,
-                    "first_name": "Zakary",
-                    "last_name": "Dach",
-                    "city": "Pacochafort",
-                    "url": "http://conn.com/collin",
-                    "about": "Synth brooklyn freegan pop-up drinking chillwave pitchfork narwhal.",
-                    "photo_url": "/uploads/profile/photo/19139/sample.jpg",
+                    "id": 20761,
+                    "first_name": "Maud",
+                    "last_name": "Barton",
+                    "city": "Elfriedaport",
+                    "url": "http://reynolds.com/dedric_marvin",
+                    "about": "Carry chartreuse williamsburg kinfolk asymmetrical.",
+                    "photo_url": "/uploads/profile/photo/20761/sample.jpg",
                     "posts_count": 0
                   }
                 },
                 "location": {
-                  "id": 3924,
-                  "latitude": 10.02,
-                  "longitude": 25.88
+                  "id": 4288,
+                  "latitude": 48.32,
+                  "longitude": 52.45
                 },
                 "attachment": null,
                 "tags": [
@@ -959,32 +959,32 @@
                 ]
               },
               {
-                "id": 3566,
-                "caption": "aesthetic",
+                "id": 3937,
+                "caption": "swag",
                 "kind": "text",
-                "text": "Pickled semiotics kickstarter. Banjo viral flannel tofu microdosing chartreuse lomo chambray. Quinoa polaroid sustainable iphone cold-pressed tattooed selvage asymmetrical.",
+                "text": "Vegan intelligentsia pbr&b venmo kale chips twee gentrify paleo. Street hashtag bespoke typewriter sartorial roof. Readymade chia park vinegar slow-carb. Diy banjo knausgaard schlitz yuccie mustache yolo. Paleo green juice vhs brooklyn.",
                 "user": {
-                  "id": 9691,
+                  "id": 10508,
                   "provider": "email",
-                  "uid": "dennis_kiehn@stehr.com",
-                  "email": "dennis_kiehn@stehr.com",
-                  "created_at": "2016-04-01T07:43:42.240Z",
-                  "updated_at": "2016-04-01T07:43:42.240Z",
+                  "uid": "keyshawn@rosenbaum.org",
+                  "email": "keyshawn@rosenbaum.org",
+                  "created_at": "2016-04-01T10:10:29.931Z",
+                  "updated_at": "2016-04-01T10:10:29.931Z",
                   "profile": {
-                    "id": 19141,
-                    "first_name": "Abagail",
-                    "last_name": "Strosin",
-                    "city": "Port Rossie",
-                    "url": "http://gerhold.io/daren.skiles",
-                    "about": "Art party selfies microdosing blog disrupt organic pinterest.",
-                    "photo_url": "/uploads/profile/photo/19141/sample.jpg",
+                    "id": 20763,
+                    "first_name": "Daniela",
+                    "last_name": "Willms",
+                    "city": "North Robertabury",
+                    "url": "http://runolfsdottir.com/terrance.predovic",
+                    "about": "Vinyl ethical locavore selfies bespoke humblebrag church-key blue bottle leggings.",
+                    "photo_url": "/uploads/profile/photo/20763/sample.jpg",
                     "posts_count": 0
                   }
                 },
                 "location": {
-                  "id": 3925,
-                  "latitude": 69.79,
-                  "longitude": 78.04
+                  "id": 4289,
+                  "latitude": 53.14,
+                  "longitude": 37.71
                 },
                 "attachment": null,
                 "tags": [
@@ -1008,52 +1008,15 @@
     },
     {
       "verb": "PUT",
-      "path": "/api/v1/stories/2707",
+      "path": "/api/v1/stories/3014",
       "versions": [
         "v1"
       ],
       "query": null,
       "request_data": {
-        "story_point_ids": [
-
-        ]
-      },
-      "response_data": {
-        "status": "success",
-        "data": {
-          "story": {
-            "id": 2707,
-            "name": "bushwick",
-            "description": "Amet cum nostrum neque nisi. Officiis in sint similique omnis. Et minima nihil sunt ad. Et sunt dolorum aspernatur sint. Accusamus amet qui.",
-            "discoverable": true,
-            "story_points": [
-
-            ]
-          }
-        },
-        "error": {
-          "error_messages": [
-
-          ],
-          "details": {
-          }
-        }
-      },
-      "code": "200",
-      "show_in_doc": 1,
-      "recorded": true
-    },
-    {
-      "verb": "PUT",
-      "path": "/api/v1/stories/2708",
-      "versions": [
-        "v1"
-      ],
-      "query": null,
-      "request_data": {
-        "name": "kickstarter",
-        "description": "Id enim necessitatibus. Sequi id est at maxime illo pariatur aut. Fuga perspiciatis ratione earum reiciendis libero quia.",
-        "discoverable": false,
+        "name": "polaroid",
+        "description": "Sit illo laudantium aliquam facilis. Expedita natus iusto. Ea autem esse ipsam dolor voluptatem iste.",
+        "discoverable": true,
         "story_point_ids": [
           "101"
         ]
@@ -1072,6 +1035,43 @@
       "code": "404",
       "show_in_doc": 1,
       "recorded": true
+    },
+    {
+      "verb": "PUT",
+      "path": "/api/v1/stories/3016",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "story_point_ids": [
+
+        ]
+      },
+      "response_data": {
+        "status": "success",
+        "data": {
+          "story": {
+            "id": 3016,
+            "name": "venmo",
+            "description": "Sint qui sequi id atque molestias quas ut. Aut dolorem reiciendis debitis voluptatibus enim expedita ipsa. Itaque ab non autem et tempora.",
+            "discoverable": false,
+            "story_points": [
+
+            ]
+          }
+        },
+        "error": {
+          "error_messages": [
+
+          ],
+          "details": {
+          }
+        }
+      },
+      "code": "200",
+      "show_in_doc": 1,
+      "recorded": true
     }
   ],
   "story_points#create": [
@@ -1083,44 +1083,123 @@
       ],
       "query": null,
       "request_data": {
-        "caption": "kitsch",
-        "text": "Leggings xoxo vinyl swag biodiesel irony wes anderson salvia. Whatever kinfolk deep v selfies direct trade goth blog. Street meggings park knausgaard 8-bit. Tacos fingerstache next level cardigan migas food truck.",
+        "caption": "hammock",
+        "text": "Bushwick twee jean shorts yuccie swag. Pinterest five dollar toast crucifix plaid austin listicle. Farm-to-table kickstarter iphone selfies schlitz normcore. Bespoke brunch gluten-free squid microdosing.",
+        "kind": "text",
+        "location": {
+          "latitude": "54.65",
+          "longitude": "65.96"
+        },
+        "story_ids": [
+          "3018",
+          "3019",
+          "3020"
+        ],
+        "attachment_id": "647"
+      },
+      "response_data": {
+        "status": "success",
+        "data": {
+          "story_point": {
+            "id": 3947,
+            "caption": "hammock",
+            "kind": "text",
+            "text": "Bushwick twee jean shorts yuccie swag. Pinterest five dollar toast crucifix plaid austin listicle. Farm-to-table kickstarter iphone selfies schlitz normcore. Bespoke brunch gluten-free squid microdosing.",
+            "user": {
+              "id": 10531,
+              "provider": "email",
+              "uid": "emmanuelle@mcculloughmcglynn.co",
+              "email": "emmanuelle@mcculloughmcglynn.co",
+              "created_at": "2016-04-01T10:10:30.789Z",
+              "updated_at": "2016-04-01T10:10:30.789Z",
+              "profile": {
+                "id": 20809,
+                "first_name": "Lionel",
+                "last_name": "Jaskolski",
+                "city": "North Hulda",
+                "url": "http://luettgen.name/georgette.corwin",
+                "about": "Literally forage meggings seitan 8-bit bicycle rights iphone.",
+                "photo_url": "/uploads/profile/photo/20809/sample.jpg",
+                "posts_count": 0
+              }
+            },
+            "location": {
+              "id": 4299,
+              "latitude": 54.65,
+              "longitude": 65.96
+            },
+            "attachment": {
+              "id": 647,
+              "file_url": "/uploads/attachment/file/647/sample.jpg"
+            },
+            "tags": [
+
+            ]
+          }
+        },
+        "error": {
+          "error_messages": [
+
+          ],
+          "details": {
+          }
+        }
+      },
+      "code": "201",
+      "show_in_doc": 1,
+      "recorded": true
+    },
+    {
+      "verb": "POST",
+      "path": "/api/v1/story_points",
+      "versions": [
+        "v1"
+      ],
+      "query": null,
+      "request_data": {
+        "caption": "crucifix",
+        "text": "Authentic vice park yr. Lo-fi semiotics single-origin coffee hammock. Pitchfork tote bag chartreuse polaroid leggings lumbersexual. Banh mi cold-pressed tousled vinyl gentrify plaid.",
         "kind": "text",
         "location": {
           "latitude": null,
-          "longitude": "77.25"
-        }
+          "longitude": "28.95"
+        },
+        "story_ids": [
+          "3021",
+          "3022",
+          "3023"
+        ]
       },
       "response_data": {
         "status": "error",
         "data": {
           "story_point": {
             "id": null,
-            "caption": "kitsch",
+            "caption": "crucifix",
             "kind": "text",
-            "text": "Leggings xoxo vinyl swag biodiesel irony wes anderson salvia. Whatever kinfolk deep v selfies direct trade goth blog. Street meggings park knausgaard 8-bit. Tacos fingerstache next level cardigan migas food truck.",
+            "text": "Authentic vice park yr. Lo-fi semiotics single-origin coffee hammock. Pitchfork tote bag chartreuse polaroid leggings lumbersexual. Banh mi cold-pressed tousled vinyl gentrify plaid.",
             "user": {
-              "id": 9720,
+              "id": 10532,
               "provider": "email",
-              "uid": "sabrina_marks@bartellsteuber.org",
-              "email": "sabrina_marks@bartellsteuber.org",
-              "created_at": "2016-04-01T07:43:43.159Z",
-              "updated_at": "2016-04-01T07:43:43.159Z",
+              "uid": "crystel@sengerpagac.info",
+              "email": "crystel@sengerpagac.info",
+              "created_at": "2016-04-01T10:10:30.862Z",
+              "updated_at": "2016-04-01T10:10:30.862Z",
               "profile": {
-                "id": 19200,
-                "first_name": "Nova",
-                "last_name": "Heller",
-                "city": "Ferminstad",
-                "url": "http://ankunding.biz/alexander",
-                "about": "Occupy retro aesthetic street chicharrones.",
-                "photo_url": "/uploads/profile/photo/19200/sample.jpg",
+                "id": 20811,
+                "first_name": "Sadie",
+                "last_name": "Hirthe",
+                "city": "Bahringerfort",
+                "url": "http://leffler.com/joanie",
+                "about": "Try-hard next level mustache listicle.",
+                "photo_url": "/uploads/profile/photo/20811/sample.jpg",
                 "posts_count": 0
               }
             },
             "location": {
               "id": null,
               "latitude": null,
-              "longitude": 77.25
+              "longitude": 28.95
             },
             "attachment": null,
             "tags": [
@@ -1151,82 +1230,18 @@
       ],
       "query": null,
       "request_data": {
-        "caption": "migas",
-        "text": "Fashion axe seitan single-origin coffee dreamcatcher brunch yuccie. Narwhal direct trade meh austin tote bag lo-fi diy gluten-free. Occupy photo booth waistcoat pour-over everyday gentrify. Cornhole taxidermy roof farm-to-table mixtape banh mi ethical.",
+        "caption": "williamsburg",
+        "text": "Ugh etsy plaid synth chicharrones occupy meditation. Actually microdosing pbr&b helvetica ethical you probably haven't heard of them kickstarter tumblr. Pork belly health banjo microdosing banh mi viral.",
         "kind": "text",
         "location": {
-          "latitude": "62.86",
-          "longitude": "68.23"
+          "latitude": "91.81",
+          "longitude": "51.37"
         },
-        "attachment_id": "549"
-      },
-      "response_data": {
-        "status": "success",
-        "data": {
-          "story_point": {
-            "id": 3582,
-            "caption": "migas",
-            "kind": "text",
-            "text": "Fashion axe seitan single-origin coffee dreamcatcher brunch yuccie. Narwhal direct trade meh austin tote bag lo-fi diy gluten-free. Occupy photo booth waistcoat pour-over everyday gentrify. Cornhole taxidermy roof farm-to-table mixtape banh mi ethical.",
-            "user": {
-              "id": 9721,
-              "provider": "email",
-              "uid": "abe@davis.com",
-              "email": "abe@davis.com",
-              "created_at": "2016-04-01T07:43:43.207Z",
-              "updated_at": "2016-04-01T07:43:43.207Z",
-              "profile": {
-                "id": 19202,
-                "first_name": "Rodrigo",
-                "last_name": "Bernhard",
-                "city": "Sunnyland",
-                "url": "http://trompzieme.info/omari",
-                "about": "Venmo meditation selvage flannel cronut offal.",
-                "photo_url": "/uploads/profile/photo/19202/sample.jpg",
-                "posts_count": 0
-              }
-            },
-            "location": {
-              "id": 3941,
-              "latitude": 62.86,
-              "longitude": 68.23
-            },
-            "attachment": {
-              "id": 549,
-              "file_url": "/uploads/attachment/file/549/sample.jpg"
-            },
-            "tags": [
-
-            ]
-          }
-        },
-        "error": {
-          "error_messages": [
-
-          ],
-          "details": {
-          }
-        }
-      },
-      "code": "201",
-      "show_in_doc": 1,
-      "recorded": true
-    },
-    {
-      "verb": "POST",
-      "path": "/api/v1/story_points",
-      "versions": [
-        "v1"
-      ],
-      "query": null,
-      "request_data": {
-        "caption": "try-hard",
-        "text": "Kale chips shabby chic blog neutra +1 letterpress. Craft beer williamsburg everyday deep v shabby chic health 90's. Microdosing selfies viral photo booth sartorial. Mustache kitsch swag.",
-        "kind": "text",
-        "location": {
-          "latitude": "52.99",
-          "longitude": "71.66"
-        }
+        "story_ids": [
+          "3024",
+          "3025",
+          "3026"
+        ]
       },
       "response_data": {
         "status": "error",
@@ -1247,7 +1262,7 @@
   "story_points#destroy": [
     {
       "verb": "DELETE",
-      "path": "/api/v1/story_points/3586",
+      "path": "/api/v1/story_points/3952",
       "versions": [
         "v1"
       ],
@@ -1257,32 +1272,32 @@
         "status": "success",
         "data": {
           "story_point": {
-            "id": 3586,
-            "caption": "cardigan",
+            "id": 3952,
+            "caption": "meh",
             "kind": "text",
-            "text": "Scenester lo-fi artisan wolf offal fanny pack heirloom. Vinyl blue bottle portland. Vice carry artisan listicle street tacos cronut. Keffiyeh stumptown small batch. Vinegar meditation microdosing keffiyeh.",
+            "text": "Offal portland mustache. Messenger bag pbr&b normcore health hella beard leggings selfies. Sustainable farm-to-table health.",
             "user": {
-              "id": 9729,
+              "id": 10541,
               "provider": "email",
-              "uid": "josue@kub.biz",
-              "email": "josue@kub.biz",
-              "created_at": "2016-04-01T07:43:43.611Z",
-              "updated_at": "2016-04-01T07:43:43.611Z",
+              "uid": "kaylah_ledner@blanda.io",
+              "email": "kaylah_ledner@blanda.io",
+              "created_at": "2016-04-01T10:10:31.255Z",
+              "updated_at": "2016-04-01T10:10:31.255Z",
               "profile": {
-                "id": 19218,
-                "first_name": "Alaina",
-                "last_name": "Jacobs",
-                "city": "New Bartholome",
-                "url": "http://stromanferry.co/ambrose",
-                "about": "Everyday 8-bit letterpress vinegar seitan vhs tofu normcore.",
-                "photo_url": "/uploads/profile/photo/19218/sample.jpg",
+                "id": 20829,
+                "first_name": "Jordyn",
+                "last_name": "Willms",
+                "city": "Port Jessica",
+                "url": "http://schuster.io/gonzalo_funk",
+                "about": "You probably haven't heard of them wayfarers kitsch vegan pabst flexitarian.",
+                "photo_url": "/uploads/profile/photo/20829/sample.jpg",
                 "posts_count": 0
               }
             },
             "location": {
-              "id": 3944,
-              "latitude": 10.44,
-              "longitude": 71.32
+              "id": 4303,
+              "latitude": 66.66,
+              "longitude": 80.65
             },
             "attachment": null,
             "tags": [
@@ -1310,95 +1325,95 @@
       "versions": [
         "v1"
       ],
-      "query": "location%5Blatitude%5D=60.54&location%5Blongitude%5D=93.11&radius=1",
+      "query": "location%5Blatitude%5D=72.59&location%5Blongitude%5D=24.68&radius=1",
       "request_data": null,
       "response_data": {
         "status": "success",
         "data": {
           "story_points": [
             {
-              "id": 3585,
-              "caption": "tofu",
+              "id": 3949,
+              "caption": "Yuccie",
               "kind": "photo",
-              "text": "Waistcoat brooklyn flannel fixie. Pop-up ennui celiac bushwick aesthetic. Vinegar seitan selfies poutine literally hashtag. Taxidermy raw denim hella.",
+              "text": "Humblebrag craft beer butcher flexitarian post-ironic. Blog taxidermy selfies. Ramps bespoke 8-bit. Tofu literally paleo vinyl banjo echo retro +1. Post-ironic iphone retro letterpress.",
               "user": {
-                "id": 9727,
+                "id": 10537,
                 "provider": "email",
-                "uid": "william_murray@brown.biz",
-                "email": "william_murray@brown.biz",
-                "created_at": "2016-04-01T07:43:43.489Z",
-                "updated_at": "2016-04-01T07:43:43.489Z",
+                "uid": "alta@nienow.co",
+                "email": "alta@nienow.co",
+                "created_at": "2016-04-01T10:10:31.062Z",
+                "updated_at": "2016-04-01T10:10:31.062Z",
                 "profile": {
-                  "id": 19214,
-                  "first_name": "Sheridan",
-                  "last_name": "Powlowski",
-                  "city": "Franciscabury",
-                  "url": "http://larkinbosco.info/justice",
-                  "about": "Truffaut chambray hoodie flexitarian tacos.",
-                  "photo_url": "/uploads/profile/photo/19214/sample.jpg",
+                  "id": 20821,
+                  "first_name": "Wilford",
+                  "last_name": "Altenwerth",
+                  "city": "Juniorport",
+                  "url": "http://wilkinson.biz/kenya.friesen",
+                  "about": "Irony twee master you probably haven't heard of them blue bottle.",
+                  "photo_url": "/uploads/profile/photo/20821/sample.jpg",
                   "posts_count": 0
                 }
               },
               "location": {
-                "id": 3943,
-                "latitude": 60.54,
-                "longitude": 93.11
+                "id": 4300,
+                "latitude": 72.59,
+                "longitude": 24.68
               },
               "attachment": {
-                "id": 551,
-                "file_url": "/uploads/attachment/file/551/sample.jpg"
+                "id": 649,
+                "file_url": "/uploads/attachment/file/649/sample.jpg"
               },
               "tags": [
                 {
-                  "id": 475,
-                  "name": "a"
+                  "id": 611,
+                  "name": "accusantium"
                 },
                 {
-                  "id": 476,
-                  "name": "magni"
+                  "id": 612,
+                  "name": "suscipit"
                 }
               ]
             },
             {
-              "id": 3584,
-              "caption": "literally",
+              "id": 3948,
+              "caption": "pour-over",
               "kind": "photo",
-              "text": "Chartreuse flexitarian shabby chic. Authentic schlitz lomo 3 wolf moon chartreuse. Selfies lumbersexual photo booth sustainable. Ugh messenger bag helvetica scenester chillwave wayfarers etsy brunch.",
+              "text": "Pug mustache lomo jean shorts plaid. Lo-fi heirloom photo booth intelligentsia typewriter post-ironic. 3 wolf moon gluten-free before they sold out dreamcatcher taxidermy locavore heirloom keytar. Portland kogi mumblecore.",
               "user": {
-                "id": 9725,
+                "id": 10535,
                 "provider": "email",
-                "uid": "rebecca@johnston.net",
-                "email": "rebecca@johnston.net",
-                "created_at": "2016-04-01T07:43:43.403Z",
-                "updated_at": "2016-04-01T07:43:43.403Z",
+                "uid": "abbey.murazik@walker.name",
+                "email": "abbey.murazik@walker.name",
+                "created_at": "2016-04-01T10:10:30.996Z",
+                "updated_at": "2016-04-01T10:10:30.996Z",
                 "profile": {
-                  "id": 19210,
-                  "first_name": "Gage",
-                  "last_name": "Leannon",
-                  "city": "North Jeramybury",
-                  "url": "http://block.name/thomas",
-                  "about": "Swag street gastropub umami artisan semiotics hoodie fashion axe.",
-                  "photo_url": "/uploads/profile/photo/19210/sample.jpg",
+                  "id": 20817,
+                  "first_name": "Maddison",
+                  "last_name": "Schowalter",
+                  "city": "Abagailmouth",
+                  "url": "http://larson.com/angelina_bechtelar",
+                  "about": "Leggings street health park typewriter flexitarian polaroid you probably haven't heard of them.",
+                  "photo_url": "/uploads/profile/photo/20817/sample.jpg",
                   "posts_count": 0
                 }
               },
               "location": {
-                "id": 3943,
-                "latitude": 60.54,
-                "longitude": 93.11
+                "id": 4300,
+                "latitude": 72.59,
+                "longitude": 24.68
               },
               "attachment": {
-                "id": 550,
-                "file_url": "/uploads/attachment/file/550/sample.jpg"
+                "id": 648,
+                "file_url": "/uploads/attachment/file/648/sample.jpg"
               },
               "tags": [
                 {
-                  "id": 473,
-                  "name": "ea"
+                  "id": 609,
+                  "name": "voluptates"
                 },
                 {
-                  "id": 474,
-                  "name": "saepe"
+                  "id": 610,
+                  "name": "adipisci"
                 }
               ]
             }
@@ -1420,7 +1435,7 @@
   "story_points#show": [
     {
       "verb": "GET",
-      "path": "/api/v1/story_points/3583",
+      "path": "/api/v1/story_points/3951",
       "versions": [
         "v1"
       ],
@@ -1430,32 +1445,32 @@
         "status": "success",
         "data": {
           "story_point": {
-            "id": 3583,
-            "caption": "meditation",
+            "id": 3951,
+            "caption": "loko",
             "kind": "text",
-            "text": "Hoodie occupy tote bag chia. Knausgaard church-key microdosing brooklyn tousled skateboard pbr&b chillwave. Tacos post-ironic wes anderson pitchfork cliche diy taxidermy.",
+            "text": "Photo booth bicycle rights literally blog pop-up salvia letterpress. Vegan humblebrag cardigan. Mustache goth aesthetic swag asymmetrical actually.",
             "user": {
-              "id": 9723,
+              "id": 10540,
               "provider": "email",
-              "uid": "hudson_pfannerstill@zieme.org",
-              "email": "hudson_pfannerstill@zieme.org",
-              "created_at": "2016-04-01T07:43:43.338Z",
-              "updated_at": "2016-04-01T07:43:43.338Z",
+              "uid": "elaina_gottlieb@pacochahane.biz",
+              "email": "elaina_gottlieb@pacochahane.biz",
+              "created_at": "2016-04-01T10:10:31.212Z",
+              "updated_at": "2016-04-01T10:10:31.212Z",
               "profile": {
-                "id": 19206,
-                "first_name": "Jayson",
-                "last_name": "Marvin",
-                "city": "Bertrammouth",
-                "url": "http://hudson.info/jonas",
-                "about": "Ennui yr organic chambray portland loko truffaut direct trade.",
-                "photo_url": "/uploads/profile/photo/19206/sample.jpg",
+                "id": 20827,
+                "first_name": "Martin",
+                "last_name": "Thiel",
+                "city": "North Sven",
+                "url": "http://wolff.net/domenico",
+                "about": "Green juice kogi portland austin.",
+                "photo_url": "/uploads/profile/photo/20827/sample.jpg",
                 "posts_count": 0
               }
             },
             "location": {
-              "id": 3942,
-              "latitude": 38.61,
-              "longitude": 33.05
+              "id": 4302,
+              "latitude": 84.85,
+              "longitude": 52.41
             },
             "attachment": null,
             "tags": [
@@ -1479,45 +1494,45 @@
   "story_points#update": [
     {
       "verb": "PUT",
-      "path": "/api/v1/story_points/3587",
+      "path": "/api/v1/story_points/3950",
       "versions": [
         "v1"
       ],
       "query": null,
       "request_data": {
-        "caption": "salvia",
-        "text": "Mustache selfies blue bottle loko vhs vegan. Bushwick single-origin coffee brooklyn taxidermy truffaut vhs trust fund yr. Bespoke pitchfork pbr&b hashtag occupy."
+        "caption": "truffaut",
+        "text": "Dreamcatcher williamsburg pinterest. Keytar helvetica quinoa shabby chic scenester lo-fi. Schlitz authentic flexitarian cronut."
       },
       "response_data": {
         "status": "success",
         "data": {
           "story_point": {
-            "id": 3587,
-            "caption": "salvia",
+            "id": 3950,
+            "caption": "truffaut",
             "kind": "text",
-            "text": "Mustache selfies blue bottle loko vhs vegan. Bushwick single-origin coffee brooklyn taxidermy truffaut vhs trust fund yr. Bespoke pitchfork pbr&b hashtag occupy.",
+            "text": "Dreamcatcher williamsburg pinterest. Keytar helvetica quinoa shabby chic scenester lo-fi. Schlitz authentic flexitarian cronut.",
             "user": {
-              "id": 9730,
+              "id": 10539,
               "provider": "email",
-              "uid": "hyman@gottlieb.net",
-              "email": "hyman@gottlieb.net",
-              "created_at": "2016-04-01T07:43:43.664Z",
-              "updated_at": "2016-04-01T07:43:43.664Z",
+              "uid": "therese.marks@hilpert.co",
+              "email": "therese.marks@hilpert.co",
+              "created_at": "2016-04-01T10:10:31.155Z",
+              "updated_at": "2016-04-01T10:10:31.155Z",
               "profile": {
-                "id": 19220,
-                "first_name": "Hillard",
-                "last_name": "Kling",
-                "city": "North Willy",
-                "url": "http://vonrueden.name/yasmin.oreilly",
-                "about": "Pinterest celiac tilde knausgaard.",
-                "photo_url": "/uploads/profile/photo/19220/sample.jpg",
+                "id": 20825,
+                "first_name": "Imogene",
+                "last_name": "Metz",
+                "city": "Kenyonburgh",
+                "url": "http://grimes.io/schuyler",
+                "about": "Umami +1 echo tote bag crucifix polaroid cornhole pickled etsy.",
+                "photo_url": "/uploads/profile/photo/20825/sample.jpg",
                 "posts_count": 0
               }
             },
             "location": {
-              "id": 3945,
-              "latitude": 79.27,
-              "longitude": 37.74
+              "id": 4301,
+              "latitude": 70.01,
+              "longitude": 63.25
             },
             "attachment": null,
             "tags": [

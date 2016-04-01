@@ -50,10 +50,15 @@ module Api::V1
 
     api! 'Create a story point'
     param :kind, StoryPoint::KINDS, required: true, desc: 'Kind'
+    param :story_ids, Array, of: Integer, required: false, desc: 'Array of story ids'
     param_group :story_point
     see "attachments#create", "Attachment"
     see "stories#create", "Story"
     def create
+      if params[:story_ids].present?
+        Story.accessible_by(current_ability, :update).find(params[:story_ids])
+      end
+
       @story_point.kind = StoryPoint::kinds[params[:kind]]
       @story_point.location = Location.create(location_params)
 
@@ -104,7 +109,7 @@ module Api::V1
     end
 
     def location_params
-      params.require(:location).permit(:latitude, :longitude)
+      params.require(:location).permit(:latitude, :longitude, story_ids: [])
     end
   end
 end
