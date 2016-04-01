@@ -35,6 +35,15 @@ describe Api::V1::StoriesController do
     end
   end
 
+  describe 'GET #show' do
+    let(:story) { create(:story_with_story_points, user: user) }
+
+    it 'should be success', :show_in_doc do
+      get :show, id: story.id
+      should respond_with :ok
+    end
+  end
+
   describe 'POST #create' do
     let(:params){ attributes_for(:story) }
 
