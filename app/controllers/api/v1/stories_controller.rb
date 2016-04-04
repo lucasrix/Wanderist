@@ -20,7 +20,7 @@ module Api::V1
     param :page, Integer, desc: 'Page number for pagination', required: false
     def my_stories
       stories = @stories.page(params[:page])
-      render json: Response.new(stories)
+      render json: Response.new(stories, scope: current_user)
     end
 
 
@@ -28,7 +28,7 @@ module Api::V1
     error 404, 'Story not found'
     error 404, 'StoryPoint not found'
     def show
-      render json: Response.new(@story)
+      render json: Response.new(@story, scope: current_user)
     end
 
     api! 'Create a story'

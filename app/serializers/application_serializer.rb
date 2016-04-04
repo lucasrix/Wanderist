@@ -1,4 +1,4 @@
 class ApplicationSerializer < ActiveModel::Serializer
 
-  delegate :current_user, to: :scope
+  alias current_user scope
 end

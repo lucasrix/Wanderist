@@ -15,25 +15,25 @@ module Api
 
     def create_entity(entity)
       if entity.save
-        render json: Response.new(entity), status: :created
+        render json: Response.new(entity, scope: current_user), status: :created
       else
-        render json: Response.new(entity), status: :unprocessable_entity
+        render json: Response.new(entity, scope: current_user), status: :unprocessable_entity
       end
     end
 
     def update_entity(entity, params)
       if entity.update(params)
-        render json: Response.new(entity)
+        render json: Response.new(entity, scope: current_user)
       else
-        render json: Response.new(entity), status: :unprocessable_entity
+        render json: Response.new(entity, scope: current_user), status: :unprocessable_entity
       end
     end
 
     def destroy_entity(entity)
       if entity.destroy
-        render json: Response.new(entity)
+        render json: Response.new(entity, scope: current_user)
       else
-        render json: Response.new(entity), status: :unprocessable_entity
+        render json: Response.new(entity, scope: current_user), status: :unprocessable_entity
       end
     end
   end

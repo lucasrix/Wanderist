@@ -34,7 +34,7 @@ module Api::V1
       origin_params = build_origin_params
       if origin_params
         @story_points = @service.within_origin(*origin_params)
-        render json: Response.new(@story_points, StoryPointSerializer)
+        render json: Response.new(@story_points, StoryPointSerializer, scope: current_user)
       else
         response = Response.new
         response.add_error_message I18n.t('story_points.missing_params')
@@ -45,7 +45,7 @@ module Api::V1
     api! 'Show a story point info'
     error 404, 'Story point not found'
     def show
-      render json: Response.new(@story_point)
+      render json: Response.new(@story_point, scope: current_user)
     end
 
     api! 'Create a story point'
