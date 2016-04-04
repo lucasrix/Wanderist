@@ -61,16 +61,6 @@ module Api::V1
 
       @story_point.kind = StoryPoint::kinds[params[:kind]]
       @story_point.location = Location.create(location_params)
-
-      # if params[:tags].present?
-      #   tags_params = params[:tags].map do |tag|
-      #     {
-      #       name: tag
-      #     }
-      #   end
-      #   @story_point.tags.build(tags_params)
-      # end
-
       create_entity(@story_point)
     end
 
