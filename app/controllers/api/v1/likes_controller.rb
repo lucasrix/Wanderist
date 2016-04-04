@@ -6,56 +6,42 @@ module Api::V1
       error 401, 'Unauthorized action'
     end
 
-    before_action :authorize_parent
     load_resource :story
     load_resource :story_point
-    load_and_authorize_resource :like, only: :destroy, through: [:story, :story_point]
+    load_and_authorize_resource through: [:story, :story_point]
+    before_action :authorize_parent
 
     api! 'Create like'
-    example <<-EOS
-    POST /api/v1/story_points/1/like
-    200
-    {
-      "success": true,
-      "data": {
-        "story_point": {
-          "id": 1,
-          "likes": 3
-        }
-      },
-      "error": {
-        "error_messages": [],
-        "details": {}
-      }
-    }
-    EOS
+    error 404, 'Story Point not found.'
+    error 404, 'Story not found.'
     def create
+      if @like.save
+        render json: Response.new(resource, scope: current_user), status: :created
+      else
+        render json: Response.new(resource, scope: current_user), status: :unprocessable_entity
+      end
     end
-
 
     api! 'Delete like'
     error 404, 'Story Point not found.'
-    example <<-EOS
-    DELETE /api/v1/story_points/1/like
-    200
-    {
-      "success": true,
-      "data": {
-        "story_point": {
-          "id": 1,
-          "likes": 2
-        }
-      },
-      "error": {
-        "error_messages": [],
-        "details": {}
-      }
-    }
-    EOS
+    error 404, 'Story not found.'
     def destroy
+      if like.destroy
+        render json: Response.new(resource, scope: current_user)
+      else
+        render json: Response.new(resource, scope: current_user), status: :unprocessable_entity
+      end
     end
 
     private
+
+    def like
+      resource.likes.find_by(user: current_user)
+    end
+
+    def resource
+      @story || @story_point
+    end
 
     def authorize_parent
       authorize! :read, (@story || @story_point)

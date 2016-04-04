@@ -7,6 +7,7 @@ RSpec.describe Story, type: :model do
   context 'Associations' do
     it { should belong_to(:user) }
     it { should have_and_belong_to_many(:story_points) }
+    it { should have_many(:likes) }
   end
 
   context 'Validations' do

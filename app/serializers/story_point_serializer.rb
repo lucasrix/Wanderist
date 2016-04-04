@@ -1,4 +1,6 @@
 class StoryPointSerializer < ApplicationSerializer
+  include LikableSerializer
+
   attributes :id, :caption, :kind, :text
 
   has_one :user

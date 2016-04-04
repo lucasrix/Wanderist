@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_one :profile, dependent: :destroy
   has_many :stories
   has_many :story_points
+  has_many :likes
 
   # validates :username,
   #           # presence: true,

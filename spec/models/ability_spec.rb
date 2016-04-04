@@ -91,7 +91,41 @@ RSpec.describe Ability, type: :model do
       it { should be_able_to(:update, profile) }
       it { should_not be_able_to(:update, foreign_profile) }
     end
-
   end
 
+  context 'likes' do
+    context 'story point' do
+      let(:story_point) { build(:story_point, user: another_user) }
+      let(:like) { build(:like, user: user, likable: story_point) }
+      let(:like_without_user) { build(:like, user: nil, likable: story_point) }
+
+      describe 'create' do
+        it { should be_able_to(:create, like) }
+        it { should_not be_able_to(:create, like_without_user) }
+      end
+
+      describe 'destroy' do
+        let(:like_another_user) { build(:like, user: another_user, likable: story_point) }
+        it { should be_able_to(:destroy, like) }
+        it { should_not be_able_to(:destroy, like_another_user) }
+      end
+    end
+
+    context 'story' do
+      let(:story) { build(:story, user: another_user) }
+      let(:like) { build(:like, user: user, likable: story) }
+      let(:like_without_user) { build(:like, user: nil, likable: story) }
+
+      describe 'create' do
+        it { should be_able_to(:create, like) }
+        it { should_not be_able_to(:create, like_without_user) }
+      end
+
+      describe 'destroy' do
+        let(:like_another_user) { build(:like, user: another_user, likable: story) }
+        it { should be_able_to(:destroy, like) }
+        it { should_not be_able_to(:destroy, like_another_user) }
+      end
+    end
+  end
 end

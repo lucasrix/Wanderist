@@ -4,10 +4,11 @@ class Response
 
   attr_reader :status, :data, :error
 
-  def initialize(data = nil, element_serializer = nil)
+  def initialize(data = nil , element_serializer = nil , **opts)
+    @opts = opts
+    @element_serializer = element_serializer
     @error_messages = []
     @details = {}
-    @element_serializer = element_serializer
     prepare(data) if data
   end
 
@@ -66,7 +67,7 @@ class Response
       @element_serializer || ActiveModel::Serializer.serializer_for(data)
     end
     raise "Serializer not found for #{data.class.name}" unless serializer
-    @data = serializer.new(data)
+    @data = serializer.new(data, @opts)
     if data.is_a?(ActiveRecord::Relation)
       element_serializer = get_element_serializer(data)
       @data.root = element_serializer.root_name.pluralize

@@ -11,6 +11,6 @@ class Ability
     can :read, Story
     can :read, Profile
     can [:update], Profile, user_id: user.id
-
+    can [:create, :destroy], Like, user_id: user.id
   end
 end
