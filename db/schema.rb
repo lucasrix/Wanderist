@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160310144207) do
+ActiveRecord::Schema.define(version: 20160405144715) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(version: 20160310144207) do
   end
 
   add_index "attachments", ["user_id"], name: "index_attachments_on_user_id", using: :btree
+
+  create_table "followings", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "followable_id"
+    t.string   "followable_type"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "followings", ["followable_type", "followable_id"], name: "index_followings_on_followable_type_and_followable_id", using: :btree
+  add_index "followings", ["user_id"], name: "index_followings_on_user_id", using: :btree
 
   create_table "likes", force: :cascade do |t|
     t.integer  "user_id"
@@ -143,6 +154,7 @@ ActiveRecord::Schema.define(version: 20160310144207) do
   add_index "users", ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true, using: :btree
 
   add_foreign_key "attachments", "users"
+  add_foreign_key "followings", "users"
   add_foreign_key "likes", "users"
   add_foreign_key "profiles", "users"
   add_foreign_key "reports", "users"
