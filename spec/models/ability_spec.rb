@@ -57,11 +57,6 @@ RSpec.describe Ability, type: :model do
       it { should be_able_to(:read, foreign_story) }
     end
 
-    describe 'my_stories' do
-      it { should be_able_to(:my_stories, story) }
-      it { should_not be_able_to(:my_stories, foreign_story) }
-    end
-
     describe 'create' do
       it { should be_able_to(:create, story) }
       it { should_not be_able_to(:create, foreign_story) }

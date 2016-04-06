@@ -42,12 +42,25 @@ describe Api::V1::Auth::RegistrationsController do
     end
 
     context 'email already in use' do
+
       it 'returns 403', :show_in_doc do
         params[:password] = nil
         create(:user, email: params[:email])
 
         post :create, params
         should respond_with :forbidden
+      end
+
+      it 'returns only one error' do
+        create(:user, email: params[:email])
+
+        post :create, params
+        expect(response.body).to include(I18n.t('error.already_in_use'))
+        expect(response.body).not_to include(I18n.t('error.cant_be_blank'))
+      end
+
+      it 'should not create a new user' do
+        expect { post :create, params }.to change { User.count }.by(1)
       end
     end
   end

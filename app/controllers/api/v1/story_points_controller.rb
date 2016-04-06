@@ -91,7 +91,8 @@ module Api::V1
     end
 
     def set_service
-      @service = StoryPointsService.new(@story_points)
+      @story_points = current_user.story_points if params[:scope] == 'current_user'
+      @service ||= StoryPointsService.new(@story_points)
     end
 
     def story_point_params

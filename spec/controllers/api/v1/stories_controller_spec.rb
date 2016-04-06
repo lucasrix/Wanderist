@@ -3,23 +3,28 @@ require 'rails_helper'
 describe Api::V1::StoriesController do
   include_context "ability"
 
-  describe 'GET #my_stories' do
+  describe 'GET #index scope: :current_user' do
     let(:user) { create(:user) }
     let!(:story) { create(:story_with_story_points, user: user) }
+    let(:params) do
+      {
+          scope: 'current_user'
+      }
+    end
 
     before do
       allow(@controller).to receive(:current_user).and_return(user)
     end
 
     it 'should be success', :show_in_doc do
-      get :my_stories
+      get :index, params
       should respond_with :ok
     end
 
     it 'paginates stories' do
       create_list(:story, 30, user: user)
       per_page = Kaminari.config.default_per_page
-      get :my_stories
+      get :index, params
       resp = ActiveSupport::JSON.decode(response.body)
       stories = resp["data"]["stories"]
       expect(stories.length).to eq(per_page)
@@ -27,8 +32,34 @@ describe Api::V1::StoriesController do
 
     context 'unauthorized' do
       it 'should return status 403', :show_in_doc do
-        ability.cannot :my_stories, Story
-        get :my_stories
+        ability.cannot :index, Story
+        get :index, params
+        should respond_with :forbidden
+      end
+    end
+  end
+
+  describe 'GET #index' do
+    let(:stories) { create_list(:story, 30 , user: user) }
+    let(:story_point) { create(:story_point, user: user, stories: stories) }
+
+    it 'should be success', :show_in_doc do
+      get :index, story_point_id: story_point.id
+      should respond_with :ok
+    end
+
+    it 'paginates stories' do
+      per_page = Kaminari.config.default_per_page
+      get :index, story_point_id: story_point.id
+      resp = ActiveSupport::JSON.decode(response.body)
+      all_stories = resp["data"]["stories"]
+      expect(all_stories.length).to eq(per_page)
+    end
+
+    context 'unauthorized' do
+      it 'should return status 403', :show_in_doc do
+        ability.cannot :index, Story
+        get :index, story_point_id: story_point.id
         should respond_with :forbidden
       end
     end
