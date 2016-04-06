@@ -120,7 +120,7 @@ describe Api::V1::StoryPointsController do
   end
 
   describe 'PUT #update' do
-    let!(:story_point) { create(:story_point, user: user) }
+    let!(:story_point) { create(:story_point, user: user, location: create(:location)) }
 
     it 'should return status 200', :show_in_doc do
       params = attributes_for(:story_point)

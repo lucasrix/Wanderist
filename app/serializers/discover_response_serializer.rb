@@ -1,0 +1,2 @@
+class DiscoverResponseSerializer < ResponseSerializer
+end

@@ -42,7 +42,7 @@ RSpec.configure do |config|
 
   config.before(:each) do
     allow(AssignGeodataService).to receive(:call) do |location|
-      location.city = Faker::Address.city
+      location.city ||= Faker::Address.city
       location
     end
   end

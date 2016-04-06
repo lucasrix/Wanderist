@@ -9,6 +9,7 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'devise'
 require 'shoulda/matchers'
+require 'support/global_helpers'
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
@@ -21,6 +22,7 @@ RSpec.configure do |config|
   config.include Devise::TestHelpers, type: :controller
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
+  config.include GlobalHelpers
 
   config.filter_run show_in_doc: true if ENV['APIPIE_RECORD']
 end
