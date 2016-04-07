@@ -3,3 +3,6 @@ en:
 
   story_points:
     missing_params: Missing params
+
+  following:
+     following_errors: You cannot follow yourself

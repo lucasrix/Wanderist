@@ -43,6 +43,7 @@ Rails.application.routes.draw do
       resource :profile, only: [:show, :update]
       resources :profiles, only: [:show]
 
+      resources :users, concerns: [:followable], only: [:index, :show]
     end
   end
 end

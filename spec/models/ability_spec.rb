@@ -128,4 +128,47 @@ RSpec.describe Ability, type: :model do
       end
     end
   end
+
+  context 'followings' do
+    context 'story' do
+      let(:story) { build(:story, user: another_user) }
+      let(:following) { build(:following, user: user, followable: story) }
+      let(:following_without_user) { build(:following, user: nil, followable: story) }
+
+      describe 'create' do
+        it { should be_able_to(:create, following) }
+        it { should_not be_able_to(:create, following_without_user) }
+      end
+
+      describe 'destroy' do
+        it { should be_able_to(:destroy, following) }
+        it { should_not be_able_to(:destroy, following_without_user) }
+      end
+    end
+
+    context 'user' do
+      let(:following) { build(:following, user: user, followable: another_user) }
+      let(:following_without_user) { build(:following, user: nil, followable: another_user) }
+      let(:following_by_himself) { build(:following, user: user, followable: user) }
+
+      describe 'create' do
+        it { should be_able_to(:create, following) }
+        it { should_not be_able_to(:create, following_without_user) }
+        it { should_not be_able_to(:create, following_by_himself)}
+      end
+
+      describe 'destroy' do
+        it { should be_able_to(:destroy, following) }
+        it { should_not be_able_to(:destroy, following_without_user) }
+      end
+    end
+  end
+
+  context 'user' do
+    describe 'read' do
+      it { should be_able_to(:read, user) }
+      it { should be_able_to(:read, another_user) }
+    end
+  end
+
 end

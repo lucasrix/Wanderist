@@ -6,59 +6,46 @@ module Api::V1
       error 401, 'Unauthorized action'
     end
 
-    before_action :authorize_parent
     load_resource :story
-    load_and_authorize_resource :following, only: :destroy, through: :story
+    load_resource :user
+    load_and_authorize_resource through: [:story, :user]
+    before_action :authorize_parent
 
     api! 'Create following'
-    example <<-EOS
-    POST /api/v1/stories/1/following
-    200
-    {
-      "success": true,
-      "data": {
-        "story": {
-          "id": 1,
-          "followed": true
-        }
-      },
-      "error": {
-        "error_messages": [],
-        "details": {}
-      }
-    }
-    EOS
+    error 404, 'User not found.'
+    error 404, 'Story not found.'
     def create
+      if @following.save
+        render json: Response.new(resource), status: :created
+      else
+        render json: Response.new(resource), status: :unprocessable_entity
+      end
     end
 
 
     api! 'Delete following'
     error 404, 'Story not found.'
-    example <<-EOS
-    DELETE /api/v1/story_points/1/following
-    200
-    {
-      "success": true,
-      "data": {
-        "story": {
-          "id": 1,
-          "followed": false
-        }
-      },
-      "error": {
-        "error_messages": [],
-        "details": {}
-      }
-    }
-    EOS
+    error 404, 'User not found.'
     def destroy
+      if following.destroy
+        render json: Response.new(resource)
+      else
+        render json: Response.new(resource), status: :unprocessable_entity
+      end
     end
 
     private
 
+    def following
+      resource.followings.find_by(user: current_user)
+    end
+
+    def resource
+      @story || @user
+    end
+
     def authorize_parent
-      authorize! :read, @story
+      authorize! :read, resource
     end
   end
 end
-

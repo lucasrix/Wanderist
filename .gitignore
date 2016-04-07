@@ -17,6 +17,9 @@
 /config/database.yml
 /config/application.yml
 
+# Ignore  RubyMine
+.idea
+
 # Ignore OS files.
 .DS_Store
 .powrc
