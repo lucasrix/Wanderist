@@ -16,4 +16,26 @@ class Profile < ActiveRecord::Base
             }
 
   mount_uploader :photo, ProfilePhotoUploader
+
+  def likes_count
+    user.likes_count
+  end
+
+  def followings_count
+    Following.where(user: user).count
+  end
+
+  def followers_count
+    Following.where(followable: user).count
+  end
+
+  def saves_count
+    StoryPoint.joins(:stories)
+              .where(stories: {id: user.stories.ids})
+              .where.not(user: user).count
+  end
+
+  def story_points_count
+    user.story_points_count
+  end
 end
