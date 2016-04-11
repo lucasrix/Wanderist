@@ -17,5 +17,6 @@ class Ability
       follow.followable == user
     end
     can :read, User
+    can :cities, Location
   end
 end

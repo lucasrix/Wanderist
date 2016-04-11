@@ -42,6 +42,11 @@ Rails.application.routes.draw do
 
       resource :profile, only: [:show, :update]
       resources :profiles, only: [:show]
+      resources :locations, only: [] do
+        collection do
+          get :cities
+        end
+      end
 
       resources :users, concerns: [:followable], only: [:index, :show]
     end

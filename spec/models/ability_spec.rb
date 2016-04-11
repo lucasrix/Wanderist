@@ -93,6 +93,12 @@ RSpec.describe Ability, type: :model do
     end
   end
 
+  context 'location' do
+    let(:location) { build(:location) }
+
+    it { should be_able_to(:cities, location) }
+  end
+
   context 'likes' do
     context 'story point' do
       let(:story_point) { build(:story_point, user: another_user) }

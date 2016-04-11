@@ -6,3 +6,6 @@ en:
 
   following:
      following_errors: You cannot follow yourself
+  locations:
+    errors:
+      geocode_error: 'Could not geocode address'
