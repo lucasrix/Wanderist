@@ -6,8 +6,7 @@ module Api::V1
       error 401, 'Unauthorized action'
     end
 
-    load_and_authorize_resource only: [:show, :create, :update, :destroy]
-    load_and_authorize_resource through: :current_user, only: :my_stories
+    load_and_authorize_resource only: [:index, :show, :create, :update, :destroy]
 
     def_param_group :story do
       param :name, String, desc: 'Name', required: true, action_aware: true
@@ -16,13 +15,14 @@ module Api::V1
       param :story_point_ids, Array, of: Integer, required: false
     end
 
-    api! "Show my stories"
+    api! 'Show list of stories'
     param :page, Integer, desc: 'Page number for pagination', required: false
-    def my_stories
-      stories = @stories.page(params[:page])
-      render json: Response.new(stories, scope: current_user)
-    end
 
+    def index
+      stories = user_stories || story_point_stories
+      current_stories = stories.page(params[:page]) if stories
+      render json: Response.new(current_stories, scope: current_user)
+    end
 
     api! 'Show a story info'
     error 404, 'Story not found'
@@ -57,6 +57,18 @@ module Api::V1
     end
 
     private
+
+    def user_stories
+      current_user.stories if params[:scope] == 'current_user'
+    end
+
+    def story_point_stories
+      if params[:story_point_id].present?
+        story_point = StoryPoint.accessible_by(current_ability, :read).find(params[:story_point_id])
+        story_point.stories
+      end
+    end
+
     def story_params
       params.permit(:name, :description, :discoverable, story_point_ids: [])
     end

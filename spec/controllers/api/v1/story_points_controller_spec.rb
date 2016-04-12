@@ -32,6 +32,41 @@ describe Api::V1::StoryPointsController do
     end
   end
 
+  describe 'GET #index scope: :current_user' do
+    before do
+      allow(@controller).to receive(:current_user).and_return(user)
+    end
+
+    let(:location) { create(:location) }
+    let(:another_user) { create(:user) }
+    let!(:story_points) { create_list(:story_point_with_attachment, 2, :with_tags,user: user, location: location) }
+    let(:another_story_points) { create_list(:story_point_with_attachment, 2, :with_tags, user: another_user, location: location) }
+    let(:params) do
+      {   scope: 'current_user',
+          radius: 1,
+          location: {
+              latitude:  location.latitude,
+              longitude: location.longitude
+          }
+      }
+    end
+
+    it 'should be success', :show_in_doc do
+      get :index, params
+      should respond_with :ok
+    end
+
+    it 'creates StoryPointsService' do
+      expect(StoryPointsService).to receive(:new).once.and_call_original
+      get :index, params
+    end
+
+    it 'calls StoryPointsService#within_origin' do
+      expect_any_instance_of(StoryPointsService).to receive(:within_origin)
+      get :index, params
+    end
+  end
+
   describe 'GET #show' do
     let(:story_point) { create(:story_point, user: user) }
 

@@ -29,13 +29,18 @@ Rails.application.routes.draw do
         resource :following, only: [:create, :destroy]
       end
 
-      resources :story_points, concerns: :likeable, only: [:index, :show, :create, :update, :destroy]
-      resources :attachments, only: [:create]
-      resources :stories, concerns: [:likeable, :followable], only: [:show, :create, :update, :destroy] do
+      resources :story_points, concerns: :likeable, only: [:index, :show, :create, :update, :destroy] do
+        resources :stories, only: [:index]
+      end
+
+      resource :user, scope: 'current_user', only: [:index] do
         resources :story_points, only: [:index]
-        collection do
-          get :my_stories
-        end
+        resources :stories, only: [:index]
+      end
+
+      resources :attachments, only: [:create]
+      resources :stories, concerns: [:likeable, :followable], only: [:index, :show, :create, :update, :destroy] do
+        resources :story_points, only: [:index]
       end
 
       get :discover, to:  'discovers#discover'

@@ -19,6 +19,8 @@ gem 'fog'
 gem 'fog-aws'
 gem 'carrierwave'
 gem 'file_validators'
+gem 'mini_magick'
+gem 'streamio-ffmpeg'
 
 # Auth
 gem 'devise_token_auth'

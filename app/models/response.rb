@@ -76,7 +76,7 @@ class Response
 
   def set_errors(data)
     if data.is_a?(ActiveRecord::Base)
-      unless data.valid?
+      if data.errors.any?
         @error_messages += data.errors.full_messages
         @details.merge! data.errors.to_hash
       end

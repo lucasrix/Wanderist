@@ -9,3 +9,6 @@ en:
   locations:
     errors:
       geocode_error: 'Could not geocode address'
+  error:
+    already_in_use: already in use
+    cant_be_blank: can't be blank
