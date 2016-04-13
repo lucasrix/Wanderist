@@ -6,6 +6,13 @@ module Api::V1
       error 403, 'Forbidden action'
     end
 
+    def_param_group :location do
+      param :location, Hash,  action_aware: true, desc: 'Location info' do
+        param :latitude, Float, desc: 'Latitude coordinate', required: true
+        param :longitude, Float, desc: 'Longitude coordinate', required: true
+      end
+    end
+
     load_and_authorize_resource through: :current_user, singleton: true, only: [:update]
 
     api! 'Show a profile'
@@ -22,6 +29,7 @@ module Api::V1
     end
 
     api! 'Update a profile'
+    param_group :location
     param :photo, File, required: false, desc: 'New profile photo'
     param :first_name, String, required: false, desc: 'First name'
     param :last_name, String, required: false, desc: 'Last name'
@@ -31,13 +39,26 @@ module Api::V1
     error 422, 'Validation failed'
 
     def update
+      set_location if params[:location].present?
       update_entity(@profile, profile_params)
     end
 
     private
+
+    def set_location
+      if @profile.location
+        @profile.location.update_attributes(location_params)
+      else
+        @profile.create_location(location_params)
+      end
+    end
+
     def profile_params
       params.permit(:first_name, :last_name, :about, :url, :city, :photo)
     end
 
+    def location_params
+      params.require(:location).permit(:latitude, :longitude)
+    end
   end
 end

@@ -4,9 +4,6 @@ class StoryPointsService < BaseService
   end
 
   def within_origin(latitude, longitude, radius)
-    origin = Location.new(latitude: latitude, longitude: longitude)
-    locations = Location.within(radius, origin: origin)
-
-    @collection.where(location: locations)
+    @collection.joins(:location).within(radius, origin: [latitude, longitude])
   end
 end

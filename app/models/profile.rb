@@ -2,6 +2,7 @@ class Profile < ActiveRecord::Base
   ABOUT_MAX_LENGTH = 255
 
   belongs_to :user
+  has_one :location, as: :locatable
 
   # validates :first_name, presence: true
   # validates :last_name, presence: true
