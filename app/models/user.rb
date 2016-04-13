@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
 
   include DeviseTokenAuth::Concerns::User
   include Followable
+  delegate :count, to: :likes, prefix: 'likes'
+  delegate :count, to: :story_points, prefix: 'story_points'
 
   has_one :profile, dependent: :destroy
   has_many :stories
