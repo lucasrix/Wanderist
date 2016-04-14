@@ -16,6 +16,7 @@ RSpec.describe Profile, type: :model do
 
   context 'relations' do
     it { should belong_to(:user) }
+    it { should have_one(:location) }
   end
 
   describe '#likes_count' do

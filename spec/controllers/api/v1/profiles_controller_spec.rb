@@ -26,11 +26,38 @@ describe Api::V1::ProfilesController do
   end
 
   describe 'PUT #update' do
-    let(:params){ attributes_for(:profile) }
+    let(:params){ attributes_for(:profile, location: nil) }
+    let(:location_params) { attributes_for(:location) }
+    let(:params_with_location) { params.merge(location: location_params)  }
 
-    it 'should be success', :show_in_doc do
-      put :update, params
-      should respond_with :ok
+    context 'location params arent presented' do
+      it 'should be success', :show_in_doc do
+        put :update, params
+        should respond_with :ok
+      end
+    end
+
+    context 'location params are presented' do
+      it 'should be success', :show_in_doc do
+        put :update, params_with_location
+        should respond_with :ok
+      end
+    end
+
+    context 'profile hasnt location' do
+      it 'creates new location' do
+        user.profile.location = nil
+        expect { put :update, params_with_location }.to change { Location.count }.by(1)
+      end
+    end
+
+    context 'profile has location' do
+      it 'updates profile location' do
+        location = user.profile.location
+        allow(location).to receive(:update_attributes)
+        expect(location).to receive(:update_attributes) { location_params }
+        put :update, params_with_location
+      end
     end
 
     it 'should update a profile' do
