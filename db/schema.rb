@@ -53,7 +53,6 @@ ActiveRecord::Schema.define(version: 20160413120318) do
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
     t.string   "city"
-    t.integer  "story_point_id"
     t.integer  "locatable_id"
     t.string   "locatable_type"
   end
