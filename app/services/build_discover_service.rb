@@ -1,5 +1,4 @@
 class BuildDiscoverService < BaseService
-
   def initialize(discover, page = nil)
     @discover = discover
     @page = page
@@ -14,7 +13,7 @@ class BuildDiscoverService < BaseService
   private
 
   def load_stories
-    @discover = @discover.map {|story_point| discovered(story_point) }
+    @discover = @discover.map { |story_point| discovered(story_point) }
   end
 
   def discovered(story_point)

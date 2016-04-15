@@ -5,7 +5,6 @@ module Api::V1
       api_versions 'v1'
     end
 
-
     api! 'Terms of service. Respond with HTML content.'
     def terms_of_service
     end
@@ -13,6 +12,5 @@ module Api::V1
     api! 'Privacy policy. Respond with HTML content.'
     def privacy_policy
     end
-
   end
 end

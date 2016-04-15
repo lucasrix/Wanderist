@@ -6,7 +6,7 @@ class Following < ActiveRecord::Base
 
   private
 
-    def following_himself
-      errors.add(:followable, I18n.t('following.following_errors')) if self.user.equal?(followable)
-    end
+  def following_himself
+    errors.add(:followable, I18n.t('following.following_errors')) if user.equal?(followable)
+  end
 end

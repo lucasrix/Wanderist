@@ -3,7 +3,6 @@ module Api::V1::Auth
     resource_description do
       short 'Users manager'
       api_versions 'v1'
-
     end
 
     api! 'Email registration. A verification email will be sent to the email address provided.'
@@ -15,7 +14,6 @@ module Api::V1::Auth
     param :password_confirmation, String, required: false, desc: 'Password confirmation'
     error 403, 'Email already in use'
     error 422, 'Validation failed'
-
 
     def create
       super do |user|
@@ -35,7 +33,7 @@ module Api::V1::Auth
 
     def render_create_error_email_already_exists
       response = Response.new(@resource)
-      response.add_error_message I18n.t("devise_token_auth.registrations.email_already_exists", email: @resource.email)
+      response.add_error_message I18n.t('devise_token_auth.registrations.email_already_exists', email: @resource.email)
       render json: response, status: :forbidden
     end
 
@@ -45,17 +43,18 @@ module Api::V1::Auth
 
     def render_update_error_user_not_found
       response = Response.new(@resource)
-      response.add_error_message I18n.t("devise_token_auth.registrations.user_not_found")
+      response.add_error_message I18n.t('devise_token_auth.registrations.user_not_found')
       render json: response, status: :not_found
     end
 
     def render_destroy_error
       response = Response.new(@resource)
-      response.add_error_message I18n.t("devise_token_auth.registrations.account_to_destroy_not_found")
+      response.add_error_message I18n.t('devise_token_auth.registrations.account_to_destroy_not_found')
       render json: response, status: :not_found
     end
 
     private
+
     def update_profile(user)
       user.profile.update!(profile_params)
     end
@@ -63,6 +62,5 @@ module Api::V1::Auth
     def profile_params
       params.permit(:photo, :first_name, :last_name)
     end
-
   end
 end

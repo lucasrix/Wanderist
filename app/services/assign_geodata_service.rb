@@ -1,5 +1,4 @@
 class AssignGeodataService < BaseService
-
   def initialize(location)
     @location = location
   end

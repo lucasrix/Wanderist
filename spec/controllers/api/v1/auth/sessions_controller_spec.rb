@@ -4,7 +4,7 @@ describe Api::V1::Auth::SessionsController do
   let(:user) { create(:user) }
 
   before do
-    @request.env["devise.mapping"] = Devise.mappings[:user]
+    @request.env['devise.mapping'] = Devise.mappings[:user]
   end
 
   describe 'POST #create' do
@@ -20,7 +20,5 @@ describe Api::V1::Auth::SessionsController do
       post :create, email: Faker::Internet.email, password: password
       should respond_with :unauthorized
     end
-
   end
-
 end

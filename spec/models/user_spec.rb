@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  it_behaves_like "followable"
+  it_behaves_like 'followable'
   context 'relations' do
     it { should have_one(:profile).dependent(:destroy) }
     it { should have_many(:stories) }

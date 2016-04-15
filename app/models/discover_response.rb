@@ -1,5 +1,4 @@
 class DiscoverResponse < Response
-
   include ActiveModel::Serialization
 
   def prepare(data)
@@ -7,13 +6,13 @@ class DiscoverResponse < Response
   end
 
   def data
-    {discovered: @data}
+    { discovered: @data }
   end
 
   private
 
   def set_data_serializer(data)
-    @opts.merge!(root: false)
+    @opts[:root] = false
     @data = data.map do |object|
       serializer = ActiveModel::Serializer.serializer_for(object)
       serializer.new(object, @opts)

@@ -106,7 +106,7 @@ RSpec.describe Profile, type: :model do
     end
 
     context 'another user has created story_points too' do
-      before  do
+      before do
         create_list(:story_point, 10, user: another_user)
       end
 

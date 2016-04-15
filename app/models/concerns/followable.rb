@@ -7,7 +7,6 @@ module Followable
     delegate :count, to: :followings, prefix: 'followings'
   end
 
-
   def followed?(user)
     followings.exists?(user: user)
   end

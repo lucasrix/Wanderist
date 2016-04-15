@@ -4,7 +4,7 @@ describe Api::V1::Auth::ProviderSessionsController do
   let(:user) { create(:user) }
   let(:token) { Faker::Lorem.characters(212) }
 
-  describe "POST #create" do
+  describe 'POST #create' do
     it 'should return 200', :show_in_doc do
       allow(ProviderAuthService).to receive(:facebook_auth).with(token).once.and_return(user)
       expect(controller).to receive(:sign_in).once

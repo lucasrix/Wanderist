@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Api::V1::ProfilesController do
-  include_context "ability"
+  include_context 'ability'
 
   before do
     allow(@controller).to receive(:current_user).and_return(user)
@@ -26,9 +26,9 @@ describe Api::V1::ProfilesController do
   end
 
   describe 'PUT #update' do
-    let(:params){ attributes_for(:profile, location: nil) }
+    let(:params) { attributes_for(:profile, location: nil) }
     let(:location_params) { attributes_for(:location) }
-    let(:params_with_location) { params.merge(location: location_params)  }
+    let(:params_with_location) { params.merge(location: location_params) }
 
     context 'location params arent presented' do
       it 'should be success', :show_in_doc do
@@ -78,6 +78,5 @@ describe Api::V1::ProfilesController do
         should respond_with :forbidden
       end
     end
-
   end
 end

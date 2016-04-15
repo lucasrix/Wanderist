@@ -5,6 +5,5 @@ class AttachmentSerializer < ApplicationSerializer
     if object.present?
       object.file_url(:thumbnail) || object.file_url(:video_thumbnail)
     end
-
   end
 end

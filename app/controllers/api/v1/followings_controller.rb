@@ -22,7 +22,6 @@ module Api::V1
       end
     end
 
-
     api! 'Delete following'
     error 404, 'Story not found.'
     error 404, 'User not found.'

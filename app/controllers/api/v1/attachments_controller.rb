@@ -4,7 +4,6 @@ module Api::V1
       short 'Attachments manager'
       api_versions 'v1'
       error 401, 'Unauthorized action'
-
     end
 
     load_and_authorize_resource
@@ -18,6 +17,7 @@ module Api::V1
     end
 
     private
+
     def attachment_params
       params.permit(:file)
     end
