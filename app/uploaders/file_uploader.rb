@@ -31,12 +31,12 @@ class FileUploader < ApplicationUploader
     File.rename(current_path + '.jpg', current_path)
   end
 
-  def is_image?(attachment)
-    content_type(attachment.file).match(/image\/jpeg|image\/gif|image\/png|image\/jpg/i)
+  def is_image?(_attachment)
+    content_type(original_filename).match(/image\/jpeg|image\/gif|image\/png|image\/jpg/i)
   end
 
-  def is_video?(attachment)
-    content_type(attachment.file).match(/mp4|wav/i)
+  def is_video?(_attachment)
+    content_type(original_filename).match(/mp4|wav/i)
   end
 
   def content_type(file)

@@ -12,7 +12,11 @@ class User < ActiveRecord::Base
   has_many :stories
   has_many :story_points
   has_many :likes
+  has_many :followers , through: :followings, source: :user
 
+  def followed
+    User.joins(:followings).where('followings.user_id = ?', id)
+  end
   # validates :username,
   #           # presence: true,
   #           uniqueness: {
@@ -23,3 +27,4 @@ class User < ActiveRecord::Base
     Profile.create(user: self)
   end
 end
+

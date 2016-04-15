@@ -16,4 +16,8 @@ module GlobalHelpers
   def city_by_distance
     ['Kyiv', 'Warsaw', 'London', 'New York']
   end
+
+  def serialized_collection(collection, serializer)
+    JSON.parse ActiveModel::ArraySerializer.new(collection.reverse, serializer: serializer).to_json
+  end
 end
