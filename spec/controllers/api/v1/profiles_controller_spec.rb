@@ -44,20 +44,11 @@ describe Api::V1::ProfilesController do
       end
     end
 
-    context 'profile hasnt location' do
-      it 'creates new location' do
-        user.profile.location = nil
-        expect { put :update, params_with_location }.to change { Location.count }.by(1)
-      end
-    end
-
-    context 'profile has location' do
-      it 'updates profile location' do
-        location = user.profile.location
-        allow(location).to receive(:update_attributes)
-        expect(location).to receive(:update_attributes) { location_params }
-        put :update, params_with_location
-      end
+    it 'updates profile location' do
+      location = user.profile.location
+      allow(location).to receive(:update_attributes)
+      expect(location).to receive(:update_attributes) { location_params }
+      put :update, params_with_location
     end
 
     it 'should update a profile' do

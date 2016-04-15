@@ -1,4 +1,7 @@
 class DiscoversQuery < BaseQuery
+
+  CITY_CENTER_RADIUS = 1
+
   def initialize(origin_params = nil, relation = StoryPoint)
     @origin_params = origin_params || {}
     @relation = relation.includes(:stories).joins(:location)
@@ -21,7 +24,9 @@ class DiscoversQuery < BaseQuery
   def build_origin
     @radius = @origin_params[:radius]
     @origin = Location.new(location_params)
-    @city = Location.within(1, origin: @origin).first.city
+    @city = Location.within(CITY_CENTER_RADIUS, origin: @origin)
+                    .where.not(locatable_type: 'Profile')
+                    .first.city
   end
 
   def filter_by_origin
