@@ -30,7 +30,6 @@ RSpec.describe Ability, type: :model do
       it { should be_able_to(:destroy, story_point) }
       it { should_not be_able_to(:destroy, foreign_story_point) }
     end
-
   end
 
   context 'attachment' do
@@ -155,7 +154,7 @@ RSpec.describe Ability, type: :model do
       describe 'create' do
         it { should be_able_to(:create, following) }
         it { should_not be_able_to(:create, following_without_user) }
-        it { should_not be_able_to(:create, following_by_himself)}
+        it { should_not be_able_to(:create, following_by_himself) }
       end
 
       describe 'destroy' do
@@ -171,5 +170,4 @@ RSpec.describe Ability, type: :model do
       it { should be_able_to(:read, another_user) }
     end
   end
-
 end

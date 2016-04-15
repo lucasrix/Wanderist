@@ -3,8 +3,8 @@ require 'rails_helper'
 describe AssignGeodataService do
   let(:location) { build(:location, :valid_location) }
   let(:geo_error_msg) { I18n.t(:geocode_error, scope: [:locations, :errors]) }
-  let(:geodata_success) {  double( success: true, city: Faker::Address.city) }
-  let(:geodata_error) { double( success: false, city: nil) }
+  let(:geodata_success) { double(success: true, city: Faker::Address.city) }
+  let(:geodata_error) { double(success: false, city: nil) }
   subject { AssignGeodataService.new(location) }
 
   describe '#call' do
@@ -68,7 +68,6 @@ describe AssignGeodataService do
   end
 
   context 'use external API' do
-
     it 'can receive data from google API' do
       allow(AssignGeodataService).to receive(:call).and_call_original
       AssignGeodataService.call(location)

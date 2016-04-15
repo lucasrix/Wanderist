@@ -15,13 +15,13 @@ RSpec.describe Response, type: :model do
       end
 
       it 'returns false' do
-        subject.instance_variable_set(:@details, { email: Faker::Hipster.paragraph })
+        subject.instance_variable_set(:@details, email: Faker::Hipster.paragraph)
         expect(subject).not_to be_success
       end
 
       it 'returns false' do
         subject.instance_variable_set(:@error_messages, [Faker::Hipster.paragraph])
-        subject.instance_variable_set(:@details, { email: Faker::Hipster.paragraph })
+        subject.instance_variable_set(:@details, email: Faker::Hipster.paragraph)
         expect(subject).not_to be_success
       end
     end
@@ -98,7 +98,6 @@ RSpec.describe Response, type: :model do
     it 'contains error' do
       expect(subject.attributes).to have_key('error')
     end
-
   end
 
   describe '#initialize' do
@@ -116,5 +115,4 @@ RSpec.describe Response, type: :model do
       Response.new(story_point)
     end
   end
-
 end

@@ -24,6 +24,7 @@ class ProviderAuthService < BaseService
   end
 
   private
+
   def self.generate_random_password
     SecureRandom.urlsafe_base64(nil, false)
   end

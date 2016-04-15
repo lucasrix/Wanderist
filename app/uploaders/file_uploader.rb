@@ -1,7 +1,6 @@
 require 'streamio-ffmpeg'
 
 class FileUploader < ApplicationUploader
-
   include CarrierWave::MiniMagick
   include CarrierWave::MimeTypes
 
@@ -13,15 +12,14 @@ class FileUploader < ApplicationUploader
     /image\//
   end
 
-
   version :thumbnail, if: :is_image? do
     process resize_to_fill: [200, 200]
   end
 
   version :video_thumbnail, if: :is_video? do
     process :screenshot
-    def full_filename (for_file)
-      %Q{thumbnail_#{File.basename(for_file, ".*")}.jpg}
+    def full_filename(for_file)
+      %(thumbnail_#{File.basename(for_file, '.*')}.jpg)
     end
   end
 
@@ -29,8 +27,8 @@ class FileUploader < ApplicationUploader
 
   def screenshot
     movie = FFMPEG::Movie.new(current_path)
-    movie.screenshot(current_path + ".jpg", {resolution: '200x200' }, preserve_aspect_ratio: :width)
-    File.rename(current_path + ".jpg", current_path)
+    movie.screenshot(current_path + '.jpg', { resolution: '200x200' }, preserve_aspect_ratio: :width)
+    File.rename(current_path + '.jpg', current_path)
   end
 
   def is_image?(attachment)
@@ -45,11 +43,9 @@ class FileUploader < ApplicationUploader
     MIME::Types.type_for(file).first.content_type
   end
 
-
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   # def filename
   #   "something.jpg" if original_filename
   # end
-
 end

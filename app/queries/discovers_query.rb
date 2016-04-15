@@ -29,12 +29,12 @@ class DiscoversQuery < BaseQuery
   end
 
   def filter_by_city
-     @relation.where("locations.city = ?", "#{@city}").order(updated_at: :desc)
+    @relation.where('locations.city = ?', @city.to_s).order(updated_at: :desc)
   end
 
   def story_points_outside_city
     @relation.by_distance(origin: @origin)
-             .where("locations.city != ? OR locations.city IS ?", "#{@city}", nil )
+             .where('locations.city != ? OR locations.city IS ?', @city.to_s, nil)
   end
 
   def filter_whole_world

@@ -13,32 +13,30 @@ module Api::V1::Auth
     error 404, 'Token not found'
 
     def create
-      begin
-        @resource = ProviderAuthService::facebook_auth params[:facebook_access_token]
-        if @resource.valid?
-          create_token_info
-          set_token_on_resource
-          create_auth_params
+      @resource = ProviderAuthService.facebook_auth params[:facebook_access_token]
+      if @resource.valid?
+        create_token_info
+        set_token_on_resource
+        create_auth_params
 
-          # @resource.skip_confirmation!
+        # @resource.skip_confirmation!
 
-          sign_in(:user, @resource, store: false, bypass: false)
-          @resource.save!
+        sign_in(:user, @resource, store: false, bypass: false)
+        @resource.save!
 
-          update_auth_header
-          render json: Response.new(@resource)
-        else
-          render json: Response.new(@resource), status: :forbidden
-        end
-      rescue Koala::Facebook::AuthenticationError
-        response = Response.new
-        response.add_error_message I18n.t("token_not_found")
-        render json: response, status: :not_found
+        update_auth_header
+        render json: Response.new(@resource)
+      else
+        render json: Response.new(@resource), status: :forbidden
       end
+    rescue Koala::Facebook::AuthenticationError
+      response = Response.new
+      response.add_error_message I18n.t('token_not_found')
+      render json: response, status: :not_found
     end
 
-
     private
+
     def create_token_info
       # create token info
       @client_id = SecureRandom.urlsafe_base64(nil, false)
@@ -60,7 +58,7 @@ module Api::V1::Auth
         uid: @resource.uid,
         expiry: @expiry
       }
-      @auth_params.merge!(oauth_registration: true)
+      @auth_params[:oauth_registration] = true
       @auth_params
     end
   end

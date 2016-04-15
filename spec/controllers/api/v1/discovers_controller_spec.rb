@@ -14,7 +14,7 @@ describe Api::V1::DiscoversController do
 
     context 'origin mode' do
       let(:params) do
-        { radius: 100000,
+        { radius: 100_000,
           location: {
             latitude:  target_location.latitude,
             longitude: target_location.longitude
@@ -22,12 +22,11 @@ describe Api::V1::DiscoversController do
         }
       end
 
-      it 'should be success', :show_in_doc  do
+      it 'should be success', :show_in_doc do
         get :discover, params
         should respond_with :ok
       end
     end
-
 
     context 'city mode' do
       let(:params) do

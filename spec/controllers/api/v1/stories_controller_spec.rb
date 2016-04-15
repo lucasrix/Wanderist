@@ -1,14 +1,14 @@
 require 'rails_helper'
 
 describe Api::V1::StoriesController do
-  include_context "ability"
+  include_context 'ability'
 
   describe 'GET #index scope: :current_user' do
     let(:user) { create(:user) }
     let!(:story) { create(:story_with_story_points, user: user) }
     let(:params) do
       {
-          scope: 'current_user'
+        scope: 'current_user'
       }
     end
 
@@ -26,7 +26,7 @@ describe Api::V1::StoriesController do
       per_page = Kaminari.config.default_per_page
       get :index, params
       resp = ActiveSupport::JSON.decode(response.body)
-      stories = resp["data"]["stories"]
+      stories = resp['data']['stories']
       expect(stories.length).to eq(per_page)
     end
 
@@ -40,7 +40,7 @@ describe Api::V1::StoriesController do
   end
 
   describe 'GET #index' do
-    let(:stories) { create_list(:story, 30 , user: user) }
+    let(:stories) { create_list(:story, 30, user: user) }
     let(:story_point) { create(:story_point, user: user, stories: stories) }
 
     it 'should be success', :show_in_doc do
@@ -52,7 +52,7 @@ describe Api::V1::StoriesController do
       per_page = Kaminari.config.default_per_page
       get :index, story_point_id: story_point.id
       resp = ActiveSupport::JSON.decode(response.body)
-      all_stories = resp["data"]["stories"]
+      all_stories = resp['data']['stories']
       expect(all_stories.length).to eq(per_page)
     end
 
@@ -75,7 +75,7 @@ describe Api::V1::StoriesController do
   end
 
   describe 'POST #create' do
-    let(:params){ attributes_for(:story) }
+    let(:params) { attributes_for(:story) }
 
     it 'should be success', :show_in_doc do
       post :create, params
@@ -99,7 +99,6 @@ describe Api::V1::StoriesController do
         should respond_with :forbidden
       end
     end
-
   end
 
   describe 'PUT #update' do
@@ -146,7 +145,6 @@ describe Api::V1::StoriesController do
       put :update, id: story.id, **params
       should respond_with :not_found
     end
-
   end
 
   describe 'DELETE #destroy' do

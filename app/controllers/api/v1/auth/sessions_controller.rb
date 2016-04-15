@@ -87,7 +87,6 @@ module Api::V1::Auth
 
 
       EOS
-
     end
 
     skip_after_action :update_auth_header, only: [:create]
@@ -96,9 +95,9 @@ module Api::V1::Auth
     param :email, String, desc: 'Email address'
     param :password, String, desc: 'Password', required: true
     error 401, 'Invalid login credentials. Please try again.'
-    error 401, 'A confirmation email was sent to your account at {{email}}.' +
-                 'You must follow the instructions in the email before your account ' +
-                 'can be activated'
+    error 401, 'A confirmation email was sent to your account at {{email}}.' \
+               'You must follow the instructions in the email before your account ' \
+               'can be activated'
     def create
       super
     end
@@ -110,6 +109,7 @@ module Api::V1::Auth
     end
 
     protected
+
     def render_create_success
       update_auth_header
       render json: Response.new(@resource)
@@ -117,15 +117,14 @@ module Api::V1::Auth
 
     def render_create_error_not_confirmed
       response = Response.new
-      response.add_error_message I18n.t("devise_token_auth.sessions.not_confirmed", email: @resource.email)
+      response.add_error_message I18n.t('devise_token_auth.sessions.not_confirmed', email: @resource.email)
       render json: response, status: 401
     end
 
     def render_create_error_bad_credentials
       response = Response.new
-      response.add_error_message I18n.t("devise_token_auth.sessions.bad_credentials")
+      response.add_error_message I18n.t('devise_token_auth.sessions.bad_credentials')
       render json: response, status: 401
     end
-
   end
 end

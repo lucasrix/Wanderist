@@ -6,5 +6,4 @@ class PreviewStoryPointSerializer < ApplicationSerializer
   has_one :attachment
 
   has_many :tags
-
 end

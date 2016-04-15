@@ -5,5 +5,4 @@ class Attachment < ActiveRecord::Base
 
   validates :file, presence: true, file_size: { less_than: 100.megabytes }
   validates :user, presence: true
-
 end

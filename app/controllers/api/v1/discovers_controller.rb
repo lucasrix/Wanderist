@@ -41,7 +41,7 @@ module Api::V1
     end
 
     def build_discover(discovered)
-       BuildDiscoverService.call(discovered, params[:page])
+      BuildDiscoverService.call(discovered, params[:page])
     end
 
     def origin_params_valid?

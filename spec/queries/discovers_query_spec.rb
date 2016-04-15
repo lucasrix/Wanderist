@@ -1,8 +1,7 @@
 require 'rails_helper'
 
 describe DiscoversQuery do
-
-  let(:origin_params) { ActionController::Parameters.new( {location: cities_list[:kyiv], radius: nil }) }
+  let(:origin_params) { ActionController::Parameters.new(location: cities_list[:kyiv], radius: nil) }
 
   subject { DiscoversQuery.new }
 
@@ -19,18 +18,18 @@ describe DiscoversQuery do
 
   describe '#filter_by_city' do
     it 'filter story_points by city' do
-      cities = create_query(:filter_by_city, radius: nil )
+      cities = create_query(:filter_by_city, radius: nil)
       expect(cities).to eq(['Kyiv'])
     end
   end
 
   describe '#filter_by_origin' do
     it 'filter data by origin' do
-      cities = create_query(:filter_by_origin, radius: 1 )
+      cities = create_query(:filter_by_origin, radius: 1)
       expect(cities).to eq(['Kyiv'])
     end
 
-    it_behaves_like 'sort_by_distance', :filter_by_origin, radius: 10000
+    it_behaves_like 'sort_by_distance', :filter_by_origin, radius: 10_000
   end
 
   describe '#filter_whole_world' do
@@ -44,6 +43,6 @@ describe DiscoversQuery do
     current_location = origin_params.merge(radius)
     query = DiscoversQuery.new(current_location)
     result = query.send(method)
-    result.map{|story_point| story_point.location.city}
+    result.map { |story_point| story_point.location.city }
   end
 end

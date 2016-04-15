@@ -1,8 +1,7 @@
 class StoryPoint < ActiveRecord::Base
   include Likable
 
-
-  KINDS = %i(audio video photo text)
+  KINDS = %i(audio video photo text).freeze
   CAPTION_MAX_LENGTH = 30
   TEXT_MAX_LENGTH = 1500
 

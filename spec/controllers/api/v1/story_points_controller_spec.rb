@@ -39,14 +39,14 @@ describe Api::V1::StoryPointsController do
 
     let(:location) { create(:location) }
     let(:another_user) { create(:user) }
-    let!(:story_points) { create_list(:story_point_with_attachment, 2, :with_tags,user: user, location: location) }
+    let!(:story_points) { create_list(:story_point_with_attachment, 2, :with_tags, user: user, location: location) }
     let(:another_story_points) { create_list(:story_point_with_attachment, 2, :with_tags, user: another_user, location: location) }
     let(:params) do
       {   scope: 'current_user',
           radius: 1,
           location: {
-              latitude:  location.latitude,
-              longitude: location.longitude
+            latitude:  location.latitude,
+            longitude: location.longitude
           }
       }
     end
@@ -77,8 +77,8 @@ describe Api::V1::StoryPointsController do
   end
 
   describe 'POST #create' do
-    let!(:stories){ create_list(:story, 3, user: user) }
-    let(:params){ attributes_for(:story_point).merge({ location: attributes_for(:location), story_ids: stories.map(&:id) }) }
+    let!(:stories) { create_list(:story, 3, user: user) }
+    let(:params) { attributes_for(:story_point).merge(location: attributes_for(:location), story_ids: stories.map(&:id)) }
 
     it 'should be success' do
       post :create, params
@@ -116,7 +116,6 @@ describe Api::V1::StoryPointsController do
         should respond_with :forbidden
       end
     end
-
   end
 
   describe 'PUT #update' do
@@ -142,7 +141,6 @@ describe Api::V1::StoryPointsController do
       put :update, id: story_point.id, caption: wrong_caption
       should respond_with :unprocessable_entity
     end
-
   end
 
   describe 'DELETE #destroy' do

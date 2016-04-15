@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Api::V1::LikesController do
-  include_context "ability"
+  include_context 'ability'
 
   let(:user) { create(:user) }
   let!(:story) { create(:story_with_story_points) }
@@ -11,7 +11,7 @@ describe Api::V1::LikesController do
     allow(@controller).to receive(:current_user).and_return(user)
   end
 
-  shared_examples "create_like" do
+  shared_examples 'create_like' do
     it 'should be success', :show_in_doc do
       post :create, params
       should respond_with :created
@@ -28,8 +28,7 @@ describe Api::V1::LikesController do
     end
   end
 
-
-  shared_examples "destroy_like" do
+  shared_examples 'destroy_like' do
     it 'should be success', :show_in_doc do
       delete :destroy, params
       should respond_with :ok
@@ -46,14 +45,13 @@ describe Api::V1::LikesController do
     end
   end
 
-
   describe 'POST #create' do
     context 'likes for story' do
       let(:params) do
         { story_id: story.id }
       end
 
-      it_behaves_like "create_like"
+      it_behaves_like 'create_like'
     end
 
     context 'likes for story_point' do
@@ -61,12 +59,11 @@ describe Api::V1::LikesController do
         { story_point_id: story_point.id }
       end
 
-      it_behaves_like "create_like"
+      it_behaves_like 'create_like'
     end
   end
 
   describe 'DELETE #destroy' do
-
     context 'likes for story' do
       before do
         create(:like, user: user, likable: story)
@@ -76,7 +73,7 @@ describe Api::V1::LikesController do
         { story_id: story.id }
       end
 
-      it_behaves_like "destroy_like"
+      it_behaves_like 'destroy_like'
     end
 
     context 'likes for story_point' do
@@ -88,7 +85,7 @@ describe Api::V1::LikesController do
         create(:like, user: user, likable: story_point)
       end
 
-      it_behaves_like "destroy_like"
+      it_behaves_like 'destroy_like'
     end
   end
 end

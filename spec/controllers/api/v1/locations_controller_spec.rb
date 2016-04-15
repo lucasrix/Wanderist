@@ -5,7 +5,7 @@ describe Api::V1::LocationsController do
 
   before do
     allow(AssignGeodataService).to receive(:call).and_call_original
-    create_list(:location,  3, :valid_location)
+    create_list(:location, 3, :valid_location)
     allow(@controller).to receive(:current_user).and_return(user)
   end
 

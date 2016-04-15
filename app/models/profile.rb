@@ -12,15 +12,13 @@ class Profile < ActiveRecord::Base
               less_than: 10.megabytes
             },
             file_content_type: {
-              #allow: /^image\/.*/,
+              # allow: /^image\/.*/,
               exclude: ['image/gif']
             }
 
   mount_uploader :photo, ProfilePhotoUploader
 
-  def likes_count
-    user.likes_count
-  end
+  delegate :likes_count, to: :user
 
   def followings_count
     Following.where(user: user).count
@@ -32,11 +30,9 @@ class Profile < ActiveRecord::Base
 
   def saves_count
     StoryPoint.joins(:stories)
-              .where(stories: {id: user.stories.ids})
+              .where(stories: { id: user.stories.ids })
               .where.not(user: user).count
   end
 
-  def story_points_count
-    user.story_points_count
-  end
+  delegate :story_points_count, to: :user
 end

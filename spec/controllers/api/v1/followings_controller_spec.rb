@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Api::V1::FollowingsController do
-  include_context "ability"
+  include_context 'ability'
 
   let(:user) { create(:user) }
   let(:story) { create(:story) }
@@ -11,7 +11,7 @@ describe Api::V1::FollowingsController do
     allow(@controller).to receive(:current_user).and_return(user)
   end
 
-  shared_examples "create_following" do
+  shared_examples 'create_following' do
     it 'should be success', :show_in_doc do
       post :create, params
       should respond_with :created
@@ -28,7 +28,7 @@ describe Api::V1::FollowingsController do
     end
   end
 
-  shared_examples "destroy_following" do
+  shared_examples 'destroy_following' do
     it 'should be success', :show_in_doc do
       delete :destroy, params
       should respond_with :ok
@@ -51,7 +51,7 @@ describe Api::V1::FollowingsController do
         { story_id: story.id }
       end
 
-      it_behaves_like "create_following"
+      it_behaves_like 'create_following'
     end
 
     context 'followings for another user' do
@@ -59,7 +59,7 @@ describe Api::V1::FollowingsController do
         { user_id: another_user.id }
       end
 
-      it_behaves_like "create_following"
+      it_behaves_like 'create_following'
     end
   end
 
@@ -73,7 +73,7 @@ describe Api::V1::FollowingsController do
         { story_id: story.id }
       end
 
-      it_behaves_like "destroy_following"
+      it_behaves_like 'destroy_following'
     end
 
     context 'followings for another user' do
@@ -85,7 +85,7 @@ describe Api::V1::FollowingsController do
         create(:following, user: user, followable: another_user)
       end
 
-      it_behaves_like "destroy_following"
+      it_behaves_like 'destroy_following'
     end
   end
 end
