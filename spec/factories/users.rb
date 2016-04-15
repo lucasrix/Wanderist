@@ -8,7 +8,8 @@ FactoryGirl.define do
     username { Faker::Internet.user_name }
 
     after(:create) do |user, _evaluator|
-      create(:profile, user: user)
+      attributes = attributes_for(:profile)
+      user.profile.update_attributes(attributes)
     end
   end
 end
