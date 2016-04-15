@@ -20,142 +20,13 @@ module Api::V1
     description <<-EOS
       If location and radius are presented - "Near You" mode.\n
       If location is presented and radius not presented - "City" mode.\n
-      If location ans radius aren't presented - "Whole World" mode.\n
+      If location and radius aren't presented - "Whole World" mode.\n
     EOS
-    example <<-EOS
-    GET /api/v1/discover?location[latitude]=10.66&location[longitude]=50.39&radius=1&page=1
-    200
-    {
-      "status": "success",
-      "data": {
-        "discovered": [
-          {
-            "id": 1149,
-            "type": "StoryPoint"
-            "caption": "freegan",
-            "kind": "photo",
-            "text": "Locavore lumbersexual franzen. Pitchfork single-origin coffee salvia park poutine locavore. Cornhole literally microdosing viral.",
-            "user": {
-              "id": 4495,
-              "provider": "email",
-              "uid": "janick_mueller@anderson.name",
-              "email": "janick_mueller@anderson.name",
-              "created_at": "2016-03-28T13:59:22.831Z",
-              "updated_at": "2016-03-28T13:59:22.831Z",
-              "profile": {
-                "id": 8783,
-                "first_name": null,
-                "last_name": null,
-                "city": null,
-                "url": null,
-                "about": null,
-                "photo_url": null,
-                "posts_count": 0
-              }
-            },
-            "location": {
-              "id": 1481,
-              "latitude": 10.66,
-              "longitude": 50.39
-            },
-            "attachment": {
-              "id": 198,
-              "file_url": "/uploads/attachment/file/198/sample.jpg"
-            },
-            "tags": [
-              {
-                "id": 3,
-                "name": "voluptatem"
-              },
-              {
-                "id": 4,
-                "name": "iste"
-              }
-            ]
-          },
-          {
-            "id": 1243,
-            "type": "Story",
-            "name": "farm-to-table",
-            "description": "Veniam nisi sit. In dolorem quia placeat ipsa quaerat. Dicta earum laudantium quia et sapiente.",
-            "discoverable": true
-            "user": {
-              "id": 4493,
-              "provider": "email",
-              "uid": "stefan@cummings.org",
-              "email": "stefan@cummings.org",
-              "created_at": "2016-03-28T13:59:22.727Z",
-              "updated_at": "2016-03-28T13:59:22.727Z",
-              "profile": {
-                "id": 8779,
-                "first_name": null,
-                "last_name": null,
-                "city": null,
-                "url": null,
-                "about": null,
-                "photo_url": null,
-                "posts_count": 0
-              },
-            },
-            "story_points": [
-              {
-                "id": 1148,
-                "caption": "chicharrones",
-                "kind": "photo",
-                "text": "Blue bottle godard ennui blog post-ironic. Venmo bushwick vinegar kombucha kinfolk salvia. Bitters kombucha hammock tote bag swag tattooed occupy.",
-                "user": {
-                  "id": 4493,
-                  "provider": "email",
-                  "uid": "stefan@cummings.org",
-                  "email": "stefan@cummings.org",
-                  "created_at": "2016-03-28T13:59:22.727Z",
-                  "updated_at": "2016-03-28T13:59:22.727Z",
-                  "profile": {
-                    "id": 8779,
-                    "first_name": null,
-                    "last_name": null,
-                    "city": null,
-                    "url": null,
-                    "about": null,
-                    "photo_url": null,
-                    "posts_count": 0
-                  }
-                },
-                "location": {
-                  "id": 1481,
-                  "latitude": 10.66,
-                  "longitude": 50.39
-                },
-                "attachment": {
-                  "id": 197,
-                  "file_url": "/uploads/attachment/file/197/sample.jpg"
-                },
-                "tags": [
-                  {
-                    "id": 1,
-                    "name": "dolor"
-                  },
-                  {
-                    "id": 2,
-                    "name": "quidem"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      "error": {
-        "error_messages": [],
-        "details": {}
-      }
-    }
-    EOS
+
     def discover
-      origin_params = build_origin_params
-      if origin_params
-        @story_points = @service.within_origin(*origin_params)
-        render json: Response.new(@story_points, StoryPointSerializer)
+      if origin_params_valid?
+        @discover = build_discover(discovered_story_points)
+        render json: DiscoverResponse.new(@discover, scope: current_user)
       else
         response = Response.new
         response.add_error_message I18n.t('story_points.missing_params')
@@ -165,17 +36,16 @@ module Api::V1
 
     private
 
-    def build_origin_params
-      return unless origin_params_valid?
-      location_params.values << params[:radius]
+    def discovered_story_points
+      DiscoversQuery.new(params).load_relation
+    end
+
+    def build_discover(discovered)
+       BuildDiscoverService.call(discovered, params[:page])
     end
 
     def origin_params_valid?
-      Location.new(location_params).valid? && params[:radius].present?
-    end
-
-    def set_service
-      @service = StoryPointsService.new(@story_points)
+      params[:location].present? ? Location.new(location_params).valid? : true
     end
 
     def location_params

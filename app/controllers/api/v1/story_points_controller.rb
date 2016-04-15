@@ -96,11 +96,11 @@ module Api::V1
     end
 
     def story_point_params
-      params.permit(:caption, :text, :attachment_id, :kind)
+      params.permit(:caption, :text, :attachment_id, :kind, story_ids: [])
     end
 
     def location_params
-      params.require(:location).permit(:latitude, :longitude, story_ids: [])
+      params.require(:location).permit(:latitude, :longitude)
     end
   end
 end
