@@ -20,6 +20,10 @@ class Profile < ActiveRecord::Base
 
   delegate :likes_count, to: :user
 
+  after_create do
+    self.create_location
+  end
+
   def followings_count
     Following.where(user: user).count
   end

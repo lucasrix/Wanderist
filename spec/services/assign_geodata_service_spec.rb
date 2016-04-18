@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe AssignGeodataService do
-  let(:location) { build(:location, :valid_location) }
+  let(:location) { create(:location, :valid_location) }
   let(:geo_error_msg) { I18n.t(:geocode_error, scope: [:locations, :errors]) }
   let(:geodata_success) { double(success: true, city: Faker::Address.city) }
   let(:geodata_error) { double(success: false, city: nil) }
@@ -10,6 +10,14 @@ describe AssignGeodataService do
   describe '#call' do
     before do
       allow(subject).to receive_messages(load_geodata: nil, set_geodata: nil)
+    end
+
+    context 'location is new record' do
+      it 'returns nil' do
+        location = Location.new
+        result = AssignGeodataService.new(location).call
+        expect(result).to be_nil
+      end
     end
 
     it 'calls #load_geodata' do
@@ -25,13 +33,24 @@ describe AssignGeodataService do
 
   describe '#load_geodata' do
     before do
-      allow(Geokit::Geocoders::GoogleGeocoder).to receive(:reverse_geocode) { geodata_success }
-      subject.send(:load_geodata)
+      geodata = instance_variable_get(:@geodata)
+      allow(geodata).to receive(:success) { geodata_success }
     end
 
-    it 'calls .reverse_geocode on Geokit::Geocoders::GoogleGeocoder' do
-      expect(Geokit::Geocoders::GoogleGeocoder).to receive(:reverse_geocode)
-      subject.send(:load_geodata)
+    context 'locatable: Profile' do
+      it 'calls #get_geocode' do
+        allow(subject).to receive(:geocode_service?).and_return(true)
+        expect(subject).to receive(:get_geocode)
+        subject.send(:load_geodata)
+      end
+    end
+
+    context 'locatable: StoryPoint' do
+      it 'calls #get_reverse_geocode' do
+        allow(subject).to receive(:geocode_service?).and_return(false)
+        expect(subject).to receive(:get_reverse_geocode)
+        subject.send(:load_geodata)
+      end
     end
 
     context 'success geo response' do
@@ -67,11 +86,28 @@ describe AssignGeodataService do
     end
   end
 
-  context 'use external API' do
-    it 'can receive data from google API' do
-      allow(AssignGeodataService).to receive(:call).and_call_original
-      AssignGeodataService.call(location)
-      expect(location.city).not_to be_nil
+  describe '#get_geocode' do
+    it 'calls .geocode on Geokit' do
+      geokit = Geokit::Geocoders::GoogleGeocoder
+      allow(geokit).to receive(:geocode)
+      expect(geokit).to receive(:geocode)
+      subject.send(:get_geocode)
+    end
+  end
+
+  describe '#get_reverse_geocode' do
+    it 'calls .reverse_geocode on Geokit' do
+      geokit = Geokit::Geocoders::GoogleGeocoder
+      allow(geokit).to receive(:reverse_geocode)
+      expect(geokit).to receive(:reverse_geocode)
+      subject.send(:get_reverse_geocode)
+    end
+  end
+
+  describe '#geocode_service?' do
+    it 'returns true if set Profile location' do
+      subject.instance_variable_set(:@location, create(:story_point).location)
+      expect(subject.send(:geocode_service?)).to be_falsey
     end
   end
 end

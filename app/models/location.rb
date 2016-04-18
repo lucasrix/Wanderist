@@ -1,9 +1,11 @@
 class Location < ActiveRecord::Base
+
+  belongs_to :locatable, polymorphic: true
   acts_as_mappable lat_column_name: :latitude, lng_column_name: :longitude
+
   before_save :assign_geodata
 
-  validates :latitude, presence: true
-  validates :longitude, presence: true
+  validates :latitude, :longitude, presence: true, unless: :skip_validation
 
   scope :cities, lambda {
     where.not(city: nil)
@@ -12,6 +14,10 @@ class Location < ActiveRecord::Base
   }
 
   private
+
+  def skip_validation
+    locatable.is_a?(Profile)
+  end
 
   def assign_geodata
     AssignGeodataService.call(self)
