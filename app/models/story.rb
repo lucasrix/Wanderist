@@ -10,7 +10,6 @@ class Story < ActiveRecord::Base
   has_and_belongs_to_many :story_points
 
   validates :user, presence: true
-  validates :name, presence: true
   validates :name,
             presence: true,
             length: {
