@@ -36,6 +36,7 @@ module Api::V1::Auth
     example <<-EOS
     PATCH /api/v1/auth/password
     {
+      "current_password": "current_password",
       "password": "new_password",
       "password_confirmation": "new_password"
     }
@@ -62,6 +63,7 @@ module Api::V1::Auth
     example <<-EOS
     PUT /api/v1/auth/password
     {
+      "current_password": "current_password",
       "password": "new_password",
       "password_confirmation": "new_password"
     }
