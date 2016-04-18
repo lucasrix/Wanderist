@@ -169,5 +169,10 @@ RSpec.describe Ability, type: :model do
       it { should be_able_to(:read, user) }
       it { should be_able_to(:read, another_user) }
     end
+
+    describe 'update' do
+      it { should be_able_to(:update, user)}
+      it { should_not be_able_to(:update, another_user)}
+    end
   end
 end

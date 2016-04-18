@@ -12,11 +12,13 @@ class Ability
     can :read, Profile
     can [:update], Profile, user_id: user.id
     can [:create, :destroy], Like, user_id: user.id
+    can [:read], Following
     can [:create, :destroy], Following, user_id: user.id
     cannot [:create], Following do |follow|
       follow.followable == user
     end
-    can :read, User
+    can [:read, :followed, :followers], User
+    can [:update], User, id: user.id
     can :cities, Location
   end
 end

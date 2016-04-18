@@ -7,6 +7,8 @@ RSpec.describe User, type: :model do
     it { should have_many(:stories) }
     it { should have_many(:story_points) }
     it { should have_many(:likes) }
+    it { should have_many(:followings) }
+    it { should have_many(:followers).through(:followings).source(:user)}
   end
 
   context 'Validations' do
@@ -19,6 +21,17 @@ RSpec.describe User, type: :model do
     it 'create profile' do
       user = create(:user)
       expect(user.profile).to be_a(Profile)
+    end
+  end
+
+  context 'Methods' do
+    it 'return followed users' do
+      user = create(:user)
+      follwable_user = create(:user)
+      another_users = create_list(:user, 5)
+      create(:following, user: user, followable: follwable_user)
+      expect(user.followed).to eq([follwable_user])
+      expect(user.followed).not_to eq([another_users])
     end
   end
 end
