@@ -1,5 +1,5 @@
 class Profile < ActiveRecord::Base
-  ABOUT_MAX_LENGTH = 255
+  ABOUT_MAX_LENGTH = 500
 
   belongs_to :user
   has_one :location, as: :locatable
