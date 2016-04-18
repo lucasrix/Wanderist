@@ -1,8 +1,6 @@
 require 'streamio-ffmpeg'
 
 class FileUploader < ApplicationUploader
-  include CarrierWave::MiniMagick
-  include CarrierWave::MimeTypes
 
   def extension_whitelist
     %w(jpg jpeg gif png wav mp3 mp4)
