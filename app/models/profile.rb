@@ -21,7 +21,7 @@ class Profile < ActiveRecord::Base
   delegate :likes_count, to: :user
 
   after_create do
-    self.create_location
+    self.create_location(Location::DEFAULT_CITY_PARAMS)
   end
 
   def followings_count

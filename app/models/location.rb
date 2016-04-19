@@ -1,11 +1,14 @@
 class Location < ActiveRecord::Base
 
+  DEFAULT_CITY_PARAMS = { latitude: 38.89, longitude: -77.036, city: 'Washington' }
+
   belongs_to :locatable, polymorphic: true
+
   acts_as_mappable lat_column_name: :latitude, lng_column_name: :longitude
 
   before_save :assign_geodata
 
-  validates :latitude, :longitude, presence: true, unless: :skip_validation
+  validates :latitude, :longitude, presence: true
 
   scope :cities, lambda {
     where.not(city: nil)
@@ -14,10 +17,6 @@ class Location < ActiveRecord::Base
   }
 
   private
-
-  def skip_validation
-    locatable.is_a?(Profile)
-  end
 
   def assign_geodata
     AssignGeodataService.call(self)

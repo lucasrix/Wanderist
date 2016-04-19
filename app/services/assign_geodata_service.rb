@@ -6,7 +6,6 @@ class AssignGeodataService < BaseService
   end
 
   def call
-    return if @location.new_record?
     load_geodata
     set_geodata
   end
