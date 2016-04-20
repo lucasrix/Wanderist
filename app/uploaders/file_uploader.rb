@@ -34,7 +34,7 @@ class FileUploader < ApplicationUploader
   end
 
   def is_video?(_attachment)
-    content_type(original_filename).match(/mp4|wav/i)
+    content_type(original_filename).match(/video\/mp4|video\/wav|video\/mov|video/i)
   end
 
   def content_type(file)
