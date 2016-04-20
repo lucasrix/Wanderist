@@ -21,12 +21,21 @@ describe Api::V1::AttachmentsController do
     end
 
     context 'video attachment' do
-      let(:params) { attributes_for(:video_attachment) }
+      let(:params) { attributes_for(:video_mp4_attachment) }
       it_behaves_like 'attachments'
     end
 
-    context 'audio attachment' do
-      let(:params) { attributes_for(:audio_attachment) }
+    context '.mov attachment' do
+      let(:params) { attributes_for(:video_mov_attachment) }
+      it_behaves_like 'attachments'
+    end
+
+    context '.m4a audio attachment' do
+      let(:params) { attributes_for(:audio_m4a_attachment) }
+      it_behaves_like 'attachments'
+    end
+    context '.mp3 audio attachment' do
+      let(:params) { attributes_for(:audio_mp3_attachment) }
       it_behaves_like 'attachments'
     end
 
