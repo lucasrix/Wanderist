@@ -6,8 +6,9 @@ module Api::V1
       error 401, 'Unauthorized action'
     end
 
-    load_and_authorize_resource :story, only: [:index]
-    load_and_authorize_resource through: :story, shallow: true
+    load_and_authorize_resource :story, only: :index
+    load_and_authorize_resource :user, only: :index
+    load_and_authorize_resource through: [:story, :user], shallow: true
     load_and_authorize_resource :attachment, only: [:create, :update]
 
     before_action :set_service, only: [:index]
