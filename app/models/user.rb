@@ -17,11 +17,13 @@ class User < ActiveRecord::Base
   def followed
     User.joins(:followings).where('followings.user_id = ?', id)
   end
-  # validates :username,
-  #           # presence: true,
-  #           uniqueness: {
-  #             case_sensitive: false
-  #           }
+
+  validate :unique_email_user, if: Proc.new { |u| u.provider == 'email' && u.email_change }
+   #validates :email,
+             # presence: true,
+             #uniqueness: {
+               #case_sensitive: false
+             #}
 
   after_create do
     Profile.create(user: self)
