@@ -8,7 +8,8 @@ describe Api::V1::StoriesController do
     let!(:story) { create(:story_with_story_points, user: user) }
     let(:params) do
       {
-        scope: 'current_user'
+        scope: 'current_user',
+        page: 1
       }
     end
 
@@ -50,10 +51,30 @@ describe Api::V1::StoriesController do
 
     it 'paginates stories' do
       per_page = Kaminari.config.default_per_page
-      get :index, story_point_id: story_point.id
+      get :index, story_point_id: story_point.id, page: 1
       resp = ActiveSupport::JSON.decode(response.body)
       all_stories = resp['data']['stories']
       expect(all_stories.length).to eq(per_page)
+    end
+
+    context 'stories of particular user' do
+      let(:another_user) { create(:user) }
+      let(:params) do
+        { user_id: another_user.id }
+      end
+
+      before do
+        create_list(:story, 10, user: another_user)
+        create_list(:story, 10)
+        allow(@controller).to receive(:current_user).and_return(user)
+      end
+
+      it 'returns stories of another user' do
+        get :index, params
+        stories = subject.instance_variable_get(:@stories)
+        another_user_stories = another_user.stories
+        expect(stories).to match_array(another_user_stories)
+      end
     end
 
     context 'unauthorized' do

@@ -9,6 +9,7 @@ RSpec.describe User, type: :model do
     it { should have_many(:likes) }
     it { should have_many(:followings) }
     it { should have_many(:followers).through(:followings).source(:user)}
+    it { should validate_length_of(:password).is_at_least(6) }
   end
 
   context 'Validations' do

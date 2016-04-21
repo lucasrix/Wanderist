@@ -6,7 +6,9 @@ module Api::V1
       error 401, 'Unauthorized action'
     end
 
-    load_and_authorize_resource only: [:index, :show, :create, :update, :destroy]
+    load_and_authorize_resource :user, only: :index
+    load_and_authorize_resource through: :user, shallow: true, only: :index
+    load_and_authorize_resource only: [:show, :create, :update, :destroy]
 
     def_param_group :story do
       param :name, String, desc: 'Name', required: true, action_aware: true
@@ -19,8 +21,8 @@ module Api::V1
     param :page, Integer, desc: 'Page number for pagination', required: false
 
     def index
-      stories = user_stories || story_point_stories
-      current_stories = stories.page(params[:page]) if stories
+      stories = story_point_stories || user_stories
+      current_stories = paginate(stories) if stories
       render json: Response.new(current_stories, scope: current_user)
     end
 
@@ -58,8 +60,13 @@ module Api::V1
 
     private
 
+    def paginate(collection)
+      params[:page].present? ? collection.page(params[:page]) : collection
+    end
+
     def user_stories
-      current_user.stories if params[:scope] == 'current_user'
+      @stories = current_user.stories if params[:scope] == 'current_user'
+      @stories
     end
 
     def story_point_stories

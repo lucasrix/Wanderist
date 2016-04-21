@@ -30,6 +30,33 @@ describe Api::V1::StoryPointsController do
       expect_any_instance_of(StoryPointsService).to receive(:within_origin)
       get :index, params
     end
+
+    context 'story points of particular user' do
+      let(:another_user) { create(:user) }
+      let(:params) do
+        {
+          radius: 10000,
+          user_id: another_user.id,
+          location: {
+            latitude:  location.latitude,
+            longitude: location.longitude
+          }
+        }
+      end
+
+      before do
+        create_list(:story_point, 10, user: another_user)
+        create(:story_point)
+        allow(@controller).to receive(:current_user).and_return(user)
+      end
+
+      it 'returns story_points of another user' do
+        get :index, params
+        story_points = subject.instance_variable_get(:@story_points)
+        another_user_story_points = another_user.story_points
+        expect(story_points).to match_array(another_user_story_points)
+      end
+    end
   end
 
   describe 'GET #index scope: :current_user' do

@@ -33,7 +33,11 @@ Rails.application.routes.draw do
         resources :stories, only: [:index]
       end
 
-      resources :users, concerns: [:followable], only: [:index]
+      resources :users, concerns: [:followable], only: [:index] do
+        resources :story_points, only: [:index]
+        resources :stories, only: [:index]
+      end
+
       resource :user, scope: 'current_user', only: [:update] do
         resources :story_points, only: [:index]
         resources :stories, only: [:index]
