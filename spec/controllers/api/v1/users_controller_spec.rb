@@ -117,6 +117,15 @@ describe Api::V1::UsersController do
         should respond_with :forbidden
       end
     end
+
+    context 'user updates email to existing email' do
+      it 'should return status 422' do
+        another_user = create(:user)
+        params = {scope: 'current_user', email: another_user.email}
+        put :update, params
+        should respond_with :unprocessable_entity
+      end
+    end
   end
 end
 
