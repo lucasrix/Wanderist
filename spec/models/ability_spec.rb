@@ -175,4 +175,19 @@ RSpec.describe Ability, type: :model do
       it { should_not be_able_to(:update, another_user)}
     end
   end
+
+  context 'gadget' do
+    let(:gadget) { build(:gadget, user: user) }
+    let(:another_gadget) { build(:gadget, user: another_user) }
+
+    describe 'create' do
+      it { should be_able_to(:create, gadget)}
+      it { should_not be_able_to(:create, another_gadget)}
+    end
+
+    describe 'destroy' do
+      it { should be_able_to(:destroy, gadget)}
+      it { should_not be_able_to(:destroy, another_gadget)}
+    end
+  end
 end

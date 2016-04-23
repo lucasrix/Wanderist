@@ -80,8 +80,15 @@ GEM
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
     colorize (0.7.7)
+    commander (4.4.0)
+      highline (~> 1.7.2)
     concurrent-ruby (1.0.1)
     daemons (1.2.3)
+    delayed_job (4.1.1)
+      activesupport (>= 3.0, < 5.0)
+    delayed_job_active_record (4.1.0)
+      activerecord (>= 3.0, < 5)
+      delayed_job (>= 3.0, < 5)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     devise (4.0.0)
@@ -241,6 +248,9 @@ GEM
     haml (4.0.7)
       tilt
     highline (1.7.8)
+    houston (2.2.3)
+      commander (~> 4.1)
+      json
     i18n (0.7.0)
     ice_nine (0.11.2)
     inflecto (0.0.2)
@@ -456,6 +466,7 @@ DEPENDENCIES
   brakeman
   cancancan (~> 1.10)
   carrierwave
+  delayed_job_active_record
   devise_token_auth
   factory_girl_rails
   faker
@@ -465,6 +476,7 @@ DEPENDENCIES
   fuubar
   geokit-rails
   haml
+  houston
   kaminari
   koala (~> 2.2)
   mailcatcher

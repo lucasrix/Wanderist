@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   has_many :stories
   has_many :story_points
   has_many :likes
-  has_many :followers , through: :followings, source: :user
+  has_many :gadgets
 
   def followed
     User.joins(:followings).where('followings.user_id = ?', id)

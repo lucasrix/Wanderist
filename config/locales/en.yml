@@ -12,3 +12,7 @@ en:
   error:
     already_in_use: already in use
     cant_be_blank: can't be blank
+  push_notifications:
+    new_resource: '%{followed} you follow add new %{triggered}'
+    update_resource: '%{followed} you follow has a new %{triggered}'
+
