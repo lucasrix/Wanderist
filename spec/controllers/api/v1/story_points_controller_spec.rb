@@ -143,6 +143,18 @@ describe Api::V1::StoryPointsController do
         should respond_with :forbidden
       end
     end
+
+    context 'geoservice error' do
+      before  do
+        allow(AssignGeodataService).to receive(:call).and_call_original
+        allow(Geokit::Geocoders::GoogleGeocoder).to receive(:reverse_geocode) { raise Geokit::Geocoders::GeocodeError }
+      end
+
+      it 'should return 422' do
+        post :create, params
+        should respond_with :unprocessable_entity
+      end
+    end
   end
 
   describe 'PUT #update' do

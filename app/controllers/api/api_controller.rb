@@ -12,6 +12,12 @@ module Api
       render json: response, status: :not_found
     end
 
+    rescue_from Geokit::Geocoders::GeocodeError do |exception|
+      response = Response.new
+      response.add_error_message(exception.message)
+      render json: response, status: :unprocessable_entity
+    end
+
     def create_entity(entity)
       if entity.save
         render json: Response.new(entity, scope: current_user), status: :created

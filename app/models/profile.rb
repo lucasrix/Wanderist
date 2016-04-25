@@ -1,5 +1,5 @@
 class Profile < ActiveRecord::Base
-  ABOUT_MAX_LENGTH = 500
+  ABOUT_MAX_LENGTH = 1500
 
   belongs_to :user
   has_one :location, as: :locatable
@@ -19,6 +19,8 @@ class Profile < ActiveRecord::Base
   mount_uploader :photo, ProfilePhotoUploader
 
   delegate :likes_count, to: :user
+  delegate :story_points_count, to: :user
+  delegate :stories_count, to: :user
 
   after_create do
     self.create_location(Location::DEFAULT_CITY_PARAMS)
@@ -38,5 +40,4 @@ class Profile < ActiveRecord::Base
               .where.not(user: user).count
   end
 
-  delegate :story_points_count, to: :user
 end

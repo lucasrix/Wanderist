@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   include Followable
   delegate :count, to: :likes, prefix: 'likes'
   delegate :count, to: :story_points, prefix: 'story_points'
+  delegate :count, to: :stories, prefix: 'stories'
 
   has_one :profile, dependent: :destroy
   has_many :stories
