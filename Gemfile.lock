@@ -116,6 +116,8 @@ GEM
       i18n (~> 0.5)
     faraday (0.9.2)
       multipart-post (>= 1.2, < 3)
+    figaro (1.1.1)
+      thor (~> 0.14)
     file_validators (2.0.2)
       activemodel (>= 3.0)
       mime-types (>= 1.0)
@@ -248,6 +250,8 @@ GEM
       activesupport (>= 4.1.0)
     haml (4.0.7)
       tilt
+    has_secure_token (1.0.0)
+      activerecord (>= 3.0)
     highline (1.7.8)
     houston (2.2.3)
       commander (~> 4.1)
@@ -472,12 +476,14 @@ DEPENDENCIES
   devise_token_auth
   factory_girl_rails
   faker
+  figaro
   file_validators
   fog
   fog-aws
   fuubar
   geokit-rails
   haml
+  has_secure_token
   houston
   kaminari
   koala (~> 2.2)

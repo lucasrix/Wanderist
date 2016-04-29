@@ -4,17 +4,12 @@ describe Api::V1::StoriesController do
   include_context 'ability'
 
   describe 'GET #index scope: :current_user' do
-    let(:user) { create(:user) }
-    let!(:story) { create(:story_with_story_points, user: user) }
+    let(:story) { create(:story_with_story_points, user: user) }
     let(:params) do
       {
         scope: 'current_user',
         page: 1
       }
-    end
-
-    before do
-      allow(@controller).to receive(:current_user).and_return(user)
     end
 
     it 'should be success', :show_in_doc do
@@ -34,6 +29,7 @@ describe Api::V1::StoriesController do
     context 'unauthorized' do
       it 'should return status 403', :show_in_doc do
         ability.cannot :index, Story
+        reload_ability(ability)
         get :index, params
         should respond_with :forbidden
       end
@@ -60,13 +56,15 @@ describe Api::V1::StoriesController do
     context 'stories of particular user' do
       let(:another_user) { create(:user) }
       let(:params) do
-        { user_id: another_user.id }
+        {
+          user_id: another_user.id
+        }
       end
 
       before do
         create_list(:story, 10, user: another_user)
         create_list(:story, 10)
-        allow(@controller).to receive(:current_user).and_return(user)
+        reload_ability(ability)
       end
 
       it 'returns stories of another user' do
@@ -80,6 +78,7 @@ describe Api::V1::StoriesController do
     context 'unauthorized' do
       it 'should return status 403', :show_in_doc do
         ability.cannot :index, Story
+        reload_ability(ability)
         get :index, story_point_id: story_point.id
         should respond_with :forbidden
       end
@@ -116,6 +115,7 @@ describe Api::V1::StoriesController do
     context 'unauthorized' do
       it 'should return status 403', :show_in_doc do
         ability.cannot :create, Story
+        reload_ability(ability)
         post :create, params
         should respond_with :forbidden
       end
@@ -160,6 +160,7 @@ describe Api::V1::StoriesController do
 
     it 'should return 404' do
       ability.cannot :read, StoryPoint
+      reload_ability(ability)
       params = attributes_for(:story)
       story_points = create_list(:story_point, 3)
       params[:story_point_ids] = story_points.map(&:id)

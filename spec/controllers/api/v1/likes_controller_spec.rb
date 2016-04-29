@@ -1,15 +1,10 @@
 require 'rails_helper'
 
 describe Api::V1::LikesController do
-  include_context 'ability'
-
-  let(:user) { create(:user) }
   let!(:story) { create(:story_with_story_points) }
   let!(:story_point) { create(:story_point) }
 
-  before do
-    allow(@controller).to receive(:current_user).and_return(user)
-  end
+  include_context 'ability'
 
   shared_examples 'create_like' do
     it 'should be success', :show_in_doc do

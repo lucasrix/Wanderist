@@ -1,5 +1,6 @@
 class StoryPointSerializer < ApplicationSerializer
   include SerializerLikable
+  include SerializerReportable
   include SerializerUtils
 
   attributes :id, :caption, :kind, :text, :created_at, :updated_at

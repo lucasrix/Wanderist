@@ -3,12 +3,7 @@ require 'rails_helper'
 describe Api::V1::UsersController do
   include_context "ability"
 
-  before do
-    allow(@controller).to receive(:current_user).and_return(user)
-  end
-
   describe 'GET #followers' do
-
     let(:another_users) { create_list(:user, 5) }
 
     let(:params) do
@@ -16,6 +11,7 @@ describe Api::V1::UsersController do
         scope: 'current_user'
       }
     end
+
     before do
       another_users.each do |another_user|
         create(:following, user: another_user, followable: user)
@@ -37,6 +33,7 @@ describe Api::V1::UsersController do
     context 'unauthorized' do
       it 'should return status 403', :show_in_doc do
         ability.cannot :followers, User
+        reload_ability(ability)
         get :followers, params
         should respond_with :forbidden
       end
@@ -80,6 +77,7 @@ describe Api::V1::UsersController do
     context 'unauthorized' do
       it 'should return status 403', :show_in_doc do
         ability.cannot :followed, User
+        reload_ability(ability)
         get :followed, params
         should respond_with :forbidden
       end
@@ -113,6 +111,7 @@ describe Api::V1::UsersController do
     context 'unauthorized' do
       it 'should return status 403', :show_in_doc do
         ability.cannot :update, User
+        reload_ability(ability)
         put :update, params
         should respond_with :forbidden
       end

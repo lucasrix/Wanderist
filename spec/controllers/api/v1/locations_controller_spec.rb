@@ -6,7 +6,6 @@ describe Api::V1::LocationsController do
   before do
     allow(AssignGeodataService).to receive(:call).and_call_original
     create_list(:location, 3, :valid_location)
-    allow(@controller).to receive(:current_user).and_return(user)
   end
 
   describe 'GET #cities' do
@@ -19,6 +18,7 @@ describe Api::V1::LocationsController do
   context 'unauthorized' do
     it 'should return status 403', :show_in_doc do
       ability.cannot :cities, Location
+      reload_ability(ability)
       get :cities
       should respond_with :forbidden
     end

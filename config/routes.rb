@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root to: redirect('http://www.maplifyapp.com/')
 
+  put 'reports/:report_id', to: 'blockings#update', as: :blockings
+  get 'reports/:report_id', to: 'blockings#edit', as: :update_blocked
+
   apipie
   mount_devise_token_auth_for User.name,
     at: 'api/v1/auth',
@@ -28,11 +31,15 @@ Rails.application.routes.draw do
         resource :like, only: [:create, :destroy]
       end
 
+      concern :reportable do
+        resource :report, only: [:create]
+      end
+
       concern :followable do
         resource :following, only: [:create, :destroy]
       end
 
-      resources :story_points, concerns: :likeable, only: [:index, :show, :create, :update, :destroy] do
+      resources :story_points, concerns: [:likeable, :reportable], only: [:index, :show, :create, :update, :destroy] do
         resources :stories, only: [:index]
       end
 
@@ -49,7 +56,7 @@ Rails.application.routes.draw do
       end
 
       resources :attachments, only: [:create]
-      resources :stories, concerns: [:likeable, :followable], only: [:index, :show, :create, :update, :destroy] do
+      resources :stories, concerns: [:likeable, :followable, :reportable], only: [:index, :show, :create, :update, :destroy] do
         resources :story_points, only: [:index]
       end
 

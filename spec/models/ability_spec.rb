@@ -8,8 +8,8 @@ RSpec.describe Ability, type: :model do
   subject { Ability.new(user) }
 
   context 'story points' do
-    let(:story_point) { build(:story_point, user: user) }
-    let(:foreign_story_point) { build(:story_point, user: another_user) }
+    let(:story_point) { create(:story_point, user: user) }
+    let(:foreign_story_point) { create(:story_point, user: another_user) }
 
     describe 'create' do
       it { should be_able_to(:create, story_point) }
@@ -48,8 +48,8 @@ RSpec.describe Ability, type: :model do
   end
 
   context 'story' do
-    let(:story) { build(:story, user: user) }
-    let(:foreign_story) { build(:story, user: another_user) }
+    let(:story) { create(:story, user: user) }
+    let(:foreign_story) { create(:story, user: another_user) }
 
     describe 'read' do
       it { should be_able_to(:read, story) }

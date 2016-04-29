@@ -1,0 +1,6 @@
+%h3
+  = flash[:message] || t(:title, scope: [:blockings, :edit])
+= form_tag update_blocked_path(action_token: @action_token), method: :put do
+  = hidden_field_tag :blocked, false
+  = check_box_tag  :blocked, true, @resource.blocked
+  = submit_tag t(:save, scope: [:blockings, :edit, :buttons])

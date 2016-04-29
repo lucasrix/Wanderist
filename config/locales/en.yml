@@ -15,4 +15,22 @@ en:
   push_notifications:
     new_resource: '%{followed} you follow add new %{triggered}'
     update_resource: '%{followed} you follow has a new %{triggered}'
+  blockings:
+    update:
+      success: 'Blocked status was successfully changed to %{status}'
+      error: 'Blocked status cant be changed'
+    edit:
+      title: 'Block resource'
+      buttons:
+        save: 'Save'
+  mailer:
+    report:
+      new_report_subject: 'New report'
+      new_report_title: 'New report have been received.'
+      new_report_from: 'From: %{user_email} with id: %{user_id}'
+      new_report_on: 'On %{resource} with id: %{resource_id}'
+      new_report_kind: 'Abuse kind: %{kind} with id: %{report_id}'
+      reports_count: 'Resource has %{count} reports'
+      blocking_link_title: 'Change blocked status'
+
 

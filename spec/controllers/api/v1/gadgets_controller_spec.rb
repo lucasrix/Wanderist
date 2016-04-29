@@ -3,12 +3,6 @@ require 'rails_helper'
 describe Api::V1::GadgetsController do
   include_context 'ability'
 
-  let(:user) { create(:user) }
-
-  before do
-    allow(@controller).to receive(:current_user).and_return(user)
-  end
-
   describe 'POST #create' do
     let(:params) { attributes_for(:gadget) }
 
@@ -29,7 +23,9 @@ describe Api::V1::GadgetsController do
 
     context 'unauthorized user' do
       it 'should return status 403', :show_in_doc do
+        ability = Ability.new(user)
         ability.cannot :create, Gadget
+        reload_ability(ability)
         post :create, params
         should respond_with :forbidden
       end
@@ -60,7 +56,9 @@ describe Api::V1::GadgetsController do
 
     context 'unauthorized user' do
       it 'should return status 403', :show_in_doc do
+        ability = Ability.new(user)
         ability.cannot :destroy, Gadget
+        reload_ability(ability)
         delete :destroy, params
         should respond_with :forbidden
       end
