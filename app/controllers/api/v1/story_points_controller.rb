@@ -12,11 +12,13 @@ module Api::V1
     load_and_authorize_resource :attachment, only: [:create, :update]
 
     before_action :set_service, only: [:index]
+    before_action :authorize_stories, only: [:create, :update]
 
     def_param_group :location do
       param :location, Hash,  action_aware: true, desc: 'Location info' do
         param :latitude, Float, desc: 'Latitude coordinate', required: true
         param :longitude, Float, desc: 'Longitude coordinate', required: true
+        param :address, String, desc: 'Address', required: false
       end
     end
 
@@ -56,10 +58,6 @@ module Api::V1
     see 'attachments#create', 'Attachment'
     see 'stories#create', 'Story'
     def create
-      if params[:story_ids].present?
-        Story.accessible_by(current_ability, :update).find(params[:story_ids])
-      end
-
       @story_point.kind = StoryPoint.kinds[params[:kind]]
       @story_point.location = Location.create(location_params)
       create_entity(@story_point)
@@ -91,17 +89,24 @@ module Api::V1
       Location.new(location_params).valid? && params[:radius].present?
     end
 
+    def authorize_stories
+      if params[:story_ids].present?
+        Story.accessible_by(current_ability, :update).find(params[:story_ids])
+      end
+    end
+
     def set_service
       @story_points = current_user.story_points if params[:scope] == 'current_user'
       @service ||= StoryPointsService.new(@story_points)
     end
 
     def story_point_params
+      params[:story_ids] ||= []
       params.permit(:caption, :text, :attachment_id, :kind, story_ids: [])
     end
 
     def location_params
-      params.require(:location).permit(:latitude, :longitude)
+      params.require(:location).permit(:latitude, :longitude, :address)
     end
   end
 end

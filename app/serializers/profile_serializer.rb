@@ -1,6 +1,6 @@
 class ProfileSerializer < ApplicationSerializer
   attributes :id, :first_name, :last_name, :city, :url, :about, :photo_url,
-             :big_thumbnail, :small_thumbnail, :story_points_count
+             :big_thumbnail, :small_thumbnail, :story_points_count, :stories_count, :likes_count, :saves_count
   has_one :location
 
   def small_thumbnail

@@ -10,6 +10,7 @@ module Api::V1
       param :location, Hash,  action_aware: true, desc: 'Location info' do
         param :latitude, Float, desc: 'Latitude coordinate', required: true
         param :longitude, Float, desc: 'Longitude coordinate', required: true
+        param :address, String, desc: 'Address', required: false
       end
     end
 
@@ -58,7 +59,7 @@ module Api::V1
     end
 
     def location_params
-      params.require(:location).permit(:latitude, :longitude)
+      params.require(:location).permit(:latitude, :longitude, :address)
     end
   end
 end

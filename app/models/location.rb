@@ -12,7 +12,7 @@ class Location < ActiveRecord::Base
 
   scope :cities, lambda {
     where.not(city: nil)
-      .select(:latitude, :longitude, :city)
+      .select(:latitude, :longitude, :city, :address)
       .uniq(:city).order(:city)
   }
 
