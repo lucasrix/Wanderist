@@ -26,7 +26,7 @@ class DiscoversQuery < BaseQuery
     @origin = Location.new(location_params)
     @city = Location.within(CITY_CENTER_RADIUS, origin: @origin)
                     .where.not(locatable_type: 'Profile')
-                    .first.city
+                    .first.try(:city)
   end
 
   def filter_by_origin
