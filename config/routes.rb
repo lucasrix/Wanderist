@@ -60,7 +60,7 @@ Rails.application.routes.draw do
         end
       end
 
-
+      resources :gadgets, only: [:create, :destroy]
     end
   end
 end

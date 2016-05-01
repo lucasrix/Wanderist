@@ -27,6 +27,10 @@ gem 'devise_token_auth'
 gem 'cancancan', '~> 1.10'
 gem 'koala', '~> 2.2'
 
+# Jobs
+gem 'delayed_job_active_record'
+gem 'houston'
+
 group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'

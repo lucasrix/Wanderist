@@ -20,5 +20,6 @@ class Ability
     can [:read, :followed, :followers], User
     can [:update], User, id: user.id
     can :cities, Location
+    can [:create, :destroy], Gadget, user_id: user.id
   end
 end
