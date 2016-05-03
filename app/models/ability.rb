@@ -27,6 +27,7 @@ class Ability
       can [:update], User, id: user.id
       can :cities, Location
       can [:create, :destroy], Gadget, user_id: user.id
+      can :read, Notification, user_id: user.id
     end
   end
 end

@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe StoryPoint, type: :model do
   it_behaves_like 'pushable'
+  it_behaves_like 'notificable'
+
   it { expect(StoryPoint).to have_constant(:CAPTION_MAX_LENGTH) }
   it { expect(StoryPoint).to have_constant(:TEXT_MAX_LENGTH) }
 

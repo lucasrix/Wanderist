@@ -5,6 +5,10 @@ module Api::V1
       api_versions 'v1'
     end
 
+    api! 'About of service. Respond with HTML content.'
+    def about
+    end
+
     api! 'Terms of service. Respond with HTML content.'
     def terms_of_service
     end

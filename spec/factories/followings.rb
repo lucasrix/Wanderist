@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :following do
     user
-    association :followable
+    followable { create(:story) }
   end
 end

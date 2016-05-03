@@ -190,4 +190,15 @@ RSpec.describe Ability, type: :model do
       it { should_not be_able_to(:destroy, another_gadget)}
     end
   end
+
+  context 'notification' do
+    let(:story) { build(:story) }
+    let(:notification) { build(:notification, user: user, notificable: story) }
+    let(:another_notification) { build(:notification, user: another_user, notificable: story) }
+
+    describe 'index' do
+      it { should be_able_to(:index, notification) }
+      it { should_not be_able_to(:index, another_notification) }
+    end
+  end
 end

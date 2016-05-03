@@ -15,6 +15,7 @@ class User < ActiveRecord::Base
   has_many :likes
   has_many :gadgets
   has_many :reports
+  has_many :notifications
 
   def followed
     User.joins(:followings).where('followings.user_id = ?', id)
