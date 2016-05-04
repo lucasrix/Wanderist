@@ -16,9 +16,9 @@ module Api::V1
     error 404, 'Story not found.'
     def create
       if @following.save
-        render json: Response.new(resource), status: :created
+        render json: Response.new(resource, scope: current_user), status: :created
       else
-        render json: Response.new(resource), status: :unprocessable_entity
+        render json: Response.new(resource, scope: current_user), status: :unprocessable_entity
       end
     end
 
@@ -27,9 +27,9 @@ module Api::V1
     error 404, 'User not found.'
     def destroy
       if following.destroy
-        render json: Response.new(resource)
+        render json: Response.new(resource, scope: current_user)
       else
-        render json: Response.new(resource), status: :unprocessable_entity
+        render json: Response.new(resource, scope: current_user), status: :unprocessable_entity
       end
     end
 
