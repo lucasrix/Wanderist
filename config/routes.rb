@@ -12,6 +12,9 @@ Rails.application.routes.draw do
     },
     skip: [:omniauth_callbacks]
 
+
+  get :share, to: 'shared_links#share'
+
   namespace :api do
     namespace :v1 do
       namespace :auth do
