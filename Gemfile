@@ -9,6 +9,7 @@ gem 'puma'
 gem 'haml'
 gem 'geokit-rails'
 gem 'kaminari'
+gem 'browser'
 
 # Docs
 gem 'apipie-rails', github: 'Apipie/apipie-rails'
