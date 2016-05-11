@@ -1,4 +1,8 @@
 en:
+  errors:
+    messages:
+      not_email: 'Please enter valid email'
+
   token_not_found: Token not found
 
   story_points:
