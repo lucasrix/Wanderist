@@ -9,6 +9,7 @@ module Api::V1
     load_and_authorize_resource :user, only: :index
     load_and_authorize_resource through: :user, shallow: true, only: :index
     load_and_authorize_resource only: [:show, :create, :update, :destroy]
+    before_action :authorize_story_points, only: [:create, :update]
 
     def_param_group :story do
       param :name, String, desc: 'Name', required: true, action_aware: true
@@ -44,10 +45,6 @@ module Api::V1
     param_group :story
     error 422, 'Validation error.'
     def update
-      if params[:story_point_ids].present?
-        StoryPoint.accessible_by(current_ability, :read).find(params[:story_point_ids])
-      end
-
       update_entity(@story, story_params)
     end
 
@@ -69,6 +66,12 @@ module Api::V1
       @stories
     end
 
+    def authorize_story_points
+      if params[:story_point_ids].present?
+        StoryPoint.accessible_by(current_ability, :read).find(params[:story_point_ids])
+      end
+    end
+
     def story_point_stories
       if params[:story_point_id].present?
         story_point = StoryPoint.accessible_by(current_ability, :read).find(params[:story_point_id])
@@ -77,6 +80,7 @@ module Api::V1
     end
 
     def story_params
+      params[:story_point_ids] ||= []
       params.permit(:name, :description, :discoverable, story_point_ids: [])
     end
   end

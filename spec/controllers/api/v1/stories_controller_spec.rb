@@ -138,6 +138,13 @@ describe Api::V1::StoriesController do
       expect(Story.exists?(name: params[:name])).to be_truthy
     end
 
+    it 'deletes all story_points from story' do
+      put :update, id: story.id, story_point_ids: []
+      story.reload
+      story_points = story.story_points
+      expect(story_points).to be_empty
+    end
+
     it 'should remove story points from story', :show_in_doc do
       story = create(:story_with_story_points, user: user)
       put :update, id: story.id, story_point_ids: []

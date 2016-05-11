@@ -4,7 +4,7 @@ class Story < ActiveRecord::Base
   include Pushable
 
   NAME_MAX_LENGTH = 25
-  DESCRIPTION_MAX_LENGTH = 512
+  DESCRIPTION_MAX_LENGTH = 1500
 
   belongs_to :user
 

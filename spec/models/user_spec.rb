@@ -17,6 +17,16 @@ RSpec.describe User, type: :model do
     subject { build(:user) }
     # it { should validate_presence_of(:username) }
     # it { should validate_uniqueness_of(:username).case_insensitive }
+    context 'incorrect email format' do
+      it 'returns custom error for email' do
+        I18n.load_path << Rails.root.join('config', 'locales', 'en.yml')
+        subject.email = Faker::Lorem.word
+        subject.save
+        expected_error = I18n.t(:not_email, scope: [:errors, :messages])
+        errors = subject.errors[:email]
+        expect(errors).to eq([expected_error])
+      end
+    end
   end
 
   context 'callbacks' do
