@@ -13,14 +13,22 @@ class CreateFollowerNotificationsService < BaseService
 
   def set_params(resource, event)
     if resource.is_a?(Following)
-      @target_resource = resource.followable
-      @follower_ids = @target_resource.followers.ids
-      @event = :new_following_story
+      set_following_event_params(resource, event)
     else
-      @target_resource = resource
-      @follower_ids = @action_user.followers.ids
-      @event = event
+      set_user_event_params(resource, event)
     end
+  end
+
+  def set_following_event_params(resource, event)
+    @target_resource = resource.followable
+    @follower_ids = @target_resource.followers.ids
+    @event = :new_following_story
+  end
+
+  def set_user_event_params(resource, event)
+    @target_resource = resource
+    @follower_ids = @action_user.followers.ids
+    @event = event
   end
 
   def create_follower_notifications

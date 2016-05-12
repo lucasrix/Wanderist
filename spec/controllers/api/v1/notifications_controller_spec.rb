@@ -27,6 +27,7 @@ describe Api::V1::NotificationsController do
     context 'unauthorized' do
       it 'should return status 403', :show_in_doc do
         ability.cannot :index, Notification
+        reload_ability(ability)
         get :index
         should respond_with :forbidden
       end
