@@ -1,4 +1,6 @@
 class Following < ActiveRecord::Base
+  include Notificable
+
   belongs_to :user
   belongs_to :followable, polymorphic: true
   validates_uniqueness_of :user_id, scope: [:followable_id, :followable_type]

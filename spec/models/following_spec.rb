@@ -1,6 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe Following, type: :model do
+  before do
+    allow(CreateOwnerNotificationsService).to receive(:call)
+    allow(CreateFollowerNotificationsService).to receive(:call)
+  end
+
   context 'Associations' do
     before do
       subject.user = create(:user)
@@ -25,4 +30,6 @@ RSpec.describe Following, type: :model do
       expect(invalid_following.errors.messages).to include(followable: [I18n.t('following.following_errors')])
     end
   end
+
+  it_behaves_like 'notificable'
 end

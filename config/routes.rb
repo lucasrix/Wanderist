@@ -24,6 +24,7 @@ Rails.application.routes.draw do
         resources :provider_sessions, only: [:create]
       end
 
+      get :about, to: 'texts#about'
       get :terms_of_service, to: 'texts#terms_of_service'
       get :privacy_policy, to: 'texts#privacy_policy'
 
@@ -71,6 +72,7 @@ Rails.application.routes.draw do
       end
 
       resources :gadgets, only: [:create, :destroy]
+      resources :notifications, only: :index
     end
   end
 end

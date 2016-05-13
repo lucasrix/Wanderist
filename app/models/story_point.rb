@@ -2,6 +2,7 @@ class StoryPoint < ActiveRecord::Base
   include Likable
   include Pushable
   include Reportable
+  include Notificable
 
   KINDS = %i(audio video photo text).freeze
   CAPTION_MAX_LENGTH = 30
@@ -14,6 +15,7 @@ class StoryPoint < ActiveRecord::Base
 
   has_and_belongs_to_many :stories
   has_and_belongs_to_many :tags
+  has_many :notifications, as: :notificable
 
   acts_as_mappable through: :location
 

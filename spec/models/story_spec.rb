@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe Story, type: :model do
   it_behaves_like 'followable'
   it_behaves_like 'pushable'
+  it_behaves_like 'notificable'
 
   it { expect(Story).to have_constant(:NAME_MAX_LENGTH) }
   it { expect(Story).to have_constant(:DESCRIPTION_MAX_LENGTH) }
