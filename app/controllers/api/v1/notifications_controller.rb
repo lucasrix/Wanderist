@@ -9,6 +9,7 @@ module Api::V1
     load_and_authorize_resource through: :current_user
     after_action :make_read
 
+    api! 'List of notifications'
     def index
       notifications = @notifications.ordered
       render json: Response.new(notifications, scope: current_user)
