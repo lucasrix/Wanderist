@@ -10,6 +10,7 @@ gem 'haml'
 gem 'geokit-rails'
 gem 'kaminari'
 gem 'browser'
+gem "figaro"
 
 # Docs
 gem 'apipie-rails', github: 'Apipie/apipie-rails'
@@ -27,6 +28,7 @@ gem 'streamio-ffmpeg'
 gem 'devise_token_auth'
 gem 'cancancan', '~> 1.10'
 gem 'koala', '~> 2.2'
+gem 'has_secure_token'
 
 # Jobs
 gem 'delayed_job_active_record'

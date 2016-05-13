@@ -37,11 +37,12 @@ module Api::V1
     private
 
     def discovered_story_points
-      DiscoversQuery.new(params).load_relation
+      @story_points = StoryPoint.accessible_by(current_ability)
+      DiscoversQuery.new(params, @story_points).load_relation
     end
 
     def build_discover(discovered)
-      BuildDiscoverService.call(discovered, params[:page])
+      BuildDiscoverService.call(discovered, current_ability, params[:page])
     end
 
     def origin_params_valid?

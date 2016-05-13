@@ -2,6 +2,7 @@ class Story < ActiveRecord::Base
   include Likable
   include Followable
   include Pushable
+  include Reportable
 
   NAME_MAX_LENGTH = 25
   DESCRIPTION_MAX_LENGTH = 1500

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160425093020) do
+ActiveRecord::Schema.define(version: 20160510150619) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -81,6 +81,17 @@ ActiveRecord::Schema.define(version: 20160425093020) do
     t.string   "address"
   end
 
+  create_table "notifications", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "action_user_id"
+    t.boolean  "unread",           default: true
+    t.integer  "notificable_id"
+    t.string   "notificable_type"
+    t.string   "message"
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+  end
+
   create_table "profiles", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "first_name"
@@ -101,6 +112,8 @@ ActiveRecord::Schema.define(version: 20160425093020) do
     t.integer  "user_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "kind"
+    t.string   "action_token"
   end
 
   add_index "reports", ["reportable_type", "reportable_id"], name: "index_reports_on_reportable_type_and_reportable_id", using: :btree
@@ -111,8 +124,9 @@ ActiveRecord::Schema.define(version: 20160425093020) do
     t.string   "name"
     t.text     "description"
     t.boolean  "discoverable", default: true
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.boolean  "blocked",      default: false
   end
 
   add_index "stories", ["user_id"], name: "index_stories_on_user_id", using: :btree
@@ -129,8 +143,9 @@ ActiveRecord::Schema.define(version: 20160425093020) do
     t.integer  "kind"
     t.integer  "attachment_id"
     t.text     "text"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.boolean  "blocked",       default: false
   end
 
   add_index "story_points", ["attachment_id"], name: "index_story_points_on_attachment_id", using: :btree

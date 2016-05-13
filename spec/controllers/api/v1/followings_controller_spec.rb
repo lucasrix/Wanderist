@@ -3,13 +3,9 @@ require 'rails_helper'
 describe Api::V1::FollowingsController do
   include_context 'ability'
 
-  let(:user) { create(:user) }
-  let(:story) { create(:story) }
+  let!(:story) { create(:story) }
   let(:another_user) { create(:user) }
 
-  before do
-    allow(@controller).to receive(:current_user).and_return(user)
-  end
 
   shared_examples 'create_following' do
     it 'should be success', :show_in_doc do

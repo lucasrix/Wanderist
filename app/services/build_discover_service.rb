@@ -1,6 +1,7 @@
 class BuildDiscoverService < BaseService
-  def initialize(discover, page = nil)
+  def initialize(discover, current_ability, page = nil)
     @discover = discover
+    @current_ability = current_ability
     @page = page
   end
 
@@ -17,8 +18,8 @@ class BuildDiscoverService < BaseService
   end
 
   def discovered(story_point)
-    if story_point.stories.any?
-      story_point.stories.sort_by(&:updated_at).reverse
+    if story_point.stories.accessible_by(@current_ability).any?
+      story_point.stories.accessible_by(@current_ability).sort_by(&:updated_at).reverse
     else
       story_point
     end

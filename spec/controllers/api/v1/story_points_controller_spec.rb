@@ -47,7 +47,8 @@ describe Api::V1::StoryPointsController do
       before do
         create_list(:story_point, 10, user: another_user)
         create(:story_point)
-        allow(@controller).to receive(:current_user).and_return(user)
+        ability = Ability.new(another_user)
+        reload_ability(ability)
       end
 
       it 'returns story_points of another user' do
@@ -60,10 +61,6 @@ describe Api::V1::StoryPointsController do
   end
 
   describe 'GET #index scope: :current_user' do
-    before do
-      allow(@controller).to receive(:current_user).and_return(user)
-    end
-
     let(:location) { create(:location) }
     let(:another_user) { create(:user) }
     let!(:story_points) { create_list(:story_point_with_attachment, 2, :with_tags, user: user, location: location) }
@@ -95,9 +92,10 @@ describe Api::V1::StoryPointsController do
   end
 
   describe 'GET #show' do
-    let(:story_point) { create(:story_point, user: user) }
+    let!(:story_point) { create(:story_point, user: user) }
 
     it 'should be success', :show_in_doc do
+      reload_ability(ability)
       get :show, id: story_point.id
       should respond_with :ok
     end
@@ -131,12 +129,14 @@ describe Api::V1::StoryPointsController do
     context 'unauthorized' do
       it 'should return status 403', :show_in_doc do
         ability.cannot :create, StoryPoint
+        reload_ability(ability)
         post :create, params
         should respond_with :forbidden
       end
 
       it 'should return status 403' do
         ability.cannot :read, Attachment
+        reload_ability(ability)
         attachment = create(:attachment, user: user)
         params[:attachment_id] = attachment.id
         post :create, params

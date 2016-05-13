@@ -1,0 +1,16 @@
+%p
+  = t(:new_report_title, scope: [:mailer, :report])
+%p
+  = t(:new_report_from, scope: [:mailer, :report], user_email: @report_from.email, user_id:@report_from.id)
+%p
+  = t(:new_report_on, scope: [:mailer, :report], resource: @reportable.class.name, resource_id: @reportable.id )
+%p
+  = t(:new_report_kind, scope: [:mailer, :report], kind: @report.kind, report_id: @report.id)
+%p
+  = t(:reports_count, scope: [:mailer, :report], count: @reportable.reports_count)
+
+%p
+  - title = t(:blocking_link_title, scope: [:mailer, :report])
+  = link_to(title, update_blocked_url(action_token: @report.action_token, report_id: @report.id), only_path: false)
+
+

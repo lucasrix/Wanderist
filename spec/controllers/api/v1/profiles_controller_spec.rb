@@ -3,10 +3,6 @@ require 'rails_helper'
 describe Api::V1::ProfilesController do
   include_context 'ability'
 
-  before do
-    allow(@controller).to receive(:current_user).and_return(user)
-  end
-
   describe 'GET #show' do
     it 'should be success', :show_in_doc do
       get :show
@@ -65,6 +61,7 @@ describe Api::V1::ProfilesController do
     context 'unauthorized' do
       it 'should return status 403', :show_in_doc do
         ability.cannot :update, Profile
+        reload_ability(ability)
         put :update, params
         should respond_with :forbidden
       end
