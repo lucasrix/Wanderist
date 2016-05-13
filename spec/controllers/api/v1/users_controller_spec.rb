@@ -26,7 +26,7 @@ describe Api::V1::UsersController do
     it 'should return collection of followers' do
       get :followers, params
       received_response = JSON.parse(response.body)['data']['users']
-      expected_response = serialized_collection(another_users, UserSerializer)
+      expected_response = serialized_collection(another_users, UserSerializer, user)
       expect(received_response).to match_array(expected_response)
     end
 
@@ -70,7 +70,7 @@ describe Api::V1::UsersController do
     it 'should return collection of followers' do
       get :followed, params
       received_response = JSON.parse(response.body)['data']['users']
-      expected_response = serialized_collection(another_users, UserSerializer)
+      expected_response = serialized_collection(another_users, UserSerializer,  user)
       expect(received_response).to match_array(expected_response)
     end
 
