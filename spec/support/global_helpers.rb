@@ -17,7 +17,7 @@ module GlobalHelpers
     ['Kyiv', 'Warsaw', 'London', 'New York']
   end
 
-  def serialized_collection(collection, serializer)
-    JSON.parse ActiveModel::ArraySerializer.new(collection.reverse, serializer: serializer).to_json
+  def serialized_collection(collection, serializer, current_user)
+    JSON.parse ActiveModel::ArraySerializer.new(collection.reverse, serializer: serializer, scope: current_user).to_json
   end
 end

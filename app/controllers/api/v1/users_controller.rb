@@ -12,13 +12,13 @@ module Api::V1
     api! 'Get list of followers that follow user'
     def followers
       resource = current_user.followers
-      render json: Response.new(resource)
+      render json: Response.new(resource, scope: current_user)
     end
 
     api! 'Get list of users who followed by user'
     def followed
       resource = current_user.followed
-      render json: Response.new(resource)
+      render json: Response.new(resource, scope: current_user)
     end
 
     api! 'Update user  email'
