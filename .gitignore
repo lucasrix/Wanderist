@@ -12,6 +12,7 @@
 !/log/.keep
 /tmp
 /coverage/*
+/config/keys/
 
 # Ignore  RubyMine
 .idea
