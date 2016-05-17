@@ -36,7 +36,7 @@ describe Api::V1::GadgetsController do
     let!(:gadget) { create(:gadget, user: user) }
 
     let(:params) do
-      {id: gadget.id}
+      { id: gadget.id }
     end
 
     it 'should be success', :show_in_doc do

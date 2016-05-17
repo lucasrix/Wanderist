@@ -1,5 +1,5 @@
 require 'rails_helper'
-require "browser"
+require 'browser'
 
 describe SharedLinksController do
   describe 'GET #share' do

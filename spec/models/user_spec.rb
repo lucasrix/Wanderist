@@ -8,7 +8,7 @@ RSpec.describe User, type: :model do
     it { should have_many(:story_points) }
     it { should have_many(:likes) }
     it { should have_many(:followings) }
-    it { should have_many(:followers).through(:followings).source(:user)}
+    it { should have_many(:followers).through(:followings).source(:user) }
     it { should have_many(:gadgets) }
     it { should have_many(:notifications) }
     it { should validate_length_of(:password).is_at_least(6) }

@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Api::V1::NotificationsController do
   include_context 'ability'
 
-  before  do
+  before do
     allow(subject).to receive(:current_user).and_return(user)
     allow(CreateOwnerNotificationsService).to receive(:call)
     allow(CreateFollowerNotificationsService).to receive(:call)

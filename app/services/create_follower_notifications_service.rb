@@ -1,5 +1,4 @@
 class CreateFollowerNotificationsService < BaseService
-
   def initialize(resource, event)
     @action_user = resource.user
     set_params(resource, event)
@@ -19,7 +18,7 @@ class CreateFollowerNotificationsService < BaseService
     end
   end
 
-  def set_following_event_params(resource, event)
+  def set_following_event_params(resource, _event)
     @target_resource = resource.followable
     @follower_ids = @target_resource.followers.ids
     @event = :new_following_story
@@ -41,7 +40,7 @@ class CreateFollowerNotificationsService < BaseService
       notificable_id: @target_resource.id,
       notificable_type: @target_resource.class.name,
       action_user_id: @action_user.id,
-      message: message,
+      message: message
     }
   end
 

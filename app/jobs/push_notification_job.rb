@@ -1,5 +1,4 @@
 class PushNotificationJob < ActiveJob::Base
-
   DEFAULT_BADGE_COUNT = 1
 
   queue_as :push_notifications

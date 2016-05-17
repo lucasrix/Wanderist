@@ -47,7 +47,6 @@ describe CreateOwnerNotificationsService do
         expect(owner).to eq(target_resource.user)
       end
     end
-
   end
 
   describe '#call' do
@@ -61,7 +60,7 @@ describe CreateOwnerNotificationsService do
   describe '#create_owner_notification' do
     it 'creates new notification' do
       subject.send(:create_owner_notification)
-      expect { subject.send(:create_owner_notification) }.to change {Notification.count}.by(1)
+      expect { subject.send(:create_owner_notification) }.to change { Notification.count }.by(1)
     end
   end
 end

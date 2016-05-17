@@ -1,5 +1,6 @@
 if Rails.env.development? || Rails.env.test?
   APN = Houston::Client.development
-  APN.certificate = File.read(Rails.root.join('config', 'keys', 'pushcert_development.pem').to_s)
+  path = File.join(Rails.root, 'config', 'keys', 'pushcert_development.pem')
+  APN.certificate = File.read(path) if File.exists?(path)
 end
 

@@ -1,5 +1,4 @@
 class CreateOwnerNotificationsService < BaseService
-
   def initialize(resource, event)
     @action_user = resource.user
     @target_resource = resource.is_a?(Like) ? resource.likable : resource.followable
@@ -21,15 +20,15 @@ class CreateOwnerNotificationsService < BaseService
     {
       notificable: @target_resource,
       action_user: @action_user,
-      message: message,
+      message: message
     }
   end
 
   def message
     I18n.t(
-            @event,
-            scope: :notifications,
-            resource: @target_resource.class.name
-          )
+      @event,
+      scope: :notifications,
+      resource: @target_resource.class.name
+    )
   end
 end

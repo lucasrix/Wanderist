@@ -45,10 +45,8 @@ end
 
 group :development do
   gem 'mailcatcher'
-  gem 'brakeman', require: false
   gem 'rubocop', require: false
-  gem 'rubycritic', require: false
-  gem 'rails_best_practices'
+  gem 'analyfy', github: 'RubyGarage/analyfy'
 
   gem 'rack-cors', require: 'rack/cors'
 end

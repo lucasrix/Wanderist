@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe Api::V1::UsersController do
-  include_context "ability"
+  include_context 'ability'
 
   describe 'GET #followers' do
     let(:another_users) { create_list(:user, 5) }
@@ -41,7 +41,6 @@ describe Api::V1::UsersController do
   end
 
   describe 'GET #followed' do
-
     let(:another_users) { create_list(:user, 5) }
 
     let(:params) do
@@ -70,7 +69,7 @@ describe Api::V1::UsersController do
     it 'should return collection of followers' do
       get :followed, params
       received_response = JSON.parse(response.body)['data']['users']
-      expected_response = serialized_collection(another_users, UserSerializer,  user)
+      expected_response = serialized_collection(another_users, UserSerializer, user)
       expect(received_response).to match_array(expected_response)
     end
 
@@ -120,11 +119,10 @@ describe Api::V1::UsersController do
     context 'user updates email to existing email' do
       it 'should return status 422' do
         another_user = create(:user)
-        params = {scope: 'current_user', email: another_user.email}
+        params = { scope: 'current_user', email: another_user.email }
         put :update, params
         should respond_with :unprocessable_entity
       end
     end
   end
 end
-

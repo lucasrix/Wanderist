@@ -24,11 +24,11 @@ class SendPushNotificationsService < BaseService
 
   def get_message(event)
     I18n.t(
-            event,
-            scope: :push_notifications,
-            followed: @followed.class.name,
-            triggered: @triggered.class.name
-          )
+      event,
+      scope: :push_notifications,
+      followed: @followed.class.name,
+      triggered: @triggered.class.name
+    )
   end
 
   def link

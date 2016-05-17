@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe SerializerFollowable, :type => :serializer do
+describe SerializerFollowable, type: :serializer do
   let(:story) { build(:story) }
   let(:user) { build(:user) }
 

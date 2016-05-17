@@ -6,7 +6,6 @@ describe Api::V1::FollowingsController do
   let!(:story) { create(:story) }
   let(:another_user) { create(:user) }
 
-
   shared_examples 'create_following' do
     it 'should be success', :show_in_doc do
       post :create, params

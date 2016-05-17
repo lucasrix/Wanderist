@@ -35,7 +35,7 @@ describe Api::V1::StoryPointsController do
       let(:another_user) { create(:user) }
       let(:params) do
         {
-          radius: 10000,
+          radius: 10_000,
           user_id: another_user.id,
           location: {
             latitude:  location.latitude,
@@ -145,7 +145,7 @@ describe Api::V1::StoryPointsController do
     end
 
     context 'geoservice error' do
-      before  do
+      before do
         allow(AssignGeodataService).to receive(:call).and_call_original
         allow(Geokit::Geocoders::GoogleGeocoder).to receive(:reverse_geocode) { raise Geokit::Geocoders::GeocodeError }
       end

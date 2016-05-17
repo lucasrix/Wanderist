@@ -23,7 +23,7 @@ class Profile < ActiveRecord::Base
   delegate :stories_count, to: :user
 
   after_create do
-    self.create_location(Location::DEFAULT_CITY_PARAMS)
+    create_location(Location::DEFAULT_CITY_PARAMS)
   end
 
   def followings_count
@@ -39,5 +39,4 @@ class Profile < ActiveRecord::Base
               .where(stories: { id: user.stories.ids })
               .where.not(user: user).count
   end
-
 end

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe BuildDiscoverService do
-  let(:user) {create(:user)}
+  let(:user) { create(:user) }
   subject { BuildDiscoverService.new(StoryPoint.all, Ability.new(user)) }
 
   let(:discover) { subject.instance_variable_get(:@discover) }

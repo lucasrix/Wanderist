@@ -3,7 +3,7 @@ require 'rails_helper'
 describe BlockingsController do
   before do
     allow(ReportEmailJob).to receive(:perform_later)
-    request.env["HTTP_REFERER"] = Faker::Internet.url
+    request.env['HTTP_REFERER'] = Faker::Internet.url
   end
 
   shared_examples 'blockings' do |reportable|
@@ -21,7 +21,7 @@ describe BlockingsController do
         it 'renders 404' do
           params[:action_token] = Faker::Lorem.characters(32)
           put :edit, params
-          expect(response).to render_template(file: "404.html")
+          expect(response).to render_template(file: '404.html')
         end
       end
 
@@ -36,12 +36,12 @@ describe BlockingsController do
         it 'renders 404' do
           params[:action_token] = Faker::Lorem.characters(32)
           put :update, params
-          expect(response).to render_template(file: "404.html")
+          expect(response).to render_template(file: '404.html')
         end
       end
 
       context 'make blocked truthy' do
-        before  do
+        before do
           params[:blocked] = true
         end
 
@@ -54,7 +54,7 @@ describe BlockingsController do
       end
 
       context 'makes blocked falsey' do
-        before  do
+        before do
           resource.update(blocked: true)
           resource.reload
           params[:blocked] = false
@@ -74,7 +74,6 @@ describe BlockingsController do
       end
     end
   end
-
 
   context 'blockings story' do
     it_behaves_like 'blockings', :story

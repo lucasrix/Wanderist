@@ -1,7 +1,6 @@
 require 'streamio-ffmpeg'
 
 class FileUploader < ApplicationUploader
-
   def extension_whitelist
     %w(jpg jpeg gif png wav mp3 mp4)
   end
@@ -14,12 +13,12 @@ class FileUploader < ApplicationUploader
     process resize_to_fill: [200, 200]
   end
 
-  #version :video_thumbnail, if: :is_video? do
-    #process :screenshot
-    #def full_filename(for_file)
-      #%(thumbnail_#{File.basename(for_file, '.*')}.jpg)
-    #end
-  #end
+  # version :video_thumbnail, if: :is_video? do
+  # process :screenshot
+  # def full_filename(for_file)
+  # %(thumbnail_#{File.basename(for_file, '.*')}.jpg)
+  # end
+  # end
 
   protected
 
