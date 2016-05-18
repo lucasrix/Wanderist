@@ -28,6 +28,17 @@ en:
       buttons:
         save: 'Save'
   mailer:
+    layout:
+      secure: "We'll never share your email and will only send you emails related to your Maplify account."
+      copyright: "© 2016 Maplify Inc."
+    welcome:
+      about: "Welcome! We're so happy you signed up. Maplify lets you discover a place through people's stories, stories big and far reaching, to small moments in your daily life. Share your stories!"
+      feedback: "We're new around here and would absolutely love any feedback or thoughts you have, just shoot us an email."
+      welcome_subject: 'Welcome to Maplify!'
+      title: 'Welcome to Maplify'
+      happy_discovering: 'Happy discovering!'
+      team: 'Lucas, and the Maplify team'
+      learn_more: 'Learn more about Maplify'
     report:
       new_report_subject: 'New report'
       new_report_title: 'New report have been received.'
@@ -36,6 +47,13 @@ en:
       new_report_kind: 'Abuse kind: %{kind} with id: %{report_id}'
       reports_count: 'Resource has %{count} reports'
       blocking_link_title: 'Change blocked status'
+    reset_password:
+      title: 'Reset your Maplify password'
+      request: 'We received a request for a forgotten password.'
+      change: 'To change your Maplify password, please click on'
+      error_request: 'If you did not request this change, you do not need to do anything.'
+      expired: "This link will expire in 4 hours."
+      link_title: 'this link'
 
   notifications:
     new_like: 'You %{resource} have new like'

@@ -26,5 +26,6 @@ class User < ActiveRecord::Base
 
   after_create do
     Profile.create(user: self)
+    UserNotificationMailer.welcome(self).deliver_now
   end
 end

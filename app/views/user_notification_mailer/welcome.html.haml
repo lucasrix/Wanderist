@@ -7,33 +7,33 @@
             %table(border="0" cellpadding="0" cellspacing="0" width="100%")
               %tr
                 %td(height="175" bgcolor="#364b61" style="text-align: center; padding: 51px 20px 30px;")
-                  %img(src="email_maplify_logo.png" width="276" height="94" alt="Maplify - Your life on a map")
+                  = image_tag attachments['email_maplify_logo.png'].url, width: "276", height: "94", alt: "Maplify - Your life on a map"
         %tr
           %td(bgcolor="#fff" style="padding: 45px 55px 15px;")
             %table(border="0" cellpadding="0" cellspacing="0" width="100%")
               %tr
                 %td(style="vertical-align: middle; font-family: OpenSans, Arial, sans-serif; font-size: 28px; font-weight: bold; color: #212121; padding-bottom: 15px; text-align: center;")
-                  Welcome to Maplify
+                  = t(:welcome, scope: [:mailer, :welcome])
               %tr
                 %td(style="vertical-align: middle; font-family: OpenSans, Arial, sans-serif; font-size: 16px; line-height: 24px; font-weight: normal; color: #212121; padding-bottom: 10px;")
-                  Welcome! We're so happy you signed up. Maplify lets you discover a place through people&#8242;s stories, stories big and far reaching, to small moments in your daily life. Share your stories!
+                  = t(:about, scope: [:mailer, :welcome])
               %tr
                 %td(style="vertical-align: middle; font-family: OpenSans, Arial, sans-serif; font-size: 16px; line-height: 24px; font-weight: normal; color: #212121; padding-bottom: 10px;")
-                  We&#8242;re new around here and would absolutely love any feedback or thoughts you have, just shoot us an email.
+                  = t(:feedback, scope: [:mailer, :welcome])
               %tr
                 %td(style="vertical-align: middle; font-family: OpenSans, Arial, sans-serif; font-size: 16px; line-height: 24px; font-weight: normal; color: #212121; padding-bottom: 10px;")
-                  Happy discovering!
+                  = t(:happy_discovering, scope: [:mailer, :welcome])
               %tr
                 %td(style="font-family: OpenSans, Arial, sans-serif; font-size: 16px; font-style: italic; line-height: 24px; color: #212121; padding-top: 5px; padding-bottom: 20px;")
-                  Lucas, and the Maplify team
+                  = t(:team, scope: [:mailer, :welcome])
               %tr
                 %td(style="text-align: center; padding-top: 30px; padding-bottom: 30px;")
                   /[if mso]
                     <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="#" style="height: 40px; v-text-anchor: middle; width: 250px;" arcsize="13%" stroke="f" fillcolor="#35afff">
                     <w:anchorlock/>
                     <center>
-                  %a(href="#" style="background-color:#35afff; border-radius: 5px; color: #ffffff; display: inline-block; font-family: OpenSans, Arial, sans-serif; font-size: 16px; font-weight: bold; line-height: 40px; text-align: center; text-decoration: none; width: 250px; -webkit-text-size-adjust:none;")
-                    Learn more about Maplify
+                  %a(href="maplifyapp.com" style="background-color:#35afff; border-radius: 5px; color: #ffffff; display: inline-block; font-family: OpenSans, Arial, sans-serif; font-size: 16px; font-weight: bold; line-height: 40px; text-align: center; text-decoration: none; width: 250px; -webkit-text-size-adjust:none;")
+                    = t(:learn_more, scope: [:mailer, :welcome])
                   /[if mso]
                     </center>
                     </v:roundrect>
@@ -43,16 +43,16 @@
                     %tr
                       %td(style="padding: 0 10px 10px;")
                         %a(href="#")
-                          %img(src="email_fb.png" alt="Facebook" width="10" height="18")
+                          = image_tag attachments['email_fb.png'].url, width: "10", height: "18", alt: "Facebook"
                       %td(style="padding: 0 10px 10px;")
                         %a(href="#")
-                          %img(src="email_instagram.png" alt="Instagram" width="16" height="17")
+                          = image_tag attachments['email_instagram.png'].url, width: "16", height: "17", alt: "Instagram"
                       %td(style="padding: 0 10px 10px;")
                         %a(href="#")
-                          %img(src="email_tw.png" alt="Twitter" width="16" height="13")
+                          = image_tag attachments['email_tw.png'].url, width: "16", height: "13", alt: "Twitter"
                       %td(style="padding: 0 10px 10px;")
                         %a(href="#")
-                          %img(src="email_yt.png" alt="Youtube" width="19" height="13")
+                          = image_tag attachments['email_yt.png'].url, width: "19", height: "13", alt: "Youtube"
         %tr
           %td
             %table(border="0" cellpadding="0" cellspacing="0" width="100%")
@@ -61,7 +61,8 @@
                   %table(border="0" cellpadding="0" cellspacing="0" width="100%")
                     %tr
                       %td(style="font-family: OpenSans, Arial, sans-serif; font-size: 12px; color: #212121; padding-bottom: 15px; text-align: center;")
-                        We&#8242;ll never share your email and will only send you emails related to your Maplify account.
+                        = t(:secure, scope: [:mailer, :layout])
                     %tr
                       %td(style="font-family: OpenSans, Arial, sans-serif; font-size: 12px; color: #212121; padding-bottom: 15px; text-align: center;")
-                        &#169; 2016 Maplify Inc.
+                        = t(:copyright, scope: [:mailer, :layout])
+
