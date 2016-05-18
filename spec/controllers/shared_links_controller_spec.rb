@@ -4,12 +4,14 @@ require "browser"
 describe SharedLinksController do
   describe 'GET #share' do
     context 'iOS device' do
-      let(:link) { Faker::Internet.url }
+      let(:params) do
+        { param: Faker::Lorem.word }
+      end
 
       before do
         browser = Browser.new('iPhone')
         allow(subject).to receive(:browser).and_return(browser)
-        get :share, link: link
+        get :share, params
       end
 
       it 'should render share_path' do
@@ -17,7 +19,8 @@ describe SharedLinksController do
       end
 
       it 'should render assigns link to @link' do
-        expect(assigns(:link)).to eq(link)
+        expected_link = "#{SharedLinksController::APP_PROTOCOL}://share?#{request.query_string}"
+        expect(assigns(:link)).to eq(expected_link)
       end
     end
 

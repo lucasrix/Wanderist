@@ -23,7 +23,7 @@ module Api::V1
     end
 
     def_param_group :story_point do
-      param :caption, String, required: true, desc: 'Caption', action_aware: true
+      param :caption, String, required: false, desc: 'Caption', action_aware: true
       param :text, String, required: false, desc: 'Text'
       param :attachment_id, Integer, required: false, desc: 'Attachment'
       param_group :location
