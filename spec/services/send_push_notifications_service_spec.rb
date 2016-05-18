@@ -14,7 +14,7 @@ describe SendPushNotificationsService do
 
     context 'followed resource has followers' do
       it 'calls #build_push_notifications' do
-        allow(subject).to receive(:tokens) { [ build(:gadget).token ] }
+        allow(subject).to receive(:tokens) { [build(:gadget).token] }
         expect(subject).to receive(:build_push_notifications)
       end
     end

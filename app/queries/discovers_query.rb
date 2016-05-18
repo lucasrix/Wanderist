@@ -1,5 +1,4 @@
 class DiscoversQuery < BaseQuery
-
   CITY_CENTER_RADIUS = 1
 
   def initialize(origin_params = nil, relation = StoryPoint)

@@ -53,4 +53,3 @@ shared_examples 'pushable' do
     end
   end
 end
-

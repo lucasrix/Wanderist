@@ -1,6 +1,5 @@
 class Location < ActiveRecord::Base
-
-  DEFAULT_CITY_PARAMS = { latitude: 38.89, longitude: -77.036, city: 'Washington' }
+  DEFAULT_CITY_PARAMS = { latitude: 38.89, longitude: -77.036, city: 'Washington' }.freeze
 
   belongs_to :locatable, polymorphic: true
 

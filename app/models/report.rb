@@ -1,5 +1,5 @@
 class Report < ActiveRecord::Base
-  REPORT_KIND = %w(dislike spam risk unsuited)
+  REPORT_KIND = %w(dislike spam risk unsuited).freeze
 
   has_secure_token :action_token
 
@@ -10,5 +10,5 @@ class Report < ActiveRecord::Base
   validates :user_id, presence: true, uniqueness: { scope: [:reportable_id, :reportable_type] }
   validates :kind, presence: true, inclusion: REPORT_KIND
 
-  after_create { ReportEmailJob.perform_later(self.id) }
+  after_create { ReportEmailJob.perform_later(id) }
 end

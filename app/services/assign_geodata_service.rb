@@ -22,7 +22,8 @@ class AssignGeodataService < BaseService
   def set_geodata
     return if @location.errors.any?
     if geocode_service?
-      @latitude, @longitude = @geodata.lat, @geodata.lng
+      @latitude = @geodata.lat
+      @longitude = @geodata.lng
     else
       @location.city = @geodata.city
     end

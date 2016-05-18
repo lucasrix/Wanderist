@@ -8,4 +8,3 @@ class ReportMailer < ActionMailer::Base
     mail(to: ENV['ADMIN_EMAIL'], subject: I18n.t(:new_report_subject, scope: [:mailer, :report]))
   end
 end
-

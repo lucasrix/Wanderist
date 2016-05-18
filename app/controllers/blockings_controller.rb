@@ -1,6 +1,5 @@
 class BlockingsController < ApplicationController
-
-  rescue_from CanCan::AccessDenied do |exception|
+  rescue_from CanCan::AccessDenied do |_exception|
     render file: "#{Rails.root}/public/404", layout: false, status: :not_found
   end
 

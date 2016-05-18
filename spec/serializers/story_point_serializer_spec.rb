@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe StoryPointSerializer, :type => :serializer do
+describe StoryPointSerializer, type: :serializer do
   let(:user) { build(:user) }
   let(:story) { build(:story) }
   let(:story_point) { build(:story_point) }
@@ -27,4 +27,3 @@ describe StoryPointSerializer, :type => :serializer do
     end
   end
 end
-

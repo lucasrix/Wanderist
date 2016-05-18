@@ -3,7 +3,7 @@ module Followable
 
   included do
     has_many :followings, as: :followable
-    has_many :followers , through: :followings, source: :user
+    has_many :followers, through: :followings, source: :user
 
     delegate :count, to: :followings, prefix: 'followings'
   end

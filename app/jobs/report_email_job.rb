@@ -1,5 +1,4 @@
 class ReportEmailJob < ActiveJob::Base
-
   queue_as :email_notifications
 
   def perform(report_id)

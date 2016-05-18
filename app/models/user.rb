@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
 
   include DeviseTokenAuth::Concerns::User
   include Followable
+
   delegate :count, to: :likes, prefix: 'likes'
   delegate :count, to: :story_points, prefix: 'story_points'
   delegate :count, to: :stories, prefix: 'stories'
@@ -21,15 +22,9 @@ class User < ActiveRecord::Base
     User.joins(:followings).where('followings.user_id = ?', id)
   end
 
-  validate :unique_email_user, if: Proc.new { |u| u.provider == 'email' && u.email_change }
-   #validates :email,
-             # presence: true,
-             #uniqueness: {
-               #case_sensitive: false
-             #}
+  validate :unique_email_user, if: proc { |u| u.provider == 'email' && u.email_change }
 
   after_create do
     Profile.create(user: self)
   end
 end
-

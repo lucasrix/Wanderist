@@ -106,4 +106,3 @@ shared_examples 'notificable' do
     end
   end
 end
-
