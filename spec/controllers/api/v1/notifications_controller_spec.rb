@@ -18,10 +18,20 @@ describe Api::V1::NotificationsController do
       should respond_with :ok
     end
 
-    it 'set unread to false' do
-      get :index
-      unread = user.notifications.pluck(:unread).uniq
-      expect(unread).to match_array([false])
+    context 'make_read = true' do
+      it 'change unread to false' do
+        get :index, make_read: true
+        unread = user.notifications.pluck(:unread).uniq
+        expect(unread).to match_array([false])
+      end
+    end
+
+    context 'make_read = false' do
+      it 'doesnt change unread' do
+        get :index
+        unread = user.notifications.pluck(:unread).uniq
+        expect(unread).to match_array([true])
+      end
     end
 
     context 'unauthorized' do
