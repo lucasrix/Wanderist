@@ -17,13 +17,21 @@ RSpec.describe StoryPoint, type: :model do
   end
 
   context 'Validations' do
-    it { should validate_presence_of(:caption) }
     it { should validate_length_of(:caption).is_at_most(StoryPoint::CAPTION_MAX_LENGTH) }
-    it { should validate_presence_of(:text) }
     it { should validate_length_of(:text).is_at_most(StoryPoint::TEXT_MAX_LENGTH) }
     it { should validate_presence_of(:user) }
     it { should validate_presence_of(:location) }
     it { should validate_presence_of(:kind) }
     it { should validate_presence_of(:attachment) }
+
+    context 'kind is text' do
+      subject { build(:story_point, kind: 'text') }
+      it { should validate_presence_of(:text) }
+    end
+
+    context 'kind isnt text' do
+      subject { build(:story_point, kind: 'photo', attachment: build(:attachment)) }
+      it { should_not validate_presence_of(:text) }
+    end
   end
 end

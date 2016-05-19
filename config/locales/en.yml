@@ -56,11 +56,11 @@ en:
       link_title: 'this link'
 
   notifications:
-    new_like: 'You %{resource} have new like'
-    new_follower: 'You have new follower'
-    new_following: 'Your story has new follower'
-    new_story_point_in_story: 'User you followed has added new StoryPoint to Story'
-    new_story: 'User you followed has created new Story'
-    new_story_point: 'User you followed has created new StoryPoint'
-    new_following_story: 'User you followed starts following new Story'
+    new_like: 'liked %{resource}'
+    new_follower: 'started following you'
+    new_following: 'started following your story'
+    new_story_point_in_story: 'added a new post to story'
+    new_story: 'created new story'
+    new_story_point: 'created new story post'
+    new_following_story: 'started following story'
 

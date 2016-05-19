@@ -19,8 +19,9 @@ class StoryPoint < ActiveRecord::Base
 
   acts_as_mappable through: :location
 
-  validates :caption, presence: true, length: { maximum: CAPTION_MAX_LENGTH }
-  validates :text, presence: true, length: { maximum: TEXT_MAX_LENGTH }
+  validates :caption, length: { maximum: CAPTION_MAX_LENGTH }
+  validates :text, length: { maximum: TEXT_MAX_LENGTH }
+  validates :text, presence: true, if: :text?
   validates :user, presence: true
   validates :location, presence: true
   validates :kind, presence: true
