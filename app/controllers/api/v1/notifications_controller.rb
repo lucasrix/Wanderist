@@ -10,7 +10,7 @@ module Api::V1
     after_action :make_read, if: :make_read?
 
     api! 'List of notifications'
-    param :make_read, [true, false], required: false, desc: 'Set unread to false'
+    param :make_read, ['true', 'false'], required: false, desc: 'Set unread to false'
     def index
       notifications = @notifications.ordered
       render json: Response.new(notifications, scope: current_user)
@@ -19,7 +19,7 @@ module Api::V1
     private
 
     def make_read?
-      params[:make_read] == true
+      params[:make_read] == 'true'
     end
 
     def make_read

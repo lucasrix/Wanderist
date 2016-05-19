@@ -20,7 +20,7 @@ describe Api::V1::NotificationsController do
 
     context 'make_read = true' do
       it 'change unread to false' do
-        get :index, make_read: true
+        get :index, make_read: 'true'
         unread = user.notifications.pluck(:unread).uniq
         expect(unread).to match_array([false])
       end
@@ -28,7 +28,7 @@ describe Api::V1::NotificationsController do
 
     context 'make_read = false' do
       it 'doesnt change unread' do
-        get :index
+        get :index, make_read: 'false'
         unread = user.notifications.pluck(:unread).uniq
         expect(unread).to match_array([true])
       end
