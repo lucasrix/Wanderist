@@ -22,18 +22,19 @@ RSpec.describe Profile, type: :model do
   describe '#likes_count' do
     shared_examples 'likes_count' do
       it 'returns likes count' do
-        create(:like, user: user, likable: story)
+        story = create(:story, user: user)
+        create(:like, likable: story)
         expect(profile.likes_count).to eq(1)
       end
     end
 
-    context 'only profile owner has liked resource' do
+    context 'another user has liked resource' do
       it_behaves_like 'likes_count'
     end
 
-    context 'another user has liked resource too' do
+    context 'user has liked another resource' do
       before do
-        create(:like, user: another_user, likable: story)
+        create(:like, user: user, likable: create(:story))
       end
 
       it_behaves_like 'likes_count'
@@ -69,11 +70,11 @@ RSpec.describe Profile, type: :model do
   end
 
   describe '#saves_count' do
-    let(:story_points) { create_list(:story_point, 10) }
+    let(:story_points) { create_list(:story_point, 10, user: user) }
 
     shared_examples 'saves_count' do
-      it 'returns count of story_points were saved by user' do
-        story = create(:story, user: user)
+      it 'returns count of story_points were saved by another_user' do
+        story = create(:story, user: another_user)
         story.story_points << story_points
         expect(profile.saves_count).to eq(story_points.length)
       end
@@ -83,9 +84,9 @@ RSpec.describe Profile, type: :model do
       it_behaves_like 'saves_count'
     end
 
-    context 'another user has saved story_points list to his story' do
+    context 'user has saved story_points list to his story' do
       before do
-        story = create(:story, user: another_user)
+        story = create(:story, user: user)
         story.story_points << story_points
       end
 
