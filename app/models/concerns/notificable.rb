@@ -15,6 +15,7 @@ module Notificable
   end
 
   def get_event(triggered)
+    return if triggered && self.new_record?
     case
     when triggered
       :new_story_point_in_story

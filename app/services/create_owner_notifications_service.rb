@@ -28,7 +28,7 @@ class CreateOwnerNotificationsService < BaseService
     I18n.t(
       @event,
       scope: :notifications,
-      resource: @target_resource.class.name
+      resource: @target_resource.class.name.downcase
     )
   end
 end

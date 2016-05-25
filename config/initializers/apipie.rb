@@ -14,4 +14,9 @@ Apipie.configure do |config|
   config.languages = ['en']
   config.default_locale = 'en'
   config.default_version = 'v1'
+  config.authenticate = Proc.new do
+    authenticate_or_request_with_http_basic do |username, password|
+      username == "maplifyapp" && password == ENV['APIPIE_PASSWORD']
+    end
+  end if Rails.env.production?
 end

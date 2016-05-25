@@ -1,7 +1,7 @@
 class ProviderAuthService < BaseService
   def self.facebook_auth(access_token)
     graph = Koala::Facebook::API.new(access_token)
-    profile = graph.get_object('me')
+    profile = graph.get_object('me?fields=id,name,email')
     user = User.find_or_initialize_by(provider: 'facebook', uid: profile['id'])
 
     if user.new_record?

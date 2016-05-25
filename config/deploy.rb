@@ -1,67 +1,81 @@
 # config valid only for current version of Capistrano
-lock '3.4.0'
+lock '3.5.0'
 
-set :application, 'wanderist-api'
+set :application, 'maplify-api'
 set :repo_url, 'git@github.com:sparrow/wanderist-api.git'
+set :branch, 'feature/deploy'
+set :deploy_user, 'deployer'
 
-SSHKit.config.command_map[:rake] = "bundle exec rake"
-
-set :use_sudo, false
-set :deploy_via, :copy
-set :keep_releases, 10
-
-set :log_level, :debug
-set :pty, true
-
-set :rvm1_ruby_version, "ruby-2.3.0"
-set :rvm_type, :user
 set :default_env, { rvm_bin_path: '~/.rvm/bin' }
 
-set :linked_files, %w{ config/database.yml config/application.yml }
-set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
+set :deploy_to, "/home/#{fetch(:deploy_user)}/www/#{fetch(:application)}"
+set :pty, true
+set :linked_files, %w(config/database.yml config/application.yml config/keys/pushcert_production.pem)
+set :linked_dirs, %w(tmp/pids tmp/sockets log)
 
-# require 'airbrake/capistrano3'
-# after "deploy:finished", "airbrake:deploy"
+set :puma_rackup, -> { File.join(current_path, 'config.ru') }
+set :puma_state, "#{shared_path}/tmp/pids/puma.state"
+set :puma_pid, "#{shared_path}/tmp/pids/puma.pid"
+set :puma_bind, "unix://#{shared_path}/tmp/sockets/puma.sock"
+set :puma_conf, "#{shared_path}/puma.rb"
+set :puma_access_log, "#{shared_path}/log/puma_error.log"
+set :puma_error_log, "#{shared_path}/log/puma_access.log"
+set :puma_role, :app
+set :puma_env, fetch(:rack_env, fetch(:rails_env, 'production'))
+set :puma_threads, [4, 4]
+set :puma_workers, 2
+set :puma_init_active_record, true
+set :puma_preload_app, true
 
-# Default branch is :master
-# ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+namespace :deploy do
+  desc 'upload config files'
+  task :upload_config do
+    on roles(:all) do
+      execute "mkdir -p #{deploy_to}/shared/config"
+      upload!('config/database.yml', "#{deploy_to}/shared/config/database.yml")
+      upload!('config/application.yml', "#{deploy_to}/shared/config/application.yml")
+    end
+  end
 
-# Default deploy_to directory is /var/www/my_app_name
-# set :deploy_to, '/var/www/my_app_name'
+  desc 'upload apn keys'
+  task :upload_apn_keys do
+    on roles(:all) do
+      execute "mkdir -p #{deploy_to}/shared/config/keys"
+      upload!('config/keys/pushcert_development.pem', "#{deploy_to}/shared/config/keys/pushcert_development.pem")
+      upload!('config/keys/pushcert_production.pem', "#{deploy_to}/shared/config/keys/pushcert_production.pem")
+    end
+  end
 
-# Default value for :scm is :git
-# set :scm, :git
+  desc 'upload nginx ssl keys'
+  task :upload_ssl_keys do
+    on roles(:all) do
+      tmp_dir = "#{deploy_to}/tmp/ssl"
+      nginx_dir = '/etc/nginx/ssl/api.maplifyapp.com'
 
-# Default value for :format is :pretty
-# set :format, :pretty
+      execute "mkdir -p #{tmp_dir}"
+      sudo "mkdir -p #{nginx_dir}"
 
-# Default value for :log_level is :debug
-# set :log_level, :debug
+      upload!('config/keys/ssl-bundle.crt', "#{tmp_dir}/ssl-bundle.crt")
+      upload!('config/keys/api-maplifyapp-private.key', "#{tmp_dir}/api-maplifyapp-private.key")
+      upload!('config/keys/dhparam.pem', "#{tmp_dir}/dhparam.pem")
 
-# Default value for :pty is false
-# set :pty, true
+      sudo "mv #{tmp_dir}/ssl-bundle.crt #{nginx_dir}/ssl-bundle.crt"
+      sudo "mv #{tmp_dir}/api-maplifyapp-private.key #{nginx_dir}/api-maplifyapp-private.key"
+      sudo "mv #{tmp_dir}/dhparam.pem #{nginx_dir}/dhparam.pem"
 
-# Default value for :linked_files is []
-# set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
+      execute "rm -r #{tmp_dir}"
+    end
+  end
 
-# Default value for linked_dirs is []
-# set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system')
+  desc 'Install gem for backups'
+  task :backup do
+    on roles(:all) do
+      execute "/bin/bash -lc 'gem install backup:4.2.2 --no-ri --no-rdoc'"
+    end
+  end
 
-# Default value for default_env is {}
-# set :default_env, { path: "/opt/ruby/bin:$PATH" }
-
-# Default value for keep_releases is 5
-# set :keep_releases, 5
-
-# namespace :deploy do
-#
-#   after :restart, :clear_cache do
-#     on roles(:web), in: :groups, limit: 3, wait: 10 do
-#       # Here we can do anything such as:
-#       # within release_path do
-#       #   execute :rake, 'cache:clear'
-#       # end
-#     end
-#   end
-#
-# end
+  before :starting, 'deploy:upload_config'
+  before :starting, 'deploy:upload_apn_keys'
+  before :starting, 'deploy:upload_ssl_keys'
+  after  :finished, 'deploy:backup'
+end
