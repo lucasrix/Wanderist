@@ -23,7 +23,7 @@ describe ProviderAuthService do
     end
 
     before do
-      allow(koala).to receive(:get_object).with('me').and_return(me)
+      allow(koala).to receive(:get_object).with('me?fields=id,name,email').and_return(me)
       allow(Koala::Facebook::API).to receive(:new).with(token).once.and_return(koala)
     end
 

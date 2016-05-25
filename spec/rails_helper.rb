@@ -10,6 +10,7 @@ require 'rspec/rails'
 require 'devise'
 require 'shoulda/matchers'
 require 'support/global_helpers'
+require 'bullet'
 
 Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
@@ -25,6 +26,17 @@ RSpec.configure do |config|
   config.include GlobalHelpers
 
   config.filter_run show_in_doc: true if ENV['APIPIE_RECORD']
+
+  if Bullet.enable?
+    config.before(:each) do
+      Bullet.start_request
+    end
+
+    config.after(:each) do
+      Bullet.perform_out_of_channel_notifications if Bullet.notification?
+      Bullet.end_request
+    end
+  end
 end
 
 Shoulda::Matchers.configure do |config|

@@ -3,7 +3,7 @@ class DiscoversQuery < BaseQuery
 
   def initialize(origin_params = nil, relation = StoryPoint)
     @origin_params = origin_params || {}
-    @relation = relation.includes(:stories).joins(:location)
+    @relation = relation.joins(:location)
     build_origin if @origin_params[:location].present?
   end
 
