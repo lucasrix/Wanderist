@@ -87,8 +87,7 @@
     "rules": [
       {
         "http":   { "port": "80",   "protocol": "tcp" },
-        "https":  { "port": "443",  "protocol": "tcp" },
-        "http":   { "port": "2812", "protocol": "tcp" }
+        "https":  { "port": "443",  "protocol": "tcp" }
       }
     ]
   },
