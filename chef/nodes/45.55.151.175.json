@@ -1,0 +1,119 @@
+{
+
+  "authorization": {
+    "sudo": {
+      "groups": ["sysadmin"],
+      "users": ["deployer", "ubuntu"],
+      "passwordless": "false"
+    }
+  },
+
+  "users": ["deployer"],
+
+  "openssh": {
+    "server": {
+      "allow_agent_forwarding": "yes",
+      "allow_tcp_forwarding": "no",
+      "login_grace_time": "30s",
+      "password_authentication": "no",
+      "permit_root_login": "no",
+      "r_s_a_authentication": "no"
+    },
+    "client": {
+      "github.com": {
+        "user_known_hosts_file": "/dev/null",
+        "strict_host_key_checking": "no"
+      }
+    }
+  },
+
+  "nginx": {
+    "install_method": "source",
+    "default_site_enabled": false,
+    "source": {
+      "version": "1.9.6",
+      "checksum": "ed501fc6d0eff9d3bc1049cc1ba3a3ac8c602de046acb2a4c108392bbfa865ea"
+    }
+  },
+
+  "rvm": {
+    "user_default_ruby": "2.3.0",
+    "user_install_rubies": true,
+    "installs": {
+      "deployer": true
+    },
+    "user_installs": [
+      {
+        "user": "deployer"
+      }
+    ],
+    "gpg": {}
+  },
+
+  "postgresql": {
+    "version": "9.4",
+    "users": [
+      {
+        "username": "deployer",
+        "encrypted_password": "$1$twVOHUgj$u.QMIvzqdduFwLA.AZQUQ/",
+        "superuser": true,
+        "createdb": true,
+        "login": true
+      }
+    ],
+
+    "databases": [
+      {
+        "name": "maplify_production",
+        "owner": "deployer",
+        "template": "template0",
+        "encoding": "UTF-8",
+        "locale": "en_US.UTF-8"
+      }
+    ]
+  },
+
+    "monit": {
+       "web_interface": {
+         "enable":  true,
+         "use_syslog": true,
+         "port":    2812,
+         "address": "localhost",
+         "allow":   ["localhost", "thehealthclinic:blablabla"]
+       }
+     },
+
+  "firewall": {
+    "rules": [
+      {
+        "web server http":   { "port": "80",   "protocol": "tcp" },
+        "web server https":  { "port": "443",  "protocol": "tcp" },
+        "monit http":        { "port": "2812", "protocol": "tcp" }
+      }
+    ]
+  },
+
+  "run_list": [
+    "recipe[chef-solo-search]",
+    "recipe[openssh]",
+    "recipe[users::sysadmins]",
+    "recipe[sudo]",
+    "recipe[ufw]",
+    "recipe[nginx]",
+    "recipe[pre-rvm]",
+    "recipe[monit]",
+    "recipe[rvm::user]",
+    "recipe[postgresql::server]",
+    "recipe[postgresql::client]",
+    "recipe[nodejs::nodejs]",
+    "recipe[apt-packages]",
+    "recipe[imagemagick::devel]",
+    "recipe[rg-imagemagick-policy]",
+    "recipe[nginx-template-production]",
+    "recipe[rg-monit-production]"
+  ],
+
+  "automatic": {
+    "ipaddress": "45.55.151.175"
+  }
+}

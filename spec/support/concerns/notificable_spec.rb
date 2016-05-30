@@ -43,7 +43,7 @@ shared_examples 'notificable' do
   describe '#get_event' do
     context 'subject has triggered' do
       it 'returns :new_story_point_in_story' do
-        object = build(:story)
+        object = create(:story)
         result = object.get_event(StoryPoint.new)
         expect(result).to eq(:new_story_point_in_story)
       end

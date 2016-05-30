@@ -1,7 +1,7 @@
 class UserNotificationMailer < ActionMailer::Base
   include Attachmentable
 
-  default from: 'notifications@maplifyapp.com'
+  default from: ENV["NO_REPLAY_EMAIL"]
 
   def welcome(user)
     set_attachments

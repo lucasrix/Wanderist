@@ -13,12 +13,12 @@ class FileUploader < ApplicationUploader
     process resize_to_fill: [200, 200]
   end
 
-  # version :video_thumbnail, if: :is_video? do
-  # process :screenshot
-  # def full_filename(for_file)
-  # %(thumbnail_#{File.basename(for_file, '.*')}.jpg)
-  # end
-  # end
+  version :video_thumbnail, if: :is_video? do
+    process :screenshot
+    def full_filename(for_file)
+      %(thumbnail_#{File.basename(for_file, '.*')}.jpg)
+    end
+  end
 
   protected
 
@@ -37,12 +37,6 @@ class FileUploader < ApplicationUploader
   end
 
   def content_type(file)
-    MIME::Types.type_for(file).first.content_type
+    MIME::Types.type_for(file).to_s
   end
-
-  # Override the filename of the uploaded files:
-  # Avoid using model.id or version_name here, see uploader/store.rb for details.
-  # def filename
-  #   "something.jpg" if original_filename
-  # end
 end

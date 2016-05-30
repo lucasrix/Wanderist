@@ -1,29 +1,16 @@
 #!/usr/bin/env ruby
 #^syntax detection
 
-site 'http://community.opscode.com/api/v1'
+site 'https://supermarket.getchef.com/api/v1'
 
-cookbook 'runit'
+cookbook 'chef-solo-search'
 cookbook 'users'
 cookbook 'sudo'
-cookbook 'chef-solo-search'
-
+cookbook 'openssh'
 cookbook 'nginx'
-cookbook 'nodejs'
-cookbook 'monit'
-cookbook 'openssh', '~> 1.5.2'
-cookbook 'ufw'
-cookbook 'newrelic-ng',
-  :git => 'https://github.com/chr4-cookbooks/newrelic-ng.git'
-
-cookbook 'rvm',
-  :git => 'https://github.com/martinisoft/chef-rvm'
-
-cookbook 'postgresql',
-  :git => 'https://github.com/phlipper/chef-postgresql.git'
-
-cookbook 'redis',
-  :git => 'https://github.com/phlipper/chef-redis.git'
-
+cookbook 'rvm', git: 'https://github.com/martinisoft/chef-rvm.git'
+cookbook 'postgresql', git: 'https://github.com/phlipper/chef-postgresql.git'
+cookbook 'nodejs', '~> 2.4.2'
+cookbook 'ufw', git: 'https://github.com/lukyanovfedor/ufw.git'
 cookbook 'imagemagick'
-cookbook 'swap_tuning'
+cookbook 'monit'
