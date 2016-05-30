@@ -25,6 +25,18 @@ module Api::V1::Auth
       super
     end
 
+    protected
+
+    def render_create_error
+      if @resource
+        super
+      else
+        response = Response.new
+        response.add_error_message I18n.t("devise_token_auth.passwords.user_not_found", email: @email)
+        render json: response, status: 404
+      end
+    end
+
     def render_update_success
       render json: Response.new(@resource)
     end
