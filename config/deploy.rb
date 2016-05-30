@@ -3,7 +3,7 @@ lock '3.5.0'
 
 set :application, 'maplify-api'
 set :repo_url, 'git@github.com:sparrow/wanderist-api.git'
-set :branch, 'feature/deploy'
+set :branch, 'develop'
 set :deploy_user, 'deployer'
 
 set :default_env, { rvm_bin_path: '~/.rvm/bin' }
