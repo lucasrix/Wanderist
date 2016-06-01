@@ -79,25 +79,21 @@
          "use_syslog": true,
          "port":    2812,
          "address": "localhost",
-         "allow":   ["localhost", "thehealthclinic:blablabla"]
+         "allow":   ["localhost", "maplifyapp:phu1Tex"]
        }
      },
 
   "firewall": {
-    "rules": [
-      {
-        "http":   { "port": "80",   "protocol": "tcp" },
-        "https":  { "port": "443",  "protocol": "tcp" }
-      }
-    ]
+    "allow_ssh": true
   },
 
   "run_list": [
     "recipe[chef-solo-search]",
     "recipe[openssh]",
     "recipe[users::sysadmins]",
+    "recipe[firewall::default]",
+    "recipe[rg-firewall]",
     "recipe[sudo]",
-    "recipe[ufw]",
     "recipe[nginx]",
     "recipe[pre-rvm]",
     "recipe[monit]",
