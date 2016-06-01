@@ -14,7 +14,7 @@ SITE
     chef_gem (0.1.0)
     chef_handler (1.4.0)
     compat_resource (12.9.1)
-    firewall (2.5.0)
+    firewall (2.5.1)
       chef-sugar (>= 0.0.0)
     homebrew (2.1.0)
       build-essential (>= 2.1.2)
@@ -67,14 +67,6 @@ SITE
       yum (>= 3.6.3)
 
 GIT
-  remote: https://github.com/lukyanovfedor/ufw.git
-  ref: master
-  sha: 09b1dabd831d23516ce4b8ba49d181c15da44f52
-  specs:
-    ufw (0.7.5)
-      firewall (>= 0.9)
-
-GIT
   remote: https://github.com/martinisoft/chef-rvm.git
   ref: master
   sha: eddd733694a1d3e0872f5692e8dda93aa2752791
@@ -92,6 +84,7 @@ GIT
 
 DEPENDENCIES
   chef-solo-search (>= 0)
+  firewall (~> 2.5.1)
   imagemagick (>= 0)
   monit (>= 0)
   nginx (>= 0)
@@ -100,6 +93,5 @@ DEPENDENCIES
   postgresql (>= 0)
   rvm (>= 0)
   sudo (>= 0)
-  ufw (>= 0)
   users (>= 0)
 
