@@ -34,7 +34,9 @@ gem 'delayed_job_active_record'
 gem 'houston'
 gem 'whenever', :require => false
 
+#Monitoring
 gem "newrelic_rpm"
+gem 'airbrake', '~> 5.2'
 
 group :development, :test do
   gem 'pry-rails'
