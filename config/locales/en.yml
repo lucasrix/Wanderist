@@ -46,7 +46,8 @@ en:
       new_report_on: 'On %{resource} with id: %{resource_id}'
       new_report_kind: 'Abuse kind: %{kind} with id: %{report_id}'
       reports_count: 'Resource has %{count} reports'
-      blocking_link_title: 'Change blocked status'
+      blocking_link_title: 'Remove from feed'
+      open_resource: 'Open %{resource}'
     reset_password:
       title: 'Reset your Maplify password'
       request: 'We received a request for a forgotten password.'
@@ -59,8 +60,8 @@ en:
     new_like: 'liked %{resource}'
     new_follower: 'started following you'
     new_following: 'started following your story'
-    new_story_point_in_story: 'added a new post to story'
+    new_story_point_in_story: 'added a new storypoint to story'
     new_story: 'created new story'
-    new_story_point: 'created new story post'
+    new_story_point: 'created new storypoint'
     new_following_story: 'started following story'
 

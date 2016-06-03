@@ -8,6 +8,8 @@ class Story < ActiveRecord::Base
   NAME_MAX_LENGTH = 25
   DESCRIPTION_MAX_LENGTH = 1500
 
+  delegate :readable, to: :story_points, prefix: 'story_points'
+
   belongs_to :user
   has_many :notifications, as: :notificable
 
