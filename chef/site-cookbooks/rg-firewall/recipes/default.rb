@@ -15,9 +15,3 @@ firewall_rule 'https' do
   protocol :tcp
   action :create
 end
-
-firewall_rule 'http' do
-  port 2812
-  protocol :tcp
-  action :create
-end
