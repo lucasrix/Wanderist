@@ -8,6 +8,8 @@ class StoryPoint < ActiveRecord::Base
   CAPTION_MAX_LENGTH = 30
   TEXT_MAX_LENGTH = 1500
 
+  delegate :readable, to: :stories, prefix: 'stories'
+
   belongs_to :user
   belongs_to :attachment
 

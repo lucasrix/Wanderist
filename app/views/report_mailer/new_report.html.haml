@@ -5,6 +5,9 @@
 %p
   = t(:new_report_on, scope: [:mailer, :report], resource: @reportable.class.name, resource_id: @reportable.id )
 %p
+  %a(href="#{@link}")
+    = t(:open_resource, scope: [:mailer, :report], resource: @reportable.class.name)
+%p
   = t(:new_report_kind, scope: [:mailer, :report], kind: @report.kind, report_id: @report.id)
 %p
   = t(:reports_count, scope: [:mailer, :report], count: @reportable.reports_count)

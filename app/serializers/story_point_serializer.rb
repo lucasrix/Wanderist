@@ -9,6 +9,9 @@ class StoryPointSerializer < ApplicationSerializer
   has_one :user
   has_one :location
   has_one :attachment
-
   has_many :tags
+
+  def stories
+    object.stories_readable(current_user)
+  end
 end
