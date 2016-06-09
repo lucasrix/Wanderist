@@ -25,8 +25,13 @@ module Api::V1
     api! 'Delete like'
     error 404, 'Story Point not found.'
     error 404, 'Story not found.'
+    error 404, 'Like not found.'
     def destroy
-      if like.destroy
+      if like.nil?
+        response = Response.new
+        response.add_error_message(I18n.t(:not_found, scope: [:errors, :messages], resource: 'Like'))
+        render json: response, status: :not_found
+      elsif like.destroy
         render json: Response.new(resource, scope: current_user)
       else
         render json: Response.new(resource, scope: current_user), status: :unprocessable_entity

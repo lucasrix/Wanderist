@@ -33,6 +33,12 @@ describe Api::V1::FollowingsController do
       expect { delete :destroy, params }.to change { Following.count }.by(-1)
     end
 
+    it 'should return status 404' do
+      allow(subject).to receive(:following).and_return(nil)
+      delete :destroy, params
+      should respond_with :not_found
+    end
+
     it 'should return status 422' do
       allow_any_instance_of(Following).to receive(:destroy).and_return(false)
       delete :destroy, params
