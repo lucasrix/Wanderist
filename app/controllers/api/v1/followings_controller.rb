@@ -25,8 +25,13 @@ module Api::V1
     api! 'Delete following'
     error 404, 'Story not found.'
     error 404, 'User not found.'
+    error 404, 'Following not found.'
     def destroy
-      if following.destroy
+      if following.nil?
+        response = Response.new
+        response.add_error_message(I18n.t(:not_found, scope: [:errors, :messages], resource: 'Following'))
+        render json: response, status: :not_found
+      elsif following.destroy
         render json: Response.new(resource, scope: current_user)
       else
         render json: Response.new(resource, scope: current_user), status: :unprocessable_entity

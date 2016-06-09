@@ -2,6 +2,7 @@ en:
   errors:
     messages:
       not_email: 'Please enter valid email'
+      not_found: "%{resource} not found"
 
   token_not_found: Token not found
 

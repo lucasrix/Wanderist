@@ -38,6 +38,12 @@ describe Api::V1::LikesController do
       delete :destroy, params
       should respond_with :unprocessable_entity
     end
+
+    it 'should return status 404' do
+      allow(subject).to receive(:like).and_return(nil)
+      delete :destroy, params
+      should respond_with :not_found
+    end
   end
 
   describe 'POST #create' do
