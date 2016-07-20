@@ -20,12 +20,12 @@ describe Api::V1::AttachmentsController do
       it_behaves_like 'attachments'
     end
 
-    context 'video attachment' do
+    context 'video attachment', skip_on_ci: true do
       let(:params) { attributes_for(:video_mp4_attachment) }
       it_behaves_like 'attachments'
     end
 
-    context '.mov attachment' do
+    context '.mov attachment', skip_on_ci: true do
       let(:params) { attributes_for(:video_mov_attachment) }
       it_behaves_like 'attachments'
     end

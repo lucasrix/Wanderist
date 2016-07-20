@@ -8,7 +8,7 @@ class Ability
       can [:read, :update], Report, action_token: action_token
       can :update, StoryPoint, reports: { action_token: action_token }
       can [:read, :update], Story, reports: { action_token: action_token }
-    else
+    elsif user.persisted?
       can [:read], StoryPoint, id: StoryPoint.readable(user).ids
       can [:create, :update, :destroy], StoryPoint, user_id: user.id
       can [:read, :create], Attachment, user_id: user.id
