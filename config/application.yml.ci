@@ -1,0 +1,7 @@
+#Mailer settings
+ADMIN_EMAIL:              'test@example.com'
+NO_REPLAY_EMAIL:          "Test <no-reply@example.com>"
+
+#Monitoring
+AIRBRAKE_PROJECT_ID:      '123456'
+AIRBRAKE_PROJECT_KEY:     'b4d077cbc519607335135cf0af075daf'

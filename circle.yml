@@ -1,0 +1,15 @@
+dependencies:
+  pre:
+    - sudo apt-get install ffmpeg x264
+machine:
+  ruby:
+    version:
+      2.3.0
+database:
+  override:
+    - cp config/application.yml.ci config/application.yml
+    - cp config/database.yml.ci config/database.yml
+    - bundle exec rake db:create db:migrate db:test:prepare
+test:
+  override:
+    - bundle exec rspec ./spec -fd --tag ~@skip_on_ci
