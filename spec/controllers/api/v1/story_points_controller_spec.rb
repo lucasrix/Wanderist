@@ -159,6 +159,7 @@ describe Api::V1::StoryPointsController do
 
   describe 'PUT #update' do
     let!(:story_point) { create(:story_point, user: user, location: create(:location)) }
+    let!(:new_location_params) { attributes_for(:location)}
 
     it 'should return status 200', :show_in_doc do
       params = attributes_for(:story_point)
@@ -173,6 +174,14 @@ describe Api::V1::StoryPointsController do
       new_caption = Faker::Hipster.word
       put :update, id: story_point.id, caption: new_caption
       expect(StoryPoint.where(caption: new_caption)).not_to be_empty
+    end
+
+    it 'updates story point location' do
+      put :update, id: story_point.id, location: new_location_params
+      story_point.reload
+      result = story_point.location.slice(:latitude, :longitude, :address).values.map(&:to_s)
+      expected_result = new_location_params.values
+      expect(result).to match_array(expected_result)
     end
 
     it 'should return 422' do
