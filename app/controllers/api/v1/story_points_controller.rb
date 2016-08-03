@@ -68,6 +68,7 @@ module Api::V1
     error 404, 'Story Point not found.'
 
     def update
+      @story_point.location.update(location_params) if params[:location].present?
       update_entity(@story_point, story_point_params)
     end
 
