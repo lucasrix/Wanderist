@@ -7,6 +7,6 @@ class CustomDeviseMailer < Devise::Mailer
 
   def reset_password_instructions(record, token, opts={})
     set_attachments
-    super(record, opts)
+    super
   end
 end
