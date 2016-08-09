@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
 
   get :share, to: 'shared_links#share'
+  get :edit_password, to: 'shared_links#edit_password'
 
   namespace :api do
     namespace :v1 do
